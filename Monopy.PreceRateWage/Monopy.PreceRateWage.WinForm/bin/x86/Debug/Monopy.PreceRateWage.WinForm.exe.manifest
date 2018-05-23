@@ -150,50 +150,50 @@
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Common.dll" size="80384">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Common.dll" size="83456">
       <assemblyIdentity name="Monopy.PreceRateWage.Common" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>WfJ8D3lp1q/SxhUoRt1d65YoDsE=</dsig:DigestValue>
+        <dsig:DigestValue>LKg9zsuYt69h/UtbScsJQPH5icI=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Dal.dll" size="118784">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Dal.dll" size="122880">
       <assemblyIdentity name="Monopy.PreceRateWage.Dal" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>odNly7rgJ1NN1n0zW/dZ3QCzZKA=</dsig:DigestValue>
+        <dsig:DigestValue>4w4smlqY9fT56vU4bS8H29tj+2c=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Model.dll" size="386048">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Model.dll" size="406016">
       <assemblyIdentity name="Monopy.PreceRateWage.Model" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>PSgtIIwGhW9poDwiZXFbaHPk3OI=</dsig:DigestValue>
+        <dsig:DigestValue>tJtu2n1SFcahWznTlV2tmZzKtb8=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
   <dependency>
-    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.WinForm.exe" size="1792936">
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.WinForm.exe" size="1890728">
       <assemblyIdentity name="Monopy.PreceRateWage.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>+SZFH7TDPuRUG66SUjUN5zWr3bc=</dsig:DigestValue>
+        <dsig:DigestValue>wCgY+3/Xx4xnHh8HpvJieOgg7tA=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>

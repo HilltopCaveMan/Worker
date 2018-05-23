@@ -14,14 +14,14 @@
     <framework targetVersion="4.0" profile="Full" supportedRuntime="4.0.30319" />
   </compatibleFrameworks>
   <dependency>
-    <dependentAssembly dependencyType="install" codebase="Monopy.PreceRateWage.WinForm.exe.manifest" size="83076">
+    <dependentAssembly dependencyType="install" codebase="Monopy.PreceRateWage.WinForm.exe.manifest" size="84481">
       <assemblyIdentity name="Monopy.PreceRateWage.WinForm.exe" version="1.0.0.207" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="msil" type="win32" />
       <hash>
         <dsig:Transforms>
           <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
         </dsig:Transforms>
         <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
-        <dsig:DigestValue>Vlta82OxZoQWiF+TLRCVv54/dRw=</dsig:DigestValue>
+        <dsig:DigestValue>JFzaP0C2FsV/PKaC8h7s1uE63KM=</dsig:DigestValue>
       </hash>
     </dependentAssembly>
   </dependency>
