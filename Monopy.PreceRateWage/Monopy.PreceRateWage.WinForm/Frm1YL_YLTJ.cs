@@ -40,7 +40,7 @@ namespace Monopy.PreceRateWage.WinForm
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
             btnSearch.PerformClick();
         }
-        
+
         /// <summary>
         /// 查询
         /// </summary>
@@ -48,7 +48,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            RefDgv(dtp.Value,CmbLB.Text);
+            RefDgv(dtp.Value, CmbLB.Text);
             dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
@@ -247,10 +247,10 @@ namespace Monopy.PreceRateWage.WinForm
         private void InitUI()
         {
             var list = new BaseDal<DataBase1YL_YLTJ>().GetList().ToList();
-            
+
             RefCmbLB(list);
         }
-        
+
         private void RefCmbLB(List<DataBase1YL_YLTJ> list)
         {
             var listTmp = list.GroupBy(t => t.LB).Select(t => t.Key).OrderBy(t => t).ToList();
