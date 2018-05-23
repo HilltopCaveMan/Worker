@@ -1,0 +1,40 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>Workaround for DISABLED Attribute Problem</title>
+    <SCRIPT>
+
+        var canNav = false;
+        function canNavigate() {
+            return canNav;
+        }
+        function load() {
+            document.all("btn1").innerText = "Link status == " + canNav;
+        }
+
+        function setNavigate(linkObj, canNavParam) {
+            if (linkObj != null) {
+                if (canNavParam == false) {
+                    linkObj.disabled = true;
+                } else {
+                    linkObj.disabled = false;
+                }
+                canNav = canNavParam;
+            }
+        }
+
+        function updateBtnStatus(btnName) {
+            var btn = document.all(btnName);
+            if (btn != null) {
+                document.all(btnName).innerText = "Link status == " + canNav;
+            }
+        }
+    </SCRIPT>
+</head>
+<body onload="load();">
+    <a id="lnk1" disabled=true href="http://www.microsoft.com/" rel="external nofollow" onclick="return canNavigate();">Click here</a>
+    <p>
+        <button id=btn1 onclick="setNavigate(document.all('lnk1'), !(canNav));updateBtnStatus('btn1');"></button>
+</body>
+</html>

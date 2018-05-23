@@ -1,0 +1,931 @@
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——月工资.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——指标.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位入库合格品日录入.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位入库合格品日录入和计算.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位人员出勤日录入日计算.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位人员出勤日录入日计算导出.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——计件日录入.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——计件日录入.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——磨瓷冷补.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——磨瓷冷补.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——成检计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——成检计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——小试磨瓷冷补计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——小试磨瓷冷补计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——叉车司机外协月录入.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——叉车司机外协月.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——辅助验货月录入.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——辅助验货月.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——交通补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——交通补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——租房补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——租房补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——幼儿园补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——幼儿园补助.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——奖惩.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——奖惩.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——保险.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——保险.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——五星.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——五星.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——互助离职.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助离职.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——公司奖惩.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——公司奖惩.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——离职扣款.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——离职扣款.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——招工介绍费.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——招工介绍费.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——车票.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——车票.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——体检费.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——体检费.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——雇主责任险.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——雇主责任险.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——出勤.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——出勤.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——工龄.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出通用——工龄.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——编制.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板三厂——检包——线长费模板.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出三厂——检包——线长费模板.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助金扣款.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——工资单.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——品管验货总天数.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——品管验货总天数.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\工资单导出格式.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补月报.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补记功表.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC原库存磨瓷月报.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC磨瓷月报.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——车间考核表.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——车间考核表.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——卸石膏计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——卸石膏计件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——大件车间月报.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——小件车间月报.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC大件.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板通用——编制.xlsx
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.config
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.application
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OOXML.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXml4Net.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\System.Linq.Dynamic.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll.config
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csprojResolveAssemblyReference.cache
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_CJJJ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_FZYH.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR_Month.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ_YZ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_PGYHZTS.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XCSJ_WX.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XSMCLBJJ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XZF.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCDJ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XJCJYB.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_CJKH.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_DJCJYB.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XSGJJ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JSF.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseHeadcount.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BF.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BX.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CP.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CQ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GL.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GZZRX.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_High.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_NoMoney.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Dept.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Factory.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JT.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_LZ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_TJF.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_WX.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_YEY.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_ZF.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGetGZD.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroup.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroupRole.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGZD.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMain.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRYCQ.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseDay.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseMonth.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmLogin.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmModify.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRKHGP.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMsg.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmRole.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Properties.Resources.resources
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.GenerateResource.Cache
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CoreCompileInputs.cache
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.TrustInfo.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.application
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——月工资.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——指标.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位入库合格品日录入.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位入库合格品日录入和计算.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位人员出勤日录入日计算.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位人员出勤日录入日计算导出.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——计件日录入.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——计件日录入.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——磨瓷冷补.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——磨瓷冷补.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——成检计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——成检计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——小试磨瓷冷补计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——小试磨瓷冷补计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——叉车司机外协月录入.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——叉车司机外协月.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——辅助验货月录入.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——辅助验货月.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——交通补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——交通补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——租房补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——租房补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——幼儿园补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——幼儿园补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——奖惩.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——奖惩.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——保险.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——保险.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——五星.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——五星.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——互助离职.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助离职.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——公司奖惩.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——公司奖惩.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——离职扣款.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——离职扣款.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——招工介绍费.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——招工介绍费.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——车票.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——车票.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——体检费.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——体检费.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——雇主责任险.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——雇主责任险.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——出勤.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——出勤.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——工龄.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出通用——工龄.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——编制.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板三厂——检包——线长费模板.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出三厂——检包——线长费模板.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助金扣款.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——工资单.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——品管验货总天数.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——品管验货总天数.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\工资单导出格式.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补月报.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补记功表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC原库存磨瓷月报.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC磨瓷月报.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——车间考核表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——车间考核表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——卸石膏计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——卸石膏计件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——大件车间月报.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——小件车间月报.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC大件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC小件.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC上线.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——入职补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——入职补助.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——辅助验货.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——辅助验货.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——车间考核.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——车间考核.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件统计.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件统计.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件明细表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件明细表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——加班审批表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——加班审批表.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板通用——编制.xlsx
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.config
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.application
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OOXML.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXml4Net.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\System.Linq.Dynamic.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll.config
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csprojResolveAssemblyReference.cache
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_CJJJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_FZYH.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR_Month.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ_YZ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_PGYHZTS.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XCSJ_WX.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XSMCLBJJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XZF.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCDJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCSX.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCXJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XJCJYB.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_CJKH.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_DJCJYB.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XSGJJ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_CJKH.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJHS.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJTJB.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_FZYH.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JBSPB.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JSF.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_RZBZ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseHeadcount.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BF.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BX.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CP.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CQ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GL.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GZZRX.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_High.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_NoMoney.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Dept.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Factory.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JT.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_LZ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_TJF.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_WX.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_YEY.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_ZF.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGetGZD.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroup.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroupRole.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGZD.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMain.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRYCQ.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseDay.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseMonth.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmLogin.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmModify.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRKHGP.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMsg.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmRole.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Properties.Resources.resources
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.GenerateResource.Cache
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CoreCompileInputs.cache
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.TrustInfo.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.application
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_PYGZHS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——月工资.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——指标.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位入库合格品日录入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位入库合格品日录入和计算.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位人员出勤日录入日计算.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位人员出勤日录入日计算导出.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——计件日录入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——计件日录入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——磨瓷冷补.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——磨瓷冷补.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——成检计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——成检计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——小试磨瓷冷补计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——小试磨瓷冷补计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——叉车司机外协月录入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——叉车司机外协月.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——辅助验货月录入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——辅助验货月.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——交通补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——交通补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——租房补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——租房补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——幼儿园补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——幼儿园补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——奖惩.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——奖惩.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——保险.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——保险.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——五星.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——五星.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——互助离职.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助离职.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——公司奖惩.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——公司奖惩.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——离职扣款.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——离职扣款.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——招工介绍费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——招工介绍费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——车票.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——车票.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——体检费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——体检费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——雇主责任险.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——雇主责任险.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——出勤.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——出勤.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——工龄.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出通用——工龄.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——编制.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板三厂——检包——线长费模板.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出三厂——检包——线长费模板.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助金扣款.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——工资单.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——品管验货总天数.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——品管验货总天数.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\工资单导出格式.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补记功表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC原库存磨瓷月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC磨瓷月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——车间考核表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——车间考核表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——卸石膏计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——卸石膏计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——大件车间月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——小件车间月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC大件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC小件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC上线.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——入职补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——入职补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——辅助验货.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——辅助验货.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——车间考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——车间考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件统计.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件统计.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件明细表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件明细表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——加班审批表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——加班审批表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉工资核算.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉工资核算.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉工个人工资.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉修检工个人考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉修检工个人考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉擦绺工个人考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉擦绺工个人考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉班组考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉班组考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉班组考核结果.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——破损.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——PMC破损.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——开发试烧.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑计件和考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——总窑回烧.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——吸尘工考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——开窑工考核和计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——烧小窑考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑工小考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——三段报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——三段报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——开窑报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——开窑报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——回烧检验按大类.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——烧成补瓷工考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——气站安全员.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标实际缺陷数.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标检验记录.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑检验按大类.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——技术员考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——技术员报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——技术员报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——入职补助月.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——入职补助月.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——报工.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——定员验证.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——金额验证.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——PMC调度高压计件交坯.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——PMC半检月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——成型月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——车间报工导入.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——交坯表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——班长费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具——班长费.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具——质量汇总表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具高压水箱——加班申请表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具高压水箱——加班申请表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具高压水箱——工号人员编码对应.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板通用——编制.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.config
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.application
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\CSkin.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\DevComponents.DotNetBar.Design.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\DevComponents.DotNetBar2.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OOXML.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXml4Net.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXmlFormats.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\System.Linq.Dynamic.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\CSkin.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.resources.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csprojResolveAssemblyReference.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_CXYB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_JB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_RYDY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_01_PMCDDGYJJJP.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_02_PMCBJYB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_03_PMCBJJYJLYB_ADL.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_05_CJBG.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_06_JPB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_07_BZFGY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_081_ZLWCHZB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_CJJJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_FZYH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR_Month.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ_YZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_PGYHZTS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XCSJ_WX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XSMCLBJJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XZF.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCDJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCSX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCXJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XJCJYB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_CJKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_DJCJYB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XSGJJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_BG.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_BZ_KH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_CLG_KH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_JXG_KH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_PS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_PYGZHS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_01_ZYJJHKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_02_ZY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_03_HS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_04_3DZY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_05_KYBG.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_06_HSJYADL.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_07_QZAQY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_08_TBSJQXS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_09_TBJJJL.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_10_ZYJJADL.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_11_JSYKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_12_JSYBG.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_13_BG.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_CJKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJHS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJTJB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmAbout.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_FZYH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JBSPB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JSF.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_KFSS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_PMCPS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_RZBZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_RZBZ_Month.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseHeadcount.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BF.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CP.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CQ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GL.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GZZRX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_High.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_NoMoney.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Dept.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Factory.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JT.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_LZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_TJF.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_WX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_YEY.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_ZF.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGetGZD.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroup.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroupRole.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGZD.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMain.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRYCQ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseDay.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseMonth.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmLogin.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmModify.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRKHGP.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMsg.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmRole.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Properties.Resources.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.GenerateResource.Cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CoreCompileInputs.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.TrustInfo.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.application
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYSX_02_GYSX.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型半检拉坯——拉坯月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_BJLP_01_LPYB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具高压水箱——工号人员编码对应.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——技术员——成型面具技术员考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型面具技术员考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——技术员——成型技术员考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型技术员考核.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_JSY_01CXJSYKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_JSY_02MJJSYKH.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型技术员差手质量.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_01JJKHTB.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——计件考核提报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——计件考核提报Out.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——模型数.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_02MXS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_03JJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件7通.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件个人.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_03JJ_GR.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_04SX_TZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——变产补助台账.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——变产表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——变产表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_04SXBZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_05PX_TZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——培训补助台账.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——入职表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——入职表.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_05PXBZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——注小计.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——注小计.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_06ZXJ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——辅料罚款.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_07FLFK.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——开发试烧统计月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——开发试烧统计月报.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_09SS.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——破损补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_11PSBZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——师傅补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——师傅补助.xlsx
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_12SFBZ.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——月工资.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板基础数据——指标.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位入库合格品日录入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位入库合格品日录入和计算.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——线位人员出勤日录入日计算.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——线位人员出勤日录入日计算导出.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——计件日录入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——计件日录入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——磨瓷冷补.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——磨瓷冷补.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——成检计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——成检计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——小试磨瓷冷补计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——小试磨瓷冷补计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——叉车司机外协月录入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——叉车司机外协月.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——辅助验货月录入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——辅助验货月.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——交通补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——交通补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——租房补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——租房补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——幼儿园补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——幼儿园补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——奖惩.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——奖惩.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——保险.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——保险.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——五星.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——五星.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——互助离职.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助离职.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——公司奖惩.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——公司奖惩.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——离职扣款.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——离职扣款.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——招工介绍费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——招工介绍费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——车票.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——车票.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——体检费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——体检费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——雇主责任险.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——雇主责任险.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——出勤.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——出勤.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——工龄.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出通用——工龄.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板通用——编制.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\InExcel\模板三厂——检包——线长费模板.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板导出三厂——检包——线长费模板.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——互助金扣款.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——工资单.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——品管验货总天数.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——检包——品管验货总天数.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\工资单导出格式.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC冷补记功表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC原库存磨瓷月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——检包——PMC磨瓷月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——车间考核表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——车间考核表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——卸石膏计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——模具——卸石膏计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——大件车间月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——小件车间月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC大件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC小件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——模具——PMC上线.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——入职补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——入职补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——辅助验货.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——辅助验货.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——车间考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——车间考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件统计.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件统计.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——原料——计件明细表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——原料——计件明细表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——加班审批表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——加班审批表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉工资核算.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉工资核算.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉工个人工资.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉修检工个人考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉修检工个人考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉擦绺工个人考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉擦绺工个人考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——喷釉班组考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉班组考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——喷釉班组考核结果.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——喷釉——报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——喷釉——破损.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——PMC破损.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——开发试烧.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑计件和考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——总窑回烧.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——吸尘工考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——开窑工考核和计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——烧小窑考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑工小考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——三段报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——三段报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——开窑报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——开窑报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——回烧检验按大类.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——烧成补瓷工考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——气站安全员.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标实际缺陷数.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标检验记录.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——装窑检验按大类.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——贴标考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——技术员考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——技术员报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——技术员报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出通用——入职补助月.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板通用——入职补助月.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——烧成——报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——报工.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——定员验证.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——烧成——金额验证.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——PMC调度高压计件交坯.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——PMC半检月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——成型月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——车间报工导入.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——交坯表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具——班长费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具——班长费.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具——质量汇总表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具高压水箱——加班申请表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具高压水箱——加班申请表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型高压面具高压水箱——工号人员编码对应.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型半检拉坯——拉坯月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型高压面具高压水箱——工号人员编码对应.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——技术员——成型面具技术员考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型面具技术员考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——技术员——成型技术员考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型技术员考核.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——技术员——成型技术员差手质量.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——计件考核提报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——计件考核提报Out.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——模型数.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件7通.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——成型计件个人.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——变产补助台账.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——变产表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——变产表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——培训补助台账.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——入职表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——入职表.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——注小计.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——注小计.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——辅料罚款.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——开发试烧统计月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——开发试烧统计月报.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——破损补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板三厂——成型——师傅补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Excel\模板导出三厂——成型——师傅补助.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\OutExcel\模板通用——编制.xlsx
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.config
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.application
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.WinForm.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OOXML.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXml4Net.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.OpenXmlFormats.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\System.Linq.Dynamic.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Common.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Dal.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Monopy.PreceRateWage.Model.dll.config
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\Dapper.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\EntityFramework.SqlServer.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\NPOI.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\bin\x86\Debug\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csprojResolveAssemblyReference.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_BJLP_01_LPYB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_01JJKHTB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_02MXS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_03JJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_04SXBZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_04SX_TZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_05PXBZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_05PX_TZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_06ZXJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_07FLFK.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_09SS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_11PSBZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_12SFBZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_CXYB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_JB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_General_RYDY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_01_PMCDDGYJJJP.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_02_PMCBJYB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_03_PMCBJJYJLYB_ADL.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_05_CJBG.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_06_JPB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_07_BZFGY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYMJ_081_ZLWCHZB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_GYSX_02_GYSX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_JSY_01CXJSYKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_JSY_02MJJSYKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_CJJJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_FZYH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR_Month.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_MCLBJJ_YZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_PGYHZTS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XCSJ_WX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XSMCLBJJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XZF.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCDJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCSX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_PMCXJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XJCJYB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_CJKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_DJCJYB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3MJ_XSGJJ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_BG.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_BZ_KH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_CLG_KH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_JXG_KH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_PS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3PY_PYGZHS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_01_ZYJJHKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_02_ZY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_03_HS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_04_3DZY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_05_KYBG.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_06_HSJYADL.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_07_QZAQY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_08_TBSJQXS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_09_TBJJJL.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_10_ZYJJADL.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_11_JSYKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_12_JSYBG.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3SC_13_BG.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_CJKH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJHS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3YL_JJTJB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmAbout.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_FZYH.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JBSPB.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_JSF.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_KFSS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_PMCPS.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_RZBZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseGeneral_RZBZ_Month.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmBaseHeadcount.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3CX_CX_03JJ_GR.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BF.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_BX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CP.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_CQ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GL.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_GZZRX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_High.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_HZJJ_NoMoney.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Dept.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JC_Factory.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_JT.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_LZ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_TJF.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_WX.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_YEY.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGeneral_ZF.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGetGZD.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroup.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGroupRole.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmGZD.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMain.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_JJRLR.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRYCQ.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseDay.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmDataBaseMonth.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmLogin.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmModify.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Frm3JB_XWRKHGP.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmMsg.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.FrmRole.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.Properties.Resources.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.GenerateResource.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CoreCompileInputs.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.TrustInfo.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe.manifest
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.application
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.exe
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.WinForm\obj\x86\Debug\Monopy.PreceRateWage.WinForm.pdb

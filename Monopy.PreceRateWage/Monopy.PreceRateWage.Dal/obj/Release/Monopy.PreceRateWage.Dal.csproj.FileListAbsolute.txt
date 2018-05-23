@@ -1,0 +1,53 @@
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Dal.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Dal.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Dapper.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.SqlServer.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Common.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OOXML.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\ICSharpCode.SharpZipLib.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OpenXmlFormats.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OpenXml4Net.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.dll.config
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Dapper.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.SqlServer.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.csprojResolveAssemblyReference.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.csproj.CoreCompileInputs.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\System.Linq.Dynamic.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Dal.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Dal.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Dapper.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.SqlServer.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\System.Linq.Dynamic.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OOXML.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\ICSharpCode.SharpZipLib.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OpenXmlFormats.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.OpenXml4Net.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Common.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Monopy.PreceRateWage.Model.dll.config
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\Dapper.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\EntityFramework.SqlServer.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\NPOI.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.csprojResolveAssemblyReference.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.csproj.CoreCompileInputs.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Dal\obj\Release\Monopy.PreceRateWage.Dal.pdb

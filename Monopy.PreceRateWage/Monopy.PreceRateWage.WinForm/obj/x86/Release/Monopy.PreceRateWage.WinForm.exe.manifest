@@ -1,0 +1,1771 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<asmv1:assembly xsi:schemaLocation="urn:schemas-microsoft-com:asm.v1 assembly.adaptive.xsd" manifestVersion="1.0" xmlns:asmv1="urn:schemas-microsoft-com:asm.v1" xmlns="urn:schemas-microsoft-com:asm.v2" xmlns:asmv2="urn:schemas-microsoft-com:asm.v2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:co.v1="urn:schemas-microsoft-com:clickonce.v1" xmlns:asmv3="urn:schemas-microsoft-com:asm.v3" xmlns:dsig="http://www.w3.org/2000/09/xmldsig#" xmlns:co.v2="urn:schemas-microsoft-com:clickonce.v2">
+  <asmv1:assemblyIdentity name="Monopy.PreceRateWage.WinForm.exe" version="1.0.0.207" publicKeyToken="0000000000000000" language="neutral" processorArchitecture="x86" type="win32" />
+  <description asmv2:iconFile="logo.ico" xmlns="urn:schemas-microsoft-com:asm.v1" />
+  <application />
+  <entryPoint>
+    <assemblyIdentity name="Monopy.PreceRateWage.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+    <commandLine file="Monopy.PreceRateWage.WinForm.exe" parameters="" />
+  </entryPoint>
+  <trustInfo>
+    <security>
+      <applicationRequestMinimum>
+        <PermissionSet version="1" class="System.Security.NamedPermissionSet" Name="LocalIntranet" Description="Default rights given to applications on the local intranet" Unrestricted="true" ID="Custom" SameSite="site" />
+        <defaultAssemblyRequest permissionSetReference="Custom" />
+      </applicationRequestMinimum>
+      <requestedPrivileges xmlns="urn:schemas-microsoft-com:asm.v3">
+        <!-- UAC 清单选项
+             如果想要更改 Windows 用户帐户控制级别，请使用
+             以下节点之一替换 requestedExecutionLevel 节点。n
+        <requestedExecutionLevel  level="asInvoker" uiAccess="false" />
+        <requestedExecutionLevel  level="requireAdministrator" uiAccess="false" />
+        <requestedExecutionLevel  level="highestAvailable" uiAccess="false" />
+
+            指定 requestedExecutionLevel 元素将禁用文件和注册表虚拟化。
+            如果你的应用程序需要此虚拟化来实现向后兼容性，则删除此
+            元素。
+        -->
+        <requestedExecutionLevel level="asInvoker" uiAccess="false" />
+      </requestedPrivileges>
+    </security>
+  </trustInfo>
+  <dependency>
+    <dependentOS>
+      <osVersionInfo>
+        <os majorVersion="5" minorVersion="1" buildNumber="2600" servicePackMajor="0" />
+      </osVersionInfo>
+    </dependentOS>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="preRequisite" allowDelayedBinding="true">
+      <assemblyIdentity name="Microsoft.Windows.CommonLanguageRuntime" version="4.0.30319.0" />
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="CSkin.dll" size="2738176">
+      <assemblyIdentity name="CSkin" version="16.1.14.2" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>vz5/bJknGGTOsz3Bxf2ZGESrieM=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Dapper.dll" size="114176">
+      <assemblyIdentity name="Dapper" version="1.50.2.0" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>S+IrzDoCgH9XMD8zvH2a4b7YksQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevComponents.DotNetBar.Design.dll" size="430080">
+      <assemblyIdentity name="DevComponents.DotNetBar.Design" version="11.0.0.4" publicKeyToken="2C9FF1FDDC42653C" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>haO3xcVhMEgb3CB+aEDBEXmjR8s=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="DevComponents.DotNetBar2.dll" size="4874240">
+      <assemblyIdentity name="DevComponents.DotNetBar2" version="11.0.0.4" publicKeyToken="C39C3242A43EEE2B" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ogsU/apxRrWIUXLHt+6Rzyy4UZo=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.dll" size="4976848">
+      <assemblyIdentity name="EntityFramework" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>46kt4MV1UHajZcPX5eMKts5WRNg=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh-Hans\EntityFramework.resources.dll" size="326352">
+      <assemblyIdentity name="EntityFramework.resources" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="zh-Hans" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>VTFR8ko54wZ8RHDbRLRmiVFqYk8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="EntityFramework.SqlServer.dll" size="601808">
+      <assemblyIdentity name="EntityFramework.SqlServer" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>DuZy7z5rd12LPvicZ+1Wy4iEXO0=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="zh-Hans\EntityFramework.SqlServer.resources.dll" size="19664">
+      <assemblyIdentity name="EntityFramework.SqlServer.resources" version="6.0.0.0" publicKeyToken="B77A5C561934E089" language="zh-Hans" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>7cIFiW2cDLdBSyuFtiZ6fuB+K08=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="ICSharpCode.SharpZipLib.dll" size="200704">
+      <assemblyIdentity name="ICSharpCode.SharpZipLib" version="0.86.0.518" publicKeyToken="1B03E6ACF1164F73" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ep35wl1JaQtqPEUWB9MRqGaxMfQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Common.dll" size="80384">
+      <assemblyIdentity name="Monopy.PreceRateWage.Common" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>WfJ8D3lp1q/SxhUoRt1d65YoDsE=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Dal.dll" size="118784">
+      <assemblyIdentity name="Monopy.PreceRateWage.Dal" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>odNly7rgJ1NN1n0zW/dZ3QCzZKA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.Model.dll" size="386048">
+      <assemblyIdentity name="Monopy.PreceRateWage.Model" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>PSgtIIwGhW9poDwiZXFbaHPk3OI=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="Monopy.PreceRateWage.WinForm.exe" size="1792936">
+      <assemblyIdentity name="Monopy.PreceRateWage.WinForm" version="1.0.0.0" language="neutral" processorArchitecture="x86" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+SZFH7TDPuRUG66SUjUN5zWr3bc=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NPOI.dll" size="1679360">
+      <assemblyIdentity name="NPOI" version="2.3.0.0" publicKeyToken="0DF73EC7942B34E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>tOQB9yRMQTRu1Rmqdd7eaq3DzJA=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NPOI.OOXML.dll" size="536064">
+      <assemblyIdentity name="NPOI.OOXML" version="2.3.0.0" publicKeyToken="0DF73EC7942B34E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>ohbvwC/qSDjH63IZQi2i95Jlq60=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NPOI.OpenXml4Net.dll" size="91136">
+      <assemblyIdentity name="NPOI.OpenXml4Net" version="2.3.0.0" publicKeyToken="0DF73EC7942B34E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>TS8U9rBelu9rraZWmxVUhB/wvE8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="NPOI.OpenXmlFormats.dll" size="2121728">
+      <assemblyIdentity name="NPOI.OpenXmlFormats" version="2.3.0.0" publicKeyToken="0DF73EC7942B34E1" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+DS0zumaGPNJdQhrAxYj0oDcgN8=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <dependency>
+    <dependentAssembly dependencyType="install" allowDelayedBinding="true" codebase="System.Linq.Dynamic.dll" size="49664">
+      <assemblyIdentity name="System.Linq.Dynamic" version="1.0.6132.35681" language="neutral" processorArchitecture="msil" />
+      <hash>
+        <dsig:Transforms>
+          <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+        </dsig:Transforms>
+        <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+        <dsig:DigestValue>+Um/JLqS9QfQ4c6we0vtbeUWdnQ=</dsig:DigestValue>
+      </hash>
+    </dependentAssembly>
+  </dependency>
+  <file name="Excel\工资单导出格式.xlsx" size="12490">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>v3eaa0vPjJLQHF3aWwxI0F3U054=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型——变产表.xlsx" size="9255">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Z1AIDKigNYM6pj8RtXGAiw5f0UI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型高压面具——班长费.xlsx" size="8818">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZCvqdJ6WJa/DyNb2wR+xEsMlQ8c=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型高压面具高压水箱——工号人员编码对应.xlsx" size="9039">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Z0By4LzkIIe/2SxcpfcuXwW1pTg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型高压面具高压水箱——加班申请表.xlsx" size="8939">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>P7/i+HHo4zhb7m5c+blKl6UhBTA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型高压面具——质量汇总表.xlsx" size="9606">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OSbvzeoBoiFZJAlcOb4U+NIbFwI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型——开发试烧统计月报.xlsx" size="9060">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>wZDAdkivgDiYaW3xrTHQ354N5aU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型——入职表.xlsx" size="9056">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IgSs84FpqlrPn5NAmYAanrqQUnU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型——师傅补助.xlsx" size="9314">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lM3sDy6zU5qCRU7zoJtrsUP2Mho=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——成型——注小计.xlsx" size="8933">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>NKbGVnvKwMH0bdrM0gi4iAACedo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——技术员——成型技术员差手质量.xlsx" size="8860">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SOYMk8ICa9U0ZLl+q1nI9NQmSMs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——技术员——成型技术员考核.xlsx" size="10706">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5G2Tet+oBR6SO2gOjtk2aRJnreg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——技术员——成型面具技术员考核.xlsx" size="8999">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jMMobL0RamcBDn2o4vRd3YHBm0E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——叉车司机外协月.xlsx" size="8781">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KhnHuX5cQ2Eid9FWJ+A16o5fgjE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——成检计件.xlsx" size="11775">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>27u5Fp48KKhR26uTWdohAhcm6vs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——辅助验货月.xlsx" size="8743">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ohnZbBZDt+DD/WlqnG95b8L2RVU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——计件日录入.xlsx" size="11362">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PuK+yKky9RIZnh717q6SK6ZmqzQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——磨瓷冷补.xlsx" size="10029">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>NdaPVjKikHCLpMQTVGOhsLyKfS0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——品管验货总天数.xlsx" size="8834">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>R0MWVNzN6u1wfwgTYlOkvgK917I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——线位人员出勤日录入日计算导出.xlsx" size="9137">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>4Iv7hgq6BoLBQ3ml6WMa+LD5CvE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——线位入库合格品日录入和计算.xlsx" size="9182">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ymyNvxTczmIl1hj3rp7Qm70Hnkk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——检包——小试磨瓷冷补计件.xlsx" size="8767">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ZWlkCTbAKargzlUy1IujjhXrX8w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——模具——车间考核表.xlsx" size="8926">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QUD2QH7C52WT2WHuhI7fifDMPs8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——模具——卸石膏计件.xlsx" size="8810">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>7xfnRwGGG/ESfgyVa8AMFuIOp5Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——报工.xlsx" size="9390">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fwUFIYgcN+wdk+HRbzs5S8VgLQ4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉班组考核.xlsx" size="9896">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3ZJuu34rT0K4N+knbowLFt5hfuk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉班组考核结果.xlsx" size="8852">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XHPiHFScspR7As5qiXFDwA1xA2Y=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉擦绺工个人考核.xlsx" size="9011">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3Py6yunsRGZnOxgDEPeC49a9Xjw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉工个人工资.xlsx" size="8884">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Fe73FgvQ4oL8AxSZXrAvftlUFkI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉工资核算.xlsx" size="9443">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GcLTit8h41MSTHZ7Sd9We57g1Jg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——喷釉——喷釉修检工个人考核.xlsx" size="9219">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xy5HA6RjpeUTL3CzobNX2GtImI0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——报工.xlsx" size="9419">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dCDBUYcNs/rP0r8oVuHxOeCcgyA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——定员验证.xlsx" size="9820">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OpDabzVtk503BmUZ4+wK9W83Iw4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——技术员报工.xlsx" size="9527">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lc+pIwoXWkHyOtoR9Lrr/TFrlHI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——金额验证.xlsx" size="10052">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>teobrqkdgLfkkRKYqjKjzzuQfe8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——开窑报工.xlsx" size="8909">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>zgFQRCkjoiz/iM1fmm4dbzKJs7M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——烧成——三段报工.xlsx" size="8898">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>4BGqM4BXGvcouYJk7Ad20HQKU7A=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——原料——车间考核.xlsx" size="8873">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5yqukMTYIVhlh6OCGnSUUH74QF0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——原料——计件明细表.xlsx" size="8891">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>m8j4wDfjdKBx3OR7IZHJ4qstIBo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出三厂——原料——计件统计.xlsx" size="10067">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nbRyHvfwpar/l6hMWSy0cIM14Ho=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——保险.xlsx" size="8909">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>knYvxl/Tv3p4TjMcLNsqZVBoHHU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——车票.xlsx" size="12871">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3rnDkgpdNdZNhpUfU2vxvHPAPeg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——出勤.xlsx" size="9097">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ak4ADdEuir7yhO8v139JPo0GnRA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——辅助验货.xlsx" size="8652">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Q+fyg5uM2HiD23F29lQO3bq2YfY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——工资单.xlsx" size="12871">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3rnDkgpdNdZNhpUfU2vxvHPAPeg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——公司奖惩.xlsx" size="8832">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XR6h1XUDRoJc79Hm0kHic4XDHtw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——雇主责任险.xlsx" size="8860">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UHarsgRWLThXTfu3kqyZxbZVoRQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——互助离职.xlsx" size="8759">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>w4hpux0jaFBNFvwfQ6JimYD1l48=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——加班审批表.xlsx" size="8959">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vj6ndbyw+dvJpz/Ymcw7CVDt4VY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——奖惩.xlsx" size="15103">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>hJGu+uhcV0gP6D+QjF7cSfJKA68=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——交通补助.xlsx" size="8910">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>whqLeiIOkL035H8ld+7Jx5nW8ew=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——离职扣款.xlsx" size="9936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>J3nUfOQtJ4lh0stURlXj8N+UyOs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——入职补助.xlsx" size="8853">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>14yiZIFcLh9z32slHJnzAp4AtEw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——入职补助月.xlsx" size="8932">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vKDpoIz13ta5n28vqeu/9cVqKP0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——体检费.xlsx" size="8854">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WhkI9Q9gGC8IEdiLlvaw8doriVU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——五星.xlsx" size="8705">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Y55PmmOO++tk61v/dSupEm2u5uM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——幼儿园补助.xlsx" size="8960">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>6p0tE4kA9jYdc/TTX6tRIR1gr68=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——招工介绍费.xlsx" size="19258">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DiqNy7OrqksUYEIuDpuNmWdvBYA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板导出通用——租房补助.xlsx" size="8874">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>nJsw7p4j5ndyHNbOT9ulSHgteyQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板基础数据——月工资.xlsx" size="13146">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IOexxdDxWk0wuhmb7UKEksCx8VE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板基础数据——指标.xlsx" size="16347">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UT/etdMt0Ek0hhJbdgkeT+ThsIA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型半检拉坯——拉坯月报.xlsx" size="9163">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vfW8ef+Uj5uD1wCSFkIedgTaBC0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——变产表.xlsx" size="9167">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>SDx7X2o1ISaOhXRWXlHS3lDGgq0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——变产补助台账.xlsx" size="9097">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JOnd0CSw6KqUAzKoTPa9ddX8nDo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——成型计件.xlsx" size="11035">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>PDap799OrktK2ed9W14nPvyslHs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——成型计件7通.xlsx" size="9066">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bu61IyWAIQhOF7cGBp+mgdJAyxo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——成型计件个人.xlsx" size="8839">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>bPtQ2fK6Kizw+NkKKhPPue8WiM8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——辅料罚款.xlsx" size="8820">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>sJYY/qKldBFbFfgn2pMCTpKGSzU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——PMC半检月报.xlsx" size="9115">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>NU5cIKZ4Fozlqnkhd6evHdkArk8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——PMC调度高压计件交坯.xlsx" size="8754">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>/p7TG5t8TwVPHR0KykGNPpxOLYM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——班长费.xlsx" size="8785">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uHHaxxgdnvvPgIe8kO+0PWrEDSY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——车间报工导入.xlsx" size="9094">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>oJjqq3K8I0gP1Y8XVjO1tz5lJ88=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——成型月报.xlsx" size="8913">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>13kercciIVtQvS/cwKCcwtZaEfs=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具高压水箱——工号人员编码对应.xlsx" size="9015">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>q0bLiiSsy0a7TX8sSuErvPH8rag=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具高压水箱——加班申请表.xlsx" size="8871">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GhiQU5NNxnH1tmpuGHAhaoKFwZ0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型高压面具——交坯表.xlsx" size="8760">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>heIeRy6pWPGLCstfewnLxYtMdhM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——计件考核提报.xlsx" size="8984">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>QarTi5tzReH8cNBgx+412phrTX0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——计件考核提报Out.xlsx" size="8653">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>cFqzRqj667KAkkEyv5L29ocdseY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——开发试烧统计月报.xlsx" size="9000">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>dvX5Fm3iCOF6JnA7/IWHK+zI3/E=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——模型数.xlsx" size="8751">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FekfMzUf9xJ4i29jQousUpWkI9k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——培训补助台账.xlsx" size="8936">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>2fbfrnVkz7S7A9H9zH0Lo4NUjt0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——破损补助.xlsx" size="8834">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Mj83lU4IUbAVD9NiaWce4QM/otc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——入职表.xlsx" size="8987">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>xUSX4By8IND4lq+WmYLJbcyOdj0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——师傅补助.xlsx" size="9622">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>keIfStE65+TVY381lxQFBeG6nGg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——成型——注小计.xlsx" size="8898">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>d+f6q87dqsU1wJHen3JI3gLVOKc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——技术员——成型技术员考核.xlsx" size="10301">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IGdr/Zn5Xx8y61gUak0Pq45g+hk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——技术员——成型面具技术员考核.xlsx" size="8841">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>alQzaI7GXtHScwNSo76urch14ng=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——PMC冷补记功表.xlsx" size="10976">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>YMCBNFm9P5L1gz4bF8d3zGrFWyI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——PMC冷补月报.xlsx" size="11070">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>CRUIFDh5CNFpwGSafwYz3kEk+38=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——PMC磨瓷月报.xlsx" size="11144">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lVcu/Tnz5MbNeqZubzJSHFKKKpA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——PMC原库存磨瓷月报.xlsx" size="11149">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>s1XdWPlzZJaqGb9/A6X/2sPMc2k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——叉车司机外协月录入.xlsx" size="8743">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>utNUpJe9Sih3mTPD5csZRxmGC8w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——成检计件.xlsx" size="9132">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>14kKrSxZu+A9vsjhGrFjoVM04YI=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——辅助验货月录入.xlsx" size="8714">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>vA7tBVnhfR+/tyR19MzoT+HQOxg=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——计件日录入.xlsx" size="11322">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>BzWwGLUw0MGnjhBEvsrL7bUHM18=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——磨瓷冷补.xlsx" size="9866">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ujK3D7jbKlLFhdMu8r6x0kEinUY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——品管验货总天数.xlsx" size="8756">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>r5P+P/gMJZTB8FdGQiUTyccY0z8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——线位人员出勤日录入日计算.xlsx" size="8920">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>srNfzA6X40rOO5H4eCoVdNzlur4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——线位入库合格品日录入.xlsx" size="8915">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lM+oqhg6nkPqmVDdFvRvZUsaxrQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——检包——小试磨瓷冷补计件.xlsx" size="8697">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>V5brOSLgu9cMCZQc2hDbZPuCxCY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——PMC大件.xlsx" size="10014">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>yxKufAe/YtORgtOD3PIpvielJvE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——PMC上线.xlsx" size="10576">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>DdVIkWs3lrX8lbkrmw8FU5lHFsw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——PMC小件.xlsx" size="10970">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>uGlGU6YLfRAeX9W5g5ph+kROx9I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——车间考核表.xlsx" size="8829">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>lKLftqOxw6tNaa3Sy+5lZoVE9g4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——大件车间月报.xlsx" size="9378">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8/Mm/v0JUzWI/eSmpAKMa4uLa7M=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——小件车间月报.xlsx" size="10145">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GG9ILWfLGnNdPPoBhkF8chny8dc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——模具——卸石膏计件.xlsx" size="8772">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>M9h/jMSYFRALl1BDwiWtee3IcTE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——报工.xlsx" size="8858">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8KAMbYoHYzhh695ZJhUN1e6aS6Q=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——喷釉班组考核.xlsx" size="9253">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>JRjliLHuAMEwhxHRuvfvKSLihQQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——喷釉擦绺工个人考核.xlsx" size="8903">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>qMj3SJD5DEaL110dU7OM7w1ANkE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——喷釉工资核算.xlsx" size="9834">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>OEsFU4HIQTlx8Nkef+A3OnTIck8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——喷釉修检工个人考核.xlsx" size="8900">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HBg5ltCPAkkXyNOLP/+xq54f6Og=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——喷釉——破损.xlsx" size="8917">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>w2HdHoyA272oHcIz/y8z1vXugWM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——报工.xlsx" size="8974">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>R+wyqApSM6k/v0ppTkI3ou5iics=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——回烧检验按大类.xlsx" size="8897">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Eb9GtnSJcjggirNw1xOZeBZBJZA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——技术员报工.xlsx" size="9152">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iToa7oNOv7tNtwlAGlRY2SXcRVM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——技术员考核.xlsx" size="8851">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Nz6I/pNLLNTETtBhgw3U3L3bETY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——开窑报工.xlsx" size="8825">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>GB1FKXOL1oCczia3tcniRvLt5Tc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——开窑工考核和计件.xlsx" size="9023">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>XBVGVQ4Xn4RaBBS+vHcKsAIi3U8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——气站安全员.xlsx" size="8905">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>3Td8vXrs9nSrSGNXeBAqcR/wUFE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——三段报工.xlsx" size="8877">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>guCGRjDjIxb5Nljl4Vzxqf59BrM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——烧成补瓷工考核.xlsx" size="9426">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FDsePhKQfAIRLIDlvRsnnOwf7Z4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——烧小窑考核.xlsx" size="9097">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>8mwHSQjM3EihWsfMpyXjGcne3ZE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——贴标检验记录.xlsx" size="8862">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>es6Xp0NZlw33/s82VfN+PrQWCw0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——贴标考核.xlsx" size="9329">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>4+XKYsDt5m1apcb/HPI5dFaHNmo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——贴标实际缺陷数.xlsx" size="8842">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Q57TsMmqwbYHDAh42mkDikpOBk8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——吸尘工考核.xlsx" size="9043">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iDnni867UxhM9Qs18fDpoRx95KE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——装窑工小考核.xlsx" size="9850">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>KdU7HfVDTvbhEyKEBJj2LH5/cDA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——装窑计件和考核.xlsx" size="8808">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>AVmHan3Cy276Xb6MM0t889urTlc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——装窑检验按大类.xlsx" size="9095">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>4DlL2JoIQlsJ/Ntt5IpbD9u6ILA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——烧成——总窑回烧.xlsx" size="10986">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>rYknwjUPhy9HcL51oKH5gn/Vx0w=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——原料——车间考核.xlsx" size="8885">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>fAUxVjaoDgkQRQuHgDeAV4WtGHo=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——原料——计件明细表.xlsx" size="8839">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Vd0ZRoyoD5fzYpV7RadTtunrM1k=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板三厂——原料——计件统计.xlsx" size="10010">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>+GGi4cXtcrp4r/iNk7mV2zYQL6g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——PMC破损.xlsx" size="9421">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>AU08aEdvwWyXZFewm9Oc0HzEP40=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——保险.xlsx" size="8881">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Entm1RiyDPims2yEJzOb4C3EBCk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——车票.xlsx" size="12829">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ayvz4LhP40o1QmKefABrG1hLaLc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——出勤.xlsx" size="9257">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>iqd0AdXVciS3xU03Ewa/golW3VE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——辅助验货.xlsx" size="8619">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>CosjNbXAgqc/LWXVAFjw5SJcLEE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——公司奖惩.xlsx" size="8927">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>35j4sm/gRk0/Lag+e5gdrnNEwzA=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——雇主责任险.xlsx" size="8783">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pklx2aK5kN6un+m7LhCKL8n4bjc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——互助金扣款.xlsx" size="8633">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WCzCM5QmlWKyiyvJctA24Z36PF0=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——互助离职.xlsx" size="8686">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>eNzJeMouYFZjlYJDVAozM/omTXk=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——加班审批表.xlsx" size="8862">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Emn4wdtlN+5mnpn+CnYobwT6eeQ=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——奖惩.xlsx" size="13421">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>gIOkUorCGpBT3FlCLqq2ozyOREE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——交通补助.xlsx" size="8916">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>TKK2J4/u7IuxcVUASK89om6WzUU=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——开发试烧.xlsx" size="8925">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>ywTt09d16Rnk5uo+7l9w9HaHat4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——离职扣款.xlsx" size="8923">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>i9VbapJ+CUxQLa5nBH9tgv92M/I=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——入职补助.xlsx" size="8813">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>IJLRfONb3/WkQ5S236obH6GZ9e4=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——入职补助月.xlsx" size="8876">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>D81mjmZ7bs48PmfUUdbsdHjg2o8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——体检费.xlsx" size="8960">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Noi47VeIriQjCoo/qo0oJhr+bU8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——五星.xlsx" size="8779">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>FrahQUzIN+lJIl5O6C56Tjg5YZY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——幼儿园补助.xlsx" size="8978">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HXVqHrHZKmmTZL5lT5RB/EJvUR8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——招工介绍费.xlsx" size="18711">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>jF64KucedsH3i63XEdWk+o0JZDw=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Excel\模板通用——租房补助.xlsx" size="8933">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>yodpwg5vAU3NdvMrxv/eFHa6khc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="InExcel\模板三厂——检包——线长费模板.xlsx" size="10772">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>WRVF7izXjPIR0HfjJd03wMSgOug=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="InExcel\模板通用——编制.xlsx" size="8909">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>Yhs0XtfASJ50jEgTpMeYr+rPXIM=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="InExcel\模板通用——工龄.xlsx" size="8923">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UvziuuUbv2/bQniNwgkoLamZfmE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="logo.ico" size="9662">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>5d+PtAJceS1zcx/+G6BxoF75lJc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="logo.jpg" size="1650">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>etdVgvDyewQOL3qe1inT2NhtmK8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="logo.png" size="20542">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>//KiP1iW0g1kNFkLm9wVzwogP/g=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="Monopy.PreceRateWage.WinForm.exe.config" size="1693">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>pjhBoMTwwtRDpYX7YPqBT/sMD60=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="OutExcel\模板导出三厂——检包——线长费模板.xlsx" size="10902">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>HNPtpn8fioM/8DxmBO14HDn9utY=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="OutExcel\模板导出通用——工龄.xlsx" size="8923">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>UvziuuUbv2/bQniNwgkoLamZfmE=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="OutExcel\模板通用——编制.xlsx" size="8930">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>31VZ7BHtthKgxnHQoH3BzNd1exc=</dsig:DigestValue>
+    </hash>
+  </file>
+  <file name="test.html" size="1272">
+    <hash>
+      <dsig:Transforms>
+        <dsig:Transform Algorithm="urn:schemas-microsoft-com:HashTransforms.Identity" />
+      </dsig:Transforms>
+      <dsig:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1" />
+      <dsig:DigestValue>43viyGtjyBXTQe8RrLJ8Q7xn8+8=</dsig:DigestValue>
+    </hash>
+  </file>
+  <compatibility xmlns="urn:schemas-microsoft-com:compatibility.v1">
+    <application>
+      <!-- 设计此应用程序与其一起工作且已针对此应用程序进行测试的
+           Windows 版本的列表。取消评论适当的元素，Windows 将
+           自动选择最兼容的环境。 -->
+      <!-- Windows Vista -->
+      <!--<supportedOS Id="{e2011457-1546-43c5-a5fe-008deee3d3f0}" />-->
+      <!-- Windows 7 -->
+      <!--<supportedOS Id="{35138b9a-5d96-4fbd-8e2d-a2440225f93a}" />-->
+      <!-- Windows 8 -->
+      <!--<supportedOS Id="{4a2f28e3-53b9-4441-ba9c-d69d4a4a6e38}" />-->
+      <!-- Windows 8.1 -->
+      <!--<supportedOS Id="{1f676c76-80e1-4239-95bb-83d0f6d0da78}" />-->
+      <!-- Windows 10 -->
+      <!--<supportedOS Id="{8e0f7a12-bfb3-4fe8-b9a5-48fd50a15a9a}" />-->
+    </application>
+  </compatibility>
+</asmv1:assembly>

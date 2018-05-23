@@ -1,0 +1,254 @@
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\documents\visual studio 2013\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\Documents\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+C:\Users\HH\source\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojResolveAssemblyReference.cache
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+E:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180512\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20150513\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180515\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180516\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\梦牌计件工资\20180517\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\ICSharpCode.SharpZipLib.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OOXML.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXml4Net.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.OpenXmlFormats.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\System.Linq.Dynamic.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\NPOI.xml
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.xml
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\zh-Hans\EntityFramework.resources.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+F:\meng\Monopy\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Common.pdb
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\EntityFramework.dll
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.pdb
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\bin\Debug\Monopy.PreceRateWage.Model.dll.config
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csprojAssemblyReference.cache
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CoreCompileInputs.cache
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.csproj.CopyComplete
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.dll
+D:\工作\Monopy.PreceRateWage\Monopy.PreceRateWage.Common\obj\Debug\Monopy.PreceRateWage.Common.pdb

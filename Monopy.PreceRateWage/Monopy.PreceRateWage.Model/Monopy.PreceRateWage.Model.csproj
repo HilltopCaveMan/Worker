@@ -1,0 +1,253 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{2C700692-46E3-46F1-B675-AC1CB42D68B2}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Monopy.PreceRateWage.Model</RootNamespace>
+    <AssemblyName>Monopy.PreceRateWage.Model</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.1.3\lib\net40\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Drawing.Design" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BaseGroupRole.cs" />
+    <Compile Include="BaseGroupUser.cs" />
+    <Compile Include="BaseHeadcount.cs" />
+    <Compile Include="BaseRole.cs" />
+    <Compile Include="BaseRoleUser.cs" />
+    <Compile Include="BaseUser.cs" />
+    <Compile Include="DataBase1CC_CJB.cs" />
+    <Compile Include="DataBase1CC_CJB_Child.cs" />
+    <Compile Include="DataBase1CC_PGYH.cs" />
+    <Compile Include="DataBase1CC_XTTZ.cs" />
+    <Compile Include="DataBase1YL_JJ.cs" />
+    <Compile Include="DataBase1YL_YLTJ.cs" />
+    <Compile Include="DataBase3CX_BJLP_01_LPYB.cs" />
+    <Compile Include="DataBase3CX_BJLP_01_LPYB_Child.cs" />
+    <Compile Include="DataBase3CX_CX_04SXBZ.cs" />
+    <Compile Include="DataBase3CX_CX_04SX_TZ.cs" />
+    <Compile Include="DataBase3CX_CX_01JJKHTB.cs" />
+    <Compile Include="DataBase3CX_CX_01JJKHTB_Out.cs" />
+    <Compile Include="DataBase3CX_CX_02MXS.cs" />
+    <Compile Include="DataBase3CX_CX_03JJ.cs" />
+    <Compile Include="DataBase3CX_CX_03JJ_7T.cs" />
+    <Compile Include="DataBase3CX_CX_03JJ_GR.cs" />
+    <Compile Include="DataBase3CX_CX_05PXBZ.cs" />
+    <Compile Include="DataBase3CX_CX_05PX_TZ.cs" />
+    <Compile Include="DataBase3CX_CX_06ZXJ.cs" />
+    <Compile Include="DataBase3CX_CX_07FLFK.cs" />
+    <Compile Include="DataBase3CX_CX_09SS.cs" />
+    <Compile Include="DataBase3CX_CX_11PSBZ.cs" />
+    <Compile Include="DataBase3CX_CX_12SFBZ.cs" />
+    <Compile Include="DataBase3CX_General_CXYB.cs" />
+    <Compile Include="DataBase3CX_General_RYDY.cs" />
+    <Compile Include="DataBase3CX_GYMJ_01_PMCDDGYJJJP.cs" />
+    <Compile Include="DataBase3CX_GYMJ_02_PMCBJYB.cs" />
+    <Compile Include="DataBase3CX_GYMJ_02_PMCBJYB_Child.cs" />
+    <Compile Include="DataBase3CX_GYMJ_03_PMCBJJYJLYB_ADL.cs" />
+    <Compile Include="DataBase3CX_GYMJ_05_CJBG.cs" />
+    <Compile Include="DataBase3CX_GYMJ_06_JPB.cs" />
+    <Compile Include="DataBase3CX_GYMJ_06_JPB_Child.cs" />
+    <Compile Include="DataBase3CX_GYMJ_07_BZFGY.cs" />
+    <Compile Include="DataBase3CX_GYMJ_081_ZLWCHZB.cs" />
+    <Compile Include="DataBase3CX_GYMJ_082_BBKH.cs" />
+    <Compile Include="DataBase3CX_General_JB.cs" />
+    <Compile Include="DataBase3CX_GYSX_01_BZF.cs" />
+    <Compile Include="DataBase3CX_GYSX_02_GYSX.cs" />
+    <Compile Include="DataBase3CX_JSY_01CXJSYKH_01CSZL.cs" />
+    <Compile Include="DataBase3CX_JSY_01CXJSYKH_02KH.cs" />
+    <Compile Include="DataBase3CX_JSY_02MJJSYKH.cs" />
+    <Compile Include="DataBase3JB_CJJJ.cs" />
+    <Compile Include="DataBase3JB_CJJJ_Child.cs" />
+    <Compile Include="DataBase3JB_CJJJ_Result.cs" />
+    <Compile Include="DataBase3JB_FZYH.cs" />
+    <Compile Include="DataBase3JB_JJRLR.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ_YZ1.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ_YZ2.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ_YZ3.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ_YZ4.cs" />
+    <Compile Include="DataBase3JB_MCLBJJ_YZ5.cs" />
+    <Compile Include="DataBase3JB_XCSJ_WX.cs" />
+    <Compile Include="DataBase3JB_XSMCLBJJ.cs" />
+    <Compile Include="DataBase3JB_XWRYCQ.cs" />
+    <Compile Include="DataBase3JB_XZF.cs" />
+    <Compile Include="DataBase3MJ_CJKH.cs" />
+    <Compile Include="DataBase3MJ_DJCJYB.cs" />
+    <Compile Include="DataBase3MJ_PMCDJ.cs" />
+    <Compile Include="DataBase3MJ_PMCDJ_Child.cs" />
+    <Compile Include="DataBase3MJ_PMCSX.cs" />
+    <Compile Include="DataBase3MJ_PMCSX_Child.cs" />
+    <Compile Include="DataBase3MJ_PMCXJ.cs" />
+    <Compile Include="DataBase3MJ_PMCXJ_Child.cs" />
+    <Compile Include="DataBase3MJ_XJCJYB.cs" />
+    <Compile Include="DataBase3MJ_XSGJJ.cs" />
+    <Compile Include="DataBase3PY_BG.cs" />
+    <Compile Include="DataBase3PY_BZ_KH.cs" />
+    <Compile Include="DataBase3PY_BZ_KH_Sum.cs" />
+    <Compile Include="DataBase3PY_CLG_KH.cs" />
+    <Compile Include="DataBase3PY_JXGRJJ_KH.cs" />
+    <Compile Include="DataBase3PY_PS.cs" />
+    <Compile Include="DataBase3PY_PYGZHS.cs" />
+    <Compile Include="DataBase3SC_04_3DZY.cs" />
+    <Compile Include="DataBase3SC_06_HSJYADL.cs" />
+    <Compile Include="DataBase3SC_06_HSJYADL_SCBCGKH.cs" />
+    <Compile Include="DataBase3SC_05_KYBG.cs" />
+    <Compile Include="DataBase3SC_07_QZAQY.cs" />
+    <Compile Include="DataBase3SC_0203_ZY_HS.cs" />
+    <Compile Include="DataBase3SC_01_ZYJJHKH.cs" />
+    <Compile Include="DataBase3SC_0203_ZY_HS_KYGKH.cs" />
+    <Compile Include="DataBase3SC_0203_ZY_HS_SXYKH.cs" />
+    <Compile Include="DataBase3SC_0203_ZY_HS_XCGKH.cs" />
+    <Compile Include="DataBase3SC_0203_ZY_HS_ZYGXKH.cs" />
+    <Compile Include="DataBase3SC_08_TBSJQXS.cs" />
+    <Compile Include="DataBase3SC_09_TBJJJL.cs" />
+    <Compile Include="DataBase3SC_10_ZYJJADL.cs" />
+    <Compile Include="DataBase3SC_10_ZYJJADL_XXTBKH.cs" />
+    <Compile Include="DataBase3SC_11_JSYKH.cs" />
+    <Compile Include="DataBase3SC_12_JSYBG.cs" />
+    <Compile Include="DataBase3SC_13_BG.cs" />
+    <Compile Include="DataBase3SC_13_BG_DY.cs" />
+    <Compile Include="DataBase3SC_13_BG_GZYZ.cs" />
+    <Compile Include="DAtaBaseGeneral1_HZ.cs" />
+    <Compile Include="DataBaseGeneral_JBSPB.cs" />
+    <Compile Include="DataBase3YL_JJHS.cs" />
+    <Compile Include="DataBase3YL_JJTJB.cs" />
+    <Compile Include="DataBase3YL_JYGKHB.cs" />
+    <Compile Include="DataBaseDay.cs" />
+    <Compile Include="DataBase3JB_XWRKHGP.cs" />
+    <Compile Include="DataBaseGeneral_BF.cs" />
+    <Compile Include="DataBaseGeneral_BX.cs" />
+    <Compile Include="DataBaseGeneral_CQ.cs" />
+    <Compile Include="DataBaseGeneral_FZYH.cs" />
+    <Compile Include="DataBaseGeneral_GL.cs" />
+    <Compile Include="DataBaseGeneral_GZZRX.cs" />
+    <Compile Include="DataBaseGeneral_HZJJ_High.cs" />
+    <Compile Include="DataBaseGeneral_HZJJ_NoMoney.cs" />
+    <Compile Include="DataBaseGeneral_JC_Dept.cs" />
+    <Compile Include="DataBaseGeneral_JC_Factory.cs" />
+    <Compile Include="DataBaseGeneral_JSF.cs" />
+    <Compile Include="DataBaseGeneral_JT.cs" />
+    <Compile Include="DataBaseGeneral_CP.cs" />
+    <Compile Include="DataBaseGeneral_KFSS.cs" />
+    <Compile Include="DataBaseGeneral_LZ.cs" />
+    <Compile Include="DataBaseGeneral_PMCPS.cs" />
+    <Compile Include="DataBaseGeneral_RZBZ.cs" />
+    <Compile Include="DataBaseGeneral_RZBZ_Month.cs" />
+    <Compile Include="DataBaseGeneral_TJF.cs" />
+    <Compile Include="DataBaseGeneral_WX.cs" />
+    <Compile Include="DataBaseGeneral_XT.cs" />
+    <Compile Include="DataBaseGeneral_YEY.cs" />
+    <Compile Include="DataBaseGeneral_ZF.cs" />
+    <Compile Include="DataBase3JB_PGYHZTS.cs" />
+    <Compile Include="GZD.cs" />
+    <Compile Include="DataBaseMonth.cs" />
+    <Compile Include="DataBaseMsg.cs" />
+    <Compile Include="BaseDep.cs" />
+    <Compile Include="Enums\Enums.cs" />
+    <Compile Include="HHContext.cs" />
+    <Compile Include="BaseGroup.cs" />
+    <Compile Include="LogTable.cs" />
+    <Compile Include="Migrations\201707030525347_InitialCreate.cs" />
+    <Compile Include="Migrations\201707030525347_InitialCreate.Designer.cs">
+      <DependentUpon>201707030525347_InitialCreate.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805120553130_Create.cs" />
+    <Compile Include="Migrations\201805120553130_Create.Designer.cs">
+      <DependentUpon>201805120553130_Create.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201805121221001_month.cs" />
+    <Compile Include="Migrations\201805121221001_month.Designer.cs">
+      <DependentUpon>201805121221001_month.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RGSM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="ClassDiagram1.cd" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201707030525347_InitialCreate.resx">
+      <DependentUpon>201707030525347_InitialCreate.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805120553130_Create.resx">
+      <DependentUpon>201805120553130_Create.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201805121221001_month.resx">
+      <DependentUpon>201805121221001_month.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

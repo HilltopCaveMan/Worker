@@ -1,0 +1,30 @@
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.dll.config
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.SqlServer.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.SqlServer.xml
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csprojResolveAssemblyReference.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.Migrations.InitialCreate.resources
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csproj.GenerateResource.Cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csproj.CoreCompileInputs.cache
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.dll
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.pdb
+D:\我的文档\Visual Studio 2017\Projects\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.dll.config
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\Monopy.PreceRateWage.Model.pdb
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.SqlServer.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\EntityFramework.SqlServer.xml
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\zh-Hans\EntityFramework.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\bin\Release\zh-Hans\EntityFramework.SqlServer.resources.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.Migrations.InitialCreate.resources
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csproj.GenerateResource.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csproj.CoreCompileInputs.cache
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.csproj.CopyComplete
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.dll
+E:\工作\梦牌计件工资\20180507\Monopy.PreceRateWage\Monopy.PreceRateWage.Model\obj\Release\Monopy.PreceRateWage.Model.pdb

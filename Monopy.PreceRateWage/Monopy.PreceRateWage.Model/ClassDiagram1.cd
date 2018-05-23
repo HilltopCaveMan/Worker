@@ -1,0 +1,419 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Monopy.PreceRateWage.Model.BaseDep" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAQ=</HashCode>
+      <FileName>BaseDep.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseGroup" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQABAEAACAAgAACAAAAAAQAAAAAAgAAAAABoAAACAA=</HashCode>
+      <FileName>BaseGroup.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseGroupRole" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAgAACEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseGroupRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseGroupUser" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAEAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseGroupUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseHeadcount" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAAAAIIAAAAQAAGEEABAAQAAAAAABAAA=</HashCode>
+      <FileName>BaseHeadcount.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseRole" Collapsed="true">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BAACAAAAAQAAAAAAAAAAAAAAAAEAAAAAAAAAEAAAAAA=</HashCode>
+      <FileName>BaseRole.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseRoleUser" Collapsed="true">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAADAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseRoleUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseUser" Collapsed="true">
+    <Position X="12.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAwAAAAAAAAAgAAQAAAMAAAAAAAAAAAAAAQA=</HashCode>
+      <FileName>BaseUser.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.BaseUserComparer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>BaseUser.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_CJJJ" Collapsed="true">
+    <Position X="4" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAIAAAQAAAIAAAAAgAAAACEEAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>DataBase3JB_CJJJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_CJJJ_Child" Collapsed="true">
+    <Position X="5.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAIAIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase3JB_CJJJ_Child.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_CJJJ_Result" Collapsed="true">
+    <Position X="7.5" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAQAAAAAAAAAAAAQAAAAAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase3JB_CJJJ_Result.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_FZYH" Collapsed="true">
+    <Position X="9.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSCAAAAQAAAAAAAAAAAAAAAGEAACAAQQAAAAACAAA=</HashCode>
+      <FileName>DataBase3JB_FZYH.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_JJRLR" Collapsed="true">
+    <Position X="11" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>wIQDClRVAYAAwAAAgAACChCownmXgm0QY/yDQCADAgk=</HashCode>
+      <FileName>DataBase3JB_JJRLR.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ" Collapsed="true">
+    <Position X="12.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQQAAgTCTAAgBAAAAADEAIAAGFAAAAAQQAAAAAABAA=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ_YZ1" Collapsed="true">
+    <Position X="0.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAIAAAQAAAAAAAAAAAAAAAEEEAAAAQAAAABAAAAA=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ_YZ1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ_YZ2" Collapsed="true">
+    <Position X="2.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAgAoAQBAAAAAAAKAAABAkEFAEAAAQAAAAJAAgAQ=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ_YZ2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ_YZ3" Collapsed="true">
+    <Position X="4" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAgAAAQBAAAAAABCAAAAAAEFgEAAIQAAAgJIAAAA=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ_YZ3.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ_YZ4" Collapsed="true">
+    <Position X="5.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAQBAAAAAAACAAAAAAEEAAAAAQAAAABAAAAA=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ_YZ4.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_MCLBJJ_YZ5" Collapsed="true">
+    <Position X="7.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACACAgAoAQBAAAAAAAKAAABAkEFAEAAAQAAAAJAAgAQ=</HashCode>
+      <FileName>DataBase3JB_MCLBJJ_YZ5.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_PGYHZTS" Collapsed="true">
+    <Position X="9.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQAAAAAAAAAAAAAAAGEAAAAAQQgAAAAAAAA=</HashCode>
+      <FileName>DataBase3JB_PGYHZTS.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_XCSJ_WX" Collapsed="true">
+    <Position X="11" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSCAAAAQAAAAAAAAAAAAAAAGkAAEAAQQAAAAACEAA=</HashCode>
+      <FileName>DataBase3JB_XCSJ_WX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_XSMCLBJJ" Collapsed="true">
+    <Position X="12.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAUAQAAABAAAAAAAAAAAGFAAAAAQQAAEAAABQA=</HashCode>
+      <FileName>DataBase3JB_XSMCLBJJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_XWRKHGP" Collapsed="true">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IACGAEAIAQAAgAAAIAqBIBAIAOEAQAgCQmAAAAQBABA=</HashCode>
+      <FileName>DataBase3JB_XWRKHGP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_XWRYCQ" Collapsed="true">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IAQmACAAAQAAgQAABAEAASACIWEAAAAAQQAAQAAAAAA=</HashCode>
+      <FileName>DataBase3JB_XWRYCQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3JB_XZF" Collapsed="true">
+    <Position X="4" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAgAAAAAAAAEAAAAGEAAAAAQQAgAAABAAA=</HashCode>
+      <FileName>DataBase3JB_XZF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_CJKH" Collapsed="true">
+    <Position X="5.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAEAAAQAAAAAEABIAIAgAAGEAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>DataBase3MJ_CJKH.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_DJCJYB" Collapsed="true">
+    <Position X="7.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQBAAAAAAAAAAABAAGEgACCAwAAAAAAgAQA=</HashCode>
+      <FileName>DataBase3MJ_DJCJYB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_PMCDJ" Collapsed="true">
+    <Position X="9.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQAAAIAAAAAAAAAAAGEQAAAAYQAAAAAAAAA=</HashCode>
+      <FileName>DataBase3MJ_PMCDJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_PMCDJ_Child" Collapsed="true">
+    <Position X="11" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAASAAAAAAAAAAAAAAAAAARAgAIgAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBase3MJ_PMCDJ_Child.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_XJCJYB" Collapsed="true">
+    <Position X="12.75" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAQAAAQAAAAAAAABAAGEgAAAAQAAAAAAAAAA=</HashCode>
+      <FileName>DataBase3MJ_XJCJYB.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBase3MJ_XSGJJ" Collapsed="true">
+    <Position X="0.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAAAAAAAABAAAAAGEAAAAAYQAQAACAAAA=</HashCode>
+      <FileName>DataBase3MJ_XSGJJ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseDay" Collapsed="true">
+    <Position X="2.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>IIEAWoAIAJYggAAEAAQAACAAAAAgAYQWQiABAQABAAA=</HashCode>
+      <FileName>DataBaseDay.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_BF" Collapsed="true">
+    <Position X="4" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAAACAIAAAAAAAAEEAAAAAQQAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_BF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_BX" Collapsed="true">
+    <Position X="5.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQAAAQAAIAAAAAAAAGEAEAAAQYgIAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_BX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_CP" Collapsed="true">
+    <Position X="7.5" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAYAAAAQAIEAAAAAAAGEYAAACwYAAAAAAAQA=</HashCode>
+      <FileName>DataBaseGeneral_CP.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_CQ" Collapsed="true">
+    <Position X="9.25" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AgQCAgAAAQAgCgAgIAIAAQEAAGEAAAAAQQgCAQAAAwA=</HashCode>
+      <FileName>DataBaseGeneral_CQ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_GL" Collapsed="true">
+    <Position X="11" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAEACAIEACAAAAAGEIBAAAAYBAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_GL.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_GZZRX" Collapsed="true">
+    <Position X="12.75" Y="4.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQACAQAAIEAAAAAAAGEQAAAAQYAAAAAAAQA=</HashCode>
+      <FileName>DataBaseGeneral_GZZRX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_HZJJ_High" Collapsed="true">
+    <Position X="0.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAAQAAAAAAAAAAAAAAAGEAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_HZJJ_High.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_HZJJ_NoMoney" Collapsed="true">
+    <Position X="2.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCCAAAAQAAAAAAIAAAAAAAAGEAAAAAQQgAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_HZJJ_NoMoney.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_JC_Dept" Collapsed="true">
+    <Position X="4" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAIAAAQAAAAIAEAAAAAAAAGEAAAAAQQgAgAABAAA=</HashCode>
+      <FileName>DataBaseGeneral_JC_Dept.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_JC_Factory" Collapsed="true">
+    <Position X="5.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAwAAAAAAMEAAAAAAgGEAAAAAQYAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_JC_Factory.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_JSF" Collapsed="true">
+    <Position X="7.5" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAECAgAAAQAAEAAIIRAAAAAIIGEIAgQAQAAQAAAAAQA=</HashCode>
+      <FileName>DataBaseGeneral_JSF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_JT" Collapsed="true">
+    <Position X="9.25" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAAACAAAAAAAAAAGEIAAACQQAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_JT.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_LZ" Collapsed="true">
+    <Position X="11" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQQQAAABIEAAACgAAGEYAAAAQcAIAAAAAQA=</HashCode>
+      <FileName>DataBaseGeneral_LZ.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_TJF" Collapsed="true">
+    <Position X="12.75" Y="5.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAEAQAAAAAAIEAAAAAAAGEYAAAAQYAAAAAAAQA=</HashCode>
+      <FileName>DataBaseGeneral_TJF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_WX" Collapsed="true">
+    <Position X="0.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAAAAAIAAAAAAAAGEAAAAAQYAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_WX.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_YEY" Collapsed="true">
+    <Position X="2.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAESAAAAAYABAISAAAAAAAAIBGEAAAAAQAAABAAAAAI=</HashCode>
+      <FileName>DataBaseGeneral_YEY.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseGeneral_ZF" Collapsed="true">
+    <Position X="4" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQSAAAAAQAAAACAAAAAAAAAAGEIAAACQQAAAAAAAAA=</HashCode>
+      <FileName>DataBaseGeneral_ZF.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseMonth" Collapsed="true">
+    <Position X="5.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BoAAAIAYDFAEgJCkABQAAAAAAAEAAQAAAAAAACAoCAA=</HashCode>
+      <FileName>DataBaseMonth.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.DataBaseMsg" Collapsed="true">
+    <Position X="7.5" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAACAAAQAgwAAAAAAAEAAAAAEABAAAAAAAAAAAAAA=</HashCode>
+      <FileName>DataBaseMsg.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.GZD" Collapsed="true">
+    <Position X="9.25" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ogUyjBIQI4RAEEAiZABgUIAIBGmpSQAg4YlIoUAUASA=</HashCode>
+      <FileName>GZD.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.HHContext" Collapsed="true">
+    <Position X="11" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>CAAAAgAAACACKJiKJgCAwACEKCACUIMGAQQJGBAwJIA=</HashCode>
+      <FileName>HHContext.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.LogTable" Collapsed="true">
+    <Position X="0.5" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAYCAAAAAAAAAAAAAAAAAAAAAAEIAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>LogTable.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.RGSM" Collapsed="true">
+    <Position X="2.25" Y="7.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAEAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>RGSM.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.Migrations.InitialCreate" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="12.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAIAMAAAAAAAAAAAAAAAAAAAAAAAAAAQEAAAAAI=</HashCode>
+      <FileName>Migrations\201707030525347_InitialCreate.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" Collapsed="true" />
+  </Class>
+  <Class Name="Monopy.PreceRateWage.Model.Migrations.Configuration" Collapsed="true">
+    <Position X="2.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Migrations\Configuration.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Enum Name="Monopy.PreceRateWage.Model.CheckType" Collapsed="true">
+    <Position X="0.5" Y="8.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABAABAAAAAEAAAAAACAAAAAAQAAAAAAAAAAAA=</HashCode>
+      <FileName>Enums\Enums.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Microsoft YaHei UI" Size="9" />
+</ClassDiagram>
