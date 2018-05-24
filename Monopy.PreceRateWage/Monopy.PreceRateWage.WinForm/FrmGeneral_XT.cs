@@ -74,6 +74,140 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         /// <summary>
+        /// 导入补余额
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonX1_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog openFileDlg = new OpenFileDialog()
+            {
+                Filter = "Excel文件|*.xlsx",
+            };
+            if (openFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                var list = new ExcelHelper<DataBaseGeneral_XT>().ReadExcel(openFileDlg.FileName, 2, 6, 0, 0, 0, true);
+                var listOld = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.IsBYE && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
+                foreach (var item in list)
+                {
+                    var itemOld = listOld.Where(t => t.UserCode == item.UserCode && t.UserName == item.UserName && t.GZ == item.GZ).FirstOrDefault();
+                    if (itemOld == null)
+                    {
+                        MessageBox.Show($"工号：{item.UserCode},姓名{item.UserName},补余额中存在，但是原始数据中不存在，请检查", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    else
+                    {
+                        itemOld.BZJE = item.BZJE;
+                        new BaseDal<DataBaseGeneral_XT>().Edit(itemOld);
+                    }
+                }
+                btnRecount.PerformClick();
+            }
+        }
+
+        /// <summary>
+        /// 导出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnExportExcel_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDlg = new SaveFileDialog()
+            {
+                Filter = "Excle2007文件|*.xlsx"
+            };
+            if (saveFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                Enabled = false;
+                List<DataBaseGeneral_XT> list = dgv.DataSource as List<DataBaseGeneral_XT>;
+                var hj = list[0];
+                list.RemoveAt(0);
+                list.Add(hj);
+                if (new ExcelHelper<DataBaseGeneral_XT>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——仓储——入职表 .xlsx", saveFileDlg.FileName, list, 2, 6, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                {
+                    if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Process.Start(saveFileDlg.FileName);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                list.Remove(hj);
+                list.Insert(0, hj);
+                Enabled = true;
+            }
+
+        }
+
+        /// <summary>
+        /// 导出补余额
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void buttonX2_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog saveFileDlg = new SaveFileDialog()
+            {
+                Filter = "Excle2007文件|*.xlsx"
+            };
+            if (saveFileDlg.ShowDialog() == DialogResult.OK)
+            {
+                Enabled = false;
+                List<DataBaseGeneral_XT> list = dgv.DataSource as List<DataBaseGeneral_XT>;
+                var hj = list[0];
+                list.RemoveAt(0);
+                list.Add(hj);
+                if (new ExcelHelper<DataBaseGeneral_XT>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——仓储——入职表.xlsx", saveFileDlg.FileName, list, 2, 6, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                {
+                    if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
+                    {
+                        Process.Start(saveFileDlg.FileName);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                list.Remove(hj);
+                list.Insert(0, hj);
+                Enabled = true;
+            }
+        }
+
+        /// <summary>
+        /// 重新计算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnRecount_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            List<DataBaseGeneral_XT> list = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            var boolOK = Recount(list, out List<DataBase1CC_XTTZ> listTZ);
+            foreach (var item in list)
+            {
+                new BaseDal<DataBaseGeneral_XT>().Edit(item);
+            }
+            if (boolOK)
+            {
+                //台账处理
+                //先删除台账中这个月的旧数据。
+                new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month);
+
+                if (new BaseDal<DataBase1CC_XTTZ>().Add(listTZ) <= 0)
+                {
+                    MessageBox.Show("台账保存失败！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                }
+            }
+            Enabled = true;
+            btnSearch.PerformClick();
+            MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
         /// 验证
         /// </summary>
         /// <param name="sender"></param>
@@ -156,6 +290,91 @@ namespace Monopy.PreceRateWage.WinForm
                 MessageBox.Show("至少有一条数据验收失败！", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
         }
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 1)
+            {
+                if (dgv.SelectedRows[0].DataBoundItem is DataBaseGeneral_XT DataBaseGeneral_XT)
+                {
+                    if (DataBaseGeneral_XT.No == "合计")
+                    {
+                        MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    FrmModify<DataBaseGeneral_XT> frm = new FrmModify<DataBaseGeneral_XT>(DataBaseGeneral_XT, header, OptionType.Modify, Text, 5, 8);
+                    if (frm.ShowDialog() == DialogResult.Yes)
+                    {
+                        InitUI();
+                        btnRecount.PerformClick();
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 1)
+            {
+                var DataBaseGeneral_XT = dgv.SelectedRows[0].DataBoundItem as DataBaseGeneral_XT;
+                if (DataBaseGeneral_XT.No == "合计")
+                {
+                    MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+                if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                {
+                    if (DataBaseGeneral_XT != null)
+                    {
+                        FrmModify<DataBaseGeneral_XT> frm = new FrmModify<DataBaseGeneral_XT>(DataBaseGeneral_XT, header, OptionType.Delete, Text, 5, 1);
+                        if (frm.ShowDialog() == DialogResult.Yes)
+                        {
+                            InitUI();
+                            btnRecount.PerformClick();
+                        }
+                    }
+                }
+            }
+        }
+
+        /// <summary>
+        /// 全部删除
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 全部删除ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+            {
+                var list = dgv.DataSource as List<DataBaseGeneral_XT>;
+                dgv.DataSource = null;
+                foreach (var item in list)
+                {
+                    if (item.No == "合计")
+                    {
+                        continue;
+                    }
+                    new BaseDal<DataBaseGeneral_XT>().Delete(item);
+                }
+                btnRecount.PerformClick();
+                return;
+            }
+            else
+            {
+                return;
+            }
+        }
+
         #endregion
 
         #region 调用方法
@@ -358,7 +577,9 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
-        #endregion
 
+
+
+        #endregion
     }
 }
