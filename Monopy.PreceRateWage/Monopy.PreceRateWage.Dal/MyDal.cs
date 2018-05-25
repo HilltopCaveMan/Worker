@@ -553,7 +553,7 @@ namespace Monopy.PreceRateWage.Dal
             return (list == null || list.Count == 0) ? new DataBase1MJ_XSGJJ { No = "合计", Money = 0.ToString(), DS = 0.ToString() } : new DataBase1MJ_XSGJJ { No = "合计", Money = list.Sum(t => decimal.TryParse(t.Money, out decimal result) ? result : 0).ToString(), DS = list.Sum(t => decimal.TryParse(t.DS, out decimal ds) ? ds : 0).ToString() };
         }
 
-        // <summary>
+        /// <summary>
         /// 一厂日工提报合计
         /// </summary>
         /// <param name="list"></param>
@@ -561,6 +561,16 @@ namespace Monopy.PreceRateWage.Dal
         public static DataBase1MJ_RGTB GetTotalDataBase1MJ_RGTB(List<DataBase1MJ_RGTB> list)
         {
             return (list == null || list.Count == 0) ? new DataBase1MJ_RGTB { No = "合计", TS = 0.ToString(), RGHJ = 0.ToString() } : new DataBase1MJ_RGTB { No = "合计", TS = list.Sum(t => decimal.TryParse(t.TS, out decimal result) ? result : 0).ToString(), RGHJ = list.Sum(t => decimal.TryParse(t.RGHJ, out decimal ds) ? ds : 0).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂大件月报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1MJ_DJCJYB GetTotalDataBase1MJ_DJCJYB(List<DataBase1MJ_DJCJYB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1MJ_DJCJYB { No = "合计", SCLJ = 0.ToString(), BCLJ = 0.ToString(),PSLJ=0.ToString() } : new DataBase1MJ_DJCJYB { No = "合计", SCLJ = list.Sum(t => decimal.TryParse(t.SCLJ, out decimal result) ? result : 0M).ToString(), BCLJ = list.Sum(t => decimal.TryParse(t.BCLJ, out decimal result) ? result : 0M).ToString() , PSLJ = list.Sum(t => decimal.TryParse(t.PSLJ, out decimal result) ? result : 0M).ToString() };
         }
 
         /// <summary>
