@@ -18,9 +18,24 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class FrmGeneral_XTTZ : Office2007Form
     {
+     
+        private string _workShop;
+
         public FrmGeneral_XTTZ()
         {
             InitializeComponent();
+        }
+        public FrmGeneral_XTTZ(string args) : this()
+        {
+            try
+            {
+                _workShop = args;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+                return;
+            }
         }
 
         #region 按钮事件
@@ -139,7 +154,7 @@ namespace Monopy.PreceRateWage.WinForm
             var listTmp = list.GroupBy(t => t.CJ).Select(t => t.Key).OrderBy(t => t).ToList();
             CmbCJ.DataSource = listTmp;
             CmbCJ.DisplayMember = "CJ";
-            CmbCJ.Text = string.Empty;
+            CmbCJ.Text = _workShop;
         }
 
         private void RefCmbGW(List<DataBase1CC_XTTZ> list)
@@ -309,12 +324,12 @@ namespace Monopy.PreceRateWage.WinForm
                             t.Money = ExcelHelper.GetCellValue(row.GetCell(4 + j));
                             t.TimeBZ = new DateTime(t.TheYear, t.TheMonth, 1);
 
-                            //if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
-                            //{
-                            //    MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //    Enabled = true;
-                            //    return null;
-                            //}
+                            if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
+                            {
+                                MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                Enabled = true;
+                                return null;
+                            }
 
                             list.Add(t);
                             no++;
