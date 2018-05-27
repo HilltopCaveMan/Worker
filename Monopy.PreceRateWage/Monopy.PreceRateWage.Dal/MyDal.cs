@@ -574,6 +574,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂小件月报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1MJ_XJCJYB GetTotalDataBase1MJ_XJCJYB(List<DataBase1MJ_XJCJYB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1MJ_XJCJYB { No = "合计", SCSL = 0.ToString() } : new DataBase1MJ_XJCJYB { No = "合计", SCSL = list.Sum(t => decimal.TryParse(t.SCSL, out decimal result) ? result : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
