@@ -6,9 +6,9 @@ using System.Text;
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 学徒补助（月）
+    /// 学徒补助（日）
     /// </summary>
-    public class DataBaseGeneral_XT
+    public class DataBaseGeneral_XTDay
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -25,7 +25,7 @@ namespace Monopy.PreceRateWage.Model
         /// <summary>
         /// 车间
         /// </summary>
-        public string  CJ { get; set; }
+        public string CJ { get; set; }
 
         /// <summary>
         /// 工种
@@ -43,29 +43,14 @@ namespace Monopy.PreceRateWage.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 第几个月
-        /// </summary>
-        public string DJGY { get; set; }
-
-        /// <summary>
         /// 补助天数
         /// </summary>
         public string BZTS { get; set; }
 
         /// <summary>
-        /// 应出勤天数
+        /// 学徒日工资
         /// </summary>
-        public string YCQTS { get; set; }
-
-        /// <summary>
-        /// 学徒标准
-        /// </summary>
-        public string XTBZ { get; set; }
-
-        /// <summary>
-        /// 学徒月工资
-        /// </summary>
-        public string XTYGZ{ get; set; }
+        public string XTRGZ { get; set; }
 
         /// <summary>
         /// 实出勤
@@ -96,10 +81,5 @@ namespace Monopy.PreceRateWage.Model
         /// 核对
         /// </summary>
         public string HD { get; set; }
-
-        /// <summary>
-        /// 是否补差额
-        /// </summary>
-        public bool IsBYE { get; set; }
     }
 }

@@ -205,6 +205,7 @@
     <Compile Include="DataBaseGeneral_TJF.cs" />
     <Compile Include="DataBaseGeneral_WX.cs" />
     <Compile Include="DataBaseGeneral_XT.cs" />
+    <Compile Include="DataBaseGeneral_XTDay.cs" />
     <Compile Include="DataBaseGeneral_YEY.cs" />
     <Compile Include="DataBaseGeneral_ZF.cs" />
     <Compile Include="DataBase3JB_PGYHZTS.cs" />

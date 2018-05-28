@@ -6,9 +6,9 @@ using System.Text;
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 
+    /// 运模计件日
     /// </summary>
-    public class DataBase1MJ_ZMJJ
+    public class DataBase1MJ_YMJJ
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -41,26 +41,89 @@ namespace Monopy.PreceRateWage.Model
         /// </summary>
         public string RQ { get; set; }
 
+        /// <summary>
+        /// 撤换全线
+        /// </summary>
+        public string CHQX1 { get; set; }
 
-        public string CHQX { get; set; }
-        public string CHDX { get; set; }
-        public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
-        //public string MyProperty { get; set; }
+        /// <summary>
+        /// 撤/换单线
+        /// </summary>
+        public string CHDX1 { get; set; }
+
+        /// <summary>
+        /// 科玛全包分体撤换全线
+        /// </summary>
+        public string KMCHQX1 { get; set; }
+
+        /// <summary>
+        /// 科玛全包分体撤/换单线
+        /// </summary>
+        public string KMCHDX1 { get; set; }
+
+        /// <summary>
+        /// 撤换全线
+        /// </summary>
+        public string CHQX2 { get; set; }
+
+        /// <summary>
+        /// 撤/换单线
+        /// </summary>
+        public string CHDX2 { get; set; }
+
+        /// <summary>
+        /// 科玛全包分体撤换全线
+        /// </summary>
+        public string KMCHQX2 { get; set; }
+
+        /// <summary>
+        /// 科玛全包分体撤/换单线
+        /// </summary>
+        public string KMCHDX2 { get; set; }
+
+        /// <summary>
+        /// 段位
+        /// </summary>
+        public string DW { get; set; }
+
+        /// <summary>
+        /// 线位
+        /// </summary>
+        public string XW { get; set; }
+
+        /// <summary>
+        /// 撤下品种
+        /// </summary>
+        public string CXPZ { get; set; }
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public string CXPZSL { get; set; }
+
+        /// <summary>
+        /// 上线品种
+        /// </summary>
+        public string SXPZ { get; set; }
+
+        /// <summary>
+        /// 数量
+        /// </summary>
+        public string SXPZSL { get; set; }
+
+        /// <summary>
+        /// 原线位模型数
+        /// </summary>
+        public string YXWMXS { get; set; }
+
+        /// <summary>
+        /// 备注
+        /// </summary>
+        public string BZ { get; set; }
+
+        /// <summary>
+        /// 金额
+        /// </summary>
+        public string JE { get; set; }
     }
 }

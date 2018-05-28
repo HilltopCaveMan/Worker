@@ -14,16 +14,16 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class FrmGeneral_XT : Office2007Form
+    public partial class FrmGeneral_XTDay : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$车间$工种$人员编码$姓名$第几个月$补助天数$应出勤天数$学徒标准$学徒月工资$实出勤$应出勤$补助金额$以得学徒总额$上限金额$核对".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$车间$工种$人员编码$姓名$补助天数$学徒日工$实出勤$应出勤$补助金额$以得学徒总额$上限金额$核对".Split('$');
         private string _workShop;
-        public FrmGeneral_XT()
+        public FrmGeneral_XTDay()
         {
             InitializeComponent();
         }
 
-        public FrmGeneral_XT(string args) : this()
+        public FrmGeneral_XTDay(string args) : this()
         {
             try
             {
@@ -42,7 +42,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void FrmGeneral_XT_Load(object sender, EventArgs e)
+        private void FrmGeneral_XTDay_Load(object sender, EventArgs e)
         {
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
             InitUI();
@@ -56,7 +56,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            RefDgv(dtp.Value, CmbGZ.Text, CmbUserCode.Text, CmbUserName.Text, checkBox1.Checked);
+            RefDgv(dtp.Value, CmbGZ.Text, CmbUserCode.Text, CmbUserName.Text);
         }
 
         /// <summary>
@@ -66,7 +66,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——仓储——入职表.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——学徒——入职表（日）.xlsx");
         }
 
         /// <summary>
@@ -87,39 +87,6 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         /// <summary>
-        /// 导入补余额
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonX1_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog openFileDlg = new OpenFileDialog()
-            {
-                Filter = "Excel文件|*.xlsx",
-            };
-            if (openFileDlg.ShowDialog() == DialogResult.OK)
-            {
-                var list = new ExcelHelper<DataBaseGeneral_XT>().ReadExcel(openFileDlg.FileName, 2, 7, 0, 0, 0, true);
-                var listOld = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.IsBYE && t.CJ == _workShop && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
-                foreach (var item in list)
-                {
-                    var itemOld = listOld.Where(t => t.UserCode == item.UserCode && t.UserName == item.UserName && t.GZ == item.GZ).FirstOrDefault();
-                    if (itemOld == null)
-                    {
-                        MessageBox.Show($"工号：{item.UserCode},姓名{item.UserName},补余额中存在，但是原始数据中不存在，请检查", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    else
-                    {
-                        itemOld.BZJE = item.BZJE;
-                        new BaseDal<DataBaseGeneral_XT>().Edit(itemOld);
-                    }
-                }
-                btnRecount.PerformClick();
-            }
-        }
-
-        /// <summary>
         /// 导出
         /// </summary>
         /// <param name="sender"></param>
@@ -133,11 +100,11 @@ namespace Monopy.PreceRateWage.WinForm
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                List<DataBaseGeneral_XT> list = dgv.DataSource as List<DataBaseGeneral_XT>;
+                List<DataBaseGeneral_XTDay> list = dgv.DataSource as List<DataBaseGeneral_XTDay>;
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_XT>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——仓储——入职表 .xlsx", saveFileDlg.FileName, list, 2, 7, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 7, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -153,41 +120,6 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = true;
             }
 
-        }
-
-        /// <summary>
-        /// 导出补余额
-        /// </summary>
-        /// <param name="sender"></param>
-        /// <param name="e"></param>
-        private void buttonX2_Click(object sender, EventArgs e)
-        {
-            SaveFileDialog saveFileDlg = new SaveFileDialog()
-            {
-                Filter = "Excle2007文件|*.xlsx"
-            };
-            if (saveFileDlg.ShowDialog() == DialogResult.OK)
-            {
-                Enabled = false;
-                List<DataBaseGeneral_XT> list = dgv.DataSource as List<DataBaseGeneral_XT>;
-                var hj = list[0];
-                list.RemoveAt(0);
-                list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_XT>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——仓储——入职表.xlsx", saveFileDlg.FileName, list, 2, 7, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
-                {
-                    if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
-                    {
-                        Process.Start(saveFileDlg.FileName);
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                list.Remove(hj);
-                list.Insert(0, hj);
-                Enabled = true;
-            }
         }
 
         /// <summary>
@@ -198,11 +130,11 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnRecount_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            List<DataBaseGeneral_XT> list = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
+            List<DataBaseGeneral_XTDay> list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
             var boolOK = Recount(list, out List<DataBase1CC_XTTZ> listTZ);
             foreach (var item in list)
             {
-                new BaseDal<DataBaseGeneral_XT>().Edit(item);
+                new BaseDal<DataBaseGeneral_XTDay>().Edit(item);
             }
             if (boolOK)
             {
@@ -229,15 +161,11 @@ namespace Monopy.PreceRateWage.WinForm
         {
             bool IsOk = true;
 
-            var list = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop);
+            var list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop);
             List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("一厂") && t.Dept.Contains(_workShop)).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            List<DataBaseMonth> moths = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo.Contains("一厂") && t.WorkshopName.Contains(_workShop)).ToList();
-
+            
             foreach (var item in list)
             {
-                DateTime dateTime = new DateTime(dtp.Value.Year, dtp.Value.Month, 1);
-                var listTZ = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.UserCode == item.UserCode && t.TimeBZ < dateTime);
-                var moth = moths.Where(x => x.PostName == item.GZ && x.MonthData == item.DJGY).FirstOrDefault();
                 var data = datas.Where(x => x.Position == item.GZ && x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
                 if (data == null)
                 {
@@ -248,44 +176,15 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     int.TryParse(item.BZTS, out int bzts);
                     int.TryParse(data.DayScq, out int scq);
-                    int.TryParse(item.YCQTS, out int ycqts);
-                    int.TryParse(data.DayYcq, out int ycq);
+                    
                     //验证补助天数
                     if (bzts > scq)
                     {
                         IsOk = false;
                         MessageBox.Show($"补助天数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，补助天数为：{item.BZTS}，出勤记录的实出勤为：{data.DayScq}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
-                    //验证应出勤天数
-                    if (ycq != ycqts)
-                    {
-                        IsOk = false;
-                        MessageBox.Show($"应出勤天数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，应出勤天数为：{item.YCQTS}，出勤记录的应出勤为：{data.DayYcq}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
-
-                //验证学徒标准
-                if (moth == null)
-                {
-                    IsOk = false;
-                    MessageBox.Show($"缺少月工资记录：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    if (item.XTBZ != moth.MoneyRZBZ)
-                    {
-                        IsOk = false;
-                        MessageBox.Show($"学徒标准不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，学徒标准为：{item.YCQTS}，月工资的入职补助为：{moth.MoneyRZBZ}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                int.TryParse(item.DJGY, out int djgy);
-                //验证台账
-                if (djgy - 1 != listTZ.Count())
-                {
-                    IsOk = false;
-                    MessageBox.Show($"补助月份不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，提报补助月份：{item.DJGY}，台账中只有：{listTZ.Count()}个月！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
+                
                 int.TryParse(item.HD, out int hd);
                 //验证核对
                 if (hd < 0)
@@ -313,14 +212,14 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                if (dgv.SelectedRows[0].DataBoundItem is DataBaseGeneral_XT DataBaseGeneral_XT)
+                if (dgv.SelectedRows[0].DataBoundItem is DataBaseGeneral_XTDay DataBaseGeneral_XTDay)
                 {
-                    if (DataBaseGeneral_XT.No == "合计")
+                    if (DataBaseGeneral_XTDay.No == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBaseGeneral_XT> frm = new FrmModify<DataBaseGeneral_XT>(DataBaseGeneral_XT, header, OptionType.Modify, Text, 6, 8);
+                    FrmModify<DataBaseGeneral_XTDay> frm = new FrmModify<DataBaseGeneral_XTDay>(DataBaseGeneral_XTDay, header, OptionType.Modify, Text, 6, 8);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
@@ -339,17 +238,17 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var DataBaseGeneral_XT = dgv.SelectedRows[0].DataBoundItem as DataBaseGeneral_XT;
-                if (DataBaseGeneral_XT.No == "合计")
+                var DataBaseGeneral_XTDay = dgv.SelectedRows[0].DataBoundItem as DataBaseGeneral_XTDay;
+                if (DataBaseGeneral_XTDay.No == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    if (DataBaseGeneral_XT != null)
+                    if (DataBaseGeneral_XTDay != null)
                     {
-                        FrmModify<DataBaseGeneral_XT> frm = new FrmModify<DataBaseGeneral_XT>(DataBaseGeneral_XT, header, OptionType.Delete, Text, 6, 1);
+                        FrmModify<DataBaseGeneral_XTDay> frm = new FrmModify<DataBaseGeneral_XTDay>(DataBaseGeneral_XTDay, header, OptionType.Delete, Text, 6, 1);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
@@ -369,7 +268,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                var list = dgv.DataSource as List<DataBaseGeneral_XT>;
+                var list = dgv.DataSource as List<DataBaseGeneral_XTDay>;
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
@@ -377,7 +276,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         continue;
                     }
-                    new BaseDal<DataBaseGeneral_XT>().Delete(item);
+                    new BaseDal<DataBaseGeneral_XTDay>().Delete(item);
                 }
                 btnRecount.PerformClick();
                 return;
@@ -394,13 +293,13 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
+            var list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
             RefCmbGZ(list);
             RefCmbUserCode(list);
             RefCmbUserName(list);
         }
 
-        private void RefCmbGZ(List<DataBaseGeneral_XT> list)
+        private void RefCmbGZ(List<DataBaseGeneral_XTDay> list)
         {
             var listTmp = list.GroupBy(t => t.GZ).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
@@ -408,7 +307,7 @@ namespace Monopy.PreceRateWage.WinForm
             CmbGZ.DisplayMember = "GZ";
             CmbGZ.Text = "全部";
         }
-        private void RefCmbUserCode(List<DataBaseGeneral_XT> list)
+        private void RefCmbUserCode(List<DataBaseGeneral_XTDay> list)
         {
             var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
@@ -416,7 +315,7 @@ namespace Monopy.PreceRateWage.WinForm
             CmbUserCode.DisplayMember = "UserCode";
             CmbUserCode.Text = "全部";
         }
-        private void RefCmbUserName(List<DataBaseGeneral_XT> list)
+        private void RefCmbUserName(List<DataBaseGeneral_XTDay> list)
         {
             var listTmp = list.GroupBy(t => t.UserName).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
@@ -425,23 +324,18 @@ namespace Monopy.PreceRateWage.WinForm
             CmbUserName.Text = "全部";
         }
 
-        private void RefDgv(DateTime selectTime, string gz, string userCode, string userName, bool isBye)
+        private void RefDgv(DateTime selectTime, string gz, string userCode, string userName)
         {
             foreach (DataGridViewColumn item in dgv.Columns)
             {
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new List<DataBaseGeneral_XT>();
-            if (isBye)
-            {
-                datas = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CJ == _workShop && (gz == "全部" ? true : t.GZ.Contains(gz)) && (userName == "全部" ? true : t.UserName.Contains(userName)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && t.IsBYE == isBye).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            }
-            else
-            {
-                datas = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CJ == _workShop && (gz == "全部" ? true : t.GZ.Contains(gz)) && (userName == "全部" ? true : t.UserName.Contains(userName)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode))).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            }
-            datas.Insert(0, MyDal.GetTotalDataBaseGeneral_XT(datas));
+            var datas = new List<DataBaseGeneral_XTDay>();
+
+            datas = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CJ == _workShop && (gz == "全部" ? true : t.GZ.Contains(gz)) && (userName == "全部" ? true : t.UserName.Contains(userName)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode))).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+
+            datas.Insert(0, MyDal.GetTotalDataBaseGeneral_XTDay(datas));
 
             dgv.DataSource = datas;
             for (int i = 0; i < 7; i++)
@@ -461,7 +355,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBaseGeneral_XT> list = new ExcelHelper<DataBaseGeneral_XT>().ReadExcel(fileName, 2, 7, 0, 0, 0, true);
+            List<DataBaseGeneral_XTDay> list = new ExcelHelper<DataBaseGeneral_XTDay>().ReadExcel(fileName, 2, 7, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -483,7 +377,7 @@ namespace Monopy.PreceRateWage.WinForm
                 list[i].CJ = _workShop;
             }
             var boolOK = Recount(list, out List<DataBase1CC_XTTZ> listTZ);
-            if (new BaseDal<DataBaseGeneral_XT>().Add(list) > 0)
+            if (new BaseDal<DataBaseGeneral_XTDay>().Add(list) > 0)
             {
                 if (boolOK)
                 {
@@ -509,7 +403,7 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = true;
         }
 
-        private bool Recount(List<DataBaseGeneral_XT> list, out List<DataBase1CC_XTTZ> listTZ)
+        private bool Recount(List<DataBaseGeneral_XTDay> list, out List<DataBase1CC_XTTZ> listTZ)
         {
             listTZ = new List<DataBase1CC_XTTZ>();
             if (list == null || list.Count == 0)
@@ -546,36 +440,30 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(itemHrCQ.DayTotal, out decimal scq);
                     decimal.TryParse(itemHrCQ.DayYcq, out decimal ycq);
 
-                    if (!item.IsBYE)
+
+                    item.SCQ = scq.ToString();
+
+                    item.YCQ = ycq.ToString();
+
+                    var itemMonth = listMonth.Where(t => t.PostName == item.GZ && string.IsNullOrEmpty(t.ProductType)).FirstOrDefault();
+
+                    var itemMonthUp = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "学徒上限").FirstOrDefault();
+                   
+                    item.XTRGZ = itemMonth.DayWork_XT;
+                    decimal.TryParse(item.XTRGZ, out decimal xtrgz);
+                    decimal.TryParse(item.BZTS, out decimal bzts);
+                    item.BZJE = (xtrgz * bzts).ToString();
+                    item.SXJE = itemMonthUp.MoneyKH;
+                    var tmpMoney = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.CJ == _workShop && t.GW == item.GZ && t.UserCode == item.UserCode && t.UserName == item.UserName);
+                    int totalMoney = 0;
+                    foreach (var tmp in tmpMoney)
                     {
-                        item.SCQ = scq.ToString();
-
-                        item.YCQ = ycq.ToString();
-
-                        var itemMonth = listMonth.Where(t => t.PostName == item.GZ && t.MonthData == item.DJGY).FirstOrDefault();
-                        if (itemMonth == null)
-                        {
-                            item.IsBYE = true;
-                            continue;
-                        }
-                        var itemMonthUp = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "学徒上限").FirstOrDefault();
-                        item.IsBYE = false;
-                        item.XTYGZ = itemMonth.MoneyRZBZ;
-                        decimal.TryParse(item.XTYGZ, out decimal xtygz);
-                        decimal.TryParse(item.BZTS, out decimal bzts);
-                        item.BZJE = (xtygz * bzts / ycq).ToString();
-                        item.SXJE = itemMonthUp.MoneyKH;
-                        var tmpMoney = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.CJ == _workShop && t.GW == item.GZ && t.UserCode == item.UserCode && t.UserName == item.UserName);
-                        int totalMoney = 0;
-                        foreach (var tmp in tmpMoney)
-                        {
-                            int.TryParse(tmp.Money, out int money);
-                            totalMoney += money;
-                        }
-                        item.XTZE = totalMoney.ToString();
-                        decimal.TryParse(item.SXJE, out decimal sxje);
-                        item.HD = (totalMoney - sxje).ToString();
+                        int.TryParse(tmp.Money, out int money);
+                        totalMoney += money;
                     }
+                    item.XTZE = totalMoney.ToString();
+                    decimal.TryParse(item.SXJE, out decimal sxje);
+                    item.HD = (totalMoney - sxje).ToString();
 
                     //生成台账
                     if (!string.IsNullOrEmpty(item.BZJE))
