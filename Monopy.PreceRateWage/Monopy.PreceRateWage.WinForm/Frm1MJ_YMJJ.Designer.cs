@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.btnMonthSumSearch = new DevComponents.DotNetBar.ButtonX();
             this.btnMonthSearch = new DevComponents.DotNetBar.ButtonX();
@@ -48,8 +48,6 @@
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.btnMonthSumExportExcel = new DevComponents.DotNetBar.ButtonX();
-            this.btnMonthExportExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnRecount = new DevComponents.DotNetBar.ButtonX();
             this.btnViewExcel = new DevComponents.DotNetBar.ButtonX();
             this.btnImportExcel = new DevComponents.DotNetBar.ButtonX();
@@ -83,7 +81,7 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanel1.DrawTitleBox = false;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
-            this.groupPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.groupPanel1.Name = "groupPanel1";
             this.groupPanel1.Size = new System.Drawing.Size(1400, 74);
             // 
@@ -121,7 +119,7 @@
             // 
             this.btnMonthSumSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnMonthSumSearch.Location = new System.Drawing.Point(1192, 4);
-            this.btnMonthSumSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMonthSumSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnMonthSumSearch.Name = "btnMonthSumSearch";
             this.btnMonthSumSearch.Size = new System.Drawing.Size(164, 35);
             this.btnMonthSumSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -134,7 +132,7 @@
             // 
             this.btnMonthSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnMonthSearch.Location = new System.Drawing.Point(1020, 4);
-            this.btnMonthSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnMonthSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnMonthSearch.Name = "btnMonthSearch";
             this.btnMonthSearch.Size = new System.Drawing.Size(164, 35);
             this.btnMonthSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -147,7 +145,7 @@
             // 
             this.buttonX2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX2.Location = new System.Drawing.Point(896, 4);
-            this.buttonX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonX2.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX2.Name = "buttonX2";
             this.buttonX2.Size = new System.Drawing.Size(116, 35);
             this.buttonX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -160,7 +158,7 @@
             // 
             this.buttonX1.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.buttonX1.Location = new System.Drawing.Point(777, 4);
-            this.buttonX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.buttonX1.Margin = new System.Windows.Forms.Padding(4);
             this.buttonX1.Name = "buttonX1";
             this.buttonX1.Size = new System.Drawing.Size(116, 35);
             this.buttonX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -199,7 +197,7 @@
             this.txtUserName.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUserName.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtUserName.SkinTxt.Location = new System.Drawing.Point(7, 6);
-            this.txtUserName.SkinTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserName.SkinTxt.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserName.SkinTxt.Multiline = true;
             this.txtUserName.SkinTxt.Name = "BaseText";
             this.txtUserName.SkinTxt.Size = new System.Drawing.Size(101, 23);
@@ -221,9 +219,9 @@
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Location = new System.Drawing.Point(431, 10);
-            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(85, 21);
+            this.labelX2.Size = new System.Drawing.Size(68, 18);
             this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX2.TabIndex = 10;
             this.labelX2.Text = "人员姓名：";
@@ -237,7 +235,7 @@
             this.dtp.font = new System.Drawing.Font("微软雅黑", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dtp.Items = null;
             this.dtp.Location = new System.Drawing.Point(63, 6);
-            this.dtp.Margin = new System.Windows.Forms.Padding(5, 5, 5, 5);
+            this.dtp.Margin = new System.Windows.Forms.Padding(5);
             this.dtp.Name = "dtp";
             this.dtp.Size = new System.Drawing.Size(163, 30);
             this.dtp.TabIndex = 9;
@@ -273,7 +271,7 @@
             this.txtUserCode.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtUserCode.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
             this.txtUserCode.SkinTxt.Location = new System.Drawing.Point(7, 6);
-            this.txtUserCode.SkinTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtUserCode.SkinTxt.Margin = new System.Windows.Forms.Padding(4);
             this.txtUserCode.SkinTxt.Multiline = true;
             this.txtUserCode.SkinTxt.Name = "BaseText";
             this.txtUserCode.SkinTxt.Size = new System.Drawing.Size(101, 23);
@@ -295,9 +293,9 @@
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX3.Location = new System.Drawing.Point(225, 10);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(85, 21);
+            this.labelX3.Size = new System.Drawing.Size(68, 18);
             this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX3.TabIndex = 5;
             this.labelX3.Text = "人员编码：";
@@ -306,7 +304,7 @@
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnSearch.Location = new System.Drawing.Point(653, 4);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 35);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -324,9 +322,9 @@
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX1.Location = new System.Drawing.Point(4, 10);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(54, 21);
+            this.labelX1.Size = new System.Drawing.Size(44, 18);
             this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "日期：";
@@ -339,7 +337,7 @@
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel2.DrawTitleBox = false;
             this.groupPanel2.Location = new System.Drawing.Point(0, 316);
-            this.groupPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupPanel2.Margin = new System.Windows.Forms.Padding(4);
             this.groupPanel2.Name = "groupPanel2";
             this.groupPanel2.Size = new System.Drawing.Size(1400, 80);
             // 
@@ -375,16 +373,12 @@
             // 
             // tableLayoutPanel1
             // 
-            this.tableLayoutPanel1.ColumnCount = 7;
+            this.tableLayoutPanel1.ColumnCount = 5;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 21.73913F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 13.04348F));
-            this.tableLayoutPanel1.Controls.Add(this.btnMonthSumExportExcel, 6, 0);
-            this.tableLayoutPanel1.Controls.Add(this.btnMonthExportExcel, 5, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnRecount, 4, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnViewExcel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnImportExcel, 2, 0);
@@ -392,52 +386,22 @@
             this.tableLayoutPanel1.Controls.Add(this.label1, 1, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 53);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1356, 56);
             this.tableLayoutPanel1.TabIndex = 5;
-            // 
-            // btnMonthSumExportExcel
-            // 
-            this.btnMonthSumExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnMonthSumExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnMonthSumExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMonthSumExportExcel.Location = new System.Drawing.Point(1178, 4);
-            this.btnMonthSumExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnMonthSumExportExcel.Name = "btnMonthSumExportExcel";
-            this.btnMonthSumExportExcel.Size = new System.Drawing.Size(174, 45);
-            this.btnMonthSumExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnMonthSumExportExcel.Symbol = "";
-            this.btnMonthSumExportExcel.TabIndex = 11;
-            this.btnMonthSumExportExcel.Text = "月导出（汇总）";
-            this.btnMonthSumExportExcel.Click += new System.EventHandler(this.btnMonthSumExportExcel_Click);
-            // 
-            // btnMonthExportExcel
-            // 
-            this.btnMonthExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnMonthExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
-            this.btnMonthExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnMonthExportExcel.Location = new System.Drawing.Point(1002, 4);
-            this.btnMonthExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnMonthExportExcel.Name = "btnMonthExportExcel";
-            this.btnMonthExportExcel.Size = new System.Drawing.Size(168, 45);
-            this.btnMonthExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.btnMonthExportExcel.Symbol = "";
-            this.btnMonthExportExcel.TabIndex = 10;
-            this.btnMonthExportExcel.Text = "月导出（明细）";
-            this.btnMonthExportExcel.Click += new System.EventHandler(this.btnMonthExportExcel_Click);
             // 
             // btnRecount
             // 
             this.btnRecount.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnRecount.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnRecount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecount.Location = new System.Drawing.Point(826, 4);
-            this.btnRecount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnRecount.Location = new System.Drawing.Point(1119, 4);
+            this.btnRecount.Margin = new System.Windows.Forms.Padding(4);
             this.btnRecount.Name = "btnRecount";
-            this.btnRecount.Size = new System.Drawing.Size(168, 45);
+            this.btnRecount.Size = new System.Drawing.Size(233, 48);
             this.btnRecount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRecount.Symbol = "";
             this.btnRecount.TabIndex = 7;
@@ -449,9 +413,9 @@
             this.btnViewExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnViewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
             this.btnViewExcel.Location = new System.Drawing.Point(4, 4);
-            this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnViewExcel.Name = "btnViewExcel";
-            this.btnViewExcel.Size = new System.Drawing.Size(168, 45);
+            this.btnViewExcel.Size = new System.Drawing.Size(231, 48);
             this.btnViewExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnViewExcel.Symbol = "";
             this.btnViewExcel.TabIndex = 1;
@@ -463,10 +427,10 @@
             this.btnImportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnImportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImportExcel.Location = new System.Drawing.Point(474, 4);
-            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnImportExcel.Location = new System.Drawing.Point(641, 4);
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(168, 45);
+            this.btnImportExcel.Size = new System.Drawing.Size(231, 48);
             this.btnImportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnImportExcel.Symbol = "";
             this.btnImportExcel.TabIndex = 0;
@@ -478,14 +442,14 @@
             this.btnExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.Location = new System.Drawing.Point(650, 4);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnExportExcel.Location = new System.Drawing.Point(880, 4);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(168, 45);
+            this.btnExportExcel.Size = new System.Drawing.Size(231, 48);
             this.btnExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel.Symbol = "";
             this.btnExportExcel.TabIndex = 2;
-            this.btnExportExcel.Text = "日导出";
+            this.btnExportExcel.Text = "导出";
             this.btnExportExcel.Click += new System.EventHandler(this.btnExportExcel_Click);
             // 
             // label1
@@ -493,10 +457,10 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(180, 0);
+            this.label1.Location = new System.Drawing.Point(243, 0);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(286, 53);
+            this.label1.Size = new System.Drawing.Size(390, 56);
             this.label1.TabIndex = 8;
             this.label1.Text = "导入时，将使用Excel中的日期！";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -505,56 +469,56 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle6;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv.ColumnFont = null;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle7.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle7.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle8.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle8.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgv.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgv.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
             this.dgv.Location = new System.Drawing.Point(0, 74);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle10;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgv.Size = new System.Drawing.Size(1400, 242);
@@ -571,25 +535,26 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(115, 32);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 28);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(114, 28);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // Frm1MJ_YMJJ
             // 
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1400, 396);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm1MJ_YMJJ";
             this.Text = "运模计件";
             this.Load += new System.EventHandler(this.Frm1MJ_YMJJ_Load);
@@ -624,9 +589,7 @@
         private DevComponents.DotNetBar.ButtonX buttonX2;
         private DevComponents.DotNetBar.ButtonX buttonX1;
         private DevComponents.DotNetBar.ButtonX btnMonthSearch;
-        private DevComponents.DotNetBar.ButtonX btnMonthExportExcel;
         private DevComponents.DotNetBar.ButtonX btnMonthSumSearch;
-        private DevComponents.DotNetBar.ButtonX btnMonthSumExportExcel;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
     }

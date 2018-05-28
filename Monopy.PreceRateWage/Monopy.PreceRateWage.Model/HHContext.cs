@@ -54,7 +54,9 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBaseGeneral_HZJJ_High> TDataBaseGeneral_HZJJ_High { get; set; }
         public virtual DbSet<DataBase3JB_PGYHZTS> TDataBase3JB_PGYHZTS { get; set; }
         public virtual DbSet<LogTable> TLogTable { get; set; }
-
+        public virtual DbSet<DataBaseGeneral_XTDay> TDataBaseGeneral_XTDay { get; set; }
+        public virtual DbSet<DataBaseGeneral_XT> TDataBaseGeneral_XT { get; set; }
+        public virtual DbSet<DataBase1CC_XTTZ> TDataBase1CC_XTTZ { get; set; }
         /*=========================================磨具开始=========================================*/
 
         public virtual DbSet<DataBase3MJ_CJKH> TDataBase3MJ_CJKH { get; set; }
@@ -155,10 +157,9 @@ namespace Monopy.PreceRateWage.Model
 
         /*=========================================一厂仓储开始=========================================*/
         public virtual DbSet<DataBase1CC_CJB> TDataBase1CC_CJB { get; set; }
-        public virtual DbSet<DataBase1CC_XTTZ> TDataBase1CC_XTTZ { get; set; }
+        
         public virtual DbSet<DAtaBaseGeneral1_HZ> TDAtaBaseGeneral1_HZ { get; set; }
         public virtual DbSet<DataBase1CC_PGYH> TDataBase1CC_PGYH { get; set; }
-        public virtual DbSet<DataBaseGeneral_XT> TDataBaseGeneral_XT { get; set; }
         /*=========================================一厂仓储结束=========================================*/
 
 
@@ -175,6 +176,7 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase1MJ_PMCDJ> TDataBase1MJ_PMCDJ { get; set; }
         public virtual DbSet<DataBase1MJ_PMCXJ> TDataBase1MJ_PMCXJ { get; set; }
         public virtual DbSet<DataBase1MJ_XJCJYB> TDataBase1MJ_XJCJYB { get; set; }
+        public virtual DbSet<DataBase1MJ_YMJJ> TDataBase1MJ_YMJJ { get; set; }
         
     }
 }

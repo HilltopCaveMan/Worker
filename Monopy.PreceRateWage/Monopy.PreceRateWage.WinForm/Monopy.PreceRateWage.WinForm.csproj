@@ -224,6 +224,12 @@
     <Compile Include="FrmGeneral_XT.Designer.cs">
       <DependentUpon>FrmGeneral_XT.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGeneral_XTDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGeneral_XTDay.Designer.cs">
+      <DependentUpon>FrmGeneral_XTDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGeneral_XTTZ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -898,6 +904,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_XT.resx">
       <DependentUpon>FrmGeneral_XT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGeneral_XTDay.resx">
+      <DependentUpon>FrmGeneral_XTDay.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_XTTZ.resx">
       <DependentUpon>FrmGeneral_XTTZ.cs</DependentUpon>
@@ -1724,6 +1733,9 @@
     <None Include="Excel\模板一厂——原料——计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——学徒——入职表（日）.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——模具——卸石膏计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1742,6 +1754,9 @@
     <None Include="Excel\模板一厂——模具——注模小件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——模具——运模计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出一厂——仓储——入职表 .xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1754,10 +1769,16 @@
     <None Include="Excel\模板导出一厂——原料——计件明细表.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出一厂——学徒——入职表（日）.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出一厂——模具——卸石膏计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——模具——日工提报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——模具——运模计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Monopy.PreceRateWage.WinForm_TemporaryKey.pfx" />
