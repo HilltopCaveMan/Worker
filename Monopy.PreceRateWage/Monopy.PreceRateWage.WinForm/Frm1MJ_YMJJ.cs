@@ -379,10 +379,10 @@ namespace Monopy.PreceRateWage.WinForm
             List<DataBase1MJ_YMJJ> datas = new List<DataBase1MJ_YMJJ>();
             var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
 
-            var baseQX = listMonth.Where(h => h.TypesName == "撤换全线").FirstOrDefault().UnitPrice;
-            var baseDX = listMonth.Where(h => h.TypesName == "撤/换单线").FirstOrDefault().UnitPrice;
-            var baseKMQX = listMonth.Where(h => h.TypesName == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
-            var baseKMDX = listMonth.Where(h => h.TypesName == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
+            var baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
+            var baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
+            var baseKMQX = listMonth.Where(h => h.TypesType == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
+            var baseKMDX = listMonth.Where(h => h.TypesType == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
 
             var listSum = new BaseDal<DataBase1MJ_YMJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode.Contains(txtUserCode.Text) && t.UserName.Contains(txtUserName.Text)).ToList().GroupBy(t => new { t.UserCode, t.GW }).Select(t => new { UserCode = t.Key.UserCode, GW = t.Key.GW }).OrderBy(t => t.GW).ThenBy(t => t.UserCode);
             foreach (DataGridViewColumn item in dgv.Columns)
@@ -450,10 +450,10 @@ namespace Monopy.PreceRateWage.WinForm
         {
             var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
 
-            var baseQX = listMonth.Where(h => h.TypesName == "撤换全线").FirstOrDefault().UnitPrice;
-            var baseDX = listMonth.Where(h => h.TypesName == "撤/换单线").FirstOrDefault().UnitPrice;
-            var baseKMQX = listMonth.Where(h => h.TypesName == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
-            var baseKMDX = listMonth.Where(h => h.TypesName == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
+            var baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
+            var baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
+            var baseKMQX = listMonth.Where(h => h.TypesType == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
+            var baseKMDX = listMonth.Where(h => h.TypesType == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
 
             foreach (DataGridViewColumn item in dgv.Columns)
             {
@@ -467,12 +467,12 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i].Visible = false;
             }
-            dgv.Rows[0].Frozen = true;
-            dgv.Rows[0].DefaultCellStyle.BackColor = Color.LimeGreen;
-            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Blue;
             dgv.Rows[1].Frozen = true;
-            dgv.Rows[1].DefaultCellStyle.BackColor = Color.Yellow;
-            dgv.Rows[1].DefaultCellStyle.SelectionBackColor = Color.Red;
+            dgv.Rows[1].DefaultCellStyle.BackColor = Color.LimeGreen;
+            dgv.Rows[1].DefaultCellStyle.SelectionBackColor = Color.Blue;
+            dgv.Rows[0].Frozen = true;
+            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
