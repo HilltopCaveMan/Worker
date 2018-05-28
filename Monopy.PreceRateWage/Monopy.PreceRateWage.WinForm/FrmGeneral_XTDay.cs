@@ -445,7 +445,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                     item.YCQ = ycq.ToString();
 
-                    var itemMonth = listMonth.Where(t => t.PostName == item.GZ && string.IsNullOrEmpty(t.ProductType)).FirstOrDefault();
+                    var itemMonth = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "入职补助").FirstOrDefault();
 
                     var itemMonthUp = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "学徒上限").FirstOrDefault();
                    
