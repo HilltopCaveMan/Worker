@@ -170,6 +170,24 @@
     <Compile Include="Frm1CX_BJLP_01_LPYB.Designer.cs">
       <DependentUpon>Frm1CX_BJLP_01_LPYB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1JB_XNDY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_XNDY.Designer.cs">
+      <DependentUpon>Frm1JB_XNDY.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1JB_XWRKHGP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_XWRKHGP.Designer.cs">
+      <DependentUpon>Frm1JB_XWRKHGP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1JB_XWRYCQ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_XWRYCQ.Designer.cs">
+      <DependentUpon>Frm1JB_XWRYCQ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1MJ_DJCJYB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -883,6 +901,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1CX_BJLP_01_LPYB.resx">
       <DependentUpon>Frm1CX_BJLP_01_LPYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_XNDY.resx">
+      <DependentUpon>Frm1JB_XNDY.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_XWRKHGP.resx">
+      <DependentUpon>Frm1JB_XWRKHGP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_XWRYCQ.resx">
+      <DependentUpon>Frm1JB_XWRYCQ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_DJCJYB.resx">
       <DependentUpon>Frm1MJ_DJCJYB.cs</DependentUpon>
@@ -1748,6 +1775,15 @@
     <None Include="Excel\模板一厂——成型半检拉坯——拉坯月报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——检包——线位人员出勤日录入日计算.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——检包——线位入库合格品日录入.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——检包——线内定员.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——模具——卸石膏计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1782,6 +1818,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——学徒——入职表（日）.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——检包——线位人员出勤日录入日计算导出.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——检包——线位入库合格品日录入和计算.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——模具——卸石膏计件.xlsx">
