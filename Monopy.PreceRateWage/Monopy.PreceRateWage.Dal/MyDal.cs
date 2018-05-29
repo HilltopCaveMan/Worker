@@ -603,6 +603,46 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂PMC日合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DataBase1JB_XWRKHGP GetTotalDataBase1JB_XWRKHGP(List<DataBase1JB_XWRKHGP> list, DateTime dateTime)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return new DataBase1JB_XWRKHGP() { TypesName = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, TheDay = dateTime.Day };
+            }
+            return new DataBase1JB_XWRKHGP() { TypesName = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, TheDay = dateTime.Day, Unit = string.Empty, X1 = list.Sum(t => string.IsNullOrEmpty(t.X1) ? 0 : Convert.ToDecimal(t.X1)).ToString(), X2 = list.Sum(t => string.IsNullOrEmpty(t.X2) ? 0 : Convert.ToDecimal(t.X2)).ToString(), X3 = list.Sum(t => string.IsNullOrEmpty(t.X3) ? 0 : Convert.ToDecimal(t.X3)).ToString(), X4 = list.Sum(t => string.IsNullOrEmpty(t.X4) ? 0 : Convert.ToDecimal(t.X4)).ToString(), X5 = list.Sum(t => string.IsNullOrEmpty(t.X5) ? 0 : Convert.ToDecimal(t.X5)).ToString(), X6 = list.Sum(t => string.IsNullOrEmpty(t.X6) ? 0 : Convert.ToDecimal(t.X6)).ToString(), X7 = list.Sum(t => string.IsNullOrEmpty(t.X7) ? 0 : Convert.ToDecimal(t.X7)).ToString(), X8 = list.Sum(t => string.IsNullOrEmpty(t.X8) ? 0 : Convert.ToDecimal(t.X8)).ToString(), X9 = list.Sum(t => string.IsNullOrEmpty(t.X9) ? 0 : Convert.ToDecimal(t.X9)).ToString(), X10 = list.Sum(t => string.IsNullOrEmpty(t.X10) ? 0 : Convert.ToDecimal(t.X10)).ToString(), X11 = list.Sum(t => string.IsNullOrEmpty(t.X11) ? 0 : Convert.ToDecimal(t.X11)).ToString(), UnitPrice = "实际", L1 = list.Sum(t => string.IsNullOrEmpty(t.L1) ? 0 : Convert.ToDecimal(t.L1)).ToString(), L2 = list.Sum(t => string.IsNullOrEmpty(t.L2) ? 0 : Convert.ToDecimal(t.L2)).ToString(), L3 = list.Sum(t => string.IsNullOrEmpty(t.L3) ? 0 : Convert.ToDecimal(t.L3)).ToString(), L4 = list.Sum(t => string.IsNullOrEmpty(t.L4) ? 0 : Convert.ToDecimal(t.L4)).ToString(), L5 = list.Sum(t => string.IsNullOrEmpty(t.L5) ? 0 : Convert.ToDecimal(t.L5)).ToString(), L6 = list.Sum(t => string.IsNullOrEmpty(t.L6) ? 0 : Convert.ToDecimal(t.L6)).ToString(), L7 = list.Sum(t => string.IsNullOrEmpty(t.L7) ? 0 : Convert.ToDecimal(t.L7)).ToString(), L8 = list.Sum(t => string.IsNullOrEmpty(t.L8) ? 0 : Convert.ToDecimal(t.L8)).ToString(), L9 = list.Sum(t => string.IsNullOrEmpty(t.L9) ? 0 : Convert.ToDecimal(t.L9)).ToString(), L10 = list.Sum(t => string.IsNullOrEmpty(t.L10) ? 0 : Convert.ToDecimal(t.L10)).ToString(), L11 = list.Sum(t => string.IsNullOrEmpty(t.L11) ? 0 : Convert.ToDecimal(t.L11)).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂检包线内出勤日合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DataBase1JB_XWRYCQ GetTotalDataBase1JB_XWRYCQ(List<DataBase1JB_XWRYCQ> list, DateTime dateTime)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return new DataBase1JB_XWRYCQ() { XW = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, TheDay = dateTime.Day };
+            }
+            return new DataBase1JB_XWRYCQ() { XW = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, TheDay = dateTime.Day, DGWGZ = list.Sum(t => string.IsNullOrEmpty(t.DGWGZ) ? 0 : Convert.ToDecimal(t.DGWGZ)).ToString(), DYSCQ = list.Sum(t => string.IsNullOrEmpty(t.DYSCQ) ? 0 : Convert.ToDecimal(t.DYSCQ)).ToString(), TBGZE = list.Sum(t => string.IsNullOrEmpty(t.TBGZE) ? 0 : Convert.ToDecimal(t.TBGZE)).ToString(), StudyDay = list.Sum(t => string.IsNullOrEmpty(t.StudyDay) ? 0M : Convert.ToDecimal(t.StudyDay)).ToString(), WorkDay = list.Sum(t => string.IsNullOrEmpty(t.WorkDay) ? 0M : Convert.ToDecimal(t.WorkDay)).ToString(), TotalGZ = list.Sum(t => string.IsNullOrEmpty(t.TotalGZ) ? 0M : Convert.ToDecimal(t.TotalGZ)).ToString(), TotalTBGZE = list.Sum(t => string.IsNullOrEmpty(t.TotalTBGZE) ? 0M : Convert.ToDecimal(t.TotalTBGZE)).ToString(), HJ = list.Sum(t => string.IsNullOrEmpty(t.HJ) ? 0M : Convert.ToDecimal(t.HJ)).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂检包线内定员合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1JB_XNDY GetTotalDataBase1JB_XNDY(List<DataBase1JB_XNDY> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1JB_XNDY { GW = "合计", SJBZ = 0.ToString() } : new DataBase1JB_XNDY { GW = "合计", SJBZ = list.Sum(t => decimal.TryParse(t.SJBZ, out decimal d) ? d : 0M).ToString()};
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
