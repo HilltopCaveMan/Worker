@@ -643,6 +643,31 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂检包磨瓷冷补合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DataBase1JB_MCLBJJ GetTotalDataBase1JB_MCLBJJ(List<DataBase1JB_MCLBJJ> list, DateTime dateTime)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return new DataBase1JB_MCLBJJ() { PZ = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month };
+            }
+            return new DataBase1JB_MCLBJJ() { PZ = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, McCount = list.Sum(t => string.IsNullOrEmpty(t.McCount) ? 0 : Convert.ToDecimal(t.McCount)).ToString(), YkcpgCount = list.Sum(t => string.IsNullOrEmpty(t.YkcpgCount) ? 0 : Convert.ToDecimal(t.YkcpgCount)).ToString(), LbCount = list.Sum(t => string.IsNullOrEmpty(t.LbCount) ? 0 : Convert.ToDecimal(t.LbCount)).ToString(), McMoney = list.Sum(t => string.IsNullOrEmpty(t.McMoney) ? 0 : Convert.ToDecimal(t.McMoney)).ToString(), YkcpgMoney = list.Sum(t => string.IsNullOrEmpty(t.YkcpgMoney) ? 0 : Convert.ToDecimal(t.YkcpgMoney)).ToString(), LbMoney = list.Sum(t => string.IsNullOrEmpty(t.LbMoney) ? 0 : Convert.ToDecimal(t.LbMoney)).ToString(), Money = list.Sum(t => string.IsNullOrEmpty(t.Money) ? 0m : Convert.ToDecimal(t.Money)).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂检包开发试烧计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1JB_KFSS GetTotalDataBase1JB_KFSS(List<DataBase1JB_KFSS> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1JB_KFSS { No = "合计", LB = "合计", SL = 0.ToString(), JJJE = 0.ToString() } : new DataBase1JB_KFSS { No = "合计", LB = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
