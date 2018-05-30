@@ -216,11 +216,6 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1JB_MCLBJJ = dgv.SelectedRows[0].DataBoundItem as DataBase1JB_MCLBJJ;
-                if (DataBase1JB_MCLBJJ.IsOkMc1 && DataBase1JB_MCLBJJ.IsOkMc2 && DataBase1JB_MCLBJJ.IsOkYkcpg && DataBase1JB_MCLBJJ.IsOkLb1 && DataBase1JB_MCLBJJ.IsOkLb2)
-                {
-                    MessageBox.Show("错误：已经核对正确，不能修改？", "禁止操作", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
                 if (DataBase1JB_MCLBJJ != null)
                 {
                     if (DataBase1JB_MCLBJJ.PZ == "合计")
@@ -248,11 +243,6 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1JB_MCLBJJ = dgv.SelectedRows[0].DataBoundItem as DataBase1JB_MCLBJJ;
-                if (DataBase1JB_MCLBJJ.IsOkMc1 && DataBase1JB_MCLBJJ.IsOkMc2 && DataBase1JB_MCLBJJ.IsOkYkcpg && DataBase1JB_MCLBJJ.IsOkLb1 && DataBase1JB_MCLBJJ.IsOkLb2)
-                {
-                    MessageBox.Show("错误：已经核对正确，不能修改？", "禁止操作", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
                 if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
                     if (DataBase1JB_MCLBJJ != null)
@@ -302,19 +292,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Visible = true;
             }
             var datas = new BaseDal<DataBase1JB_MCLBJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.UserCode.Contains(userCode)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            //if (datas.Count > 0)
-            //{
-            //    lblMc1.Text = datas[0].IsOkMc1 ? "成检记工验证成功" : "成检记工未验证或失败";
-            //    lblMc1.BackColor = datas[0].IsOkMc1 ? Color.Green : Color.Red;
-            //    lblMc2.Text = datas[0].IsOkMc2 ? "磨瓷验证成功" : "磨瓷未验证或失败";
-            //    lblMc2.BackColor = datas[0].IsOkMc2 ? Color.Green : Color.Red;
-            //    lblLb1.Text = datas[0].IsOkLb1 ? "冷补验证成功" : "冷补未验证或失败";
-            //    lblLb1.BackColor = datas[0].IsOkLb1 ? Color.Green : Color.Red;
-            //    lblLb2.Text = datas[0].IsOkLb2 ? "冷补计工验证成功" : "冷补计工未验证或失败";
-            //    lblLb2.BackColor = datas[0].IsOkLb2 ? Color.Green : Color.Red;
-            //    lblPg.Text = datas[0].IsOkYkcpg ? "配盖验证成功" : "配盖未验证或失败";
-            //    lblPg.BackColor = datas[0].IsOkYkcpg ? Color.Green : Color.Red;
-            //}
+            
             datas.Insert(0, MyDal.GetTotalDataBase1JB_MCLBJJ(datas, selectTime));
             dgv.DataSource = datas;
             for (int i = 0; i < 10; i++)
@@ -337,8 +315,33 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
+
                 foreach (var item in list)
                 {
+                    var mCount = new BaseDal<DataBase1JB_PMCMC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
+                    var yCount = new BaseDal<DataBase1JB_PMCMCYKC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
+                    var lCount = new BaseDal<DataBase1JB_PMCSY>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
+                    decimal.TryParse(mCount, out decimal m);
+                    decimal.TryParse(yCount, out decimal y);
+                    decimal.TryParse(lCount, out decimal l);
+                    decimal.TryParse(item.McCount, out decimal mc);
+                    decimal.TryParse(item.YkcpgCount, out decimal yc);
+                    decimal.TryParse(item.LbCount, out decimal lc);
+                    if (mc > m)
+                    {
+                        MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的磨瓷数量大于PMC磨瓷月报中对应的合格数" + Environment.NewLine + "PMC磨瓷月报中合格数为：【" + m.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if (yc > y)
+                    {
+                        MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的原库存磨瓷数量大于PMC磨瓷原库存月报中对应的合格数" + Environment.NewLine + "PMC磨瓷原库存月报中合格数为：【" + y.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+                    if (lc > l)
+                    {
+                        MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的冷补扫釉数量大于PMC扫釉月报中对应的合格数" + Environment.NewLine + "PMC扫釉月报中合格数为：【" + l.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                     var bDayMc = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "磨瓷" && t.TypesName == item.PZ);
                     var bDayLb = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "冷补扫釉" && t.TypesName == item.PZ);
                     item.McUnitPrice = bDayMc == null ? "0" : bDayMc.UnitPrice;

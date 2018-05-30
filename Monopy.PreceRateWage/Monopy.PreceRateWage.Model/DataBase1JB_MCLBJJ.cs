@@ -10,11 +10,6 @@ namespace Monopy.PreceRateWage.Model
 
         public DateTime? CreateTime { get; set; }
         public string CreateUser { get; set; }
-        public bool IsOkMc1 { get; set; }
-        public bool IsOkMc2 { get; set; }
-        public bool IsOkYkcpg { get; set; }
-        public bool IsOkLb1 { get; set; }
-        public bool IsOkLb2 { get; set; }
         public int TheYear { get; set; }
         public int TheMonth { get; set; }
 
