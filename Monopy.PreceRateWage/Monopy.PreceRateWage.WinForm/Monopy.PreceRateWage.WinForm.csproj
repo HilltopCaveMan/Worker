@@ -188,6 +188,18 @@
     <Compile Include="Frm1JB_PMCMC.Designer.cs">
       <DependentUpon>Frm1JB_PMCMC.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1JB_PMCMCYKC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_PMCMCYKC.Designer.cs">
+      <DependentUpon>Frm1JB_PMCMCYKC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1JB_PMCSY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_PMCSY.Designer.cs">
+      <DependentUpon>Frm1JB_PMCSY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1JB_XNDY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -928,6 +940,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1JB_PMCMC.resx">
       <DependentUpon>Frm1JB_PMCMC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_PMCMCYKC.resx">
+      <DependentUpon>Frm1JB_PMCMCYKC.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_PMCSY.resx">
+      <DependentUpon>Frm1JB_PMCSY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1JB_XNDY.resx">
       <DependentUpon>Frm1JB_XNDY.cs</DependentUpon>
@@ -1805,7 +1823,13 @@
     <None Include="Excel\模板一厂——检包——开发试烧.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——检包——扫釉月报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——检包——磨瓷冷补.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——检包——磨瓷原库存月报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——检包——磨瓷月报.xlsx">
@@ -1859,7 +1883,13 @@
     <None Include="Excel\模板导出一厂——检包——开发试烧.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出一厂——检包——扫釉月报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出一厂——检包——磨瓷冷补.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——检包——磨瓷原库存月报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——检包——磨瓷月报.xlsx">
