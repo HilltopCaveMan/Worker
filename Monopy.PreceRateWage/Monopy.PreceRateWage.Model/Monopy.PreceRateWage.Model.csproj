@@ -81,6 +81,11 @@
     <Compile Include="DataBase1CC_XTTZ.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB_Child.cs" />
+    <Compile Include="DataBase1JB_CJJJ.cs" />
+    <Compile Include="DataBase1JB_CJJJ_Child.cs" />
+    <Compile Include="DataBase1JB_CJJJ_Result.cs" />
+    <Compile Include="DataBase1JB_JJRLR.cs" />
+    <Compile Include="DataBase1JB_JJRLR_Child.cs" />
     <Compile Include="DataBase1JB_KFSS.cs" />
     <Compile Include="DataBase1JB_MCLBJJ.cs" />
     <Compile Include="DataBase1JB_PMCMC.cs" />
