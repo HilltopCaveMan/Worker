@@ -343,7 +343,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.DataSource = dt;
             for (int i = 0; i < header.Length; i++)
             {
-                if (i >= 5 && i <= 10)
+                if (i >= 5 && i <= 9)
                 {
                     dgv.Columns[i].Visible = false;
                 }
@@ -356,7 +356,7 @@ namespace Monopy.PreceRateWage.WinForm
                     dgv.Columns[i].HeaderText = header[i];
                 }
             }
-            dgv.Columns[7].Frozen = true;
+            dgv.Columns[8].Frozen = true;
             for (int i = 0; i < 2; i++)
             {
                 dgv.Rows[i].Frozen = true;
@@ -502,18 +502,18 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            var list = conn.Query<DataBase1CC_CJB>("select * from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
+                            //var list = conn.Query<DataBase1CC_CJB>("select * from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
                             conn.Open();
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_CJB where id=@id";
-                                string sqlChild = "delete from DataBase1CC_CJB_Child where DataBase1CC_CJB_Id=@id";
-                                foreach (var item in list)
-                                {
-                                    conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
-                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
-                                }
+                                string sqlMain = "delete from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + "";
+                                string sqlChild = "delete from DataBase1CC_CJB_Child theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + "";
+                                //foreach (var item in list)
+                                //{
+                                    conn.Execute(sqlChild, dbTransaction, null, null);
+                                    conn.Execute(sqlMain, dbTransaction, null, null);
+                                //}
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)

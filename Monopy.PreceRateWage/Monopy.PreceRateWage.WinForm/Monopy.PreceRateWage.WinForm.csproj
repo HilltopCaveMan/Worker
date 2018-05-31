@@ -170,6 +170,18 @@
     <Compile Include="Frm1CX_BJLP_01_LPYB.Designer.cs">
       <DependentUpon>Frm1CX_BJLP_01_LPYB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1JB_CJJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_CJJJ.Designer.cs">
+      <DependentUpon>Frm1JB_CJJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1JB_JJRLR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_JJRLR.Designer.cs">
+      <DependentUpon>Frm1JB_JJRLR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1JB_KFSS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -931,6 +943,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1CX_BJLP_01_LPYB.resx">
       <DependentUpon>Frm1CX_BJLP_01_LPYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_CJJJ.resx">
+      <DependentUpon>Frm1JB_CJJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_JJRLR.resx">
+      <DependentUpon>Frm1JB_JJRLR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1JB_KFSS.resx">
       <DependentUpon>Frm1JB_KFSS.cs</DependentUpon>
@@ -1842,6 +1860,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——检包——线内定员.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——检包——计件日录入.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——模具——卸石膏计件.xlsx">
