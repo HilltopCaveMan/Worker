@@ -668,6 +668,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂烧成装窑计件和考核合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1SC_ZYJJHKH GetTotalDataBase1SC_ZYJJHKH(List<DataBase1SC_ZYJJHKH> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1SC_ZYJJHKH { No = "合计", Code = 0.ToString(), KYL = 0.ToString(), YJP = 0.ToString(), KH = 0.ToString(), JJ = 0.ToString(), HJ = 0.ToString() } : new DataBase1SC_ZYJJHKH { No = "合计", Code = list.Count.ToString(), KYL = list.Sum(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).ToString(), YJP = list.Sum(t => decimal.TryParse(t.YJP, out decimal d) ? d : 0M).ToString(), KH = list.Sum(t => decimal.TryParse(t.KH, out decimal d) ? d : 0M).ToString(), JJ = list.Sum(t => decimal.TryParse(t.JJ, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
