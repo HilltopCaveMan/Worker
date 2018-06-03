@@ -183,7 +183,7 @@ namespace Monopy.PreceRateWage.WinForm
             dt.Columns.RemoveAt(16);
             dt.Columns.RemoveAt(15);
             dt.Columns.RemoveAt(14);
-            dt.Columns.RemoveAt(10);
+            //dt.Columns.RemoveAt(10);
             dt.Columns.RemoveAt(9);
             dt.Columns.RemoveAt(8);
             dt.Columns.RemoveAt(7);
@@ -301,11 +301,21 @@ namespace Monopy.PreceRateWage.WinForm
             dt.Columns["Scq"].SetOrdinal(3);
             dt.Columns.Add("Ycq", typeof(decimal));
             dt.Columns["Ycq"].SetOrdinal(4);
-            DataRow dj = dt.NewRow();
-            dj["GWMC"] = "单价";
-            dt.Rows.InsertAt(dj, 0);
+            DataRow zcgdj = dt.NewRow();
+            zcgdj["GWMC"] = "装车工单价";
+            dt.Rows.InsertAt(zcgdj, 0);
+            DataRow ccydj = dt.NewRow();
+            ccydj["GWMC"] = "叉车驾驶员单价";
+            dt.Rows.InsertAt(ccydj, 1);
+            DataRow fhydj = dt.NewRow();
+            fhydj["GWMC"] = "发货员单价";
+            dt.Rows.InsertAt(fhydj, 2);
+            var listZC = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dtp.Value.Year && h.CreateMonth == dtp.Value.Month && h.FactoryNo == "G001" && h.WorkshopName == "仓储" && h.PostName == "装车工").ToList();
+            var listCC = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dtp.Value.Year && h.CreateMonth == dtp.Value.Month && h.FactoryNo == "G001" && h.WorkshopName == "仓储" && h.PostName == "叉车驾驶员").ToList();
+            var listFH = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dtp.Value.Year && h.CreateMonth == dtp.Value.Month && h.FactoryNo == "G001" && h.WorkshopName == "仓储" && h.PostName == "发货员").ToList();
             for (int i = 0; i < list.Count; i++)
             {
+
                 foreach (var item in list[i].Childs.OrderBy(t => t.No))
                 {
                     string cpmc = item.CPMC;
@@ -313,13 +323,21 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         dt.Columns.Add(cpmc, typeof(string));
                     }
-                    dt.Rows[i + 1][cpmc] = item.Count;
-                    dt.Rows[0][cpmc] = item.Price;
-                    dt.Rows[i + 1]["Count"] = list[i].JJ;
-                    dt.Rows[i + 1]["Fhyzb"] = list[i].FHYZB;
-                    dt.Rows[i + 1]["TotalCount"] = list[i].HJ;
-                    dt.Rows[i + 1]["Scq"] = list[i].SCQ;
-                    dt.Rows[i + 1]["Ycq"] = list[i].YCQ;
+
+                    var zc = listZC.Where(t => t.TypesName == item.CPMC).FirstOrDefault();
+                    var cc = listCC.Where(t => t.TypesName == item.CPMC).FirstOrDefault();
+                    var fh = listFH.Where(t => t.TypesName == item.CPMC).FirstOrDefault();
+                    dt.Rows[i + 3][cpmc] = item.Count;
+
+                    dt.Rows[0][cpmc] = zc == null ? "0" : zc.UnitPrice;
+                    dt.Rows[1][cpmc] = cc == null ? "0" : cc.UnitPrice;
+                    dt.Rows[2][cpmc] = fh == null ? "0" : fh.UnitPrice;
+
+                    dt.Rows[i + 3]["Count"] = list[i].JJ;
+                    dt.Rows[i + 3]["Fhyzb"] = list[i].FHYZB;
+                    dt.Rows[i + 3]["TotalCount"] = list[i].HJ;
+                    dt.Rows[i + 3]["Scq"] = list[i].SCQ;
+                    dt.Rows[i + 3]["Ycq"] = list[i].YCQ;
                 }
             }
             DataRow dr_sum = dt.NewRow();
@@ -331,15 +349,20 @@ namespace Monopy.PreceRateWage.WinForm
             decimal[] tp = new decimal[dt.Columns.Count - 8];
             for (int j = 8; j < dt.Columns.Count; j++)
             {
-                for (int i = 1; i < dt.Rows.Count; i++)
+                for (int i = 3; i < dt.Rows.Count; i++)
                 {
                     tp[j - 8] += (decimal.TryParse(dt.Rows[i][j].ToString(), out decimal m) ? m : 0M);
                 }
                 dr_sum[j] = tp[j - 8];
             }
             dr_sum["GWMC"] = "合计";
-            dt.Rows.InsertAt(dr_sum, 1);
+            dr_sum["No"] = string.Empty;
+            dr_sum["UserCode"] = string.Empty;
+            dr_sum["UserName"] = string.Empty;
+            dt.Rows.InsertAt(dr_sum, 3);
             string[] header = "计件$发货员占比计件$合计金额$实出勤$应出勤$Id$Time$User$Year$Month$序号$岗位名称$人员编码$姓名$计件$发货员占比计件$合计金额$实出勤$应出勤".Split('$');
+            dt.DefaultView.Sort = "No";
+            dt = dt.DefaultView.ToTable();
             dgv.DataSource = dt;
             for (int i = 0; i < header.Length; i++)
             {
@@ -357,10 +380,10 @@ namespace Monopy.PreceRateWage.WinForm
                 }
             }
             dgv.Columns[8].Frozen = true;
-            for (int i = 0; i < 2; i++)
+            for (int i = 0; i < 4; i++)
             {
                 dgv.Rows[i].Frozen = true;
-                if (i == 1)
+                if (i == 3)
                 {
                     dgv.Rows[i].DefaultCellStyle.BackColor = Color.Yellow;
                     dgv.Rows[i].DefaultCellStyle.SelectionBackColor = Color.Red;
@@ -502,18 +525,21 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            //var list = conn.Query<DataBase1CC_CJB>("select * from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
+                            var list = conn.Query<DataBase1CC_CJB>("select * from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
                             conn.Open();
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + "";
-                                string sqlChild = "delete from DataBase1CC_CJB_Child theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + "";
-                                //foreach (var item in list)
-                                //{
-                                    conn.Execute(sqlChild, dbTransaction, null, null);
-                                    conn.Execute(sqlMain, dbTransaction, null, null);
-                                //}
+                                string sqlMain = "delete from DataBase1CC_CJB where id=@id";
+                                string sqlChild = "delete from DataBase1CC_CJB_Child where DataBase1CC_CJB_Id=@id";
+                                foreach (var item in list)
+                                {
+                                    conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
+                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
+
+                                }
+
+
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)
@@ -542,7 +568,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 string sqlChild = "delete from DataBase1CC_CJB_Child where DataBase1CC_CJB_Id=@id";
                                 conn.Execute(sqlChild, new { id = id }, dbTransaction, null, null);
                                 conn.Execute(sqlMain, new { id = id }, dbTransaction, null, null);
-                                
+
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)
@@ -560,6 +586,6 @@ namespace Monopy.PreceRateWage.WinForm
                 btnSearch.PerformClick();
             }
         }
-        
+
     }
 }

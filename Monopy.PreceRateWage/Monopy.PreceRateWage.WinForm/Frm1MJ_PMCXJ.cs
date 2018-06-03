@@ -135,26 +135,26 @@ namespace Monopy.PreceRateWage.WinForm
                                 continue;
                             }
                             DataBase1MJ_PMCXJ t = new DataBase1MJ_PMCXJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
-                            t.No = ExcelHelper.GetCellValue(row.GetCell(0));
-                            t.GW = ExcelHelper.GetCellValue(row.GetCell(1));
-                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
-                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(3));
+                            t.No = (i - 1).ToString();
+                            t.GW = ExcelHelper.GetCellValue(row.GetCell(0));
+                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(1));
+                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(2));
                             if (string.IsNullOrEmpty(t.UserCode) || string.IsNullOrEmpty(t.UserName))
                             {
                                 continue;
                             }
-                            if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
-                            {
-                                MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                                return;
-                            }
-                            t.RQ = ExcelHelper.GetCellValue(row.GetCell(4));
+                            //if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
+                            //{
+                            //    MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            //    return;
+                            //}
+                            t.RQ = ExcelHelper.GetCellValue(row.GetCell(3));
                             t.Childs = new List<DataBase1MJ_PMCXJ_Child>();
-                            for (j = 5; j < row.LastCellNum; j++)
+                            for (j = 4; j < row.LastCellNum; j++)
                             {
                                 var x = new DataBase1MJ_PMCXJ_Child { Id = Guid.NewGuid() };
                                 string cpmc = ExcelHelper.GetCellValue(rowFirst.GetCell(j));
-                                x.No = j - 5;
+                                x.No = j - 4;
                                 x.CPMC = cpmc;
                                 x.Count = ExcelHelper.GetCellValue(row.GetCell(j));
                                 if (!string.IsNullOrEmpty(x.Count) && !string.IsNullOrEmpty(cpmc))
@@ -393,13 +393,14 @@ namespace Monopy.PreceRateWage.WinForm
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1MJ_PMCXJ where id=@id";
+                                string sqlMain = "delete from DataBase1MJ_PMCXJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and rq=" + dateTime.Day;
                                 string sqlChild = "delete from DataBase1MJ_PMCXJ_Child where DataBase1MJ_PMCXJ_id=@id";
                                 foreach (var item in list)
                                 {
                                     conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
-                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
+
                                 }
+                                conn.Execute(sqlMain, dbTransaction, null, null);
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)

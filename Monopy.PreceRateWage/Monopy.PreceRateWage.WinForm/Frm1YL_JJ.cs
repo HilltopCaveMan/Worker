@@ -43,6 +43,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbLine.Text, CmbUserCode.Text, CmbUserName.Text, CmbLB.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -122,7 +123,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 new BaseDal<DataBase1YL_JJ>().Edit(item);
             }
-            
+
             Enabled = true;
             btnSearch.PerformClick();
             MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -144,7 +145,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1YL_JJ> frm = new FrmModify<DataBase1YL_JJ>(DataBase1YL_JJ, header, OptionType.Modify, Text, 5,3);
+                    FrmModify<DataBase1YL_JJ> frm = new FrmModify<DataBase1YL_JJ>(DataBase1YL_JJ, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
@@ -272,7 +273,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1YL_JJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gw == "全部" ? true : t.GW.Contains(gw)) && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => t.No).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1YL_JJ(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
@@ -288,7 +289,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBase1YL_JJ> list = new ExcelHelper<DataBase1YL_JJ>().ReadExcel(fileName, 2, 6, 0, 0, 0, true);
+            List<DataBase1YL_JJ> list = new ExcelHelper<DataBase1YL_JJ>().ReadExcel(fileName, 2, 5, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -297,12 +298,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
-                if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
-                {
-                    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Enabled = true;
-                    return;
-                }
+                //if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                //{
+                //    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    Enabled = true;
+                //    return;
+                //}
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
                 list[i].TheYear = dtp.Value.Year;
@@ -359,7 +360,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     var baseDay = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "原料车间" && t.TypesType == item.LB);
                     item.DJ = baseDay.UnitPrice;
-                    decimal.TryParse(item.DJ,out decimal dj);
+                    decimal.TryParse(item.DJ, out decimal dj);
                     decimal.TryParse(item.SL, out decimal sl);
                     item.JJJE = (dj * sl).ToString();
                 }
@@ -372,6 +373,6 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         #endregion
-       
+
     }
 }

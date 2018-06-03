@@ -127,7 +127,7 @@ namespace Monopy.PreceRateWage.WinForm
                         IWorkbook workbook = null;
                         workbook = WorkbookFactory.Create(fs);
                         ISheet sheet = workbook.GetSheetAt(0);
-                        int i, j;
+                        int i;
                         for (i = 2; i <= sheet.LastRowNum; i++)
                         {
                             IRow rowFirst = sheet.GetRow(1);
@@ -194,7 +194,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
-            
+
             DateTime dateTime = Convert.ToDateTime(dtp.text);
             SaveFileDialog saveFileDlg = new SaveFileDialog()
             {
@@ -260,66 +260,44 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var id = dgv.SelectedRows[0].Cells["Id"].Value.ToString();
                 DateTime dateTime = Convert.ToDateTime(dtp.text);
-                if (string.IsNullOrEmpty(id))
+                var DataBase1MJ_YMJJ = dgv.SelectedRows[0].DataBoundItem as DataBase1MJ_YMJJ;
+                if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    if (MessageBox.Show("要删除" + dtp.text + "所有数据吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                    if (DataBase1MJ_YMJJ != null)
                     {
-                        using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+                        if (DataBase1MJ_YMJJ.No == "合计" || DataBase1MJ_YMJJ.No == "运模单价")
                         {
-                            var list = conn.Query<DataBase1MJ_YMJJ>("select * from DataBase1MJ_YMJJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and rq=" + dateTime.Day);
-                            conn.Open();
-                            IDbTransaction dbTransaction = conn.BeginTransaction();
-                            try
+                            if (MessageBox.Show("要删除，日期为：" + dateTime.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
-                                string sqlMain = "delete from DataBase1MJ_YMJJ where id=@id";
-                                
-                                foreach (var item in list)
+                                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                                 {
-                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
+                                    if (conn.Execute("delete from DataBase1MJ_YMJJ where TheYear=" + dateTime.Year.ToString() + " and TheMonth=" + dateTime.Month.ToString()) > 0)
+                                    {
+                                        btnSearch.PerformClick();
+                                        MessageBox.Show("全部删除完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                    }
+                                    else
+                                    {
+                                        MessageBox.Show("删除失败，请检查您的操作和网络！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
                                 }
-                                dbTransaction.Commit();
+                                return;
                             }
-                            catch (Exception ex)
+                            else
                             {
-                                dbTransaction.Rollback();
-                                MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                dbTransaction.Dispose();
+                                return;
                             }
                         }
-                    }
-                }
-                else
-                {
-                    if (MessageBox.Show("要删除选中的记录吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
-                    {
-                        using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+                        FrmModify<DataBase1MJ_YMJJ> frm = new FrmModify<DataBase1MJ_YMJJ>(DataBase1MJ_YMJJ, header, OptionType.Delete, Text, 5, 0);
+                        if (frm.ShowDialog() == DialogResult.Yes)
                         {
-                            conn.Open();
-                            IDbTransaction dbTransaction = conn.BeginTransaction();
-                            try
-                            {
-                                string sqlMain = "delete from DataBase1MJ_YMJJ where id=@id";
-                                conn.Execute(sqlMain, new { id = id }, dbTransaction, null, null);
-                                dbTransaction.Commit();
-                            }
-                            catch (Exception ex)
-                            {
-                                dbTransaction.Rollback();
-                                MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            }
-                            finally
-                            {
-                                dbTransaction.Dispose();
-                            }
+                            btnSearch.PerformClick();
+                            btnRecount.PerformClick();
                         }
                     }
                 }
-                btnSearch.PerformClick();
+
             }
         }
 
@@ -403,7 +381,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 DataBase1MJ_YMJJ data = new DataBase1MJ_YMJJ();
 
-                 var list = new BaseDal<DataBase1MJ_YMJJ>().GetList(t => t.UserCode == itemSum.UserCode && t.GW == itemSum.GW && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+                var list = new BaseDal<DataBase1MJ_YMJJ>().GetList(t => t.UserCode == itemSum.UserCode && t.GW == itemSum.GW && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
                 data.GW = list[0].GW;
                 data.RQ = dateTime.Year.ToString() + "年" + dateTime.Month.ToString() + "月";
                 data.UserCode = list[0].UserCode;
@@ -420,7 +398,7 @@ namespace Monopy.PreceRateWage.WinForm
                 data.SXPZSL = list.Sum(t => decimal.TryParse(t.SXPZSL, out decimal d) ? d : 0M).ToString();
                 data.YXWMXS = list.Sum(t => decimal.TryParse(t.YXWMXS, out decimal d) ? d : 0M).ToString();
                 data.JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString();
-                data.DW= list[0].DW;
+                data.DW = list[0].DW;
                 data.XW = list[0].XW;
                 data.CXPZ = list[0].CXPZ;
                 data.SXPZ = list[0].SXPZ;
@@ -461,9 +439,9 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Visible = true;
             }
             list.Insert(0, MyDal.GetTotalDataBase1MJ_YMJJ(list));
-            list.Insert(1, new DataBase1MJ_YMJJ { GW = "运模单价", CHQX1 = baseQX, CHDX1 = baseDX, KMCHQX1 = baseKMQX, KMCHDX1 = baseKMDX });
+            list.Insert(1, new DataBase1MJ_YMJJ { No = "运模单价", CHQX1 = baseQX, CHDX1 = baseDX, KMCHQX1 = baseKMQX, KMCHDX1 = baseKMDX });
             dgv.DataSource = list;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

@@ -599,7 +599,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1MJ_YMJJ GetTotalDataBase1MJ_YMJJ(List<DataBase1MJ_YMJJ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1MJ_YMJJ { GW = "合计", JE = 0.ToString() } : new DataBase1MJ_YMJJ { GW = "合计", JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase1MJ_YMJJ { No = "合计", JE = 0.ToString() } : new DataBase1MJ_YMJJ { No = "合计", JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
