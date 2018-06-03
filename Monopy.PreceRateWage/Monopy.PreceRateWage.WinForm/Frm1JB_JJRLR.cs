@@ -575,33 +575,6 @@ namespace Monopy.PreceRateWage.WinForm
             MessageBox.Show("重新计算完成！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            if (dgv.SelectedRows.Count == 1)
-            {
-                var DataBase1JB_JJRLR = dgv.SelectedRows[0].DataBoundItem as DataBase1JB_JJRLR;
-                if (DataBase1JB_JJRLR.IsKF_Manager || DataBase1JB_JJRLR.IsPG_Manager || DataBase1JB_JJRLR.IsPMC_Manager)
-                {
-                    MessageBox.Show("错误：已经送审或有部门审核，不能修改？", "禁止操作", MessageBoxButtons.OK, MessageBoxIcon.Stop);
-                    return;
-                }
-                if (DataBase1JB_JJRLR != null)
-                {
-                    if (DataBase1JB_JJRLR.UserName == "合计")
-                    {
-                        MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
-                    FrmModify<DataBase1JB_JJRLR> frm = new FrmModify<DataBase1JB_JJRLR>(DataBase1JB_JJRLR, header, OptionType.Modify, Text, 4, 33);
-                    if (frm.ShowDialog() == DialogResult.Yes)
-                    {
-                        btnRecount.PerformClick();
-                        btnSearch.PerformClick();
-                    }
-                }
-            }
-        }
-
         private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count == 1)
@@ -639,10 +612,34 @@ namespace Monopy.PreceRateWage.WinForm
                                 return;
                             }
                         }
-                        FrmModify<DataBase1JB_JJRLR> frm = new FrmModify<DataBase1JB_JJRLR>(DataBase1JB_JJRLR, header, OptionType.Delete, Text, 5, 34);
-                        if (frm.ShowDialog() == DialogResult.Yes)
+                        else
                         {
-                            btnSearch.PerformClick();
+                            if (MessageBox.Show("要删除选中的记录吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
+                            {
+                                using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+                                {
+                                    conn.Open();
+                                    IDbTransaction dbTransaction = conn.BeginTransaction();
+                                    try
+                                    {
+                                        string sqlMain = "delete from DataBase1CC_CJB where id=@id";
+                                        string sqlChild = "delete from DataBase1CC_CJB_Child where DataBase1CC_CJB_Id=@id";
+                                        conn.Execute(sqlChild, new { id = DataBase1JB_JJRLR.ID }, dbTransaction, null, null);
+                                        conn.Execute(sqlMain, new { id = DataBase1JB_JJRLR.ID }, dbTransaction, null, null);
+
+                                        dbTransaction.Commit();
+                                    }
+                                    catch (Exception ex)
+                                    {
+                                        dbTransaction.Rollback();
+                                        MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    }
+                                    finally
+                                    {
+                                        dbTransaction.Dispose();
+                                    }
+                                }
+                            }
                         }
                     }
                 }

@@ -22,9 +22,24 @@ namespace Monopy.PreceRateWage.WinForm
     public partial class Frm1CC_PGYH : Office2007Form
     {
         string[] header = "Time$User$Year$Month$序号$车间$人员编码$姓名$验货天数".Split('$');
+        private string _factoryNo;
         public Frm1CC_PGYH()
         {
             InitializeComponent();
+        }
+
+        public Frm1CC_PGYH(string args) : this()
+        {
+            try
+            {
+                _factoryNo = args.Split('-')[0];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+                return;
+            }
         }
         #region 按钮事件
 
@@ -194,16 +209,16 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            var list = conn.Query<DataBase1CC_PGYH>("select * from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
+                            //var list = conn.Query<DataBase1CC_PGYH>("select * from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
                             conn.Open();
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_PGYH where id=@id";
-                                foreach (var item in list)
-                                {
-                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
-                                }
+                                string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month;
+                                //foreach (var item in list)
+                                //{
+                                conn.Execute(sqlMain, dbTransaction, null, null);
+                                //}
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)
@@ -297,7 +312,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (cj == "全部" ? true : t.CJ.Contains(cj)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ThenBy(t => t.UserCode).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1CC_PGYH(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

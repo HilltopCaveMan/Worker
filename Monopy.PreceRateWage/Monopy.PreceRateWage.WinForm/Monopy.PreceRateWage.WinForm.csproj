@@ -182,6 +182,12 @@
     <Compile Include="Frm1JB_JJRLR.Designer.cs">
       <DependentUpon>Frm1JB_JJRLR.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1JB_JJRLR_Month.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1JB_JJRLR_Month.Designer.cs">
+      <DependentUpon>Frm1JB_JJRLR_Month.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1JB_KFSS.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -949,6 +955,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1JB_JJRLR.resx">
       <DependentUpon>Frm1JB_JJRLR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1JB_JJRLR_Month.resx">
+      <DependentUpon>Frm1JB_JJRLR_Month.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1JB_KFSS.resx">
       <DependentUpon>Frm1JB_KFSS.cs</DependentUpon>

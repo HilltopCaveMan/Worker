@@ -104,7 +104,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 7, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -338,7 +338,7 @@ namespace Monopy.PreceRateWage.WinForm
             datas.Insert(0, MyDal.GetTotalDataBaseGeneral_XTDay(datas));
 
             dgv.DataSource = datas;
-            for (int i = 0; i < 7; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
