@@ -278,6 +278,24 @@
     <Compile Include="Frm1MJ_YMJJ.Designer.cs">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1SC_JSBZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1SC_JSBZ.Designer.cs">
+      <DependentUpon>Frm1SC_JSBZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1SC_QTJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1SC_QTJJ.Designer.cs">
+      <DependentUpon>Frm1SC_QTJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1SC_SY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1SC_SY.Designer.cs">
+      <DependentUpon>Frm1SC_SY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1SC_ZY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1015,6 +1033,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_YMJJ.resx">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1SC_JSBZ.resx">
+      <DependentUpon>Frm1SC_JSBZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1SC_QTJJ.resx">
+      <DependentUpon>Frm1SC_QTJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1SC_SY.resx">
+      <DependentUpon>Frm1SC_SY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1SC_ZY.resx">
       <DependentUpon>Frm1SC_ZY.cs</DependentUpon>
@@ -1913,7 +1940,13 @@
     <None Include="Excel\模板一厂——模具——运模计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——烧成——其他计件明细.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——烧成——总窑.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——烧成——技术部实验补助.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——烧成——装窑计件和考核.xlsx">
@@ -1962,6 +1995,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——模具——运模计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——烧成——其他计件明细.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——烧成——技术部实验补助.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Monopy.PreceRateWage.WinForm_TemporaryKey.pfx" />
