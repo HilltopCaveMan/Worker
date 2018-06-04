@@ -17,10 +17,25 @@ namespace Monopy.PreceRateWage.WinForm
     public partial class Frm1JB_KFSS : Office2007Form
     {
         string[] header = "Time$User$Year$Month$序号$车间$人员编号$姓名$类别$数量（件）$单价$金额".Split('$');
+        private string _dept;
         public Frm1JB_KFSS()
         {
             InitializeComponent();
         }
+        //public Frm1JB_KFSS(string args) : this()
+        //{
+        //    try
+        //    {
+
+        //        _dept = args.Split('-')[0];
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+        //        return;
+        //    }
+        //}
+
         #region 按钮事件
 
         /// <summary>
@@ -332,7 +347,7 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "磨瓷");
-               
+
                 foreach (var item in list)
                 {
                     var type = listTJ.Where(t => t.TypesType == item.LB).FirstOrDefault();

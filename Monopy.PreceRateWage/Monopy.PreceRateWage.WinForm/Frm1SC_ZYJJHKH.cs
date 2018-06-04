@@ -45,6 +45,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, txtUserCode.Text, txtUserName.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>

@@ -43,6 +43,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbUserCode.Text, CmbUserName.Text, CmbLB.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -144,7 +145,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1SC_QTJJ> frm = new FrmModify<DataBase1SC_QTJJ>(DataBase1SC_QTJJ, header, OptionType.Modify, Text, 5, 3);
+                    FrmModify<DataBase1SC_QTJJ> frm = new FrmModify<DataBase1SC_QTJJ>(DataBase1SC_QTJJ, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
@@ -286,12 +287,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
-                if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
-                {
-                    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Enabled = true;
-                    return;
-                }
+                //if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                //{
+                //    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    Enabled = true;
+                //    return;
+                //}
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
                 list[i].TheYear = dtp.Value.Year;
@@ -316,6 +317,8 @@ namespace Monopy.PreceRateWage.WinForm
         private bool Check(List<DataBase1SC_QTJJ> list)
         {
             decimal totalCount = 0M;
+            int year = list[0].TheYear;
+            int month = list[0].TheMonth;
             foreach (var item in list)
             {
                 if (item.LB == "装水堵")
@@ -324,7 +327,7 @@ namespace Monopy.PreceRateWage.WinForm
                     totalCount += js;
                 }
             }
-            var datas = new BaseDal<DataBase1SC_ZY>().GetList(t => t.TheYear == list[0].TheYear && t.TheMonth == list[0].TheMonth && t.CPMC == "35-高压盖").FirstOrDefault();
+            var datas = new BaseDal<DataBase1SC_ZY>().GetList(t => t.TheYear == year && t.TheMonth == month && t.CPMC == "35-高压盖").FirstOrDefault();
             if (datas == null)
             {
                 MessageBox.Show("总窑产品质量分析汇总表(总窑月报)数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

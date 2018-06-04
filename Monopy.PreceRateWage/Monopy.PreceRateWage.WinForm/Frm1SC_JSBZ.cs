@@ -43,6 +43,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbGW.Text, CmbGH.Text, CmbUserCode.Text, CmbUserName.Text, CmbPZ.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase1SC_JSBZ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——烧成——技术部实验补助.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1SC_JSBZ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——烧成——技术部实验补助.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -337,7 +338,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             foreach (var item in list)
             {
-                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == list[0].TheYear && t.TheMonth == list[0].TheMonth && t.CPMC == item.PZ).FirstOrDefault();
+                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == item.TheYear && t.TheMonth == item.TheMonth && t.CPMC == item.PZ).FirstOrDefault();
                 if (datas == null)
                 {
                     MessageBox.Show("总窑产品质量分析汇总表(实验)数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
