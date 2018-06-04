@@ -278,6 +278,12 @@
     <Compile Include="Frm1MJ_YMJJ.Designer.cs">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1SC_HSY.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1SC_HSY.Designer.cs">
+      <DependentUpon>Frm1SC_HSY.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1SC_JSBZ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1033,6 +1039,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_YMJJ.resx">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1SC_HSY.resx">
+      <DependentUpon>Frm1SC_HSY.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1SC_JSBZ.resx">
       <DependentUpon>Frm1SC_JSBZ.cs</DependentUpon>
@@ -1947,6 +1956,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——烧成——技术部实验补助.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——烧成——补瓷考核.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——烧成——装窑计件和考核.xlsx">
