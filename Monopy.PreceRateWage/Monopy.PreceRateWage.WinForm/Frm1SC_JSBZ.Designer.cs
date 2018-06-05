@@ -102,7 +102,8 @@
             this.dgv.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgv.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgv.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.Location = new System.Drawing.Point(0, 59);
+            this.dgv.Location = new System.Drawing.Point(0, 74);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -123,7 +124,7 @@
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1136, 237);
+            this.dgv.Size = new System.Drawing.Size(1515, 296);
             this.dgv.TabIndex = 19;
             this.dgv.TitleBack = null;
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
@@ -133,18 +134,20 @@
             // 
             this.CmbUserName.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbUserName.FormattingEnabled = true;
-            this.CmbUserName.Location = new System.Drawing.Point(672, 8);
+            this.CmbUserName.Location = new System.Drawing.Point(896, 10);
+            this.CmbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbUserName.Name = "CmbUserName";
-            this.CmbUserName.Size = new System.Drawing.Size(80, 24);
+            this.CmbUserName.Size = new System.Drawing.Size(105, 28);
             this.CmbUserName.TabIndex = 36;
             // 
             // CmbUserCode
             // 
             this.CmbUserCode.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbUserCode.FormattingEnabled = true;
-            this.CmbUserCode.Location = new System.Drawing.Point(528, 8);
+            this.CmbUserCode.Location = new System.Drawing.Point(704, 10);
+            this.CmbUserCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbUserCode.Name = "CmbUserCode";
-            this.CmbUserCode.Size = new System.Drawing.Size(80, 24);
+            this.CmbUserCode.Size = new System.Drawing.Size(105, 28);
             this.CmbUserCode.TabIndex = 37;
             // 
             // labelX7
@@ -155,9 +158,10 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(628, 11);
+            this.labelX7.Location = new System.Drawing.Point(837, 14);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(44, 18);
+            this.labelX7.Size = new System.Drawing.Size(54, 21);
             this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX7.TabIndex = 34;
             this.labelX7.Text = "姓名：";
@@ -169,9 +173,10 @@
             this.groupPanel2.Controls.Add(this.tableLayoutPanel1);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel2.DrawTitleBox = false;
-            this.groupPanel2.Location = new System.Drawing.Point(0, 296);
+            this.groupPanel2.Location = new System.Drawing.Point(0, 370);
+            this.groupPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(1136, 64);
+            this.groupPanel2.Size = new System.Drawing.Size(1515, 80);
             // 
             // 
             // 
@@ -210,17 +215,18 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 20F));
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 27F));
             this.tableLayoutPanel1.Controls.Add(this.btnRecount, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnViewExcel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnImportExcel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(533, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(711, 53);
             this.tableLayoutPanel1.TabIndex = 6;
             // 
             // btnRecount
@@ -228,9 +234,10 @@
             this.btnRecount.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnRecount.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnRecount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecount.Location = new System.Drawing.Point(402, 3);
+            this.btnRecount.Location = new System.Drawing.Point(535, 4);
+            this.btnRecount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRecount.Name = "btnRecount";
-            this.btnRecount.Size = new System.Drawing.Size(128, 34);
+            this.btnRecount.Size = new System.Drawing.Size(172, 45);
             this.btnRecount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRecount.Symbol = "";
             this.btnRecount.TabIndex = 7;
@@ -241,9 +248,10 @@
             // 
             this.btnViewExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnViewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewExcel.Location = new System.Drawing.Point(3, 3);
+            this.btnViewExcel.Location = new System.Drawing.Point(4, 4);
+            this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewExcel.Name = "btnViewExcel";
-            this.btnViewExcel.Size = new System.Drawing.Size(127, 34);
+            this.btnViewExcel.Size = new System.Drawing.Size(169, 45);
             this.btnViewExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnViewExcel.Symbol = "";
             this.btnViewExcel.TabIndex = 1;
@@ -255,9 +263,10 @@
             this.btnImportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnImportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImportExcel.Location = new System.Drawing.Point(136, 3);
+            this.btnImportExcel.Location = new System.Drawing.Point(181, 4);
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(127, 34);
+            this.btnImportExcel.Size = new System.Drawing.Size(169, 45);
             this.btnImportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnImportExcel.Symbol = "";
             this.btnImportExcel.TabIndex = 0;
@@ -269,9 +278,10 @@
             this.btnExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.Location = new System.Drawing.Point(269, 3);
+            this.btnExportExcel.Location = new System.Drawing.Point(358, 4);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(127, 34);
+            this.btnExportExcel.Size = new System.Drawing.Size(169, 45);
             this.btnExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel.Symbol = "";
             this.btnExportExcel.TabIndex = 2;
@@ -298,8 +308,9 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanel1.DrawTitleBox = false;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
+            this.groupPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1136, 59);
+            this.groupPanel1.Size = new System.Drawing.Size(1515, 74);
             // 
             // 
             // 
@@ -335,18 +346,20 @@
             // 
             this.CmbGH.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbGH.FormattingEnabled = true;
-            this.CmbGH.Location = new System.Drawing.Point(375, 6);
+            this.CmbGH.Location = new System.Drawing.Point(500, 8);
+            this.CmbGH.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbGH.Name = "CmbGH";
-            this.CmbGH.Size = new System.Drawing.Size(80, 24);
+            this.CmbGH.Size = new System.Drawing.Size(105, 28);
             this.CmbGH.TabIndex = 43;
             // 
             // CmbGW
             // 
             this.CmbGW.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbGW.FormattingEnabled = true;
-            this.CmbGW.Location = new System.Drawing.Point(231, 6);
+            this.CmbGW.Location = new System.Drawing.Point(269, 8);
+            this.CmbGW.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbGW.Name = "CmbGW";
-            this.CmbGW.Size = new System.Drawing.Size(80, 24);
+            this.CmbGW.Size = new System.Drawing.Size(144, 28);
             this.CmbGW.TabIndex = 44;
             // 
             // labelX3
@@ -357,9 +370,10 @@
             // 
             // 
             this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(331, 9);
+            this.labelX3.Location = new System.Drawing.Point(441, 11);
+            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(44, 18);
+            this.labelX3.Size = new System.Drawing.Size(54, 21);
             this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX3.TabIndex = 41;
             this.labelX3.Text = "工号：";
@@ -372,9 +386,10 @@
             // 
             // 
             this.labelX4.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX4.Location = new System.Drawing.Point(163, 9);
+            this.labelX4.Location = new System.Drawing.Point(217, 11);
+            this.labelX4.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX4.Name = "labelX4";
-            this.labelX4.Size = new System.Drawing.Size(44, 18);
+            this.labelX4.Size = new System.Drawing.Size(54, 21);
             this.labelX4.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX4.TabIndex = 42;
             this.labelX4.Text = "岗位：";
@@ -383,9 +398,10 @@
             // 
             this.CmbPZ.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbPZ.FormattingEnabled = true;
-            this.CmbPZ.Location = new System.Drawing.Point(806, 9);
+            this.CmbPZ.Location = new System.Drawing.Point(1075, 11);
+            this.CmbPZ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CmbPZ.Name = "CmbPZ";
-            this.CmbPZ.Size = new System.Drawing.Size(80, 24);
+            this.CmbPZ.Size = new System.Drawing.Size(105, 28);
             this.CmbPZ.TabIndex = 40;
             // 
             // labelX2
@@ -396,9 +412,10 @@
             // 
             // 
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX2.Location = new System.Drawing.Point(762, 12);
+            this.labelX2.Location = new System.Drawing.Point(1016, 15);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(44, 18);
+            this.labelX2.Size = new System.Drawing.Size(54, 21);
             this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX2.TabIndex = 39;
             this.labelX2.Text = "品种：";
@@ -411,9 +428,10 @@
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(460, 11);
+            this.labelX5.Location = new System.Drawing.Point(613, 14);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(68, 18);
+            this.labelX5.Size = new System.Drawing.Size(85, 21);
             this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX5.TabIndex = 35;
             this.labelX5.Text = "人员编号：";
@@ -423,18 +441,20 @@
             this.dtp.CustomFormat = "yyyy-MM";
             this.dtp.Font = new System.Drawing.Font("宋体", 12F);
             this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp.Location = new System.Drawing.Point(54, 4);
+            this.dtp.Location = new System.Drawing.Point(72, 5);
+            this.dtp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp.Name = "dtp";
             this.dtp.ShowUpDown = true;
-            this.dtp.Size = new System.Drawing.Size(86, 26);
+            this.dtp.Size = new System.Drawing.Size(113, 30);
             this.dtp.TabIndex = 12;
             // 
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.Location = new System.Drawing.Point(931, 4);
+            this.btnSearch.Location = new System.Drawing.Point(1241, 5);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 28);
+            this.btnSearch.Size = new System.Drawing.Size(116, 35);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.Symbol = "";
             this.btnSearch.TabIndex = 4;
@@ -449,9 +469,10 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(10, 8);
+            this.labelX1.Location = new System.Drawing.Point(13, 10);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(44, 18);
+            this.labelX1.Size = new System.Drawing.Size(54, 21);
             this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "日期：";
@@ -467,53 +488,53 @@
             this.toolStripMenuItem1,
             this.全部删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 88);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(149, 100);
             // 
             // 修改ToolStripMenuItem
             // 
             this.修改ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
             this.修改ToolStripMenuItem.Name = "修改ToolStripMenuItem";
-            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.修改ToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.修改ToolStripMenuItem.Text = "修改";
             this.修改ToolStripMenuItem.Click += new System.EventHandler(this.修改ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(131, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(145, 6);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(131, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(145, 6);
             // 
             // 全部删除ToolStripMenuItem
             // 
             this.全部删除ToolStripMenuItem.BackColor = System.Drawing.Color.Red;
             this.全部删除ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.全部删除ToolStripMenuItem.Name = "全部删除ToolStripMenuItem";
-            this.全部删除ToolStripMenuItem.Size = new System.Drawing.Size(134, 24);
+            this.全部删除ToolStripMenuItem.Size = new System.Drawing.Size(148, 28);
             this.全部删除ToolStripMenuItem.Text = "全部删除";
             this.全部删除ToolStripMenuItem.Click += new System.EventHandler(this.全部删除ToolStripMenuItem_Click);
             // 
             // Frm1SC_JSBZ
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1136, 360);
+            this.ClientSize = new System.Drawing.Size(1515, 450);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Frm1SC_JSBZ";
             this.Text = "技术部实验补助";
             this.Load += new System.EventHandler(this.Frm1SC_JSBZ_Load);

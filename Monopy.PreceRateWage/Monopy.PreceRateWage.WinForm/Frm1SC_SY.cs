@@ -335,9 +335,9 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i].Visible = false;
             }
-            dgv.Columns[8].Visible = false;
+            dgv.Columns[10].Visible = false;
 
-            dgv.Columns[9].Frozen = true;
+            dgv.Columns[11].Frozen = true;
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];

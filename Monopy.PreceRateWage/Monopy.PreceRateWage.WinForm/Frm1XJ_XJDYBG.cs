@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1XJ_XJDYBG : Office2007Form
     {
-        string[] header = "Time$User$Year$Month$序号$车间$人员编号$姓名$类别$数量（件）$单价$金额".Split('$');
+        string[] header = "Time$User$Year$Month$序号$人员编号$姓名$修检工号$备注$修检计件".Split('$');
         //private string _dept;
         public Frm1XJ_XJDYBG()
         {
@@ -58,6 +58,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbUserCode.Text, CmbUserName.Text, CmbXJGH.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -299,13 +300,13 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
-                if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
-                {
-                    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Enabled = true;
-                    return;
-                }
-                list[i].No = (i + 1).ToString();
+                //if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                //{
+                //    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    Enabled = true;
+                //    return;
+                //}
+
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
                 list[i].TheYear = dtp.Value.Year;
@@ -334,8 +335,8 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listTJ = new BaseDal<DataBase1XJ_XJGJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
-                if (listTJ == null)
+                var listTJ = new BaseDal<DataBase1XJ_XJGJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+                if (listTJ == null || listTJ.Count == 0)
                 {
                     MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的修检工计件数据，请联系相关人员录入", "失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
 

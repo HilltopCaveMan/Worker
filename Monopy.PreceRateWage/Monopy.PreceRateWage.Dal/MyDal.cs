@@ -718,6 +718,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂修检车间线长考核合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1XJ_XCKH GetTotalDataBase1XJ_XCKH(List<DataBase1XJ_XCKH> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1XJ_XCKH { XW = "合计", KHJE = 0.ToString() } : new DataBase1XJ_XCKH { XW = "合计", KHJE = list.Sum(t => decimal.TryParse(t.KHJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
