@@ -110,6 +110,8 @@
     <Compile Include="DataBase1SC_SY.cs" />
     <Compile Include="DataBase1SC_ZY.cs" />
     <Compile Include="DataBase1SC_ZYJJHKH.cs" />
+    <Compile Include="DataBase1XJ_XJDYBG.cs" />
+    <Compile Include="DataBase1XJ_XJGJJ.cs" />
     <Compile Include="DataBase1YL_JJ.cs" />
     <Compile Include="DataBase1YL_YLTJ.cs" />
     <Compile Include="DataBase3CX_BJLP_01_LPYB.cs" />
