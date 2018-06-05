@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1SC_JSBZ : Office2007Form
     {
-        string[] header = "Time$User$Year$Month$序号$车间$岗位$工号$人员编号$姓名$品种$件数$单价$占比$金额".Split('$');
+        string[] header = "Time$User$Year$Month$工厂$序号$车间$岗位$工号$人员编号$姓名$品种$件数$单价$占比$金额".Split('$');
         private string _factoryNo;
         private string _dept;
 
@@ -236,7 +236,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1SC_JSBZ>().GetList(t=> t.FactoryNo == _factoryNo && t.CJ == _dept).ToList();
+            var list = new BaseDal<DataBase1SC_JSBZ>().GetList(t => t.FactoryNo == _factoryNo && t.CJ == _dept).ToList();
             RefCmbGW(list);
             RefCmbGH(list);
             RefCmbUserCode(list);
@@ -299,7 +299,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1SC_JSBZ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.FactoryNo == _factoryNo && t.CJ == _dept && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gw == "全部" ? true : t.GW.Contains(gw)) && (gh == "全部" ? true : t.GH.Contains(gh)) && (pz == "全部" ? true : t.PZ.Contains(pz))).ToList().OrderBy(t => t.No).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1SC_JSBZ(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
@@ -324,12 +324,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
-                if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
-                {
-                    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    Enabled = true;
-                    return;
-                }
+                //if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                //{
+                //    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //    Enabled = true;
+                //    return;
+                //}
                 list[i].FactoryNo = _factoryNo;
                 list[i].No = (i + 1).ToString();
                 list[i].CreateUser = Program.User.ToString();
@@ -357,7 +357,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             foreach (var item in list)
             {
-                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == item.TheYear && t.TheMonth == item.TheMonth && t.CPMC == item.PZ).FirstOrDefault();
+                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == item.TheYear && t.TheMonth == item.TheMonth && t.CPMC == item.PZ && t.FactoryNo == _factoryNo && t.CJ.Contains(_dept)).FirstOrDefault();
                 if (datas == null)
                 {
                     MessageBox.Show("总窑产品质量分析汇总表(实验)数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

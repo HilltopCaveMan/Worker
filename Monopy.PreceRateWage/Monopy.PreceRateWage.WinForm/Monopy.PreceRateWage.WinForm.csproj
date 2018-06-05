@@ -314,6 +314,12 @@
     <Compile Include="Frm1SC_ZYJJHKH.Designer.cs">
       <DependentUpon>Frm1SC_ZYJJHKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1XJ_XCKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1XJ_XCKH.Designer.cs">
+      <DependentUpon>Frm1XJ_XCKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1XJ_XJDYBG.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1069,6 +1075,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1SC_ZYJJHKH.resx">
       <DependentUpon>Frm1SC_ZYJJHKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1XJ_XCKH.resx">
+      <DependentUpon>Frm1XJ_XCKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1XJ_XJDYBG.resx">
       <DependentUpon>Frm1XJ_XJDYBG.cs</DependentUpon>
@@ -1913,6 +1922,9 @@
     <None Include="Excel\模板一厂——修检——修检工计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——修检——线长考核.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——原料——原料统计.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -1998,6 +2010,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——修检——修检工计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——修检——线长考核.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——原料——原料统计.xlsx">
