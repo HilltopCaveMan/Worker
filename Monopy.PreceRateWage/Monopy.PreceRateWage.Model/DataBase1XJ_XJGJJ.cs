@@ -6,9 +6,9 @@ using System.Text;
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 技术部实验补助
+    /// 修检工计件
     /// </summary>
-    public class DataBase1SC_JSBZ
+    public class DataBase1XJ_XJGJJ
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -17,32 +17,32 @@ namespace Monopy.PreceRateWage.Model
         public int TheMonth { get; set; }
 
         /// <summary>
-        /// 工厂
-        /// </summary>
-        public string FactoryNo { get; set; }
-
-        /// <summary>
         /// 序号
         /// </summary>
         public string No { get; set; }
 
         /// <summary>
-        /// 车间
+        /// 工种
         /// </summary>
-        public string CJ { get; set; }
+        public string GZ { get; set; }
 
         /// <summary>
-        /// 岗位
+        /// 存货编码
         /// </summary>
-        public string  GW { get; set; }
+        public string CHBM { get; set; }
+
+        /// <summary>
+        /// 存货名称
+        /// </summary>
+        public string  CHMC { get; set; }
 
         /// <summary>
         /// 工号
         /// </summary>
-        public string GH { get; set; }
+        public string  GH { get; set; }
 
         /// <summary>
-        /// 人员编号
+        /// 员工编码
         /// </summary>
         public string UserCode { get; set; }
 
@@ -52,14 +52,14 @@ namespace Monopy.PreceRateWage.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 品种
+        /// 开窑量
         /// </summary>
-        public string PZ { get; set; }
+        public string KYL { get; set; }
 
         /// <summary>
-        /// 件数
+        /// 一级品
         /// </summary>
-        public string JS { get; set; }
+        public string YJP { get; set; }
 
         /// <summary>
         /// 单价
@@ -67,13 +67,8 @@ namespace Monopy.PreceRateWage.Model
         public string DJ { get; set; }
 
         /// <summary>
-        /// 占比
+        /// 修检计件
         /// </summary>
-        public string  ZB { get; set; }
-
-        /// <summary>
-        /// 计件金额
-        /// </summary>
-        public string JE { get; set; }
+        public string XJJJ{ get; set; }
     }
 }

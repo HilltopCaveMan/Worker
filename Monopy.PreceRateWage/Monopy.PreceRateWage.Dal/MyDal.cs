@@ -639,7 +639,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1JB_XNDY GetTotalDataBase1JB_XNDY(List<DataBase1JB_XNDY> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1JB_XNDY { GW = "合计", SJBZ = 0.ToString() } : new DataBase1JB_XNDY { GW = "合计", SJBZ = list.Sum(t => decimal.TryParse(t.SJBZ, out decimal d) ? d : 0M).ToString()};
+            return (list == null || list.Count == 0) ? new DataBase1JB_XNDY { GW = "合计", SJBZ = 0.ToString() } : new DataBase1JB_XNDY { GW = "合计", SJBZ = list.Sum(t => decimal.TryParse(t.SJBZ, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
@@ -684,7 +684,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1SC_QTJJ GetTotalDataBase1SC_QTJJ(List<DataBase1SC_QTJJ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1SC_QTJJ { No = "合计",JS=0.ToString(), JJJE = 0.ToString() } : new DataBase1SC_QTJJ { No = "合计", LB = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase1SC_QTJJ { No = "合计", JS = 0.ToString(), JJJE = 0.ToString() } : new DataBase1SC_QTJJ { No = "合计", LB = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
@@ -694,7 +694,27 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1SC_JSBZ GetTotalDataBase1SC_JSBZ(List<DataBase1SC_JSBZ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1SC_JSBZ {  CJ= "合计", JS = 0.ToString(), JE = 0.ToString() } : new DataBase1SC_JSBZ { CJ = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase1SC_JSBZ { CJ = "合计", JS = 0.ToString(), JE = 0.ToString() } : new DataBase1SC_JSBZ { CJ = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂修检车间修检工计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1XJ_XJGJJ GetTotalDataBase1XJ_XJGJJ(List<DataBase1XJ_XJGJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1XJ_XJGJJ { GZ = "合计", KYL = 0.ToString(), YJP = 0.ToString(), XJJJ = 0.ToString() } : new DataBase1XJ_XJGJJ { GZ = "合计", KYL = list.Sum(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).ToString(), YJP = list.Sum(t => decimal.TryParse(t.YJP, out decimal d) ? d : 0M).ToString(), XJJJ = list.Sum(t => decimal.TryParse(t.XJJJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂修检车间修检对应报工合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1XJ_XJDYBG GetTotalDataBase1XJ_XJDYBG(List<DataBase1XJ_XJDYBG> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1XJ_XJDYBG { No = "合计", XJJJ = 0.ToString() } : new DataBase1XJ_XJDYBG { No = "合计", XJJJ = list.Sum(t => decimal.TryParse(t.XJJJ, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
