@@ -278,6 +278,18 @@
     <Compile Include="Frm1MJ_YMJJ.Designer.cs">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1PY_PYPJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1PY_PYPJ.Designer.cs">
+      <DependentUpon>Frm1PY_PYPJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm1PY_RJDR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1PY_RJDR.Designer.cs">
+      <DependentUpon>Frm1PY_RJDR.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1SC_HSY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1057,6 +1069,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_YMJJ.resx">
       <DependentUpon>Frm1MJ_YMJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1PY_PYPJ.resx">
+      <DependentUpon>Frm1PY_PYPJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1PY_RJDR.resx">
+      <DependentUpon>Frm1PY_RJDR.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1SC_HSY.resx">
       <DependentUpon>Frm1SC_HSY.cs</DependentUpon>
@@ -1931,6 +1949,12 @@
     <None Include="Excel\模板一厂——原料——计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——喷釉——小件计件明细.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板一厂——喷釉——软件导入.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——学徒——入职表（日）.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2019,6 +2043,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——原料——计件明细表.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——喷釉——小件计件明细.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——喷釉——软件导入.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——学徒——入职表（日）.xlsx">
