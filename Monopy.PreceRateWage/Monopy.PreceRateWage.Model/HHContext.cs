@@ -219,6 +219,7 @@ namespace Monopy.PreceRateWage.Model
         /*=========================================一厂喷釉开始=========================================*/
         public virtual DbSet<DataBase1PY_PYPJ> TDataBase1PY_PYPJ { get; set; }
         public virtual DbSet<DataBase1PY_RJDR> TDataBase1PY_RJDR { get; set; }
+        public virtual DbSet<DataBase1PY_LPJJ> TDataBase1PY_LPJJ { get; set; }
         
     }
 }
