@@ -758,6 +758,26 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂喷釉车间拉坯计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1CX_KFSS GetTotalDataBase1CX_KFSS(List<DataBase1CX_KFSS> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1CX_KFSS { No = "合计", CJ = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase1CX_KFSS { No = "合计", CJ = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 一厂成型车间小件报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1CX_XJBG GetTotalDataBase1CX_XJBG(List<DataBase1CX_XJBG> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1CX_XJBG { GW = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase1CX_XJBG { GW = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>

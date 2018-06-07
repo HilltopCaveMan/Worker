@@ -461,7 +461,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBaseGeneral_XT> list = new ExcelHelper<DataBaseGeneral_XT>().ReadExcel(fileName, 2, 7, 0, 0, 0, true);
+            List<DataBaseGeneral_XT> list = new ExcelHelper<DataBaseGeneral_XT>().ReadExcel(fileName, 2, 6, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
