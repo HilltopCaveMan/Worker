@@ -399,7 +399,7 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal totalCount = 0;
                     foreach (var child in item.Childs)
                     {
-                        DataBaseDay dataBaseDay_01 = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "线外计件" && t.TypesName == child.CPMC);
+                        DataBaseDay dataBaseDay_01 = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == item.TheYear && t.CreateMonth == item.TheMonth && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "线外计件" && t.TypesName == child.CPMC);
                         decimal.TryParse(dataBaseDay_01.UnitPrice, out decimal price);
                         totalCount += price;
                         child.Price = dataBaseDay_01.UnitPrice;
@@ -554,7 +554,7 @@ namespace Monopy.PreceRateWage.WinForm
                 }
             }
         }
-       
+
 
         private void btnRecount_Click(object sender, EventArgs e)
         {

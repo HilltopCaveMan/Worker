@@ -22,12 +22,7 @@ namespace Monopy.PreceRateWage.Model
         public string No { get; set; }
 
         /// <summary>
-        /// 车间
-        /// </summary>
-        public string CJ { get; set; }
-
-        /// <summary>
-        /// 人员编号
+        /// 人员编码
         /// </summary>
         public string UserCode { get; set; }
 
@@ -37,23 +32,50 @@ namespace Monopy.PreceRateWage.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 类别
+        /// 品种
         /// </summary>
-        public string LB { get; set; }
+        public string Pz { get; set; }
 
         /// <summary>
-        /// 数量
+        /// 磨瓷数量
         /// </summary>
-        public string SL { get; set; }
+        public string McCount { get; set; }
 
         /// <summary>
-        /// 单价
+        /// 冷补数量
         /// </summary>
-        public string DJ { get; set; }
+        public string LbCount { get; set; }
 
         /// <summary>
-        /// 计件金额
+        /// 磨瓷
         /// </summary>
-        public string JJJE { get; set; }
+        public string McUP { get; set; }
+
+        /// <summary>
+        /// 冷补
+        /// </summary>
+        public string LbUP { get; set; }
+
+        /// <summary>
+        /// 磨瓷金额
+        /// </summary>
+        public string McMoney { get; set; }
+
+        /// <summary>
+        /// 冷补金额
+        /// </summary>
+        public string LbMoney { get; set; }
+
+        /// <summary>
+        /// 金额
+        /// </summary>
+
+        public string Money
+        {
+            get
+            {
+                return ((string.IsNullOrEmpty(McMoney) ? 0M : Convert.ToDecimal(McMoney)) + (string.IsNullOrEmpty(LbMoney) ? 0M : Convert.ToDecimal(LbMoney))).ToString();
+            }
+        }
     }
 }
