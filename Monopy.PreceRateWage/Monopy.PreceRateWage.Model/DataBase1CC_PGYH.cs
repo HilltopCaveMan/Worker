@@ -20,11 +20,6 @@ namespace Monopy.PreceRateWage.Model
         public string No { get; set; }
 
         /// <summary>
-        /// 工厂
-        /// </summary>
-        public string FactoryNo { get; set; }
-
-        /// <summary>
         /// 车间
         /// </summary>
         public string CJ { get; set; }

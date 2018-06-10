@@ -141,7 +141,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Modify, Text, 4, 2);
+                    FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -170,7 +170,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1MJ_XSGJJ != null)
                     {
-                        FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Delete, Text, 4,2);
+                        FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Delete, Text, 4, 2);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
@@ -245,7 +245,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1MJ_XSGJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName)).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase1MJ_XSGJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName)).ToList().OrderBy(t => int.TryParse(t.No, out int no) ? no : 0).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1MJ_XSGJJ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
@@ -304,7 +304,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                var sjk = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "模具车间" && t.Classification == "卸石膏");
+                var sjk = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "模具车间" && t.Classification == "卸石膏");
                 if (sjk == null)
                 {
                     MessageBox.Show("基础数据中没有【卸石膏】数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -313,7 +313,9 @@ namespace Monopy.PreceRateWage.WinForm
                 foreach (var item in list)
                 {
                     item.DJ = sjk.UnitPrice;
-                    item.Money = (Convert.ToDecimal(item.DJ) * Convert.ToDecimal(item.DS)).ToString();
+                    decimal.TryParse(item.DJ, out decimal dj);
+                    decimal.TryParse(item.DS, out decimal ds);
+                    item.Money = (dj * ds).ToString();
                 }
                 return true;
             }

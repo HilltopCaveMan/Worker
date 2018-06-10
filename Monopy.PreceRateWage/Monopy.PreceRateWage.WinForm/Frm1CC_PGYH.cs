@@ -157,7 +157,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase1CC_PGYH> list = dgv.DataSource as List<DataBase1CC_PGYH>;
-                if (new ExcelHelper<DataBase1CC_PGYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——仓储——品管验货天数.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1CC_PGYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——仓储——品管验货天数.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {

@@ -102,7 +102,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工");
+                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工");
                 foreach (var item in list)
                 {
                     var itemDay = listDay.Where(t => t.TypesName == item.SZPZ).FirstOrDefault();

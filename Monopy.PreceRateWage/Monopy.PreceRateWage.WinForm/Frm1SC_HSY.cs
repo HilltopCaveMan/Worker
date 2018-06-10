@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
         private string[] header = "创建日期$创建人$年$月$类型$序号$产品名称$颜色$开窑量$产品等级_合格$产品等级_等外$产品等级_残$产品等级_冷补修$产品等级_回烧$产品等级_磨$产品等级_磨修$合格率$原料缺陷_铜脏$原料缺陷_铁脏$原料缺陷_泥脏$原料缺陷_小计$缺陷率$成型缺陷_成走$成型缺陷_内裂$成型缺陷_裂底$成型缺陷_裂体$成型缺陷_裂眼$成型缺陷_修糙$成型缺陷_棕眼$成型缺陷_成脏$成型缺陷_泥绺$成型缺陷_坯泡$成型缺陷_崩渣$成型缺陷_冲刷$成型缺陷_卡球$成型缺陷_吹脏$成型缺陷_小计$缺陷率$修挡板$修检_裂体$修检_修糙$修检_棕眼$修检_成脏$修检_卡球$修检_滚釉$修检_爆釉$修检_坯渣$修检_小计$缺陷率$喷釉缺陷_滚釉$喷釉缺陷_滚釉釉薄$喷釉缺陷_滚釉釉厚$喷釉缺陷_滚釉釉缕$喷釉缺陷_滚釉爆釉$喷釉缺陷_滚釉坯渣$喷釉缺陷_滚釉坯磕$喷釉缺陷_滚釉釉脏$喷釉缺陷_滚釉刮边$喷釉缺陷_滚釉釉粘$喷釉缺陷_滚釉坯脏$喷釉缺陷_滚釉小计$缺陷率$回烧缺陷_修补不合格$回烧缺陷_漏补$回烧缺陷_缺陷$回烧缺陷_小计$缺陷率$装窑缺陷_装走$装窑缺陷_装粘$装窑缺陷_装磕$装窑缺陷_装脏$装窑缺陷_刮边$装窑缺陷_小计$缺陷率$开窑缺陷_出磕$开窑缺陷_划釉$开窑缺陷_小计$缺陷率$烧窑缺陷_桔釉$烧窑缺陷_氧化$烧窑缺陷_烧泡$烧窑缺陷_烧裂$烧窑缺陷_烧生$烧窑缺陷_窑脏$烧窑缺陷_风惊$烧窑缺陷_小计$缺陷率$标污$烧成缺陷率$吹脏$缺陷率$崩脏$缺陷率".Split('$');
         private string[] headerBC = "创建日期$创建人$年$月$开窑量$修补不合格数$修补率$目标$考核单价$奖罚$考核金额".Split('$');
 
-
+        
         public Frm1SC_HSY()
         {
             InitializeComponent();
@@ -402,7 +402,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 item.Frozen = false;
             }
-            var datas = new BaseDal<DataBase1SC_HSY_BCKH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList().ToList();
+            var datas = new BaseDal<DataBase1SC_HSY_BCKH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList();
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
             {

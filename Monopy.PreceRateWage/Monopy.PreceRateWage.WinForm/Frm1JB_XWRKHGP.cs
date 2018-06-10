@@ -267,7 +267,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1JB_XWRKHGP> frm = new FrmModify<DataBase1JB_XWRKHGP>(DataBase1JB_XWRKHGP, header, OptionType.Modify, Text, 5, 13);
+                    FrmModify<DataBase1JB_XWRKHGP> frm = new FrmModify<DataBase1JB_XWRKHGP>(DataBase1JB_XWRKHGP, header, OptionType.Modify, Text, 6, 13);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnRecount.PerformClick();
@@ -452,7 +452,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             foreach (var item in list)
             {
-                DataBaseDay dataBaseDay = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.TypesName == item.TypesName && t.TypesUnit == item.Unit);
+                DataBaseDay dataBaseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.TypesType == item.TypesName);
                 if (dataBaseDay == null)
                 {
                     MessageBox.Show("没有基础数据：" + item.TypesName + "," + item.Unit + "请检查是否名称写错，或单位写错！！！");
@@ -527,6 +527,6 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         #endregion
-        
+
     }
 }

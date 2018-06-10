@@ -129,8 +129,8 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 foreach (var item in list)
                 {
-                    var bDayMc = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "磨瓷" && t.TypesName == item.Pz);
-                    var bDayLb = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "冷补" && t.TypesName == item.Pz);
+                    var bDayMc = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "磨瓷" && t.TypesName == item.Pz);
+                    var bDayLb = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "冷补" && t.TypesName == item.Pz);
                     item.McUP = bDayMc == null ? "0" : bDayMc.UnitPrice;
                     item.LbUP = bDayLb == null ? "0" : bDayLb.UnitPrice;
                     item.McMoney = string.IsNullOrEmpty(item.McCount) ? string.Empty : (Convert.ToDecimal(item.McCount) * Convert.ToDecimal(item.McUP)).ToString();

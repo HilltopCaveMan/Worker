@@ -64,7 +64,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 try
                 {
-                    List<DataBaseDay> listDay = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "成检").ToList();
+                    List<DataBaseDay> listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "成检").ToList();
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;
@@ -82,17 +82,17 @@ namespace Monopy.PreceRateWage.WinForm
                             }
                             titles.Add(tmp);
                             string tmpHeader = ExcelHelper.GetCellValue(irow.GetCell(i));
-                            if (tmp == "配盖")
-                            {
-                                if (tmpHeader == "连体类")
-                                {
-                                    tmpHeader = "连体盖";
-                                }
-                                if (tmpHeader == "水箱类")
-                                {
-                                    tmpHeader = "盖";
-                                }
-                            }
+                            //if (tmp == "配盖")
+                            //{
+                            //    if (tmpHeader == "连体类")
+                            //    {
+                            //        tmpHeader = "连体盖";
+                            //    }
+                            //    if (tmpHeader == "水箱类")
+                            //    {
+                            //        tmpHeader = "盖";
+                            //    }
+                            //}
                             headers.Add(tmpHeader);
                         }
                         List<DataBase1JB_CJJJ> list = new List<DataBase1JB_CJJJ>();
@@ -188,11 +188,16 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
             DataTable dt = dgv.DataSource as DataTable;
+            
             if (dt == null || dt.Rows.Count == 0)
             {
                 MessageBox.Show("没有数据，无法导出！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            dt.Columns.RemoveAt(4);
+            dt.Columns.RemoveAt(3);
+            dt.Columns.RemoveAt(2);
+            dt.Columns.RemoveAt(1);
             for (int i = 0; i < dt.Columns.Count; i++)
             {
                 if (dt.Columns[i].DataType == Guid.NewGuid().GetType())
@@ -361,7 +366,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataTable dt;
             using (DataHelper dh = new DataHelper(DataHelper.DataType.Sqlclient, ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
             {
-                dt = dh.ExecuteQuery("SelectCJJJ", paras, CommandType.StoredProcedure);
+                dt = dh.ExecuteQuery("Select1CJJJ", paras, CommandType.StoredProcedure);
             }
             if (dt.Rows.Count > 0)
             {
@@ -410,6 +415,6 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         #endregion
-      
+
     }
 }

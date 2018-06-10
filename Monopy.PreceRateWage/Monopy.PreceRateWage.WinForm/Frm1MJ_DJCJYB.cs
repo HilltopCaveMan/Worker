@@ -56,7 +56,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-           Process.Start(Application.StartupPath + "\\Excel\\模板一厂——模具——大件车间月报.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——模具——大件车间月报.xlsx");
         }
 
         /// <summary>
@@ -74,14 +74,14 @@ namespace Monopy.PreceRateWage.WinForm
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                list = new ExcelHelper<DataBase1MJ_DJCJYB>().ReadExcel(openFileDlg.FileName, 5, 6, 1, 0, 0, true);
+                list = new ExcelHelper<DataBase1MJ_DJCJYB>().ReadExcel(openFileDlg.FileName, 3, 6, 0, 0, 0, true);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     Enabled = true;
                     return;
                 }
-                var listBase = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "模具车间").ToList();
+                var listBase = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "模具车间").ToList();
                 StringBuilder sb = new StringBuilder();
                 for (int i = 0; i < list.Count; i++)
                 {
@@ -89,6 +89,12 @@ namespace Monopy.PreceRateWage.WinForm
                     if (listBase.Where(t => t.TypesName == item.CPMC).Count() == 0)
                     {
                         sb.Append("【" + item.CPMC + "】,");
+                        list.RemoveAt(i);
+                        i--;
+                        continue;
+                    }
+                    if (string.IsNullOrEmpty(item.CPMC))
+                    {
                         list.RemoveAt(i);
                         i--;
                         continue;
@@ -133,7 +139,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase1MJ_DJCJYB> list = dgv.DataSource as List<DataBase1MJ_DJCJYB>;
-                if (new ExcelHelper<DataBase1MJ_DJCJYB>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——模具——大件车间月报.xlsx", saveFileDlg.FileName, list, 5, 6, 0, 0, 2, 6, dtp.Value.ToString("yyyy-MM"), 1))
+                if (new ExcelHelper<DataBase1MJ_DJCJYB>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——模具——大件车间月报.xlsx", saveFileDlg.FileName, list, 3, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -298,7 +304,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.Rows[0].Frozen = true;
             dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
             dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
-            
+
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
@@ -355,6 +361,6 @@ namespace Monopy.PreceRateWage.WinForm
 
         #endregion
 
-        
+
     }
 }

@@ -77,24 +77,24 @@ namespace Monopy.PreceRateWage.WinForm
         private void BtnExportExcel_Click(object sender, EventArgs e)
         {
             btnSearch.PerformClick();
+        
             DataTable dt = dgv.DataSource as DataTable;
             if (dt == null || dt.Rows.Count == 1)
             {
                 MessageBox.Show("没有数据，无法导出！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            //                  1    2   3    4    5    6     7   8     9    10
-            string[] header = "金额$Id$Time$User$Year$Month$序号$岗位$工号$姓名".Split('$');
+            //                  0      1    2          3    4     5    6     7   8     9   
+            string[] header = "ID$TheYear$TheMonth$TheDay$金额$序号$岗位$工号$姓名".Split('$');
             for (int i = 0; i < header.Length; i++)
             {
                 dt.Columns[i].Caption = header[i];
             }
 
-            dt.Columns.RemoveAt(6);
-            dt.Columns.RemoveAt(5);
-            dt.Columns.RemoveAt(4);
             dt.Columns.RemoveAt(3);
             dt.Columns.RemoveAt(2);
+            dt.Columns.RemoveAt(1);
+            dt.Columns.RemoveAt(0);
 
             SaveFileDialog sfd = new SaveFileDialog();
             sfd.FileName = "梦牌一厂检包车间--线外计件-" + dtp.Value.ToString("yyyy年MM月") + ".xls";
@@ -273,6 +273,29 @@ namespace Monopy.PreceRateWage.WinForm
             }
             DataTable dt = DataTableHelper.GetDataTable(list);
             dt.Columns.Remove("Childs");
+            dt.Columns.Remove("CreateTime");
+            dt.Columns.Remove("CreateUser");
+            dt.Columns.Remove("ModifyTime");
+            dt.Columns.Remove("ModifyUser");
+            dt.Columns.Remove("IsPMC_Check");
+            dt.Columns.Remove("PMC_Time");
+            dt.Columns.Remove("PMC_User");
+            dt.Columns.Remove("PMC_Manager_Time");
+            dt.Columns.Remove("PMC_Manager_User");
+            dt.Columns.Remove("IsPMC_Manager");
+            dt.Columns.Remove("IsPG_Check");
+            dt.Columns.Remove("PG_Time");
+            dt.Columns.Remove("PG_User");
+            dt.Columns.Remove("PG_Manager_Time");
+            dt.Columns.Remove("PG_Manager_User");
+            dt.Columns.Remove("IsPG_Manager");
+            dt.Columns.Remove("IsKF_Check");
+            dt.Columns.Remove("KF_Time");
+            dt.Columns.Remove("KF_User");
+            dt.Columns.Remove("KF_Manager_Time");
+            dt.Columns.Remove("KF_Manager_User");
+            dt.Columns.Remove("IsKF_Manager");
+
             DataRow dj = dt.NewRow();
             dj["UserName"] = "单价";
             dt.Rows.InsertAt(dj, 0);
@@ -300,21 +323,24 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (result)
                     {
-                        totalCount += (decimal.TryParse(dt.Rows[i][0].ToString(), out decimal t) ? t : 0M);
+                        totalCount += (decimal.TryParse(dt.Rows[i][4].ToString(), out decimal t) ? t : 0M);
                     }
                     tp[j - 5] += (decimal.TryParse(dt.Rows[i][j].ToString(), out decimal m) ? m : 0M);
                 }
                 result = false;
                 dr_sum[j] = tp[j - 5];
             }
-            dr_sum[0] = totalCount;
+            dr_sum[4] = totalCount;
+            dr_sum["No"] = string.Empty;
+            dr_sum["GW"] = string.Empty;
+            dr_sum["UserCode"] = string.Empty;
             dr_sum["UserName"] = "合计";
             dt.Rows.InsertAt(dr_sum, 1);
-            string[] header = "金额$Id$Time$User$Year$Month$序号$岗位$工号$姓名".Split('$');
+            string[] header = "ID$TheYear$TheMonth$TheDay$金额$序号$岗位$工号$姓名".Split('$');
             dgv.DataSource = dt;
             for (int i = 0; i < header.Length; i++)
             {
-                if (i >= 1 && i <= 5)
+                if (i < 4)
                 {
                     dgv.Columns[i].Visible = false;
                 }

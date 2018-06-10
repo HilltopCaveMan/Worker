@@ -47,7 +47,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             DateTime dateTime = Convert.ToDateTime(dtp.text);
             var list = new BaseDal<DataBase1MJ_YMJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.RQ == dateTime.Day.ToString() && t.UserCode.Contains(txtUserCode.Text) && t.UserName.Contains(txtUserName.Text)).ToList().OrderBy(t => t.No).ToList();
-            RefGrid(list);
+            RefGrid(list, dateTime);
             dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
@@ -80,7 +80,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             DateTime dateTime = Convert.ToDateTime(dtp.text);
             var list = new BaseDal<DataBase1MJ_YMJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode.Contains(txtUserCode.Text) && t.UserName.Contains(txtUserName.Text)).ToList().OrderBy(t => t.UserCode).ThenBy(t => t.No).ThenBy(t => t.RQ).ToList();
-            RefGrid(list);
+            RefGrid(list, dateTime);
             dgv.ContextMenuStrip = null;
         }
 
@@ -170,7 +170,7 @@ namespace Monopy.PreceRateWage.WinForm
                             list.Add(t);
                         }
                     }
-                    if (Recount(list) && new BaseDal<DataBase1MJ_YMJJ>().Add(list) > 0)
+                    if (Recount(list, dateTime) && new BaseDal<DataBase1MJ_YMJJ>().Add(list) > 0)
                     {
                         btnSearch.PerformClick();
                         MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -241,7 +241,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             dgv.DataSource = null;
             Enabled = false;
-            Recount(list);
+            Recount(list, dateTime);
             foreach (var item in list)
             {
                 new BaseDal<DataBase1MJ_YMJJ>().Edit(item);
@@ -249,6 +249,26 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = true;
             btnSearch.PerformClick();
             MessageBox.Show("重新计算完成！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (dgv.SelectedRows.Count == 1)
+            {
+                if (dgv.SelectedRows[0].DataBoundItem is DataBase1MJ_YMJJ DataBase1MJ_YMJJ)
+                {
+                    FrmModify<DataBase1MJ_YMJJ> frm = new FrmModify<DataBase1MJ_YMJJ>(DataBase1MJ_YMJJ, header, OptionType.Modify, Text, 5, 1);
+                    if (frm.ShowDialog() == DialogResult.Yes)
+                    {
+                        btnSearch.PerformClick();
+                    }
+                }
+            }
         }
 
         /// <summary>
@@ -323,17 +343,17 @@ namespace Monopy.PreceRateWage.WinForm
 
         #region 调用方法
 
-        private bool Recount(List<DataBase1MJ_YMJJ> list)
+        private bool Recount(List<DataBase1MJ_YMJJ> list, DateTime dateTime)
         {
             try
             {
-                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模").ToList();
+                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模").ToList();
                 foreach (var t in list)
                 {
-                    var baseQX = listMonth.Where(h => h.PostName == t.GW && h.TypesName == "撤换全线").FirstOrDefault().UnitPrice;
-                    var baseDX = listMonth.Where(h => h.PostName == t.GW && h.TypesName == "撤/换单线").FirstOrDefault().UnitPrice;
-                    var baseKMQX = listMonth.Where(h => h.PostName == t.GW && h.TypesName == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
-                    var baseKMDX = listMonth.Where(h => h.PostName == t.GW && h.TypesName == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
+                    var baseQX = listMonth.Where(h => h.PostName == t.GW && h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
+                    var baseDX = listMonth.Where(h => h.PostName == t.GW && h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
+                    var baseKMQX = listMonth.Where(h => h.PostName == t.GW && h.TypesType == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
+                    var baseKMDX = listMonth.Where(h => h.PostName == t.GW && h.TypesType == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
                     decimal.TryParse(t.CHQX1, out decimal qx);
                     decimal.TryParse(t.CHDX1, out decimal dx);
                     decimal.TryParse(t.KMCHQX1, out decimal kmqx);
@@ -355,7 +375,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void RefGrid(DateTime dateTime)
         {
             List<DataBase1MJ_YMJJ> datas = new List<DataBase1MJ_YMJJ>();
-            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
+            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
 
             var baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
             var baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
@@ -424,14 +444,26 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.ClearSelection();
         }
 
-        private void RefGrid(List<DataBase1MJ_YMJJ> list)
+        private void RefGrid(List<DataBase1MJ_YMJJ> list, DateTime dateTime)
         {
-            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
+            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
+            string baseQX = "0";
+            string baseDX = "0";
+            string baseKMQX = "";
+            string baseKMDX = "0";
+            if (listMonth == null || listMonth.Count == 0)
+            {
+                MessageBox.Show("没有" + dateTime.Year + "年" + dateTime.Month + "月的指标数据，先导入指标数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-            var baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
-            var baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
-            var baseKMQX = listMonth.Where(h => h.TypesType == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
-            var baseKMDX = listMonth.Where(h => h.TypesType == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
+            }
+            else
+            {
+                baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
+                baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
+                baseKMQX = listMonth.Where(h => h.TypesType == "科玛全包分体撤换全线").FirstOrDefault().UnitPrice;
+                baseKMDX = listMonth.Where(h => h.TypesType == "科玛全包分体撤/换单线").FirstOrDefault().UnitPrice;
+            }
+
 
             foreach (DataGridViewColumn item in dgv.Columns)
             {

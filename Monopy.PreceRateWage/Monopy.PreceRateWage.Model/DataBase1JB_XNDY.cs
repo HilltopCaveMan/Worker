@@ -27,14 +27,14 @@ namespace Monopy.PreceRateWage.Model
         public string XW { get; set; }
 
         /// <summary>
-        /// 实际编制
-        /// </summary>
-        public string SJBZ { get; set; }
-
-        /// <summary>
         /// 编制
         /// </summary>
         public string BZ { get; set; }
+
+        /// <summary>
+        /// 实际编制
+        /// </summary>
+        public string SJBZ { get; set; }
 
         /// <summary>
         /// 对数

@@ -43,6 +43,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbLine.Text, CmbXW.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -91,7 +92,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase1JB_XNDY>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——原料——计件明细表.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1JB_XNDY>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——线内定员.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -146,7 +147,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1JB_XNDY> frm = new FrmModify<DataBase1JB_XNDY>(DataBase1JB_XNDY, header, OptionType.Modify, Text, 5, 2);
+                    FrmModify<DataBase1JB_XNDY> frm = new FrmModify<DataBase1JB_XNDY>(DataBase1JB_XNDY, header, OptionType.Modify, Text, 4, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
@@ -175,7 +176,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1JB_XNDY != null)
                     {
-                        FrmModify<DataBase1JB_XNDY> frm = new FrmModify<DataBase1JB_XNDY>(DataBase1JB_XNDY, header, OptionType.Delete, Text, 5);
+                        FrmModify<DataBase1JB_XNDY> frm = new FrmModify<DataBase1JB_XNDY>(DataBase1JB_XNDY, header, OptionType.Delete, Text, 4);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();

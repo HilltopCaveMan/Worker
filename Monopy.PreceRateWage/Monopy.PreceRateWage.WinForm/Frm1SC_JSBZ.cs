@@ -324,12 +324,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
-                //if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
-                //{
-                //    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //    Enabled = true;
-                //    return;
-                //}
+                if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                {
+                    MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Enabled = true;
+                    return;
+                }
                 list[i].FactoryNo = _factoryNo;
                 list[i].No = (i + 1).ToString();
                 list[i].CreateUser = Program.User.ToString();
@@ -386,7 +386,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var item in list)
                 {
-                    var type = listTJ.Where(t => t.TypesName == item.PZ).FirstOrDefault();
+                    var type = listTJ.Where(t => t.TypesName == item.PZ && t.PostName == item.GW).FirstOrDefault();
                     var baseZb = listTJ.Where(t => t.Classification == "技术部实验").FirstOrDefault();
                     item.DJ = type.UnitPrice;
                     item.ZB = baseZb.ZB_JB_JJGZ;

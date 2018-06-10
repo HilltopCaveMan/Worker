@@ -169,11 +169,11 @@ namespace Monopy.PreceRateWage.WinForm
                         continue;
                     }
                     if (!MyDal.IsUserCodeAndNameOK(item.UserCode, item.UserName, out string userNameERP))
-                    {
+                    //{
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Enabled = true;
                         return;
-                    }
+                    //}
                     item.FactoryNo = _factoryNo;
                     item.Dept = _dept;
                     item.TheType = _theType;

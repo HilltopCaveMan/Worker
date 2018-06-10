@@ -27,6 +27,11 @@ namespace Monopy.PreceRateWage.Model
         public string GW { get; set; }
 
         /// <summary>
+        /// 日期
+        /// </summary>
+        public string RQ { get; set; }
+
+        /// <summary>
         /// 人员编号
         /// </summary>
         public string UserCode { get; set; }
@@ -35,13 +40,7 @@ namespace Monopy.PreceRateWage.Model
         /// 姓名
         /// </summary>
         public string UserName { get; set; }
-
-        /// <summary>
-        /// 日期
-        /// </summary>
-        public string RQ { get; set; }
-
-        /// <summary>
+        
         /// 撤换全线
         /// </summary>
         public string CHQX1 { get; set; }
