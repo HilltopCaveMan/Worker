@@ -143,11 +143,11 @@ namespace Monopy.PreceRateWage.WinForm
                             {
                                 continue;
                             }
-                            //if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
-                            //{
-                            //    MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                            //    return;
-                            //}
+                            if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
+                            {
+                                MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                             t.RQ = ExcelHelper.GetCellValue(row.GetCell(3));
                             t.Childs = new List<DataBase1MJ_PMCXJ_Child>();
                             for (j = 4; j < row.LastCellNum; j++)
@@ -165,7 +165,7 @@ namespace Monopy.PreceRateWage.WinForm
                             list.Add(t);
                         }
                     }
-                    if (Recount(list) && new BaseDal<DataBase1MJ_PMCXJ>().Add(list) > 0)
+                    if (Recount(list, dateTime) && new BaseDal<DataBase1MJ_PMCXJ>().Add(list) > 0)
                     {
                         btnSearch.PerformClick();
                         MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -202,6 +202,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dt.Columns[i].Caption = header[i];
             }
+            dt.Columns.RemoveAt(6);
             dt.Columns.RemoveAt(5);
             dt.Columns.RemoveAt(4);
             dt.Columns.RemoveAt(3);
@@ -255,7 +256,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             dgv.DataSource = null;
             Enabled = false;
-            Recount(list);
+            Recount(list, dateTime);
             foreach (var item in list)
             {
                 foreach (var child in item.Childs)
@@ -289,6 +290,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dt.Columns[i].Caption = header[i];
             }
+            dt.Columns.RemoveAt(6);
             dt.Columns.RemoveAt(5);
             dt.Columns.RemoveAt(4);
             dt.Columns.RemoveAt(3);
@@ -469,11 +471,11 @@ namespace Monopy.PreceRateWage.WinForm
 
         #region 调用方法
 
-        private bool Recount(List<DataBase1MJ_PMCXJ> list)
+        private bool Recount(List<DataBase1MJ_PMCXJ> list, DateTime dateTime)
         {
             try
             {
-                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间").ToList();
+                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间").ToList();
                 foreach (var t in list)
                 {
                     foreach (var x in t.Childs)

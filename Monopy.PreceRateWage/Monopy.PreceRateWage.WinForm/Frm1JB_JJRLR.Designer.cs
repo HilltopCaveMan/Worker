@@ -736,7 +736,7 @@
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm1JB_JJRLR";
-            this.Text = "三厂检包日计件";
+            this.Text = "一厂检包日计件";
             this.Load += new System.EventHandler(this.Frm1JB_JJRLR_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();

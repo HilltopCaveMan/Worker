@@ -407,6 +407,11 @@ namespace Monopy.PreceRateWage.WinForm
                 decimal total = 0;
                 decimal totalScq = 0;
 
+                if (listMonth == null || listMonth.Count == 0)
+                {
+                    MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的指标数据，无法计算，导入指标后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 foreach (var t in list)
                 {
                     decimal totalJj = 0;
@@ -441,6 +446,9 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         t.SCQ = "0";
                         t.YCQ = "0";
+
+                        MessageBox.Show("没有【" + t.UserName + "】的出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                     }
                     else
                     {
@@ -461,12 +469,20 @@ namespace Monopy.PreceRateWage.WinForm
                     if (t.GWMC.Contains("发货员"))
                     {
                         var basePrice = listMonth.Where(h => h.Classification == "发货员占比计件").FirstOrDefault();
-                        decimal.TryParse(basePrice.ZB_JB_JJGZ, out decimal jjgz);
-                        decimal.TryParse(t.SCQ, out decimal scq);
-                        t.FHYZB = scq != 0 ? ((total * jjgz) / (totalScq * scq)).ToString() : "0";
-                        decimal.TryParse(t.FHYZB, out decimal fhyzb);
-                        decimal.TryParse(t.JJ, out decimal jj);
-                        t.HJ = (fhyzb + jj).ToString();
+                        if (basePrice == null)
+                        {
+                            t.FHYZB = "0";
+                            t.HJ = "0";
+                        }
+                        else
+                        {
+                            decimal.TryParse(basePrice.ZB_JB_JJGZ, out decimal jjgz);
+                            decimal.TryParse(t.SCQ, out decimal scq);
+                            t.FHYZB = scq != 0 ? ((total * jjgz) / (totalScq * scq)).ToString() : "0";
+                            decimal.TryParse(t.FHYZB, out decimal fhyzb);
+                            decimal.TryParse(t.JJ, out decimal jj);
+                            t.HJ = (fhyzb + jj).ToString();
+                        }
                     }
                 }
                 return true;

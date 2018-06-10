@@ -166,7 +166,7 @@ namespace Monopy.PreceRateWage.WinForm
                             list.Add(t);
                         }
                     }
-                    if (Recount(list) && new BaseDal<DataBase1MJ_PMCDJ>().Add(list) > 0)
+                    if (Recount(list, dateTime) && new BaseDal<DataBase1MJ_PMCDJ>().Add(list) > 0)
                     {
                         btnSearch.PerformClick();
                         MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -256,7 +256,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             dgv.DataSource = null;
             Enabled = false;
-            Recount(list);
+            Recount(list, dateTime);
             foreach (var item in list)
             {
                 foreach (var child in item.Childs)
@@ -469,11 +469,11 @@ namespace Monopy.PreceRateWage.WinForm
 
         #region 调用方法
 
-        private bool Recount(List<DataBase1MJ_PMCDJ> list)
+        private bool Recount(List<DataBase1MJ_PMCDJ> list, DateTime dateTime)
         {
             try
             {
-                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.FactoryNo == "G001" && h.WorkshopName == "模具车间").ToList();
+                var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间").ToList();
                 foreach (var t in list)
                 {
                     foreach (var x in t.Childs)
@@ -669,7 +669,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.DataSource = dt;
             for (int i = 0; i < header.Length; i++)
             {
-                if (i >= 1 && i <= 6)
+                if (i >= 1 && i < 6)
                 {
                     dgv.Columns[i].Visible = false;
                 }
@@ -714,6 +714,6 @@ namespace Monopy.PreceRateWage.WinForm
 
         #endregion
 
-       
+
     }
 }

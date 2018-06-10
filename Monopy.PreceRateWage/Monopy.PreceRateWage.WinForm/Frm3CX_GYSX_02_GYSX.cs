@@ -52,7 +52,7 @@ namespace Monopy.PreceRateWage.WinForm
             //if (dataMonth == null || dataMonth.Count == 0)
             //{
             //    MessageBox.Show("没有月基础数据，请联系管理员");
-            //    return;
+                return;
             //}
             var bzf = new BaseDal<DataBase3CX_GYMJ_07_BZFGY>().GetList(t => t.TheType.Contains("水箱") && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
             if (bzf == null || bzf.Count == 0)

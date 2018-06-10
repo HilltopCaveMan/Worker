@@ -98,7 +98,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板三厂——检包——线位人员出勤日录入日计算.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——检包——线位人员出勤日录入日计算.xlsx");
         }
 
         /// <summary>
@@ -217,7 +217,7 @@ namespace Monopy.PreceRateWage.WinForm
                 return;
             }
             DataBase1JB_XWRYCQ DataBase1JB_XWRYCQ = new DataBase1JB_XWRYCQ() { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month, TheDay = selectTime.Day };
-            FrmModify<DataBase1JB_XWRYCQ> frm = new FrmModify<DataBase1JB_XWRYCQ>(DataBase1JB_XWRYCQ, header, OptionType.Add, Text, 5, 8);
+            FrmModify<DataBase1JB_XWRYCQ> frm = new FrmModify<DataBase1JB_XWRYCQ>(DataBase1JB_XWRYCQ, header, OptionType.Add, Text, 6, 8);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnSearch.PerformClick();
@@ -301,7 +301,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1JB_XWRYCQ> frm = new FrmModify<DataBase1JB_XWRYCQ>(DataBase1JB_XWRYCQ, header, OptionType.Modify, Text, 5, 8);
+                    FrmModify<DataBase1JB_XWRYCQ> frm = new FrmModify<DataBase1JB_XWRYCQ>(DataBase1JB_XWRYCQ, header, OptionType.Modify, Text, 6, 8);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -402,7 +402,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void RefDgv(int year, int month, string line, string userCode, string userName)
         {
-            var list = new BaseDal<DataBase1JB_XWRYCQ>().GetList(t => line != "全部" ? t.XW == line && t.TheYear == year && t.TheMonth == month && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) : t.TheYear == year && t.TheMonth == month && t.UserCode.Contains(userCode) && t.UserName.Contains(userName)).ToList().GroupBy(t => new {  t.XW, t.GWMC, t.UserCode, t.UserName }).Select(t => new DataBase1JB_XWRYCQ {  XW = t.Key.XW, GWMC = t.Key.GWMC, UserCode = t.Key.UserCode, UserName = t.Key.UserName, TheYear = year, TheMonth = month, TheDay = 0, StudyDay = t.Sum(x => string.IsNullOrEmpty(x.StudyDay) ? 0M : Convert.ToDecimal(x.StudyDay)).ToString(), WorkDay = t.Sum(x => string.IsNullOrEmpty(x.WorkDay) ? 0m : Convert.ToDecimal(x.WorkDay)).ToString(), DGWGZ = t.Sum(x => string.IsNullOrEmpty(x.DGWGZ) ? 0M : Convert.ToDecimal(x.DGWGZ)).ToString(), TBGZE = t.Sum(x => string.IsNullOrEmpty(x.TBGZE) ? 0M : Convert.ToDecimal(x.TBGZE)).ToString() }).OrderBy(t => t.XW).ThenBy(t => t.GWMC).ThenBy(t => t.UserCode).ToList();
+            var list = new BaseDal<DataBase1JB_XWRYCQ>().GetList(t => line != "全部" ? t.XW == line && t.TheYear == year && t.TheMonth == month && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) : t.TheYear == year && t.TheMonth == month && t.UserCode.Contains(userCode) && t.UserName.Contains(userName)).ToList().GroupBy(t => new { t.XW, t.GWMC, t.UserCode, t.UserName }).Select(t => new DataBase1JB_XWRYCQ { XW = t.Key.XW, GWMC = t.Key.GWMC, UserCode = t.Key.UserCode, UserName = t.Key.UserName, TheYear = year, TheMonth = month, TheDay = 0, StudyDay = t.Sum(x => string.IsNullOrEmpty(x.StudyDay) ? 0M : Convert.ToDecimal(x.StudyDay)).ToString(), WorkDay = t.Sum(x => string.IsNullOrEmpty(x.WorkDay) ? 0m : Convert.ToDecimal(x.WorkDay)).ToString(), DGWGZ = t.Sum(x => string.IsNullOrEmpty(x.DGWGZ) ? 0M : Convert.ToDecimal(x.DGWGZ)).ToString(), TBGZE = t.Sum(x => string.IsNullOrEmpty(x.TBGZE) ? 0M : Convert.ToDecimal(x.TBGZE)).ToString() }).OrderBy(t => t.XW).ThenBy(t => t.GWMC).ThenBy(t => t.UserCode).ToList();
             list.Insert(0, MyDal.GetTotalDataBase1JB_XWRYCQ(list, selectTime));
             dgv.DataSource = list;
             for (int i = 0; i < 6; i++)
@@ -464,7 +464,7 @@ namespace Monopy.PreceRateWage.WinForm
             bool isAllIn = true;
             foreach (var item in list)
             {
-                DataBaseDay dataBaseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == item.GWMC && t.JBXW == item.XW && t.Classification == "线内计件");
+                DataBaseDay dataBaseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName.Contains(item.GWMC) && t.JBXW == item.XW && t.Classification == "线内计件");
                 if (dataBaseDay == null)
                 {
                     isAllIn = false;

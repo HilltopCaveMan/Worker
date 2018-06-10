@@ -141,7 +141,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1MJ_RGTB> frm = new FrmModify<DataBase1MJ_RGTB>(DataBase1MJ_RGTB, header, OptionType.Modify, Text, 4, 2);
+                    FrmModify<DataBase1MJ_RGTB> frm = new FrmModify<DataBase1MJ_RGTB>(DataBase1MJ_RGTB, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -170,7 +170,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1MJ_RGTB != null)
                     {
-                        FrmModify<DataBase1MJ_RGTB> frm = new FrmModify<DataBase1MJ_RGTB>(DataBase1MJ_RGTB, header, OptionType.Delete, Text, 4, 2);
+                        FrmModify<DataBase1MJ_RGTB> frm = new FrmModify<DataBase1MJ_RGTB>(DataBase1MJ_RGTB, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
@@ -262,7 +262,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             dgv.ContextMenuStrip = contextMenuStrip1;
             dgv.ClearSelection();
-            
+
         }
 
         private void Import(string fileName)
@@ -306,7 +306,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                var sjk = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == "G001" && t.WorkshopName == "模具车间" && t.Classification == "日工");
+                var sjk = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "模具车间" && t.Classification == "日工");
                 if (sjk == null)
                 {
                     MessageBox.Show("基础数据中没有【日工】数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -315,7 +315,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var item in list)
                 {
-                    
+
                     item.DJ = sjk.UnitPrice;
                     item.RGHJ = (Convert.ToDecimal(item.DJ) * Convert.ToDecimal(item.TS)).ToString();
                 }

@@ -73,7 +73,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                list = new ExcelHelper<DataBase1MJ_XJCJYB>().ReadExcel(openFileDlg.FileName, 4, 6, 0, 0, 0, true);
+                list = new ExcelHelper<DataBase1MJ_XJCJYB>().ReadExcel(openFileDlg.FileName, 3, 6, 0, 0, 0, true);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -81,7 +81,7 @@ namespace Monopy.PreceRateWage.WinForm
                     return;
                 }
                 StringBuilder sb = new StringBuilder();
-                var listBase = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "模具车间").ToList();
+                var listBase = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "模具车间").ToList();
                 for (int i = 0; i < list.Count; i++)
                 {
                     var item = list[i];
@@ -246,7 +246,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1MJ_XJCJYB != null)
                     {
-                        if (DataBase1MJ_XJCJYB.No == "合计")
+                        if (DataBase1MJ_XJCJYB.CPMC == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
@@ -321,7 +321,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             dgv.ClearSelection();
         }
-        
+
         /// <summary>
         /// 验证报警
         /// </summary>

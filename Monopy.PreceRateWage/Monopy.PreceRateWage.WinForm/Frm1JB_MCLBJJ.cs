@@ -76,7 +76,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                list = excelHelper.ReadExcel(openFileDlg.FileName, 2, 10);
+                list = excelHelper.ReadExcel(openFileDlg.FileName, 2, 5);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -155,7 +155,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void BtnNew_Click(object sender, EventArgs e)
         {
             DataBase1JB_MCLBJJ DataBase1JB_MCLBJJ = new DataBase1JB_MCLBJJ() { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month };
-            FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Add, Text, 7, 7);
+            FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Add, Text, 5, 7);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnRecount.PerformClick();
@@ -223,7 +223,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Modify, Text, 9, 7);
+                    FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Modify, Text, 5, 7);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnRecount.PerformClick();
@@ -270,7 +270,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 return;
                             }
                         }
-                        FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Delete, Text, 7, 7);
+                        FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             btnSearch.PerformClick();
@@ -292,10 +292,10 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Visible = true;
             }
             var datas = new BaseDal<DataBase1JB_MCLBJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.UserCode.Contains(userCode)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            
+
             datas.Insert(0, MyDal.GetTotalDataBase1JB_MCLBJJ(datas, selectTime));
             dgv.DataSource = datas;
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
@@ -303,7 +303,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.Rows[0].Frozen = true;
             dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
             dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
-            header = "cTime$cUser$isOKmc1$isOKmc2$isOkgp$isOklb1$isOklb2$年$月$序号$人员编码$姓名$品种$磨瓷数量$原库存磨瓷数量$冷补扫釉数量$磨瓷单价$原库存磨瓷单价$冷补扫釉单价$磨瓷金额$原库存金额$冷补扫釉金额$金额".Split('$');
+            header = "cTime$cUser$年$月$序号$人员编码$姓名$品种$磨瓷数量$原库存磨瓷数量$冷补扫釉数量$磨瓷单价$原库存磨瓷单价$冷补扫釉单价$磨瓷金额$原库存金额$冷补扫釉金额$金额".Split('$');
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
@@ -316,28 +316,57 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
 
+                var baseDay = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间");
+
+                if (baseDay == null)
+                {
+                    MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的指标数据，无法计算，导入指标后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 foreach (var item in list)
                 {
-                    var mCount = new BaseDal<DataBase1JB_PMCMC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
-                    var yCount = new BaseDal<DataBase1JB_PMCMCYKC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
-                    var lCount = new BaseDal<DataBase1JB_PMCSY>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ).HG;
-                    decimal.TryParse(mCount, out decimal m);
-                    decimal.TryParse(yCount, out decimal y);
-                    decimal.TryParse(lCount, out decimal l);
+                    var mCount = new BaseDal<DataBase1JB_PMCMC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
+                    var yCount = new BaseDal<DataBase1JB_PMCMCYKC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
+                    var lCount = new BaseDal<DataBase1JB_PMCSY>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
+                    decimal m = 0M;
+                    decimal y = 0M;
+                    decimal l = 0M;
+
+                    if (mCount == null)
+                    {
+                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的磨瓷月报数据，无法计算，导入磨瓷月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    if (yCount == null)
+                    {
+                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的磨瓷原库存月报数据，无法计算，导入磨瓷原库存月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    if (lCount == null)
+                    {
+                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的扫釉月报数据，无法计算，导入扫釉月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
+
+                    decimal.TryParse(mCount.HG, out m);
+                    decimal.TryParse(yCount.HG, out y);
+                    decimal.TryParse(lCount.HG, out l);
                     decimal.TryParse(item.McCount, out decimal mc);
                     decimal.TryParse(item.YkcpgCount, out decimal yc);
                     decimal.TryParse(item.LbCount, out decimal lc);
-                    if (mc > m)
+                    if (mc > m && m != 0)
                     {
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的磨瓷数量大于PMC磨瓷月报中对应的合格数" + Environment.NewLine + "PMC磨瓷月报中合格数为：【" + m.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    if (yc > y)
+                    if (yc > y && y != 0)
                     {
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的原库存磨瓷数量大于PMC磨瓷原库存月报中对应的合格数" + Environment.NewLine + "PMC磨瓷原库存月报中合格数为：【" + y.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    if (lc > l)
+                    if (lc > l && l != 0)
                     {
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的冷补扫釉数量大于PMC扫釉月报中对应的合格数" + Environment.NewLine + "PMC扫釉月报中合格数为：【" + l.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
@@ -347,6 +376,7 @@ namespace Monopy.PreceRateWage.WinForm
                     item.McUnitPrice = bDayMc == null ? "0" : bDayMc.UnitPrice;
                     item.YkcpgUnitPrice = bDayMc == null ? "0" : bDayMc.UnitPrice;
                     item.LbUnitPrice = bDayLb == null ? "0" : bDayLb.UnitPrice;
+
                     item.McMoney = string.IsNullOrEmpty(item.McCount) ? string.Empty : (Convert.ToDecimal(item.McCount) * Convert.ToDecimal(item.McUnitPrice)).ToString();
                     item.YkcpgMoney = string.IsNullOrEmpty(item.YkcpgCount) ? string.Empty : (Convert.ToDecimal(item.YkcpgCount) * Convert.ToDecimal(item.YkcpgUnitPrice)).ToString();
                     item.LbMoney = string.IsNullOrEmpty(item.LbCount) ? string.Empty : (Convert.ToDecimal(item.LbCount) * Convert.ToDecimal(item.LbUnitPrice)).ToString();
