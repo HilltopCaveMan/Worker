@@ -200,12 +200,10 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.GW == "合计")
+                    if (item.GW != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase1JB_XNDY>().Delete(item);
                     }
-                    new BaseDal<DataBase1JB_XNDY>().Delete(item);
                 }
                 btnRecount.PerformClick();
                 return;

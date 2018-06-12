@@ -20,7 +20,6 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1CC_CJB : Office2007Form
     {
-        private string[] header = "岗位名称$人员编码$姓名$普通散装小件$科玛散装小件$连体类$501盆类$科玛柜盆类$小科玛类$科玛托盘小件$卸配件$放垛/码垛（小件）$放垛/码垛（大件）$打样品$装托盘$装812托盘$铺三合板$拼箱$贴贴".Split('$');
         public Frm1CC_CJB()
         {
             InitializeComponent();
@@ -542,7 +541,10 @@ namespace Monopy.PreceRateWage.WinForm
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
                             var list = conn.Query<DataBase1CC_CJB>("select * from DataBase1CC_CJB where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -576,7 +578,10 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {

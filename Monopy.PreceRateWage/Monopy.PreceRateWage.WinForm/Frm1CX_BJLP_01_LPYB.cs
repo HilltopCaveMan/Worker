@@ -149,7 +149,10 @@ namespace Monopy.PreceRateWage.WinForm
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
                             var list = conn.Query<DataBase1CX_BJLP_01_LPYB>("select * from DataBase1CX_BJLP_01_LPYB where theyear=" + dtp.Value.Year + " and themonth=" + dtp.Value.Month);
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -180,7 +183,10 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {

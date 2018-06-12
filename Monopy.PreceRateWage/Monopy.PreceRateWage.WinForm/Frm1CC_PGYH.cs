@@ -21,7 +21,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1CC_PGYH : Office2007Form
     {
-        string[] header = "Time$User$Year$Month$序号$车间$人员编码$姓名$验货天数".Split('$');
+        string[] header = "Time$User$Year$Month$工厂$序号$车间$人员编码$姓名$验货天数".Split('$');
         private string _factoryNo;
         public Frm1CC_PGYH()
         {
@@ -32,7 +32,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                _factoryNo = args.Split('-')[0];
+                _factoryNo = args;
 
             }
             catch (Exception ex)
@@ -108,6 +108,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 continue;
                             }
                             DataBase1CC_PGYH t = new DataBase1CC_PGYH { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
+                            t.FactoryNo = _factoryNo;
                             t.No = ExcelHelper.GetCellValue(row.GetCell(0));
                             t.CJ = ExcelHelper.GetCellValue(row.GetCell(1));
                             t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
@@ -157,7 +158,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase1CC_PGYH> list = dgv.DataSource as List<DataBase1CC_PGYH>;
-                if (new ExcelHelper<DataBase1CC_PGYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——仓储——品管验货天数.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1CC_PGYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——仓储——品管验货天数.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -201,9 +202,9 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var id = dgv.SelectedRows[0].Cells["id"].Value.ToString();
+                var no = dgv.SelectedRows[0].Cells["No"].Value.ToString();
                 DateTime dateTime = Convert.ToDateTime(dtp.Value);
-                if (string.IsNullOrEmpty(id))
+                if (no == "合计")
                 {
                     if (MessageBox.Show("要删除" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
@@ -211,24 +212,24 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             //var list = conn.Query<DataBase1CC_PGYH>("select * from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
                             conn.Open();
-                            IDbTransaction dbTransaction = conn.BeginTransaction();
+                            //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
                                 string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month;
                                 //foreach (var item in list)
                                 //{
-                                conn.Execute(sqlMain, dbTransaction, null, null);
+                                conn.Execute(sqlMain, null, null);
                                 //}
-                                dbTransaction.Commit();
+                                //dbTransaction.Commit();
                             }
                             catch (Exception ex)
                             {
-                                dbTransaction.Rollback();
+                                //dbTransaction.Rollback();
                                 MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
-                                dbTransaction.Dispose();
+                                //dbTransaction.Dispose();
                             }
                         }
                     }
@@ -239,23 +240,24 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
+                            var id = dgv.SelectedRows[0].Cells["id"].Value.ToString();
                             conn.Open();
-                            IDbTransaction dbTransaction = conn.BeginTransaction();
+                            //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
                                 string sqlMain = "delete from DataBase1CC_PGYH where id=@id";
-                                conn.Execute(sqlMain, new { id = id }, dbTransaction, null, null);
+                                conn.Execute(sqlMain, new { id = id }, null, null);
 
-                                dbTransaction.Commit();
+                                //dbTransaction.Commit();
                             }
                             catch (Exception ex)
                             {
-                                dbTransaction.Rollback();
+                                //dbTransaction.Rollback();
                                 MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
-                                dbTransaction.Dispose();
+                                //dbTransaction.Dispose();
                             }
                         }
                     }
@@ -312,7 +314,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (cj == "全部" ? true : t.CJ.Contains(cj)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ThenBy(t => t.UserCode).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1CC_PGYH(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

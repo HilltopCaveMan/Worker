@@ -617,12 +617,15 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                             {
-                                conn.Open();
+                                if (conn.State != ConnectionState.Open)
+                                {
+                                    conn.Open();
+                                }
                                 var list = conn.Query<DataBase1JB_JJRLR>("select * from DataBase1JB_JJRLR where theyear=" + selectTime.Year + " and themonth=" + selectTime.Month + " and TheDay=" + selectTime.Day);
                                 IDbTransaction dbTransaction = conn.BeginTransaction();
                                 foreach (var item in list)
                                 {
-                                    if (item.IsKF_Manager || item.IsPG_Manager || item.IsPMC_Manager)
+                                    if (item.IsKF_Manager || item.IsPG_Manager || item.IsPMC_Check)
                                     {
                                         MessageBox.Show("错误：已经送审或有部门审核，不能删除？", "禁止操作", MessageBoxButtons.OK, MessageBoxIcon.Stop);
                                         return;
@@ -665,7 +668,10 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                             {
-                                conn.Open();
+                                if (conn.State != ConnectionState.Open)
+                                {
+                                    conn.Open();
+                                }
 
                                 string sql = "select * from DataBase1JB_JJRLR where id='" + id+"'";
                                 var list = conn.Query<DataBase1JB_JJRLR>(sql).FirstOrDefault();

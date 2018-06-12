@@ -1,13 +1,18 @@
-﻿using DevComponents.DotNetBar;
+﻿using Dapper;
+using DevComponents.DotNetBar;
 using Monopy.PreceRateWage.Common;
 using Monopy.PreceRateWage.Dal;
 using Monopy.PreceRateWage.Model;
+using NPOI.SS.UserModel;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -113,6 +118,12 @@ namespace Monopy.PreceRateWage.WinForm
             List<DataBase1MJ_XSGJJ> list = dgv.DataSource as List<DataBase1MJ_XSGJJ>;
             dgv.DataSource = null;
             Enabled = false;
+            if (list == null || list.Count == 0)
+            {
+                Enabled = true;
+                btnSearch.PerformClick();
+                return;
+            }
             list.RemoveAt(0);
             Recount(list);
             foreach (var item in list)
@@ -170,7 +181,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1MJ_XSGJJ != null)
                     {
-                        FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Delete, Text, 4, 2);
+                        FrmModify<DataBase1MJ_XSGJJ> frm = new FrmModify<DataBase1MJ_XSGJJ>(DataBase1MJ_XSGJJ, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
@@ -194,12 +205,11 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase1MJ_XSGJJ>().Delete(item);
                     }
-                    new BaseDal<DataBase1MJ_XSGJJ>().Delete(item);
+
                 }
                 btnRecount.PerformClick();
                 return;

@@ -390,7 +390,10 @@ namespace Monopy.PreceRateWage.WinForm
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
                             var list = conn.Query<DataBase1MJ_PMCDJ>("select * from DataBase1MJ_PMCDJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and rq=" + dateTime.Day);
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -421,7 +424,10 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -664,6 +670,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dr_sum[j] = tp[j - 11];
             }
             dr_sum["GW"] = "合计";
+            dr_sum["Id"] = string.Empty;
             dt.Rows.InsertAt(dr_sum, 2);
             string[] header = "金额$ID$time$user$Year$Month$序号$岗位$人员编码$姓名$日期".Split('$');
             dgv.DataSource = dt;

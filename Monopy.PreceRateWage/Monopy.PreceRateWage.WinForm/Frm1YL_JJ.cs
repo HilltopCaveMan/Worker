@@ -198,12 +198,10 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase1YL_JJ>().Delete(item);
                     }
-                    new BaseDal<DataBase1YL_JJ>().Delete(item);
                 }
                 btnRecount.PerformClick();
                 return;
@@ -357,7 +355,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         if (ti.LB == item.LB)
                         {
-                            if (ti.SL == item.SL)
+                            if (ti.SL >= item.SL)
                             {
                                 continue;
                             }
@@ -374,7 +372,16 @@ namespace Monopy.PreceRateWage.WinForm
                 foreach (var item in list)
                 {
                     var baseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "原料车间" && t.TypesType == item.LB);
-                    item.DJ = baseDay.UnitPrice;
+                    if (baseDay == null)
+                    {
+                        item.DJ = string.Empty;
+                        MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月类别：【" + item.LB + "】的指标数据，导入后重新计算！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                    else
+                    {
+                        item.DJ = baseDay.UnitPrice;
+                    }
+
                     decimal.TryParse(item.DJ, out decimal dj);
                     decimal.TryParse(item.SL, out decimal sl);
                     item.JJJE = (dj * sl).ToString();
