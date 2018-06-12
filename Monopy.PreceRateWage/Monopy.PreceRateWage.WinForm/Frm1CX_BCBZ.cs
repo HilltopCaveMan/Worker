@@ -523,6 +523,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (item.No == "合计")
                     {
+                        list.Remove(item);
                         continue;
                     }
                     new BaseDal<DataBase1CX_BCBZ>().Delete(item);

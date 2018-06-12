@@ -428,6 +428,18 @@
     <Compile Include="Frm1YL_YLTJ.Designer.cs">
       <DependentUpon>Frm1YL_YLTJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CC_CJB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CC_CJB.Designer.cs">
+      <DependentUpon>Frm2CC_CJB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CC_PGYH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CC_PGYH.Designer.cs">
+      <DependentUpon>Frm2CC_PGYH.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGeneral_XT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1216,6 +1228,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1YL_YLTJ.resx">
       <DependentUpon>Frm1YL_YLTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CC_CJB.resx">
+      <DependentUpon>Frm2CC_CJB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CC_PGYH.resx">
+      <DependentUpon>Frm2CC_PGYH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_XT.resx">
       <DependentUpon>FrmGeneral_XT.cs</DependentUpon>
@@ -2160,6 +2178,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板一厂——烧成——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——仓储——品管验货天数.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——仓储——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——仓储——入职表 .xlsx">

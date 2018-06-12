@@ -838,6 +838,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂仓储品管验货天数合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CC_PGYH GetTotalDataBase2CC_PGYH(List<DataBase2CC_PGYH> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CC_PGYH { No = "合计", UserName = "合计", YHTS = 0.ToString() } : new DataBase2CC_PGYH { No = "合计", UserName = "合计", YHTS = list.Sum(t => decimal.TryParse(t.YHTS, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>

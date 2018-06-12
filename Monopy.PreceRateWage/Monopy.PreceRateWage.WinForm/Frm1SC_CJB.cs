@@ -199,6 +199,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (item.No == "合计")
                     {
+                        list.Remove(item);
                         continue;
                     }
                     new BaseDal<DataBase1SC_CJB>().Delete(item);
@@ -286,6 +287,20 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
+                if (string.IsNullOrEmpty(list[i].UserCode) || string.IsNullOrEmpty(list[i].UserName))
+                {
+                    list.RemoveAt(i);
+                    if (i > 0)
+                    {
+                        i--;
+                    }
+                    else
+                    {
+                        i = -1;
+                    }
+                    continue;
+                }
+
                 if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
                 {
                     MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
