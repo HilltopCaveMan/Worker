@@ -132,7 +132,14 @@ namespace Monopy.PreceRateWage.WinForm
                     if (string.IsNullOrEmpty(item.UserCode) || string.IsNullOrEmpty(item.UserName))
                     {
                         list.RemoveAt(i);
-                        i--;
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                        else
+                        {
+                            i = -1;
+                        }
                         continue;
                     }
                     if (!MyDal.IsUserCodeAndNameOK(item.UserCode, item.UserName, out string userNameERP))

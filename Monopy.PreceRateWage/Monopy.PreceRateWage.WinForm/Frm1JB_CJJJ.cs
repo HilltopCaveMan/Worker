@@ -107,6 +107,11 @@ namespace Monopy.PreceRateWage.WinForm
                             else
                             {
                                 DataBase1JB_CJJJ cjjj = new DataBase1JB_CJJJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, FactoryNo = ExcelHelper.GetCellValue(row.GetCell(0)), Code = ExcelHelper.GetCellValue(row.GetCell(1)), UserCode = ExcelHelper.GetCellValue(row.GetCell(2)), UserName = ExcelHelper.GetCellValue(row.GetCell(3)), Childs = new List<DataBase1JB_CJJJ_Child>(), Results = new List<DataBase1JB_CJJJ_Result>() };
+
+                                if (string.IsNullOrEmpty(cjjj.UserCode) || string.IsNullOrEmpty(cjjj.UserName))
+                                {
+                                    continue;
+                                }
                                 if (cjjj.UserCode.StartsWith("M") && !MyDal.IsUserCodeAndNameOK(cjjj.UserCode, cjjj.UserName, out string userNameERP))
                                 {
                                     MessageBox.Show("工号：【" + cjjj.UserCode + "】,姓名：【" + cjjj.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

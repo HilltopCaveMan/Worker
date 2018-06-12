@@ -160,18 +160,35 @@ namespace Monopy.PreceRateWage.WinForm
                     return;
                 }
                 Enabled = false;
-                foreach (var item in list)
+                for (int i = 0; i < list.Count; i++)
                 {
-                    if (!MyDal.IsUserCodeAndNameOK(item.UserCode, item.UserName, out string userNameERP))
+
+                    if (string.IsNullOrEmpty(list[i].UserCode) || string.IsNullOrEmpty(list[i].UserName))
                     {
-                        MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        list.RemoveAt(i);
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                        else
+                        {
+                            i = -1;
+                        }
+                        continue;
+
+                    }
+
+
+                    if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
+                    {
+                        MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Enabled = true;
                         return;
                     }
-                    item.CreateUser = Program.User.ToString();
-                    item.CreateTime = Program.NowTime;
-                    item.TheYear = selectTime.Year;
-                    item.TheMonth = selectTime.Month;
+                    list[i].CreateUser = Program.User.ToString();
+                    list[i].CreateTime = Program.NowTime;
+                    list[i].TheYear = selectTime.Year;
+                    list[i].TheMonth = selectTime.Month;
                 }
                 if (Recount(list) && new BaseDal<DataBase1JB_KFSS>().Add(list) > 0)
                 {

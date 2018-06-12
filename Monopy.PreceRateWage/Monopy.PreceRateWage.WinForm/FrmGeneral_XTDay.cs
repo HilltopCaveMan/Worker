@@ -274,6 +274,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (item.No == "合计")
                     {
+                        list.Remove(item);
                         continue;
                     }
                     new BaseDal<DataBaseGeneral_XTDay>().Delete(item);

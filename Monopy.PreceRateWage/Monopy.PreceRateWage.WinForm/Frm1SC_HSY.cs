@@ -294,7 +294,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     new BaseDal<DataBase1SC_HSY>().Delete(item);
                 }
-                new BaseDal<DataBase1SC_HSY_BCKH>().ExecuteSqlCommand("delete from DataBase1SC_HSY_BCKH where theYear = " + dtp.Value.Year + " and theMonth= " + dtp.Value.Month);
+                //new BaseDal<DataBase1SC_HSY_BCKH>().ExecuteSqlCommand("delete from DataBase1SC_HSY_BCKH where theYear = " + dtp.Value.Year + " and theMonth= " + dtp.Value.Month);
 
                 btnSearch.PerformClick();
                 return;

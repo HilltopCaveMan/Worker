@@ -19,22 +19,36 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class Frm1YL_YLTJ : Office2007Form
+    public partial class Frm2CC_PGYH : Office2007Form
     {
-        string[] header = "Time$User$Year$Month$序号$品种$类别$单位$数量".Split('$');
-
-        public Frm1YL_YLTJ()
+        string[] header = "Time$User$Year$Month$序号$车间$人员编码$姓名$验货天数".Split('$');
+        private string _factoryNo;
+        public Frm2CC_PGYH()
         {
             InitializeComponent();
+        }
+
+        public Frm2CC_PGYH(string args) : this()
+        {
+            try
+            {
+                _factoryNo = args.Split('-')[0];
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+                return;
+            }
         }
         #region 按钮事件
 
         /// <summary>
-        /// 初始化
+        /// 初期加载
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Frm1YL_YLTJ_Load(object sender, EventArgs e)
+        private void Frm2CC_PGYH_Load(object sender, EventArgs e)
         {
             InitUI();
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
@@ -42,13 +56,13 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         /// <summary>
-        /// 查询
+        /// 查询按钮
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            RefDgv(dtp.Value, CmbLB.Text);
+            RefDgv(dtp.Value, comCJ.Text, CmbUserCode.Text, CmbUserName.Text);
             dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
@@ -59,7 +73,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——原料——原料统计.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板二厂——仓储——品管验货天数.xlsx");
         }
 
         /// <summary>
@@ -77,7 +91,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 try
                 {
-                    List<DataBase1YL_YLTJ> list = new List<DataBase1YL_YLTJ>();
+                    List<DataBase2CC_PGYH> list = new List<DataBase2CC_PGYH>();
                     DateTime dateTime = dtp.Value;
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
@@ -93,16 +107,25 @@ namespace Monopy.PreceRateWage.WinForm
                             {
                                 continue;
                             }
-                            DataBase1YL_YLTJ t = new DataBase1YL_YLTJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
+                            DataBase2CC_PGYH t = new DataBase2CC_PGYH { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
                             t.No = ExcelHelper.GetCellValue(row.GetCell(0));
-                            t.PZ = ExcelHelper.GetCellValue(row.GetCell(1));
-                            t.LB = ExcelHelper.GetCellValue(row.GetCell(2));
-                            t.DW = ExcelHelper.GetCellValue(row.GetCell(3));
-                            t.SL = ExcelHelper.GetCellValue(row.GetCell(4));
+                            t.CJ = ExcelHelper.GetCellValue(row.GetCell(1));
+                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
+                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(3));
+                            t.YHTS = ExcelHelper.GetCellValue(row.GetCell(4));
+                            if (string.IsNullOrEmpty(t.UserCode) || string.IsNullOrEmpty(t.UserName))
+                            {
+                                continue;
+                            }
+                            if (!MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
+                            {
+                                MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return;
+                            }
                             list.Add(t);
                         }
                     }
-                    if (new BaseDal<DataBase1YL_YLTJ>().Add(list) > 0)
+                    if (new BaseDal<DataBase2CC_PGYH>().Add(list) > 0)
                     {
                         btnSearch.PerformClick();
                         MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -133,8 +156,8 @@ namespace Monopy.PreceRateWage.WinForm
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                List<DataBase1YL_YLTJ> list = dgv.DataSource as List<DataBase1YL_YLTJ>;
-                if (new ExcelHelper<DataBase1YL_YLTJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——原料——原料统计.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                List<DataBase2CC_PGYH> list = dgv.DataSource as List<DataBase2CC_PGYH>;
+                if (new ExcelHelper<DataBase2CC_PGYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板二厂——仓储——品管验货天数.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -158,9 +181,9 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                if (dgv.SelectedRows[0].DataBoundItem is DataBase1YL_YLTJ DataBase1YL_YLTJ)
+                if (dgv.SelectedRows[0].DataBoundItem is DataBase2CC_PGYH DataBase2CC_PGYH)
                 {
-                    FrmModify<DataBase1YL_YLTJ> frm = new FrmModify<DataBase1YL_YLTJ>(DataBase1YL_YLTJ, header, OptionType.Modify, Text, 5, 0);
+                    FrmModify<DataBase2CC_PGYH> frm = new FrmModify<DataBase2CC_PGYH>(DataBase2CC_PGYH, header, OptionType.Modify, Text, 5, 0);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -174,37 +197,38 @@ namespace Monopy.PreceRateWage.WinForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        private void 删除ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                
-                var DataBase1YL_YLTJ = dgv.SelectedRows[0].DataBoundItem as DataBase1YL_YLTJ;
+                var id = dgv.SelectedRows[0].Cells["id"].Value.ToString();
                 DateTime dateTime = Convert.ToDateTime(dtp.Value);
-                if (DataBase1YL_YLTJ.No=="合计")
+                if (string.IsNullOrEmpty(id))
                 {
                     if (MessageBox.Show("要删除" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
+                            //var list = conn.Query<DataBase2CC_PGYH>("select * from DataBase2CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
                             conn.Open();
-                            //IDbTransaction dbTransaction = conn.BeginTransaction();
+                            IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1YL_YLTJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ";
-                                
-                                conn.Execute(sqlMain, null, null);
-                               
-                                //dbTransaction.Commit();
+                                string sqlMain = "delete from DataBase2CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month;
+                                //foreach (var item in list)
+                                //{
+                                conn.Execute(sqlMain, dbTransaction, null, null);
+                                //}
+                                dbTransaction.Commit();
                             }
                             catch (Exception ex)
                             {
-                                //dbTransaction.Rollback();
+                                dbTransaction.Rollback();
                                 MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                             }
                             finally
                             {
-                                //dbTransaction.Dispose();
+                                dbTransaction.Dispose();
                             }
                         }
                     }
@@ -213,13 +237,25 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (MessageBox.Show("要删除选中的记录吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
-                        if (DataBase1YL_YLTJ != null)
+                        using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            FrmModify<DataBase1YL_YLTJ> frm = new FrmModify<DataBase1YL_YLTJ>(DataBase1YL_YLTJ, header, OptionType.Delete, Text, 5);
-                            if (frm.ShowDialog() == DialogResult.Yes)
+                            conn.Open();
+                            IDbTransaction dbTransaction = conn.BeginTransaction();
+                            try
                             {
-                                InitUI();
-                                
+                                string sqlMain = "delete from DataBase2CC_PGYH where id=@id";
+                                conn.Execute(sqlMain, new { id = id }, dbTransaction, null, null);
+
+                                dbTransaction.Commit();
+                            }
+                            catch (Exception ex)
+                            {
+                                dbTransaction.Rollback();
+                                MessageBox.Show("删除失败，请检查网络和操作！详细错误为：" + ex.Message, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
+                            finally
+                            {
+                                dbTransaction.Dispose();
                             }
                         }
                     }
@@ -233,29 +269,48 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1YL_YLTJ>().GetList().ToList();
+            var list = new BaseDal<DataBase2CC_PGYH>().GetList().ToList();
+            RefComCJ(list);
+            RefCmbUserCode(list);
+            RefCmbUserName(list);
 
-            RefCmbLB(list);
         }
-
-        private void RefCmbLB(List<DataBase1YL_YLTJ> list)
+        private void RefComCJ(List<DataBase2CC_PGYH> list)
         {
-            var listTmp = list.GroupBy(t => t.LB).Select(t => t.Key).OrderBy(t => t).ToList();
+            var listTmp = list.GroupBy(t => t.CJ).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
-            CmbLB.DataSource = listTmp;
-            CmbLB.DisplayMember = "LB";
-            CmbLB.Text = "全部";
+            comCJ.DataSource = listTmp;
+            comCJ.DisplayMember = "CJ";
+            comCJ.Text = "全部";
         }
 
-        private void RefDgv(DateTime selectTime, string lb)
+        private void RefCmbUserCode(List<DataBase2CC_PGYH> list)
+        {
+            var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
+            listTmp.Insert(0, "全部");
+            CmbUserCode.DataSource = listTmp;
+            CmbUserCode.DisplayMember = "UserCode";
+            CmbUserCode.Text = "全部";
+        }
+
+        private void RefCmbUserName(List<DataBase2CC_PGYH> list)
+        {
+            var listTmp = list.GroupBy(t => t.UserName).Select(t => t.Key).OrderBy(t => t).ToList();
+            listTmp.Insert(0, "全部");
+            CmbUserName.DataSource = listTmp;
+            CmbUserName.DisplayMember = "UserName";
+            CmbUserName.Text = "全部";
+        }
+
+        private void RefDgv(DateTime selectTime, string cj, string userCode, string userName)
         {
             foreach (DataGridViewColumn item in dgv.Columns)
             {
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1YL_YLTJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => t.No).ToList();
-            datas.Insert(0, MyDal.GetTotalDataBase1YL_YLTJ(datas));
+            var datas = new BaseDal<DataBase2CC_PGYH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (cj == "全部" ? true : t.CJ.Contains(cj)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ThenBy(t => t.UserCode).ToList();
+            datas.Insert(0, MyDal.GetTotalDataBase2CC_PGYH(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
             {
