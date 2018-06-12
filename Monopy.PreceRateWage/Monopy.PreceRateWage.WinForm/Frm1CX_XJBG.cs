@@ -194,12 +194,10 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase1CX_XJBG>().Delete(item);
                     }
-                    new BaseDal<DataBase1CX_XJBG>().Delete(item);
                 }
                 btnRecount.PerformClick();
                 return;

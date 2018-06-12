@@ -133,7 +133,6 @@
     <Compile Include="DataBase1YL_YLTJ.cs" />
     <Compile Include="DataBase2CC_CJB.cs" />
     <Compile Include="DataBase2CC_CJB_Child.cs" />
-    <Compile Include="DataBase2CC_PGYH.cs" />
     <Compile Include="DataBase3CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase3CX_BJLP_01_LPYB_Child.cs" />
     <Compile Include="DataBase3CX_CX_04SXBZ.cs" />

@@ -113,6 +113,12 @@ namespace Monopy.PreceRateWage.WinForm
             List<DataBase1CX_QTJJ> list = dgv.DataSource as List<DataBase1CX_QTJJ>;
             dgv.DataSource = null;
             Enabled = false;
+            if (list == null || list.Count == 0)
+            {
+                Enabled = true;
+                btnSearch.PerformClick();
+                return;
+            }
             list.RemoveAt(0);
             Recount(list);
             foreach (var item in list)
@@ -194,12 +200,10 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase1CX_QTJJ>().Delete(item);
                     }
-                    new BaseDal<DataBase1CX_QTJJ>().Delete(item);
                 }
                 btnRecount.PerformClick();
                 return;

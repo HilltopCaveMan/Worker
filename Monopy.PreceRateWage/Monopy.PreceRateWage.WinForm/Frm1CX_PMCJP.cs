@@ -86,7 +86,7 @@ namespace Monopy.PreceRateWage.WinForm
                         int i, j;
                         for (i = 1; i <= sheet.LastRowNum; i++)
                         {
-                            IRow rowFirst = sheet.GetRow(1);
+                            IRow rowFirst = sheet.GetRow(0);
                             IRow row = sheet.GetRow(i);
                             if (row == null)
                             {
@@ -174,7 +174,7 @@ namespace Monopy.PreceRateWage.WinForm
             sfd.FileName = "梦牌一厂成型--精坯月报-" + dtp.Value.ToString("yyyy年MM月") + ".xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                byte[] data = new ExcelHelper().DataTable2Excel(dt, "精坯月报", "一工厂" + dtp.Value.ToString("yyyy年MM月"));
+                byte[] data = new ExcelHelper().DataTable2Excel(dt, "精坯月报", "一工厂" + dtp.Value.ToString("yyyy年MM月")+ "精坯月报");
                 try
                 {
                     if (sfd.FileName.Substring(sfd.FileName.Length - 4) != ".xls")
@@ -213,7 +213,10 @@ namespace Monopy.PreceRateWage.WinForm
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
                             var list = conn.Query<DataBase1CX_PMCJP>("select * from DataBase1CX_PMCJP where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " ");
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -247,7 +250,10 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                         {
-                            conn.Open();
+                            if (conn.State != ConnectionState.Open)
+                            {
+                                conn.Open();
+                            }
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
@@ -359,7 +365,9 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     dgv.Columns[i].Visible = false;
                 }
+                dgv.Columns[i].HeaderText = header[i];
             }
+            
             dgv.Columns[5].Frozen = true;
 
             dgv.ClearSelection();

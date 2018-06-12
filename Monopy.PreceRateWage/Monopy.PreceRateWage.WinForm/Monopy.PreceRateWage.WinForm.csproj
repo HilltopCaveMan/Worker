@@ -434,12 +434,6 @@
     <Compile Include="Frm2CC_CJB.Designer.cs">
       <DependentUpon>Frm2CC_CJB.cs</DependentUpon>
     </Compile>
-    <Compile Include="Frm2CC_PGYH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Frm2CC_PGYH.Designer.cs">
-      <DependentUpon>Frm2CC_PGYH.cs</DependentUpon>
-    </Compile>
     <Compile Include="FrmGeneral_XT.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1231,9 +1225,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CC_CJB.resx">
       <DependentUpon>Frm2CC_CJB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Frm2CC_PGYH.resx">
-      <DependentUpon>Frm2CC_PGYH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_XT.resx">
       <DependentUpon>FrmGeneral_XT.cs</DependentUpon>

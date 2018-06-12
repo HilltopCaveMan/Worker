@@ -96,6 +96,10 @@ namespace Monopy.PreceRateWage.WinForm
                             DataBase1YL_YLTJ t = new DataBase1YL_YLTJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
                             t.No = ExcelHelper.GetCellValue(row.GetCell(0));
                             t.PZ = ExcelHelper.GetCellValue(row.GetCell(1));
+                            if (string.IsNullOrEmpty(t.PZ))
+                            {
+                                continue;
+                            }
                             t.LB = ExcelHelper.GetCellValue(row.GetCell(2));
                             t.DW = ExcelHelper.GetCellValue(row.GetCell(3));
                             t.SL = ExcelHelper.GetCellValue(row.GetCell(4));

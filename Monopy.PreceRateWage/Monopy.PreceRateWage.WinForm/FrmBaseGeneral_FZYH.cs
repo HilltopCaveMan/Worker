@@ -260,8 +260,36 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("工厂：" + _factoryNo + ",车间：" + _dept + ",工种：" + item.GWMC + ",基础数据中，没有数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    item.JG = month.MoneyBase;
-                    item.Money = ((decimal.TryParse(item.JG, out decimal xtrg) ? xtrg : 0M) * (decimal.TryParse(item.DayCount, out decimal day) ? day : 0M)).ToString();
+                    if (_factoryNo == "G003")
+                    {
+                        item.JG = month.MoneyBase;
+                        item.Money = ((decimal.TryParse(item.JG, out decimal xtrg) ? xtrg : 0M) * (decimal.TryParse(item.DayCount, out decimal day) ? day : 0M)).ToString();
+                    }
+                    else
+                    {
+                        var pgyh = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == _factoryNo && t.CJ.Contains(_dept) && t.UserCode == item.UserCode).ToList();
+                        if (pgyh == null || pgyh.Count == 0)
+                        {
+                            MessageBox.Show("工厂：" + _factoryNo + ",车间：" + _dept + ",姓名：" + item.UserName + ",没有品管数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        decimal totalCount = 0;
+                        foreach (var count in pgyh)
+                        {
+                            decimal.TryParse(count.YHTS, out decimal ts);
+                            totalCount += ts;
+                        }
+                       
+                        decimal.TryParse(item.DayCount, out decimal day);
+                        if (day > totalCount)
+                        {
+                            MessageBox.Show("人员编码：" + item.UserCode + ",姓名：" + item.UserName + "的天数大于品管中的验货天数，品管中的验货天数为:" + totalCount + "，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            return false;
+                        }
+                        item.JG = month.DayWork_FZYH;
+                        decimal.TryParse(item.JG, out decimal xtrg);
+                        item.Money = (xtrg * day).ToString();
+                    }
                 }
                 return true;
             }

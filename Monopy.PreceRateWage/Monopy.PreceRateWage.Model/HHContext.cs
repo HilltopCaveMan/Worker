@@ -238,7 +238,6 @@ namespace Monopy.PreceRateWage.Model
 
         /*=========================================二厂仓储开始=========================================*/
         public virtual DbSet<DataBase2CC_CJB> TDataBase2CC_CJB { get; set; }
-        public virtual DbSet<DataBase2CC_PGYH> TDataBase2CC_PGYH { get; set; }
         
     }
 }

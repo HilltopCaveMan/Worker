@@ -836,16 +836,7 @@ namespace Monopy.PreceRateWage.Dal
         {
             return (list == null || list.Count == 0) ? new DataBase1CX_BCBZ { No = "合计", GD = "合计", BZJE = 0.ToString() } : new DataBase1CX_BCBZ { No = "合计", GD = "合计", BZJE = list.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString() };
         }
-
-        /// <summary>
-        /// 二厂仓储品管验货天数合计
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public static DataBase2CC_PGYH GetTotalDataBase2CC_PGYH(List<DataBase2CC_PGYH> list)
-        {
-            return (list == null || list.Count == 0) ? new DataBase2CC_PGYH { No = "合计", UserName = "合计", YHTS = 0.ToString() } : new DataBase2CC_PGYH { No = "合计", UserName = "合计", YHTS = list.Sum(t => decimal.TryParse(t.YHTS, out decimal d) ? d : 0M).ToString() };
-        }
+        
 
         /// <summary>
         /// 获得该月总共多少天
@@ -1040,7 +1031,10 @@ namespace Monopy.PreceRateWage.Dal
 
         public static bool IsUserCodeAndNameOK(string userCode, string userName, out string userName_ERP)
         {
+            
             userName_ERP = string.Empty;
+
+            return true;
             if (string.IsNullOrEmpty(userCode))
             {
                 return false;
