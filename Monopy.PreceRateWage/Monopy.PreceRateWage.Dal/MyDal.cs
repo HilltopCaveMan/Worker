@@ -784,7 +784,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1CX_KFSS GetTotalDataBase1CX_KFSS(List<DataBase1CX_KFSS> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1CX_KFSS { No = "合计", CJ = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase1CX_KFSS { No = "合计", CJ = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase1CX_KFSS {  CJ = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase1CX_KFSS {  CJ = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
@@ -828,6 +828,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂半检拉坯车间计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1CX_BJLP_01_JJ GetTotalDataBase1CX_BJLP_01_JJ(List<DataBase1CX_BJLP_01_JJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1CX_BJLP_01_JJ { UserCode = "合计", YCQ = 0.ToString(), SCQ = 0.ToString(), JJJE = 0.ToString() } : new DataBase1CX_BJLP_01_JJ { UserCode = "合计", YCQ = list.Sum(t => decimal.TryParse(t.YCQ, out decimal d) ? d : 0M).ToString(), SCQ = list.Sum(t => decimal.TryParse(t.SCQ, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 一厂成型车间变产补助合计
         /// </summary>
         /// <param name="list"></param>
@@ -836,7 +846,26 @@ namespace Monopy.PreceRateWage.Dal
         {
             return (list == null || list.Count == 0) ? new DataBase1CX_BCBZ { No = "合计", GD = "合计", BZJE = 0.ToString() } : new DataBase1CX_BCBZ { No = "合计", GD = "合计", BZJE = list.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString() };
         }
-        
+
+        /// <summary>
+        /// 二厂喷釉车间车间报工合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2PY_CJB GetTotalDataBase2PY_CJB(List<DataBase2PY_CJB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2PY_CJB { No = "合计", LB = "合计", PYGSGKH = 0.ToString(), PYGSGJJ = 0.ToString(), PYGJXKH = 0.ToString(), PYGJXJJ = 0.ToString(), CSGSGKH = 0.ToString(), CSGSGJJ = 0.ToString(), CSGJJKH = 0.ToString(), CSGJXJJ = 0.ToString() } : new DataBase2PY_CJB { No = "合计", LB = "合计", PYGSGKH = list.Sum(t => decimal.TryParse(t.PYGSGKH, out decimal d) ? d : 0M).ToString(), PYGSGJJ = list.Sum(t => decimal.TryParse(t.PYGSGJJ, out decimal d) ? d : 0M).ToString(), PYGJXKH = list.Sum(t => decimal.TryParse(t.PYGJXKH, out decimal d) ? d : 0M).ToString(), PYGJXJJ = list.Sum(t => decimal.TryParse(t.PYGJXJJ, out decimal d) ? d : 0M).ToString(), CSGSGKH = list.Sum(t => decimal.TryParse(t.CSGSGKH, out decimal d) ? d : 0M).ToString(), CSGSGJJ = list.Sum(t => decimal.TryParse(t.CSGSGJJ, out decimal d) ? d : 0M).ToString(), CSGJJKH = list.Sum(t => decimal.TryParse(t.CSGJJKH, out decimal d) ? d : 0M).ToString(), CSGJXJJ = list.Sum(t => decimal.TryParse(t.CSGJXJJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂喷釉车间技术部实验补助合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2PY_JSBZ GetTotalDataBase2PY_JSBZ(List<DataBase2PY_JSBZ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2PY_JSBZ { CJ = "合计", JS = 0.ToString(), JE = 0.ToString() } : new DataBase2PY_JSBZ { CJ = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
 
         /// <summary>
         /// 获得该月总共多少天

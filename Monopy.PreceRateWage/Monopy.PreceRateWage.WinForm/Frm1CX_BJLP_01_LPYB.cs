@@ -274,8 +274,8 @@ namespace Monopy.PreceRateWage.WinForm
                     var workbook = WorkbookFactory.Create(fs);
                     var sheet = workbook.GetSheetAt(0);
                     int i, j;
-                    var rowTitle = sheet.GetRow(1);
-                    for (i = 2; i <= sheet.LastRowNum; i++)
+                    var rowTitle = sheet.GetRow(0);
+                    for (i = 1; i <= sheet.LastRowNum; i++)
                     {
                         var row = sheet.GetRow(i);
                         if (row == null)
@@ -291,10 +291,10 @@ namespace Monopy.PreceRateWage.WinForm
                         t.HJ = ExcelHelper.GetCellValue(row.GetCell(5));
                         t.DL = ExcelHelper.GetCellValue(row.GetCell(6));
                         t.JE = ExcelHelper.GetCellValue(row.GetCell(7));
-                        if (string.IsNullOrEmpty(t.UserCode) || string.IsNullOrEmpty(t.UserName))
-                        {
-                            continue;
-                        }
+                        //if (string.IsNullOrEmpty(t.UserCode) || string.IsNullOrEmpty(t.UserName))
+                        //{
+                        //    continue;
+                        //}
                         if (t.UserCode.StartsWith("M") && !MyDal.IsUserCodeAndNameOK(t.UserCode, t.UserName, out string userNameERP))
                         {
                             MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

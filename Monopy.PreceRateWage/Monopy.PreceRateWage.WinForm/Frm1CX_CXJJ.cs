@@ -120,7 +120,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1CX_CXJJ> frm = new FrmModify<DataBase1CX_CXJJ>(DataBase1CX_CXJJ, header, OptionType.Modify, Text, 4, 2);
+                    FrmModify<DataBase1CX_CXJJ> frm = new FrmModify<DataBase1CX_CXJJ>(DataBase1CX_CXJJ, header, OptionType.Modify, Text, 5);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -148,7 +148,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1CX_CXJJ != null)
                     {
-                        FrmModify<DataBase1CX_CXJJ> frm = new FrmModify<DataBase1CX_CXJJ>(DataBase1CX_CXJJ, header, OptionType.Delete, Text, 4, 2);
+                        FrmModify<DataBase1CX_CXJJ> frm = new FrmModify<DataBase1CX_CXJJ>(DataBase1CX_CXJJ, header, OptionType.Delete, Text, 4);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
