@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 管验货用工天数
+    /// 计件
     /// </summary>
-    public class DataBase1CC_PGYH
+    public class DataBase1CX_BJLP_01_JJ
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -17,34 +15,38 @@ namespace Monopy.PreceRateWage.Model
         public int TheMonth { get; set; }
 
         /// <summary>
-        /// 工厂
-        /// </summary>
-        public string FactoryNo { get; set; }
-
-        /// <summary>
         /// 序号
         /// </summary>
         public string No { get; set; }
 
         /// <summary>
-        /// 车间
-        /// </summary>
-        public string CJ { get; set; }
-
-        /// <summary>
-        /// 人员编号
+        /// 员工编码
         /// </summary>
         public string UserCode { get; set; }
 
         /// <summary>
-        /// 人员姓名
+        /// 姓名
         /// </summary>
         public string UserName { get; set; }
 
         /// <summary>
-        /// 验货天数
+        /// 职位
         /// </summary>
-        public string YHTS { get; set; }
+        public string ZW { get; set; }
 
+        /// <summary>
+        /// 应出勤（天数）
+        /// </summary>
+        public string YCQ { get; set; }
+
+        /// <summary>
+        /// 实出勤（天数）
+        /// </summary>
+        public string SCQ { get; set; }
+
+        /// <summary>
+        /// 计件金额
+        /// </summary>
+        public string JJJE { get; set; }
     }
 }

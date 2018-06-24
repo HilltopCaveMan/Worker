@@ -81,6 +81,7 @@
     <Compile Include="DataBase1CC_XTTZ.cs" />
     <Compile Include="DataBase1CX_BCBZ.cs" />
     <Compile Include="DataBase1CX_BCTZ.cs" />
+    <Compile Include="DataBase1CX_BJLP_01_CQB.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB_Child.cs" />
     <Compile Include="DataBase1CX_CXJJ.cs" />
@@ -133,6 +134,10 @@
     <Compile Include="DataBase1YL_YLTJ.cs" />
     <Compile Include="DataBase2CC_CJB.cs" />
     <Compile Include="DataBase2CC_CJB_Child.cs" />
+    <Compile Include="DataBase2PY_CJB.cs" />
+    <Compile Include="DataBase2PY_CJB_YGZ.cs" />
+    <Compile Include="DataBase2PY_JSBZ.cs" />
+    <Compile Include="DataBase2PY_RJDR.cs" />
     <Compile Include="DataBase3CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase3CX_BJLP_01_LPYB_Child.cs" />
     <Compile Include="DataBase3CX_CX_04SXBZ.cs" />
@@ -252,6 +257,7 @@
     <Compile Include="DataBaseGeneral_YEY.cs" />
     <Compile Include="DataBaseGeneral_ZF.cs" />
     <Compile Include="DataBase3JB_PGYHZTS.cs" />
+    <Compile Include="Frm1CX_BJLP_01_JJ.cs" />
     <Compile Include="GZD.cs" />
     <Compile Include="DataBaseMonth.cs" />
     <Compile Include="DataBaseMsg.cs" />

@@ -70,7 +70,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1CX_KFSS>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) && t.SZPZ.Contains(pz)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1CX_KFSS(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
@@ -131,7 +131,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBase1CX_KFSS> list = new ExcelHelper<DataBase1CX_KFSS>().ReadExcel(fileName, 2, 5);
+            List<DataBase1CX_KFSS> list = new ExcelHelper<DataBase1CX_KFSS>().ReadExcel(fileName, 1, 5);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -273,7 +273,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 if (dgv.SelectedRows[0].DataBoundItem is DataBase1CX_KFSS DataBase1CX_KFSS)
                 {
-                    if (DataBase1CX_KFSS.No == "合计")
+                    if (DataBase1CX_KFSS.CJ == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -293,7 +293,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1CX_KFSS = dgv.SelectedRows[0].DataBoundItem as DataBase1CX_KFSS;
-                if (DataBase1CX_KFSS.No == "合计")
+                if (DataBase1CX_KFSS.CJ == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -321,7 +321,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.CJ != "合计")
                     {
                         new BaseDal<DataBase1CX_KFSS>().Delete(item);
                     }

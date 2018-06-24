@@ -136,6 +136,17 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             List<DataBase1SC_JSBZ> list = new BaseDal<DataBase1SC_JSBZ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.CJ == _dept).ToList();
             var boolOK = Recount(list);
+            var check = Check(list);
+            if (check)
+            {
+                MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                Enabled = true;
+                return;
+            }
+
             foreach (var item in list)
             {
                 new BaseDal<DataBase1SC_JSBZ>().Edit(item);
@@ -143,7 +154,7 @@ namespace Monopy.PreceRateWage.WinForm
 
             Enabled = true;
             btnSearch.PerformClick();
-            MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            
         }
 
         /// <summary>
@@ -368,22 +379,32 @@ namespace Monopy.PreceRateWage.WinForm
 
         private bool Check(List<DataBase1SC_JSBZ> list)
         {
-            foreach (var item in list)
+            var query = list.GroupBy(t => t.PZ);
+            foreach (IGrouping<string, DataBase1SC_JSBZ> info in query)
             {
-                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == item.TheYear && t.TheMonth == item.TheMonth && t.CPMC == item.PZ && t.FactoryNo == _factoryNo && t.CJ.Contains(_dept)).FirstOrDefault();
+                List<DataBase1SC_JSBZ> sl = info.ToList<DataBase1SC_JSBZ>();//分组后的集合                  
+                decimal totalCount = 0M;
+
+                foreach (DataBase1SC_JSBZ set in info)
+                {
+                    decimal.TryParse(set.JS, out decimal js);
+                    totalCount += js;
+                }
+                var datas = new BaseDal<DataBase1SC_SY>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CPMC == info.Key && t.FactoryNo == _factoryNo && t.CJ.Contains(_dept)).FirstOrDefault();
                 if (datas == null)
                 {
                     MessageBox.Show("总窑产品质量分析汇总表(实验)数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
                 decimal.TryParse(datas.KYL, out decimal kyl);
-                decimal.TryParse(item.JS, out decimal js);
-                if (js > kyl)
+               ;
+                if (totalCount > kyl)
                 {
-                    MessageBox.Show("【" + item.PZ + "】的件数超出了开窑量件数，开窑量件数为：【" + (kyl).ToString() + "】,【" + item.PZ + "】的件数为：【" + js.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("【" + info.Key + "】的件数超出了开窑量件数，开窑量件数为：【" + kyl.ToString() + "】,【" + info.Key + "】的件数合计为：【" + totalCount.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
             }
+           
             return true;
         }
 
@@ -397,8 +418,20 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.WorkshopName == _dept);
 
+                if (listTJ == null)
+                {
+                    MessageBox.Show("指标数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                }
+
                 foreach (var item in list)
                 {
+                    if (listTJ == null)
+                    {
+                        item.JE = "0";
+                        continue;
+                    }
+
                     var type = listTJ.Where(t => t.TypesName == item.PZ && t.PostName == item.GW).FirstOrDefault();
                     var baseZb = listTJ.Where(t => t.Classification == "技术部实验").FirstOrDefault();
                     item.DJ = type.UnitPrice;

@@ -182,6 +182,9 @@ namespace Monopy.PreceRateWage.Model
 
         /*=========================================一厂成型开始=========================================*/
         public virtual DbSet<DataBase1CX_BJLP_01_LPYB> TDataBase1CX_BJLP_01_LPYB { get; set; }
+        public virtual DbSet<DataBase1CX_BJLP_01_CQB> TDataBase1CX_BJLP_01_CQB { get; set; }
+        public virtual DbSet<DataBase1CX_BJLP_01_JJ> TDataBase1CX_BJLP_01_JJ { get; set; }
+        
         public virtual DbSet<DataBase1CX_KFSS> TDataBase1CX_KFSS { get; set; }
         public virtual DbSet<DataBase1CX_PMCJP> TDataBase1CX_PMCJP { get; set; }
         public virtual DbSet<DataBase1CX_XJBG> TDataBase1CX_XJBG { get; set; }
@@ -238,6 +241,14 @@ namespace Monopy.PreceRateWage.Model
 
         /*=========================================二厂仓储开始=========================================*/
         public virtual DbSet<DataBase2CC_CJB> TDataBase2CC_CJB { get; set; }
+
+        /*=========================================二厂仓储结束=========================================*/
+
+        /*=========================================二厂喷釉开始=========================================*/
+        public virtual DbSet<DataBase2PY_CJB> TDataBase2PY_CJB { get; set; }
+        public virtual DbSet<DataBase2PY_CJB_YGZ> TDataBase2PY_CJB_YGZ { get; set; }
+        public virtual DbSet<DataBase2PY_RJDR> TDataBase2PY_RJDR { get; set; }
+        public virtual DbSet<DataBase2PY_JSBZ> TDataBase2PY_JSBZ { get; set; }
         
     }
 }

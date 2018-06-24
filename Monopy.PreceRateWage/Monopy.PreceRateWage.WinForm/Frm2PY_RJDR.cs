@@ -14,14 +14,31 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class Frm1CX_GHDR : Office2007Form
+    public partial class Frm2PY_RJDR : Office2007Form
     {
-        string[] header = "创建日期$创建人$年$月$序号$工号$人员编码$姓名$工段名称".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$类型$年月$工厂$工号$人员编码$姓名$开窑量$一级品$一级率$考核$计件$合计$建档时间$建档人$类型$配件金额$计件合计".Split('$');
 
-        public Frm1CX_GHDR()
+        private string _factoryNo;
+        public Frm2PY_RJDR()
         {
             InitializeComponent();
         }
+
+        public Frm2PY_RJDR(string args) : this()
+        {
+            try
+            {
+                _factoryNo = args;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+                return;
+            }
+        }
+
+
         #region 按钮事件
 
         /// <summary>
@@ -29,7 +46,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Frm1CX_GHDR_Load(object sender, EventArgs e)
+        private void Frm2PY_RJDR_Load(object sender, EventArgs e)
         {
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
             InitUI();
@@ -44,6 +61,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value, CmbUserCode.Text, CmbUserName.Text, CmbGH.Text);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -53,7 +71,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——成型——工号.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——喷釉——软件导入.xlsx");
         }
 
         /// <summary>
@@ -80,6 +98,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
+            btnSearch.PerformClick();
             SaveFileDialog saveFileDlg = new SaveFileDialog()
             {
                 Filter = "Excle2007文件|*.xlsx"
@@ -87,8 +106,11 @@ namespace Monopy.PreceRateWage.WinForm
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                List<DataBase1CX_GHDR> list = dgv.DataSource as List<DataBase1CX_GHDR>;
-                if (new ExcelHelper<DataBase1CX_GHDR>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——成型——工号.xlsx", saveFileDlg.FileName, list, 1, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                List<DataBase2PY_RJDR> list = dgv.DataSource as List<DataBase2PY_RJDR>;
+                var hj = list[0];
+                list.RemoveAt(0);
+                list.Add(hj);
+                if (new ExcelHelper<DataBase2PY_RJDR>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——喷釉——软件导入.xlsx", saveFileDlg.FileName, list, 1, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -99,6 +121,8 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                list.Remove(hj);
+                list.Insert(0, hj);
                 Enabled = true;
             }
         }
@@ -112,18 +136,18 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var DataBase1CX_GHDR = dgv.SelectedRows[0].DataBoundItem as DataBase1CX_GHDR;
-                if (DataBase1CX_GHDR != null)
+                if (dgv.SelectedRows[0].DataBoundItem is DataBase2PY_RJDR DataBase2PY_RJDR)
                 {
-                    if (DataBase1CX_GHDR.UserName == "合计")
+                    if (DataBase2PY_RJDR.No == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1CX_GHDR> frm = new FrmModify<DataBase1CX_GHDR>(DataBase1CX_GHDR, header, OptionType.Modify, Text, 5);
+                    FrmModify<DataBase2PY_RJDR> frm = new FrmModify<DataBase2PY_RJDR>(DataBase2PY_RJDR, header, OptionType.Modify, Text, 5);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
-                        btnSearch.PerformClick();
+                        InitUI();
+
                     }
                 }
             }
@@ -138,20 +162,21 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var DataBase1CX_GHDR = dgv.SelectedRows[0].DataBoundItem as DataBase1CX_GHDR;
-                if (DataBase1CX_GHDR.No == "合计")
+                var DataBase2PY_RJDR = dgv.SelectedRows[0].DataBoundItem as DataBase2PY_RJDR;
+                if (DataBase2PY_RJDR.No == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
                 if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    if (DataBase1CX_GHDR != null)
+                    if (DataBase2PY_RJDR != null)
                     {
-                        FrmModify<DataBase1CX_GHDR> frm = new FrmModify<DataBase1CX_GHDR>(DataBase1CX_GHDR, header, OptionType.Delete, Text, 5);
+                        FrmModify<DataBase2PY_RJDR> frm = new FrmModify<DataBase2PY_RJDR>(DataBase2PY_RJDR, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+
                         }
                     }
                 }
@@ -167,15 +192,16 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
             {
-                var list = dgv.DataSource as List<DataBase1CX_GHDR>;
+                var list = dgv.DataSource as List<DataBase2PY_RJDR>;
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
                     if (item.No != "合计")
                     {
-                        new BaseDal<DataBase1CX_GHDR>().Delete(item);
+                        new BaseDal<DataBase2PY_RJDR>().Delete(item);
                     }
                 }
+
                 return;
             }
             else
@@ -190,24 +216,22 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CX_GHDR>().GetList().ToList();
+            var list = new BaseDal<DataBase2PY_RJDR>().GetList().ToList();
 
-            RefCmbGH(list);
             RefCmbUserCode(list);
             RefCmbUserName(list);
-
+            RefCmbGH(list);
         }
-
-        private void RefCmbGH(List<DataBase1CX_GHDR> list)
+        private void RefCmbUserCode(List<DataBase2PY_RJDR> list)
         {
-            var listTmp = list.GroupBy(t => t.GH).Select(t => t.Key).OrderBy(t => t).ToList();
+            var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
-            CmbGH.DataSource = listTmp;
-            CmbGH.DisplayMember = "GH";
-            CmbGH.Text = "全部";
+            CmbUserCode.DataSource = listTmp;
+            CmbUserCode.DisplayMember = "UserCode";
+            CmbUserCode.Text = "全部";
         }
 
-        private void RefCmbUserName(List<DataBase1CX_GHDR> list)
+        private void RefCmbUserName(List<DataBase2PY_RJDR> list)
         {
             var listTmp = list.GroupBy(t => t.UserName).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
@@ -216,13 +240,13 @@ namespace Monopy.PreceRateWage.WinForm
             CmbUserName.Text = "全部";
         }
 
-        private void RefCmbUserCode(List<DataBase1CX_GHDR> list)
+        private void RefCmbGH(List<DataBase2PY_RJDR> list)
         {
-            var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
+            var listTmp = list.GroupBy(t => t.GH).Select(t => t.Key).OrderBy(t => t).ToList();
             listTmp.Insert(0, "全部");
-            CmbUserCode.DataSource = listTmp;
-            CmbUserCode.DisplayMember = "UserCode";
-            CmbUserCode.Text = "全部";
+            CmbGH.DataSource = listTmp;
+            CmbGH.DisplayMember = "GH";
+            CmbGH.Text = "全部";
         }
 
         private void RefDgv(DateTime selectTime, string userCode, string userName, string gh)
@@ -232,26 +256,25 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1CX_GHDR>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => t.No).ToList();
-
+            var datas = new BaseDal<DataBase2PY_RJDR>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => t.No).ToList();
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
-           
+            dgv.Rows[0].Frozen = true;
+            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
             }
-            dgv.ContextMenuStrip = contextMenuStrip1;
             dgv.ClearSelection();
-
         }
 
         private void Import(string fileName)
         {
-            List<DataBase1CX_GHDR> list = new ExcelHelper<DataBase1CX_GHDR>().ReadExcel(fileName, 1, 6, 0, 0, 0, true);
+            List<DataBase2PY_RJDR> list = new ExcelHelper<DataBase2PY_RJDR>().ReadExcel(fileName, 1, 6, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -272,9 +295,7 @@ namespace Monopy.PreceRateWage.WinForm
                         i = -1;
                     }
                     continue;
-
                 }
-
 
                 if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
                 {
@@ -288,7 +309,9 @@ namespace Monopy.PreceRateWage.WinForm
                 list[i].TheYear = dtp.Value.Year;
                 list[i].TheMonth = dtp.Value.Month;
             }
-            if (new BaseDal<DataBase1CX_GHDR>().Add(list) > 0)
+
+
+            if (new BaseDal<DataBase2PY_RJDR>().Add(list) > 0)
             {
                 Enabled = true;
                 btnSearch.PerformClick();
@@ -303,5 +326,6 @@ namespace Monopy.PreceRateWage.WinForm
         }
 
         #endregion
+
     }
 }

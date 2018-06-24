@@ -279,7 +279,7 @@ namespace Monopy.PreceRateWage.WinForm
                             decimal.TryParse(count.YHTS, out decimal ts);
                             totalCount += ts;
                         }
-                       
+
                         decimal.TryParse(item.DayCount, out decimal day);
                         if (day > totalCount)
                         {
