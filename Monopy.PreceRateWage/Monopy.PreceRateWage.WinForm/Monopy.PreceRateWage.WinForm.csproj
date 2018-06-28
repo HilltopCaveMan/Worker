@@ -200,6 +200,12 @@
     <Compile Include="Frm1CX_CXJJ.Designer.cs">
       <DependentUpon>Frm1CX_CXJJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1CX_DNG_01CXDNGKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1CX_DNG_01CXDNGKH.Designer.cs">
+      <DependentUpon>Frm1CX_DNG_01CXDNGKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1CX_FLJF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1138,6 +1144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1CX_CXJJ.resx">
       <DependentUpon>Frm1CX_CXJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm1CX_DNG_01CXDNGKH.resx">
+      <DependentUpon>Frm1CX_DNG_01CXDNGKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1CX_FLJF.resx">
       <DependentUpon>Frm1CX_FLJF.cs</DependentUpon>
@@ -2123,6 +2132,9 @@
     <None Include="Excel\模板一厂——喷釉——软件导入.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——多能工——成型多能工考核.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——学徒——入职表（日）.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2262,6 +2274,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——喷釉——软件导入.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——多能工——成型多能工产品达成率.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——多能工——成型多能工考核.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——学徒——入职表（日）.xlsx">
