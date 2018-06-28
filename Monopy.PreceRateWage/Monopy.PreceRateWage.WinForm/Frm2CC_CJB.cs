@@ -139,7 +139,7 @@ namespace Monopy.PreceRateWage.WinForm
                             list.Add(t);
                         }
                     }
-                    if (Recount(list) && UpdateSummary(list) && new BaseDal<DataBase2CC_CJB>().Add(list) > 0)
+                    if (Recount(list) && new BaseDal<DataBase2CC_CJB>().Add(list) > 0)
                     {
                         btnSearch.PerformClick();
                         MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -487,42 +487,6 @@ namespace Monopy.PreceRateWage.WinForm
                 return true;
             }
             catch
-            {
-                return false;
-            }
-        }
-
-        /// <summary>
-        /// 更新汇总表
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        private bool UpdateSummary(List<DataBase2CC_CJB> list)
-        {
-            try
-            {
-                List<DAtaBaseGeneral1_HZ> hzList = new List<DAtaBaseGeneral1_HZ>();
-                foreach (var item in list)
-                {
-                    DAtaBaseGeneral1_HZ t = new DAtaBaseGeneral1_HZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = DateTime.Now.Year, TheMonth = DateTime.Now.Month };
-                    t.CJ = "车间";
-                    t.GD = "";
-                    t.GWMC = item.GWMC;
-                    t.RYBM = item.UserCode;
-                    t.XM = item.UserName;
-                    t.JJGZ1 = item.HJ;
-                    hzList.Add(t);
-                }
-                if (new BaseDal<DAtaBaseGeneral1_HZ>().Add(hzList) > 0)
-                {
-                    return true;
-                }
-                else
-                {
-                    return false;
-                }
-            }
-            catch (Exception)
             {
                 return false;
             }
