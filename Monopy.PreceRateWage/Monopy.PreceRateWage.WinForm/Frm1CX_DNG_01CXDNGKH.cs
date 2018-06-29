@@ -12,8 +12,8 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1CX_DNG_01CXDNGKH : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$工段$人员编码$姓名$工段整体质量【目标】$工段整体质量【实际】$工段差手质量【目标】$工段差手质量【实际】$工段产量【目标】$工段产量【实际】$工段整体质量【差率】$工段整体质量【考核金额】$工段差手质量【差率】$工段差手质量【考核金额】$工段产量【差率】$工段产量【考核金额】$合计".Split('$');
-        private string[] header1 = "创建日期$创建人$年$月$序号$人员编码$姓名$工号$上月开窑量$本月开窑量$上月一加品$本月一级品$目标值$实际完成".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$工段$人员编码$姓名$工段整体质量【目标】$工段整体质量【实际】$工段产品达成【目标】$工段产品达成【实际】$工段整体产量【目标】$工段整体产量【实际】$工段整体质量【差率】$工段整体质量【考核金额】$工段产品达成【差率】$工段产品达成【考核金额】$工段整体产量【差率】$工段整体产量【考核金额】$合计$实出勤$应出勤".Split('$');
+        private string[] header1 = "创建日期$创建人$年$月$序号$工段$人员编码$姓名$品种$成型计划合格品数$实际完成$达成数量".Split('$');
 
         public Frm1CX_DNG_01CXDNGKH()
         {
@@ -164,6 +164,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             else
             {
+                Enabled = true;
                 MessageBox.Show("操作失败，请检查网络和操作！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
 
@@ -312,19 +313,23 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(item.GDZTZL_MB, out decimal d4);
                     decimal.TryParse(item.GDZTZL_SJWC, out decimal e4);
                     decimal j4 = d4 - e4;
-                    item.GDZTZL_CL = "(j4).ToString('P'):" + (j4).ToString("P", Culinfo);
+                    item.GDZTZL_MB = d4.ToString("P", Culinfo);
+                    item.GDZTZL_SJWC = e4.ToString("P", Culinfo);
+                    item.GDZTZL_CL = (j4).ToString("P", Culinfo);
 
                     //工段产品达成
                     decimal.TryParse(item.GDCPDC_MB, out decimal f4);
                     decimal.TryParse(item.GDCPDCL_SJWC, out decimal g4);
                     decimal l4 = g4 - f4;
-                    item.GDZTZL_CL = "(l4).ToString('P'):" + (l4).ToString("P", Culinfo);
+                    item.GDCPDC_CL = (l4).ToString();
 
                     //工段整体产量
                     decimal.TryParse(item.GDZTCL_MB, out decimal h4);
                     decimal.TryParse(item.GDZTCL_SJWC, out decimal i4);
                     decimal n4 = i4 - h4;
-                    item.GDZTZL_CL = "(n4).ToString('P'):" + (n4).ToString("P", Culinfo);
+                    item.GDZTCL_SJWC = (i4).ToString("P", Culinfo);
+                    item.GDZTCL_MB = (h4).ToString("P", Culinfo);
+                    item.GDZTCL_CL = (n4).ToString("P", Culinfo);
 
                     var dataDayZTZL = dataDay.Where(t => t.Classification == "工段整体质量").FirstOrDefault();
                     var dataDayCPDC = dataDay.Where(t => t.Classification == "工段产品达成").FirstOrDefault();
@@ -404,7 +409,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         item.SCQ = "0";
                         item.YCQ = "0";
-
+                        item.HJ = "0";
                         MessageBox.Show("没有【" + item.UserName + "】的出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                     }
@@ -412,13 +417,14 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         item.SCQ = data.DayScq;
                         item.YCQ = data.DayYcq;
+                        decimal.TryParse(item.GDZTZL_KHJE, out decimal ZTZL_KHJE);
+                        decimal.TryParse(item.GDCPDC_KHJE, out decimal CPDC_KHJE);
+                        decimal.TryParse(item.GDZTCL_KHJE, out decimal ZTCL_KHJE);
+                        decimal.TryParse(item.SCQ, out decimal scq);
+                        decimal.TryParse(item.YCQ, out decimal ycq);
+                        item.HJ = ((ZTZL_KHJE + CPDC_KHJE + ZTCL_KHJE) / ycq * scq).ToString();
                     }
-                    decimal.TryParse(item.GDZTZL_KHJE, out decimal ZTZL_KHJE);
-                    decimal.TryParse(item.GDCPDC_KHJE, out decimal CPDC_KHJE);
-                    decimal.TryParse(item.GDZTCL_KHJE, out decimal ZTCL_KHJE);
-                    decimal.TryParse(item.SCQ, out decimal scq);
-                    decimal.TryParse(item.YCQ, out decimal ycq);
-                    item.HJ = ((ZTZL_KHJE + CPDC_KHJE + ZTCL_KHJE) / ycq * scq).ToString();
+
                 }
 
                 return true;
