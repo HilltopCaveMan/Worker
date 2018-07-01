@@ -9,7 +9,7 @@ namespace Monopy.PreceRateWage.Model
         {
             //Database.CreateIfNotExists();
         }
-
+        public virtual DbSet<DataBase1GZD> TDataBase1GZD { get; set; }
         public virtual DbSet<BaseGroup> TBaseGroup { get; set; }
         public virtual DbSet<BaseRole> TBaseRole { get; set; }
         public virtual DbSet<BaseUser> TBaseUser { get; set; }
@@ -180,10 +180,16 @@ namespace Monopy.PreceRateWage.Model
 
         /*=========================================一厂成型开始=========================================*/
         public virtual DbSet<DataBase1CX_BJLP_01_LPYB> TDataBase1CX_BJLP_01_LPYB { get; set; }
-        public virtual DbSet<DataBase1CX_BJLP_01_CQB> TDataBase1CX_BJLP_01_CQB { get; set; }
         public virtual DbSet<DataBase1CX_BJLP_01_JJ> TDataBase1CX_BJLP_01_JJ { get; set; }
         public virtual DbSet<DataBase1CX_DNG_01CXDNGKH_01DCL> TDataBase1CX_DNG_01CXDNGKH_01DCL { get; set; }
         public virtual DbSet<DataBase1CX_DNG_01CXDNGKH_02KH> TDataBase1CX_DNG_01CXDNGKH_02KH { get; set; }
+        public virtual DbSet<DataBase1CX_CX_06JJ> TDataBase1CX_CX_03JJ { get; set; }
+        public virtual DbSet<DataBase1CX_CX_03JJ_7T> TDataBase1CX_CX_03JJ_7T { get; set; }
+        public virtual DbSet<DataBase1CX_CX_04BKH> TDataBase1CX_CX_04BKH { get; set; }
+        public virtual DbSet<DataBase1CX_CX_07DLDT> TDataBase1CX_CX_07DLDT { get; set; }
+        public virtual DbSet<DataBase1CX_CX_06JJ_GR> TDataBase1CX_CX_06JJ_GR { get; set; }
+        public virtual DbSet<DataBase1CX_CX_02JJKHTB> TDataBase1CX_CX_02JJKHTB { get; set; }
+        public virtual DbSet<DataBase1CX_CX_02JJKHTB_Out> TDataBase1CX_CX_02JJKHTB_Out { get; set; }
         
         public virtual DbSet<DataBase1CX_KFSS> TDataBase1CX_KFSS { get; set; }
         public virtual DbSet<DataBase1CX_PMCJP> TDataBase1CX_PMCJP { get; set; }
@@ -194,7 +200,8 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase1CX_CXJJ> TDataBase1CX_CXJJ { get; set; }
         public virtual DbSet<DataBase1CX_BCTZ> TDataBase1CX_BCTZ { get; set; }
         public virtual DbSet<DataBase1CX_BCBZ> TDataBase1CX_BCBZ { get; set; }
-
+        public virtual DbSet<DataBase1CX_General_CXYB> TDataBase1CX_General_CXYB { get; set; }
+        
 
         /*=========================================一厂成型结束=========================================*/
 
