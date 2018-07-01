@@ -16,6 +16,10 @@ namespace Monopy.PreceRateWage.Model
         public int TheYear { get; set; }
         public int TheMonth { get; set; }
 
+        /// <summary>
+        /// 工厂
+        /// </summary>
+        public string FactoryNo { get; set; }
 
         /// <summary>
         /// 序号

@@ -18,9 +18,9 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class FrmGeneral_XTTZ : Office2007Form
     {
-     
-        private string _workShop;
 
+        private string _workShop;
+        private string _factoryNo;
         public FrmGeneral_XTTZ()
         {
             InitializeComponent();
@@ -29,7 +29,8 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                _workShop = args;
+                _factoryNo = args.Split('-')[0];
+                _workShop = args.Split('-')[1];
             }
             catch (Exception ex)
             {
@@ -54,7 +55,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             RefGrid(list);
         }
 
@@ -96,7 +97,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
             btnSearch.PerformClick();
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             var dt = GetDataTable(list);
             if (dt == null || dt.Rows.Count == 1)
             {
@@ -108,11 +109,12 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dt.Columns[i].Caption = header[i];
             }
+            string f = (_factoryNo == "G001" ? "一厂" : "二厂");
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = $"梦牌一厂仓储--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}.xls";
+            sfd.FileName = $"梦牌{f}仓储--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}.xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                byte[] data = new ExcelHelper().DataTable2Excel(dt, "一厂学徒台账", $"梦牌一厂成型--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}");
+                byte[] data = new ExcelHelper().DataTable2Excel(dt, f + "学徒台账", $"梦牌{f}成型--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}");
                 try
                 {
                     if (sfd.FileName.Substring(sfd.FileName.Length - 4) != ".xls")
@@ -142,7 +144,7 @@ namespace Monopy.PreceRateWage.WinForm
         #region 调用方法
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
+            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
             RefCmbCJ(list);
             RefCmbGW(list);
             RefCmbUserCode(list);
@@ -151,7 +153,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void RefCmbCJ(List<DataBase1CC_XTTZ> list)
         {
-            var listTmp = list.GroupBy(t => t.CJ).Select(t => t.Key).OrderBy(t => t).ToList();
+            var listTmp = list.GroupBy(t => t.CJ == _workShop).Select(t => t.Key).OrderBy(t => t).ToList();
             CmbCJ.DataSource = listTmp;
             CmbCJ.DisplayMember = "CJ";
             CmbCJ.Text = _workShop;
@@ -218,6 +220,7 @@ namespace Monopy.PreceRateWage.WinForm
             dt.Columns.Remove("TheYear");
             dt.Columns.Remove("TheMonth");
             dt.Columns.Remove("No");
+            dt.Columns.Remove("FactoryNo");
             dt.Columns.Remove("TimeBZ");
             dt.Columns.Remove("Money");
             dt.Columns.Add("Count", typeof(decimal));
@@ -279,7 +282,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private List<DataBase1CC_XTTZ> ImportFile(string filePathName)
         {
-            string sql = "delete from DataBase1CC_XTTZ";
+            string sql = "delete from DataBase1CC_XTTZ where FactoryNo = '" + _factoryNo + "'and cj = '" + _workShop + "'";
             new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand(sql);
             var list = new List<DataBase1CC_XTTZ>();
             try
@@ -316,7 +319,7 @@ namespace Monopy.PreceRateWage.WinForm
                             {
                                 continue;
                             }
-                            DataBase1CC_XTTZ t = new DataBase1CC_XTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = listTitl[j].Year, TheMonth = listTitl[j].Month, No = no.ToString() };
+                            DataBase1CC_XTTZ t = new DataBase1CC_XTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = listTitl[j].Year, TheMonth = listTitl[j].Month, No = no.ToString(), FactoryNo = _factoryNo };
                             t.CJ = ExcelHelper.GetCellValue(row.GetCell(0));
                             t.GW = ExcelHelper.GetCellValue(row.GetCell(1));
                             t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
