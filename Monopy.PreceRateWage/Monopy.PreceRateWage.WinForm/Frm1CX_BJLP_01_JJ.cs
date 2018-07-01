@@ -91,7 +91,7 @@ namespace Monopy.PreceRateWage.WinForm
                 new BaseDal<DataBase1CX_BJLP_01_JJ>().Delete(item);
             }
             List<DataBase1CX_BJLP_01_JJ> list = new List<DataBase1CX_BJLP_01_JJ>();
-            var datas = new BaseDal<DataBase1CX_BJLP_01_CQB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory == "G001" && t.Dept == "青白坯库").ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             if (datas == null || datas.Count == 0)
             {
                 MessageBox.Show("出勤表里没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的数据！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -110,9 +110,9 @@ namespace Monopy.PreceRateWage.WinForm
                 DataBase1CX_BJLP_01_JJ.No = (i + 1).ToString();
                 DataBase1CX_BJLP_01_JJ.UserCode = datas[i].UserCode;
                 DataBase1CX_BJLP_01_JJ.UserName = datas[i].UserName;
-                DataBase1CX_BJLP_01_JJ.ZW = datas[i].ZW;
-                DataBase1CX_BJLP_01_JJ.YCQ = datas[i].KQHJ;
-                DataBase1CX_BJLP_01_JJ.SCQ = datas[i].YCQ;
+                DataBase1CX_BJLP_01_JJ.ZW = datas[i].Position;
+                DataBase1CX_BJLP_01_JJ.YCQ = datas[i].DayYcq;
+                DataBase1CX_BJLP_01_JJ.SCQ = datas[i].DayScq;
                 decimal.TryParse(DataBase1CX_BJLP_01_JJ.YCQ, out decimal ycq);
                 totalCount += ycq;
                 list.Add(DataBase1CX_BJLP_01_JJ);
