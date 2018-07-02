@@ -908,6 +908,56 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂烧成装窑计件和考核合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2SC_ZYJJHKH GetTotalDataBase2SC_ZYJJHKH(List<DataBase2SC_ZYJJHKH> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2SC_ZYJJHKH { No = "合计", Code = 0.ToString(), KYL = 0.ToString(), YJP = 0.ToString(), KH = 0.ToString(), JJ = 0.ToString(), HJ = 0.ToString() } : new DataBase2SC_ZYJJHKH { No = "合计", Code = list.Count.ToString(), KYL = list.Sum(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).ToString(), YJP = list.Sum(t => decimal.TryParse(t.YJP, out decimal d) ? d : 0M).ToString(), KH = list.Sum(t => decimal.TryParse(t.KH, out decimal d) ? d : 0M).ToString(), JJ = list.Sum(t => decimal.TryParse(t.JJ, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂烧成车间报对应合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2SC_CJB GetTotalDataBase2SC_CJB(List<DataBase2SC_CJB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2SC_CJB { No = "合计", GZ = "合计", ZYGDJJ = 0.ToString(), ZYGDKH = 0.ToString() } : new DataBase2SC_CJB { No = "合计", GZ = "合计", ZYGDJJ = list.Sum(t => decimal.TryParse(t.ZYGDJJ, out decimal d) ? d : 0M).ToString(), ZYGDKH = list.Sum(t => decimal.TryParse(t.ZYGDKH, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂卸车原料统计合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2YL_XCYLTJ GetTotalDataBase2YL_XCYLTJ(List<DataBase2YL_XCYLTJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2YL_XCYLTJ { No = "合计", DW = "合计", SL = 0.ToString() } : new DataBase2YL_XCYLTJ { No = "合计", DW = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂卸车计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2YL_XCJJ GetTotalDataBase2YL_XCJJ(List<DataBase2YL_XCJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2YL_XCJJ { No = "合计", LB = "合计", SL = 0.ToString(), JJJE = 0.ToString() } : new DataBase2YL_XCJJ { No = "合计", LB = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂原料车间计件提报明细合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2YL_JJTB GetTotalDataBase2YL_JJTB(List<DataBase2YL_JJTB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2YL_JJTB { No = "合计", JJGZ = 0.ToString() } : new DataBase2YL_JJTB { No = "合计", JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>
