@@ -470,6 +470,18 @@
     <Compile Include="Frm1YL_JJ.Designer.cs">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2YL_JJTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2YL_JJTB.Designer.cs">
+      <DependentUpon>Frm2YL_JJTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2YL_NYLYLTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2YL_NYLYLTJ.Designer.cs">
+      <DependentUpon>Frm2YL_NYLYLTJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1YL_YLTJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -499,6 +511,30 @@
     </Compile>
     <Compile Include="Frm2PY_RJDR.Designer.cs">
       <DependentUpon>Frm2PY_RJDR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2SC_CJB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2SC_CJB.Designer.cs">
+      <DependentUpon>Frm2SC_CJB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2SC_ZYJJHKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2SC_ZYJJHKH.Designer.cs">
+      <DependentUpon>Frm2SC_ZYJJHKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2YL_XCYLTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2YL_XCYLTJ.Designer.cs">
+      <DependentUpon>Frm2YL_XCYLTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2YL_XCJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2YL_XCJJ.Designer.cs">
+      <DependentUpon>Frm2YL_XCJJ.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmGeneral_XT.cs">
       <SubType>Form</SubType>
@@ -1310,6 +1346,12 @@
     <EmbeddedResource Include="Frm1YL_JJ.resx">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2YL_JJTB.resx">
+      <DependentUpon>Frm2YL_JJTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2YL_NYLYLTJ.resx">
+      <DependentUpon>Frm2YL_NYLYLTJ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm1YL_YLTJ.resx">
       <DependentUpon>Frm1YL_YLTJ.cs</DependentUpon>
     </EmbeddedResource>
@@ -1324,6 +1366,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2PY_RJDR.resx">
       <DependentUpon>Frm2PY_RJDR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2SC_CJB.resx">
+      <DependentUpon>Frm2SC_CJB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2SC_ZYJJHKH.resx">
+      <DependentUpon>Frm2SC_ZYJJHKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2YL_XCJJ.resx">
+      <DependentUpon>Frm2YL_XCJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2YL_XCYLTJ.resx">
+      <DependentUpon>Frm2YL_XCYLTJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_XT.resx">
       <DependentUpon>FrmGeneral_XT.cs</DependentUpon>
@@ -2300,6 +2354,12 @@
     <None Include="Excel\模板二厂——仓储——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——原料——泥、釉料统计.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——原料——计件提报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——喷釉——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2405,7 +2465,16 @@
     <None Include="Excel\模板导出一厂——烧成——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出二厂——原料——泥浆原料统计.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——原料——釉浆原料统计.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——烧成——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Monopy.PreceRateWage.WinForm_TemporaryKey.pfx" />
