@@ -470,6 +470,12 @@
     <Compile Include="Frm1YL_JJ.Designer.cs">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2YL_GRJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2YL_GRJJ.Designer.cs">
+      <DependentUpon>Frm2YL_GRJJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2YL_JJTB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1345,6 +1351,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1YL_JJ.resx">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2YL_GRJJ.resx">
+      <DependentUpon>Frm2YL_GRJJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2YL_JJTB.resx">
       <DependentUpon>Frm2YL_JJTB.cs</DependentUpon>
@@ -2352,6 +2361,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——仓储——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——原料——个人计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——原料——泥、釉料统计.xlsx">
