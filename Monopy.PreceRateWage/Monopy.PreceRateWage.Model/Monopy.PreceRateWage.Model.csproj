@@ -152,6 +152,7 @@
     <Compile Include="DataBase2PY_RJDR.cs" />
     <Compile Include="DataBase2SC_CJB.cs" />
     <Compile Include="DataBase2SC_ZYJJHKH.cs" />
+    <Compile Include="DataBase2YL_GRJJ.cs" />
     <Compile Include="DataBase2YL_JJTB.cs" />
     <Compile Include="DataBase2YL_XCJJ.cs" />
     <Compile Include="DataBase2YL_XCYLTJ.cs" />

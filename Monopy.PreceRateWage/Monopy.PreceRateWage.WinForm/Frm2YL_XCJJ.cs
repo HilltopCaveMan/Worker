@@ -371,7 +371,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var item in list)
                 {
-                    var baseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "原料车间" && t.TypesType == item.LB);
+                    var baseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "原料车间" && t.TypesType == item.LB);
                     if (baseDay == null)
                     {
                         item.DJ = string.Empty;

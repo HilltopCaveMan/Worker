@@ -948,7 +948,7 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
-        /// 二厂原料车间计件提报明细合计
+        /// 二厂原料车间计件提报合计
         /// </summary>
         /// <param name="list"></param>
         /// <returns></returns>
@@ -957,6 +957,16 @@ namespace Monopy.PreceRateWage.Dal
             return (list == null || list.Count == 0) ? new DataBase2YL_JJTB { No = "合计", JJGZ = 0.ToString() } : new DataBase2YL_JJTB { No = "合计", JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString() };
         }
 
+        /// <summary>
+        /// 二厂原料车间个人计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2YL_GRJJ GetTotalDataBase2YL_GRJJ(List<DataBase2YL_GRJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2YL_GRJJ { No = "合计", JJGZ = 0.ToString() } : new DataBase2YL_GRJJ { No = "合计", JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString() };
+        }
+        
         /// <summary>
         /// 获得该月总共多少天
         /// </summary>

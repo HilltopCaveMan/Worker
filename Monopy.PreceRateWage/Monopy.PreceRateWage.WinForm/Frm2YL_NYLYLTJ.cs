@@ -126,7 +126,7 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = false;
                 var list1 = new BaseDal<DataBase2YL_NYLYLJJ_02NJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
 
-                if (new ExcelHelper<DataBase2YL_NYLYLJJ_02NJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——原料——泥浆原料统计.xlsx", saveFileDlg.FileName, list1, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2YL_NYLYLJJ_02NJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——原料——泥浆原料统计.xlsx", saveFileDlg.FileName, list1, 3, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {

@@ -389,39 +389,48 @@ namespace Monopy.PreceRateWage.WinForm
                     return false;
                 }
             }
-            var glist = list.GroupBy(t => t.GH, t => t.PZ);
+            var glist = list.GroupBy(t => t.GH).ToList();
             foreach (IGrouping<string, DataBase2PY_JSBZ> info in glist)
             {
                 List<DataBase2PY_JSBZ> sl = info.ToList<DataBase2PY_JSBZ>();//分组后的集合  
 
-                string gh = string.Empty;
+                string gh = info.Key;
                 string pz = string.Empty;
                 decimal pysg = 0M;
                 decimal cssg = 0M;
                 decimal pyjx = 0M;
                 decimal csjx = 0M;
 
-                foreach (DataBase2PY_JSBZ set in info)
+                var plist = sl.GroupBy(t => t.PZ).ToList();
+
+                foreach (var item in plist)
                 {
-                    decimal.TryParse(set.JS, out decimal js);
-                    gh = set.GH;
-                    pz = set.PZ;
-                    switch (set.GW)
+                    List<DataBase2PY_JSBZ> s2 = item.ToList<DataBase2PY_JSBZ>();//分组后的集合  
+                    foreach (DataBase2PY_JSBZ set in item)
                     {
-                        case "喷釉工（手工）":
-                            pysg = js;
-                            break;
-                        case "擦水工（手工）":
-                            cssg = js;
-                            break;
-                        case "喷釉工（机械）":
-                            pyjx = js;
-                            break;
-                        case "擦水工（机械）":
-                            csjx = js;
-                            break;
+
+                        decimal.TryParse(set.JS, out decimal js);
+
+                        pz = set.PZ;
+                        switch (set.GW)
+                        {
+                            case "喷釉工（手工）":
+                                pysg = js;
+                                break;
+                            case "擦水工（手工）":
+                                cssg = js;
+                                break;
+                            case "喷釉工（机械）":
+                                pyjx = js;
+                                break;
+                            case "擦水工（机械）":
+                                csjx = js;
+                                break;
+                        }
                     }
                 }
+
+
                 if (cssg > pysg)
                 {
                     MessageBox.Show("工号：【" + gh + "】对应的品种：【" + pz + "】擦水工（手工）件数不能大于喷釉工（手工）件数", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -445,22 +454,22 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "喷釉车间");
+                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "喷釉车间").ToList();
 
-                if (listTJ == null)
+                if (listTJ == null || listTJ.Count == 0)
                 {
                     MessageBox.Show("指标数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
                 foreach (var item in list)
                 {
-                    if (listTJ == null)
+                    if (listTJ == null || listTJ.Count == 0)
                     {
                         item.JE = "0";
                         continue;
                     }
                     var type = listTJ.Where(t => t.TypesName == item.PZ && t.PostName == item.GW).FirstOrDefault();
-                    var baseZb = listTJ.Where(t => t.Classification == "技术部实验").FirstOrDefault();
+                    var baseZb = listTJ.Where(t => t.Classification == "技术部实验" && t.PostName == item.GW).FirstOrDefault();
                     item.DJ = type.UnitPrice;
                     item.ZB = baseZb.ZB_JB_JJGZ;
                     decimal.TryParse(item.DJ, out decimal dj);

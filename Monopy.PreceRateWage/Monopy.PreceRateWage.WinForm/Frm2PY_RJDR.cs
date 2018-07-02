@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm2PY_RJDR : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$类型$年月$工厂$工号$人员编码$姓名$开窑量$一级品$一级率$考核$计件$合计$建档时间$建档人$类型$配件金额$计件合计".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$类型$年月$工厂$工号$员工编码$姓名$开窑量$一级品$一级率$考核$计件$合计$建档日期$建档人 $类型".Split('$');
 
         private string _factoryNo;
         public Frm2PY_RJDR()
@@ -262,9 +262,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i].Visible = false;
             }
-            dgv.Rows[0].Frozen = true;
-            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
-            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
+          
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
