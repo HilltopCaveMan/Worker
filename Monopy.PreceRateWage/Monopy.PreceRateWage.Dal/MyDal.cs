@@ -966,7 +966,49 @@ namespace Monopy.PreceRateWage.Dal
         {
             return (list == null || list.Count == 0) ? new DataBase2YL_GRJJ { No = "合计", JJGZ = 0.ToString() } : new DataBase2YL_GRJJ { No = "合计", JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString() };
         }
-        
+
+        /// <summary>
+        /// 二厂模具运模计件金额合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2MJ_YMJJ GetTotalDataBase2MJ_YMJJ(List<DataBase2MJ_YMJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2MJ_YMJJ { No = "合计", JE = 0.ToString() } : new DataBase2MJ_YMJJ { No = "合计", JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+
+        /// <summary>
+        /// 二厂大件月报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2MJ_DJCJYB GetTotalDataBase2MJ_DJCJYB(List<DataBase2MJ_DJCJYB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2MJ_DJCJYB { CPMC = "合计", SCLJ = 0.ToString(), BCLJ = 0.ToString(), PSLJ = 0.ToString() } : new DataBase2MJ_DJCJYB { CPMC = "合计", SCLJ = list.Sum(t => decimal.TryParse(t.SCLJ, out decimal result) ? result : 0M).ToString(), BCLJ = list.Sum(t => decimal.TryParse(t.BCLJ, out decimal result) ? result : 0M).ToString(), PSLJ = list.Sum(t => decimal.TryParse(t.PSLJ, out decimal result) ? result : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂小件月报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2MJ_XJCJYB GetTotalDataBase2MJ_XJCJYB(List<DataBase2MJ_XJCJYB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2MJ_XJCJYB { CPMC = "合计", SCSL = 0.ToString() } : new DataBase2MJ_XJCJYB { CPMC = "合计", SCSL = list.Sum(t => decimal.TryParse(t.SCSL, out decimal result) ? result : 0M).ToString() };
+        }
+
+
+        /// <summary>
+        /// 二厂卸石膏计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2MJ_XSGJJ GetTotalDataBase2MJ_XSGJJ(List<DataBase2MJ_XSGJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2MJ_XSGJJ { No = "合计", Money = 0.ToString(), DS = 0.ToString() } : new DataBase2MJ_XSGJJ { No = "合计", Money = list.Sum(t => decimal.TryParse(t.Money, out decimal result) ? result : 0).ToString(), DS = list.Sum(t => decimal.TryParse(t.DS, out decimal ds) ? ds : 0).ToString() };
+        }
+
         /// <summary>
         /// 获得该月总共多少天
         /// </summary>

@@ -1,6 +1,6 @@
 ﻿namespace Monopy.PreceRateWage.WinForm
 {
-    partial class Frm1MJ_PMCXJ
+    partial class Frm2MJ_PMCXJ
     {
         /// <summary>
         /// Required designer variable.
@@ -557,7 +557,7 @@
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
-            // Frm1MJ_PMCXJ
+            // Frm2MJ_PMCXJ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -566,9 +566,9 @@
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
-            this.Name = "Frm1MJ_PMCXJ";
+            this.Name = "Frm2MJ_PMCXJ";
             this.Text = "PMC小件明细";
-            this.Load += new System.EventHandler(this.Frm1MJ_PMCXJ_Load);
+            this.Load += new System.EventHandler(this.Frm2MJ_PMCXJ_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
