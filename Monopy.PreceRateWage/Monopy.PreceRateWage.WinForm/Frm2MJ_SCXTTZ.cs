@@ -16,27 +16,12 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class FrmGeneral_XTTZ : Office2007Form
+    public partial class Frm2MJ_SCXTTZ : Office2007Form
     {
 
-        private string _workShop;
-        private string _factoryNo;
-        public FrmGeneral_XTTZ()
+        public Frm2MJ_SCXTTZ()
         {
             InitializeComponent();
-        }
-        public FrmGeneral_XTTZ(string args) : this()
-        {
-            try
-            {
-                _factoryNo = args.Split('-')[0];
-                _workShop = args.Split('-')[1];
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
-                return;
-            }
         }
 
         #region 按钮事件
@@ -55,7 +40,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnSearch_Click(object sender, EventArgs e)
         {
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var list = new BaseDal<DataBase2MJ_SCXTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             RefGrid(list);
         }
 
@@ -97,7 +82,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
             btnSearch.PerformClick();
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var list = new BaseDal<DataBase2MJ_SCXTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value && t.CJ.Contains(CmbCJ.Text) && t.GW.Contains(CmbGW.Text) && t.UserCode.Contains(CmbUserCode.Text) && t.UserName.Contains(CmbUserName.Text)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             var dt = GetDataTable(list);
             if (dt == null || dt.Rows.Count == 1)
             {
@@ -109,12 +94,11 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dt.Columns[i].Caption = header[i];
             }
-            string f = (_factoryNo == "G001" ? "一厂" : "二厂");
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = $"梦牌{f}{_workShop}--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}.xls";
+            sfd.FileName = $"梦牌四厂--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}.xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                byte[] data = new ExcelHelper().DataTable2Excel(dt, f + "学徒台账", $"梦牌{f}{_workShop}--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}");
+                byte[] data = new ExcelHelper().DataTable2Excel(dt, "学徒台账", $"梦牌四厂--学徒台账-{dtp1.Value.Year}-{dtp1.Value.Month}至{dtp2.Value.Year}-{dtp2.Value.Month}");
                 try
                 {
                     if (sfd.FileName.Substring(sfd.FileName.Length - 4) != ".xls")
@@ -144,22 +128,22 @@ namespace Monopy.PreceRateWage.WinForm
         #region 调用方法
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
+            var list = new BaseDal<DataBase2MJ_SCXTTZ>().GetList(t => t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
             RefCmbCJ(list);
             RefCmbGW(list);
             RefCmbUserCode(list);
             RefCmbUserName(list);
         }
 
-        private void RefCmbCJ(List<DataBase1CC_XTTZ> list)
+        private void RefCmbCJ(List<DataBase2MJ_SCXTTZ> list)
         {
-            var listTmp = list.GroupBy(t => t.CJ == _workShop).Select(t => t.Key).OrderBy(t => t).ToList();
+            var listTmp = list.GroupBy(t => t.CJ).Select(t => t.Key).OrderBy(t => t).ToList();
             CmbCJ.DataSource = listTmp;
             CmbCJ.DisplayMember = "CJ";
-            CmbCJ.Text = _workShop;
+            CmbCJ.Text = string.Empty;
         }
 
-        private void RefCmbGW(List<DataBase1CC_XTTZ> list)
+        private void RefCmbGW(List<DataBase2MJ_SCXTTZ> list)
         {
             var listTmp = list.GroupBy(t => t.GW).Select(t => t.Key).OrderBy(t => int.TryParse(t, out int it) ? it : int.MaxValue).ThenBy(t => t).ToList();
             CmbGW.DataSource = listTmp;
@@ -167,7 +151,7 @@ namespace Monopy.PreceRateWage.WinForm
             CmbGW.Text = string.Empty;
         }
 
-        private void RefCmbUserCode(List<DataBase1CC_XTTZ> list)
+        private void RefCmbUserCode(List<DataBase2MJ_SCXTTZ> list)
         {
             var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
             CmbUserCode.DataSource = listTmp;
@@ -175,7 +159,7 @@ namespace Monopy.PreceRateWage.WinForm
             CmbUserCode.Text = string.Empty;
         }
 
-        private void RefCmbUserName(List<DataBase1CC_XTTZ> list)
+        private void RefCmbUserName(List<DataBase2MJ_SCXTTZ> list)
         {
             var listTmp = list.GroupBy(t => t.UserName).Select(t => t.Key).OrderBy(t => t).ToList();
             CmbUserName.DataSource = listTmp;
@@ -183,7 +167,7 @@ namespace Monopy.PreceRateWage.WinForm
             CmbUserName.Text = string.Empty;
         }
 
-        private void RefGrid(List<DataBase1CC_XTTZ> list)
+        private void RefGrid(List<DataBase2MJ_SCXTTZ> list)
         {
             foreach (DataGridViewRow item in dgv.Rows)
             {
@@ -193,7 +177,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.DataSource = GetDataTable(list);
             if (dgv.DataSource != null)
             {
-                string[] header = "车间$岗位名称$人员编号$姓名$合计金额".Split('$');
+                string[] header = "车间$岗位名称$人员编号$姓名$合计天数".Split('$');
                 for (int i = 0; i < header.Length; i++)
                 {
                     dgv.Columns[i].HeaderText = header[i];
@@ -205,13 +189,13 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
-        private DataTable GetDataTable(List<DataBase1CC_XTTZ> list)
+        private DataTable GetDataTable(List<DataBase2MJ_SCXTTZ> list)
         {
             if (list.Count == 0)
             {
                 return null;
             }
-            var listTmp = list.GroupBy(t => new { t.CJ, t.GW, t.UserCode, t.UserName }).Select(t => new DataBase1CC_XTTZ { CJ = t.Key.CJ, GW = t.Key.GW, UserCode = t.Key.UserCode, UserName = t.Key.UserName, No = t.Min(x => int.TryParse(x.No, out int iNo) ? iNo : int.MaxValue).ToString() }).ToList();
+            var listTmp = list.GroupBy(t => new { t.CJ, t.GW, t.UserCode, t.UserName }).Select(t => new DataBase2MJ_SCXTTZ { CJ = t.Key.CJ, GW = t.Key.GW, UserCode = t.Key.UserCode, UserName = t.Key.UserName, No = t.Min(x => int.TryParse(x.No, out int iNo) ? iNo : int.MaxValue).ToString() }).ToList();
             var listTmp2 = list.GroupBy(t => new { t.TheYear, t.TheMonth }).Select(t => new { t.Key.TheYear, t.Key.TheMonth }).OrderBy(t => t.TheYear).ThenBy(t => t.TheMonth).ToList();
             DataTable dt = DataTableHelper.GetDataTable(listTmp, 0);
             dt.Columns.Remove("Id");
@@ -220,7 +204,6 @@ namespace Monopy.PreceRateWage.WinForm
             dt.Columns.Remove("TheYear");
             dt.Columns.Remove("TheMonth");
             dt.Columns.Remove("No");
-            dt.Columns.Remove("FactoryNo");
             dt.Columns.Remove("TimeBZ");
             dt.Columns.Remove("Money");
             dt.Columns.Add("Count", typeof(decimal));
@@ -280,11 +263,11 @@ namespace Monopy.PreceRateWage.WinForm
             return dt;
         }
 
-        private List<DataBase1CC_XTTZ> ImportFile(string filePathName)
+        private List<DataBase2MJ_SCXTTZ> ImportFile(string filePathName)
         {
-            string sql = "delete from DataBase1CC_XTTZ where FactoryNo = '" + _factoryNo + "'and cj = '" + _workShop + "'";
-            new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand(sql);
-            var list = new List<DataBase1CC_XTTZ>();
+            string sql = "delete from DataBase2MJ_SCXTTZ ";
+            new BaseDal<DataBase2MJ_SCXTTZ>().ExecuteSqlCommand(sql);
+            var list = new List<DataBase2MJ_SCXTTZ>();
             try
             {
                 using (var fs = new FileStream(filePathName, FileMode.Open, FileAccess.Read))
@@ -319,7 +302,7 @@ namespace Monopy.PreceRateWage.WinForm
                             {
                                 continue;
                             }
-                            DataBase1CC_XTTZ t = new DataBase1CC_XTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = listTitl[j].Year, TheMonth = listTitl[j].Month, No = no.ToString(), FactoryNo = _factoryNo };
+                            DataBase2MJ_SCXTTZ t = new DataBase2MJ_SCXTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = listTitl[j].Year, TheMonth = listTitl[j].Month, No = no.ToString() };
                             t.CJ = ExcelHelper.GetCellValue(row.GetCell(0));
                             t.GW = ExcelHelper.GetCellValue(row.GetCell(1));
                             t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
@@ -339,7 +322,7 @@ namespace Monopy.PreceRateWage.WinForm
                         }
                     }
                 }
-                if (new BaseDal<DataBase1CC_XTTZ>().Add(list) > 0)
+                if (new BaseDal<DataBase2MJ_SCXTTZ>().Add(list) > 0)
                 {
                     InitUI();
                     btnSearch.PerformClick();
