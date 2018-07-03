@@ -470,6 +470,42 @@
     <Compile Include="Frm1YL_JJ.Designer.cs">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2MJ_DJCJYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_DJCJYB.Designer.cs">
+      <DependentUpon>Frm2MJ_DJCJYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_PMCDJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_PMCDJ.Designer.cs">
+      <DependentUpon>Frm2MJ_PMCDJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_PMCXJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_PMCXJ.Designer.cs">
+      <DependentUpon>Frm2MJ_PMCXJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_XJCJYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_XJCJYB.Designer.cs">
+      <DependentUpon>Frm2MJ_XJCJYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_XSGJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_XSGJJ.Designer.cs">
+      <DependentUpon>Frm2MJ_XSGJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_YMJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_YMJJ.Designer.cs">
+      <DependentUpon>Frm2MJ_YMJJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2YL_GRJJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1351,6 +1387,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1YL_JJ.resx">
       <DependentUpon>Frm1YL_JJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_DJCJYB.resx">
+      <DependentUpon>Frm2MJ_DJCJYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_PMCDJ.resx">
+      <DependentUpon>Frm2MJ_PMCDJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_PMCXJ.resx">
+      <DependentUpon>Frm2MJ_PMCXJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_XJCJYB.resx">
+      <DependentUpon>Frm2MJ_XJCJYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_XSGJJ.resx">
+      <DependentUpon>Frm2MJ_XSGJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_YMJJ.resx">
+      <DependentUpon>Frm2MJ_YMJJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2YL_GRJJ.resx">
       <DependentUpon>Frm2YL_GRJJ.cs</DependentUpon>
@@ -2375,6 +2429,9 @@
     <None Include="Excel\模板二厂——喷釉——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——模具——运模计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出一厂——仓储——入职表 .xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2484,6 +2541,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——模具——运模计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——烧成——车间报.xlsx">
