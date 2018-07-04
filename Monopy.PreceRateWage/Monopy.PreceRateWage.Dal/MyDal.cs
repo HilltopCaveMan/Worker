@@ -1010,6 +1010,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂模具车间其他计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2MJ_QTJJ GetTotalDataBase2MJ_QTJJ(List<DataBase2MJ_QTJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2MJ_QTJJ { GW = "合计", SL = 0.ToString(), JEHJ = 0.ToString() } : new DataBase2MJ_QTJJ { GW = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JEHJ = list.Sum(t => decimal.TryParse(t.JEHJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>

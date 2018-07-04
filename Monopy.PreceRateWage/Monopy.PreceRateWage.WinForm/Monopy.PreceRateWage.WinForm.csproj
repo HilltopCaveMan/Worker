@@ -362,6 +362,12 @@
     <Compile Include="Frm1MJ_RGTB.Designer.cs">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2MJ_SCXTDay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_SCXTDay.Designer.cs">
+      <DependentUpon>Frm2MJ_SCXTDay.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1MJ_XJCJYB.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -487,6 +493,18 @@
     </Compile>
     <Compile Include="Frm2MJ_PMCXJ.Designer.cs">
       <DependentUpon>Frm2MJ_PMCXJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_QTJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_QTJJ.Designer.cs">
+      <DependentUpon>Frm2MJ_QTJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2MJ_SCXTTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2MJ_SCXTTZ.Designer.cs">
+      <DependentUpon>Frm2MJ_SCXTTZ.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm2MJ_XJCJYB.cs">
       <SubType>Form</SubType>
@@ -1334,6 +1352,9 @@
     <EmbeddedResource Include="Frm1MJ_RGTB.resx">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_SCXTDay.resx">
+      <DependentUpon>Frm2MJ_SCXTDay.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_XJCJYB.resx">
       <DependentUpon>Frm1MJ_XJCJYB.cs</DependentUpon>
     </EmbeddedResource>
@@ -1396,6 +1417,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2MJ_PMCXJ.resx">
       <DependentUpon>Frm2MJ_PMCXJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_QTJJ.resx">
+      <DependentUpon>Frm2MJ_QTJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2MJ_SCXTTZ.resx">
+      <DependentUpon>Frm2MJ_SCXTTZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2MJ_XJCJYB.resx">
       <DependentUpon>Frm2MJ_XJCJYB.cs</DependentUpon>
@@ -2429,6 +2456,9 @@
     <None Include="Excel\模板二厂——喷釉——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——模具——其他计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——模具——运模计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2541,6 +2571,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——模具——其他计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——模具——运模计件.xlsx">
