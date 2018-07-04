@@ -1030,6 +1030,17 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂半检拉坯车间半检月报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_BJLP_BJYB GetTotalDataBase2CX_BJLP_BJYB(List<DataBase2CX_BJLP_BJYB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_BJLP_BJYB { LBBM = "合计", KHJE = 0.ToString() } : new DataBase2CX_BJLP_BJYB { LBBM = "合计", KHJE = list.Sum(t => decimal.TryParse(t.KHJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>

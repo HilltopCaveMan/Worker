@@ -190,7 +190,7 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase1CX_CX_06JJ_GR> TDataBase1CX_CX_06JJ_GR { get; set; }
         public virtual DbSet<DataBase1CX_CX_02JJKHTB> TDataBase1CX_CX_02JJKHTB { get; set; }
         public virtual DbSet<DataBase1CX_CX_02JJKHTB_Out> TDataBase1CX_CX_02JJKHTB_Out { get; set; }
-        
+
         public virtual DbSet<DataBase1CX_KFSS> TDataBase1CX_KFSS { get; set; }
         public virtual DbSet<DataBase1CX_PMCJP> TDataBase1CX_PMCJP { get; set; }
         public virtual DbSet<DataBase1CX_XJBG> TDataBase1CX_XJBG { get; set; }
@@ -201,7 +201,7 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase1CX_BCTZ> TDataBase1CX_BCTZ { get; set; }
         public virtual DbSet<DataBase1CX_BCBZ> TDataBase1CX_BCBZ { get; set; }
         public virtual DbSet<DataBase1CX_General_CXYB> TDataBase1CX_General_CXYB { get; set; }
-        
+
 
         /*=========================================一厂成型结束=========================================*/
 
@@ -286,6 +286,17 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase2MJ_QTJJ> TDataBase2MJ_QTJJ { get; set; }
         public virtual DbSet<DataBase2MJ_SCXTTZ> TDataBase2MJ_SCXTTZ { get; set; }
         public virtual DbSet<DataBase2MJ_SCXTDay> TDataBase2MJ_SCXTDay { get; set; }
+
+        /*=========================================二厂模具结束=========================================*/
+
+        /*=========================================二厂成型（技术员）开始=========================================*/
+        public virtual DbSet<DataBase2CX_JSY_01CXJSYKH_02KH> TDataBase2CX_JSY_01CXJSYKH_02KH { get; set; }
+        public virtual DbSet<DataBase2CX_JSY_01CXJSYKH_01CSZL> TDataBase2CX_JSY_01CXJSYKH_01CSZL { get; set; }
+
+        /*=========================================二厂成型（技术员）结束=========================================*/
+
+        /*=========================================二厂半检拉坯开始=========================================*/
+        public virtual DbSet<DataBase2CX_BJLP_BJYB> TDataBase2CX_BJLP_BJYB { get; set; }
         
     }
 }
