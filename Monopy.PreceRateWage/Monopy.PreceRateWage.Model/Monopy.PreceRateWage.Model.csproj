@@ -152,6 +152,7 @@
     <Compile Include="DataBase2MJ_PMCXJ.cs" />
     <Compile Include="DataBase2MJ_PMCXJ_Child.cs" />
     <Compile Include="DataBase2MJ_QTJJ.cs" />
+    <Compile Include="DataBase2MJ_SCXTDay.cs" />
     <Compile Include="DataBase2MJ_SCXTTZ.cs" />
     <Compile Include="DataBase2MJ_XJCJYB.cs" />
     <Compile Include="DataBase2MJ_XSGJJ.cs" />

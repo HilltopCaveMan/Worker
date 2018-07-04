@@ -135,24 +135,28 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             List<DataBaseGeneral_XTDay> list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == _factoryNo && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
             var boolOK = Recount(list, out List<DataBase1CC_XTTZ> listTZ);
-            foreach (var item in list)
+            if (Check(list))
             {
-                new BaseDal<DataBaseGeneral_XTDay>().Edit(item);
-            }
-            if (boolOK)
-            {
-                //台账处理
-                //先删除台账中这个月的旧数据。
-                new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
-
-                if (new BaseDal<DataBase1CC_XTTZ>().Add(listTZ) <= 0)
+                foreach (var item in list)
                 {
-                    MessageBox.Show("台账保存失败！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    new BaseDal<DataBaseGeneral_XTDay>().Edit(item);
                 }
+                if (boolOK)
+                {
+                    //台账处理
+                    //先删除台账中这个月的旧数据。
+                    new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
+
+                    if (new BaseDal<DataBase1CC_XTTZ>().Add(listTZ) <= 0)
+                    {
+                        MessageBox.Show("台账保存失败！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    }
+                }
+                Enabled = true;
+                btnSearch.PerformClick();
+                MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            Enabled = true;
-            btnSearch.PerformClick();
-            MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
         }
 
         /// <summary>
@@ -164,38 +168,10 @@ namespace Monopy.PreceRateWage.WinForm
         {
             bool IsOk = true;
 
-            var list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == _factoryNo && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop);
-            List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains((_factoryNo == "G001" ? "一厂" : "二厂")) && t.Dept.Contains(_workShop)).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var list = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == _factoryNo && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CJ == _workShop).ToList();
 
-            foreach (var item in list)
-            {
-                var data = datas.Where(x => x.Position == item.GZ && x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
-                if (data == null)
-                {
-                    IsOk = false;
-                    MessageBox.Show($"缺少出勤记录：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                else
-                {
-                    int.TryParse(item.BZTS, out int bzts);
-                    int.TryParse(data.DayScq, out int scq);
+            IsOk = Check(list);
 
-                    //验证补助天数
-                    if (bzts > scq)
-                    {
-                        IsOk = false;
-                        MessageBox.Show($"补助天数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，补助天数为：{item.BZTS}，出勤记录的实出勤为：{data.DayScq}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-                }
-
-                int.TryParse(item.HD, out int hd);
-                //验证核对
-                if (hd < 0)
-                {
-                    IsOk = false;
-                    MessageBox.Show($"核对数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-            }
             if (IsOk)
             {
                 MessageBox.Show("验证通过", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -382,7 +358,7 @@ namespace Monopy.PreceRateWage.WinForm
                 list[i].FactoryNo = _factoryNo;
             }
             var boolOK = Recount(list, out List<DataBase1CC_XTTZ> listTZ);
-            if (new BaseDal<DataBaseGeneral_XTDay>().Add(list) > 0)
+            if (Check(list) && new BaseDal<DataBaseGeneral_XTDay>().Add(list) > 0)
             {
                 if (boolOK)
                 {
@@ -450,9 +426,9 @@ namespace Monopy.PreceRateWage.WinForm
 
                     item.YCQ = ycq.ToString();
 
-                    var itemMonth = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "入职补助").FirstOrDefault();
+                    var itemMonth = listMonth.Where(t => t.PostName == item.GZ && (t.Classification == "入职补助" || string.IsNullOrEmpty(t.Classification))).FirstOrDefault();
 
-                    var itemMonthUp = listMonth.Where(t => t.PostName == item.GZ && t.ProductType == "学徒上限").FirstOrDefault();
+                    var itemMonthUp = listMonth.Where(t => t.PostName == item.GZ && t.Classification == "学徒上限").FirstOrDefault();
 
                     item.XTRGZ = itemMonth.DayWork_XT;
                     decimal.TryParse(item.XTRGZ, out decimal xtrgz);
@@ -486,9 +462,35 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
+        private bool Check(List<DataBaseGeneral_XTDay> list)
+        {
+            bool IsOk = true;
 
+            foreach (var item in list)
+            {
 
+                int.TryParse(item.BZTS, out int bzts);
+                int.TryParse(item.SCQ, out int scq);
 
+                //验证补助天数
+                if (bzts > scq)
+                {
+                    IsOk = false;
+                    MessageBox.Show($"补助天数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，补助天数为：{item.BZTS}，出勤记录的实出勤为：{item.SCQ}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                int.TryParse(item.HD, out int hd);
+                //验证核对
+                if (hd < 0)
+                {
+                    IsOk = false;
+                    MessageBox.Show($"核对数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                return IsOk;
+            }
+
+            return IsOk;
+        }
         #endregion
     }
 }
