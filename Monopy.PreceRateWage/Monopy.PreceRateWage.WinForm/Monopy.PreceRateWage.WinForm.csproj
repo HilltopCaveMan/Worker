@@ -362,6 +362,18 @@
     <Compile Include="Frm1MJ_RGTB.Designer.cs">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_BJLP_BJYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_BJLP_BJYB.Designer.cs">
+      <DependentUpon>Frm2CX_BJLP_BJYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_JSY_01CXJSYKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_JSY_01CXJSYKH.Designer.cs">
+      <DependentUpon>Frm2CX_JSY_01CXJSYKH.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2MJ_SCXTDay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1351,6 +1363,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm1MJ_RGTB.resx">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_BJLP_BJYB.resx">
+      <DependentUpon>Frm2CX_BJLP_BJYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_JSY_01CXJSYKH.resx">
+      <DependentUpon>Frm2CX_JSY_01CXJSYKH.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2MJ_SCXTDay.resx">
       <DependentUpon>Frm2MJ_SCXTDay.cs</DependentUpon>
@@ -2444,6 +2462,9 @@
     <None Include="Excel\模板二厂——仓储——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——半检拉坯——半检月报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——原料——个人计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2564,6 +2585,9 @@
     <None Include="Excel\模板导出一厂——烧成——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出二厂——半检拉坯——半检月报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出二厂——原料——泥浆原料统计.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2571,6 +2595,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——技术员——成型技术员考核.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——模具——其他计件.xlsx">
