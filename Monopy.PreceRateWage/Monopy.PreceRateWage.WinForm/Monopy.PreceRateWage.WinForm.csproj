@@ -260,6 +260,12 @@
     <Compile Include="Frm1CX_PMCJP.Designer.cs">
       <DependentUpon>Frm1CX_PMCJP.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm1CX_PSBZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm1CX_PSBZ.Designer.cs">
+      <DependentUpon>Frm1CX_PSBZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm1CX_QTJJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -380,6 +386,12 @@
     <Compile Include="Frm2CX_BJLP_CJTB.Designer.cs">
       <DependentUpon>Frm2CX_BJLP_CJTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_CXJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CXJJ.Designer.cs">
+      <DependentUpon>Frm2CX_CXJJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_FLJF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -398,11 +410,29 @@
     <Compile Include="Frm2CX_JSY_01CXJSYKH.Designer.cs">
       <DependentUpon>Frm2CX_JSY_01CXJSYKH.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_KFSS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_KFSS.Designer.cs">
+      <DependentUpon>Frm2CX_KFSS.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_PMCJP.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Frm2CX_PMCJP.Designer.cs">
       <DependentUpon>Frm2CX_PMCJP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_PSPZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_PSPZ.Designer.cs">
+      <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_SFBZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_SFBZ.Designer.cs">
+      <DependentUpon>Frm2CX_SFBZ.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm2CX_XJBG.cs">
       <SubType>Form</SubType>
@@ -1349,6 +1379,9 @@
     <EmbeddedResource Include="Frm1CX_PMCJP.resx">
       <DependentUpon>Frm1CX_PMCJP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm1CX_PSBZ.resx">
+      <DependentUpon>Frm1CX_PSBZ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm1CX_QTJJ.resx">
       <DependentUpon>Frm1CX_QTJJ.cs</DependentUpon>
     </EmbeddedResource>
@@ -1409,6 +1442,9 @@
     <EmbeddedResource Include="Frm2CX_BJLP_CJTB.resx">
       <DependentUpon>Frm2CX_BJLP_CJTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CXJJ.resx">
+      <DependentUpon>Frm2CX_CXJJ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_FLJF.resx">
       <DependentUpon>Frm2CX_FLJF.cs</DependentUpon>
     </EmbeddedResource>
@@ -1418,8 +1454,17 @@
     <EmbeddedResource Include="Frm2CX_JSY_01CXJSYKH.resx">
       <DependentUpon>Frm2CX_JSY_01CXJSYKH.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_KFSS.resx">
+      <DependentUpon>Frm2CX_KFSS.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_PMCJP.resx">
       <DependentUpon>Frm2CX_PMCJP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_PSPZ.resx">
+      <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_SFBZ.resx">
+      <DependentUpon>Frm2CX_SFBZ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_XJBG.resx">
       <DependentUpon>Frm2CX_XJBG.cs</DependentUpon>
@@ -2426,6 +2471,9 @@
     <None Include="Excel\模板一厂——成型——注修工成型计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——成型——破损补助.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——成型——精坯月报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2600,6 +2648,9 @@
     <None Include="Excel\模板导出一厂——成型——开发试烧统计月报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出一厂——成型——破损补助.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出一厂——成型——计件考核提报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2658,6 +2709,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——成型——师傅补助.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——技术员——成型技术员考核.xlsx">
