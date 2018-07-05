@@ -828,6 +828,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 一厂成型车间破损补助导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase1CX_PSBZ GetTotalDataBase1CX_PSBZ(List<DataBase1CX_PSBZ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase1CX_PSBZ { No = "合计", GH = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase1CX_PSBZ { No = "合计", GH = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 一厂成型车间成型成型月报合计
         /// </summary>
         /// <param name="list"></param>
@@ -1067,6 +1077,46 @@ namespace Monopy.PreceRateWage.Dal
         public static DataBase2CX_FLJF GetTotalDataBase2CX_FLJF(List<DataBase2CX_FLJF> list)
         {
             return (list == null || list.Count == 0) ? new DataBase2CX_FLJF { No = "合计", GH = "合计", FLFK = 0.ToString() } : new DataBase2CX_FLJF { No = "合计", GH = "合计", FLFK = list.Sum(t => decimal.TryParse(t.FLFK, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间开发试烧合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_KFSS GetTotalDataBase2CX_KFSS(List<DataBase2CX_KFSS> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_KFSS { CJ = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase2CX_KFSS { CJ = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间成型计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_CXJJ GetTotalDataBase2CX_CXJJ(List<DataBase2CX_CXJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_CXJJ { GH = "合计", FQHB = 0.ToString(), GZE = 0.ToString() } : new DataBase2CX_CXJJ { GH = "合计", FQHB = list.Sum(t => decimal.TryParse(t.FQHB, out decimal d) ? d : 0M).ToString(), GZE = list.Sum(t => decimal.TryParse(t.GZE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间破损补助导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_PSBZ GetTotalDataBase2CX_PSBZ(List<DataBase2CX_PSBZ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_PSBZ { No = "合计", GH = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase2CX_PSBZ { No = "合计", GH = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间师父计件导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_SFBZ GetTotalDataBase2CX_SFBZ(List<DataBase2CX_SFBZ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_SFBZ { No = "合计", SFCode = "合计", SFBZ = 0.ToString() } : new DataBase2CX_SFBZ { No = "合计", SFCode = "合计", SFBZ = list.Sum(t => decimal.TryParse(t.SFBZ, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
