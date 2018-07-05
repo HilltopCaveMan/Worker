@@ -1039,6 +1039,35 @@ namespace Monopy.PreceRateWage.Dal
             return (list == null || list.Count == 0) ? new DataBase2CX_BJLP_BJYB { LBBM = "合计", KHJE = 0.ToString() } : new DataBase2CX_BJLP_BJYB { LBBM = "合计", KHJE = list.Sum(t => decimal.TryParse(t.KHJE, out decimal d) ? d : 0M).ToString() };
         }
 
+        /// <summary>
+        /// 二厂半检拉坯车间车间提报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_BJLP_CJTB GetTotalDataBase2CX_BJLP_CJTB(List<DataBase2CX_BJLP_CJTB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_BJLP_CJTB { No = "合计", JJJE = 0.ToString(), KHJE = 0.ToString() } : new DataBase2CX_BJLP_CJTB { No = "合计", JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString(), KHJE = list.Sum(t => decimal.TryParse(t.KHJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间小件报合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_XJBG GetTotalDataBase2CX_XJBG(List<DataBase2CX_XJBG> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_XJBG { GW = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase2CX_XJBG { GW = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间辅料奖罚合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_FLJF GetTotalDataBase2CX_FLJF(List<DataBase2CX_FLJF> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_FLJF { No = "合计", GH = "合计", FLFK = 0.ToString() } : new DataBase2CX_FLJF { No = "合计", GH = "合计", FLFK = list.Sum(t => decimal.TryParse(t.FLFK, out decimal d) ? d : 0M).ToString() };
+        }
 
         /// <summary>
         /// 获得该月总共多少天
