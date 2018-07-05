@@ -83,6 +83,7 @@
     <Compile Include="DataBase1CX_BCTZ.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB_Child.cs" />
+    <Compile Include="DataBase2CX_BJLP_BJJJ.cs" />
     <Compile Include="DataBase1CX_CXJJ.cs" />
     <Compile Include="DataBase1CX_CX_02JJKHTB.cs" />
     <Compile Include="DataBase1CX_CX_02JJKHTB_Out.cs" />
@@ -146,9 +147,16 @@
     <Compile Include="DataBase1YL_YLTJ.cs" />
     <Compile Include="DataBase2CC_CJB.cs" />
     <Compile Include="DataBase2CC_CJB_Child.cs" />
+    <Compile Include="DataBase2CX_BJLP_BJJJ_Child.cs" />
     <Compile Include="DataBase2CX_BJLP_BJYB.cs" />
+    <Compile Include="DataBase2CX_BJLP_CJTB.cs" />
+    <Compile Include="DataBase2CX_FLJF.cs" />
+    <Compile Include="DataBase2CX_GHDR.cs" />
     <Compile Include="DataBase2CX_JSY_01CXJSYKH_01CSZL.cs" />
     <Compile Include="DataBase2CX_JSY_01CXJSYKH_02KH.cs" />
+    <Compile Include="DataBase2CX_PMCJP.cs" />
+    <Compile Include="DataBase2CX_PMCJP_Child.cs" />
+    <Compile Include="DataBase2CX_XJBG.cs" />
     <Compile Include="DataBase2MJ_DJCJYB.cs" />
     <Compile Include="DataBase2MJ_PMCDJ.cs" />
     <Compile Include="DataBase2MJ_PMCDJ_Child.cs" />
