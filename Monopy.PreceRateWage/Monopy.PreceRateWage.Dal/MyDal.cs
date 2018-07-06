@@ -1120,6 +1120,26 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂检包车间包装计件导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_BZJJ GetTotalDataBase2JB_BZJJ(List<DataBase2JB_BZJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_BZJJ { No = "合计", SL = 0.ToString(), FBSL = 0.ToString(), HJ = 0.ToString() } : new DataBase2JB_BZJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), FBSL = list.Sum(t => decimal.TryParse(t.FBSL, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂检包车间包装工出勤导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_BZCQ GetTotalDataBase2JB_BZCQ(List<DataBase2JB_BZCQ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_BZCQ { No = "合计", CQTS = 0.ToString()} : new DataBase2JB_BZCQ { No = "合计", CQTS = list.Sum(t => decimal.TryParse(t.CQTS, out decimal d) ? d : 0M).ToString()};
+        }
+
+        /// <summary>
         /// 获得该月总共多少天
         /// </summary>
         /// <param name="dateTime"></param>

@@ -162,6 +162,8 @@
     <Compile Include="DataBase2CX_PSBZ.cs" />
     <Compile Include="DataBase2CX_SFBZ.cs" />
     <Compile Include="DataBase2CX_XJBG.cs" />
+    <Compile Include="DataBase2JB_BZCQ.cs" />
+    <Compile Include="DataBase2JB_BZJJ.cs" />
     <Compile Include="DataBase2MJ_DJCJYB.cs" />
     <Compile Include="DataBase2MJ_PMCDJ.cs" />
     <Compile Include="DataBase2MJ_PMCDJ_Child.cs" />
