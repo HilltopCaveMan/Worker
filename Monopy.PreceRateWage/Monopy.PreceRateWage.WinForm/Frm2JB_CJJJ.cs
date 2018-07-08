@@ -18,9 +18,9 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class Frm1JB_CJJJ : Office2007Form
+    public partial class Frm2JB_CJJJ : Office2007Form
     {
-        public Frm1JB_CJJJ()
+        public Frm2JB_CJJJ()
         {
             InitializeComponent();
             EnableGlass = false;
@@ -33,7 +33,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Frm1JB_CJJJ_Load(object sender, EventArgs e)
+        private void Frm2JB_CJJJ_Load(object sender, EventArgs e)
         {
             UiControl();
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
@@ -65,7 +65,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 try
                 {
-                    List<DataBaseDay> listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "成检工").ToList();
+                    List<DataBaseDay> listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "检包车间" && t.PostName == "成检工").ToList();
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;
@@ -85,14 +85,19 @@ namespace Monopy.PreceRateWage.WinForm
                             string tmpHeader = ExcelHelper.GetCellValue(irow.GetCell(i));
                             if (tmp == "配盖" || tmp == "磨瓷" || tmp == "喷标")
                             {
-                                if (tmpHeader == "盖")
+                                if (tmpHeader == "盖"|| tmpHeader == "连体盖")
                                 {
-                                    tmpHeader = "水堵";
+                                    tmpHeader = "单盖、水堵";
                                 }
                             }
+                            if (tmpHeader == "水堵")
+                            {
+                                tmpHeader = "单盖、水堵";
+                            }
+
                             headers.Add(tmpHeader);
                         }
-                        List<DataBase1JB_CJJJ> list = new List<DataBase1JB_CJJJ>();
+                        List<DataBase2JB_CJJJ> list = new List<DataBase2JB_CJJJ>();
                         for (int i = 3; i <= sheet.LastRowNum; i++)
                         {
                             IRow row = sheet.GetRow(i);
@@ -103,7 +108,7 @@ namespace Monopy.PreceRateWage.WinForm
                             }
                             else
                             {
-                                DataBase1JB_CJJJ cjjj = new DataBase1JB_CJJJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, FactoryNo = ExcelHelper.GetCellValue(row.GetCell(0)), Code = ExcelHelper.GetCellValue(row.GetCell(1)), UserCode = ExcelHelper.GetCellValue(row.GetCell(2)), UserName = ExcelHelper.GetCellValue(row.GetCell(3)), Childs = new List<DataBase1JB_CJJJ_Child>(), Results = new List<DataBase1JB_CJJJ_Result>() };
+                                DataBase2JB_CJJJ cjjj = new DataBase2JB_CJJJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, FactoryNo = ExcelHelper.GetCellValue(row.GetCell(0)), Code = ExcelHelper.GetCellValue(row.GetCell(1)), UserCode = ExcelHelper.GetCellValue(row.GetCell(2)), UserName = ExcelHelper.GetCellValue(row.GetCell(3)), Childs = new List<DataBase2JB_CJJJ_Child>(), Results = new List<DataBase2JB_CJJJ_Result>() };
 
                                 if (string.IsNullOrEmpty(cjjj.UserCode) || string.IsNullOrEmpty(cjjj.UserName))
                                 {
@@ -122,7 +127,7 @@ namespace Monopy.PreceRateWage.WinForm
                                         var cf = cjjj.Childs.FirstOrDefault(t => t.ChildName == titles[j - 4] + "_" + headers[j - 4]);
                                         if (cf == null)
                                         {
-                                            DataBase1JB_CJJJ_Child child = new DataBase1JB_CJJJ_Child
+                                            DataBase2JB_CJJJ_Child child = new DataBase2JB_CJJJ_Child
                                             {
                                                 Id = Guid.NewGuid(),
                                                 ChildName = titles[j - 4] + "_" + headers[j - 4],
@@ -159,7 +164,7 @@ namespace Monopy.PreceRateWage.WinForm
                                     if (h0 == null)
                                     {
                                         //insert
-                                        var h1 = new DataBase1JB_CJJJ_Result { Id = Guid.NewGuid(), Name = item.ChildName.Split('_')[1], TheCount = cjjj.Childs.Where(t => t.ChildName == item.ChildName).Sum(t => t.ChildCount) };
+                                        var h1 = new DataBase2JB_CJJJ_Result { Id = Guid.NewGuid(), Name = item.ChildName.Split('_')[1], TheCount = cjjj.Childs.Where(t => t.ChildName == item.ChildName).Sum(t => t.ChildCount) };
                                         var hh1 = listDay.FirstOrDefault(t => t.TypesType == h1.Name);
                                         h1.Price = hh1 == null ? 0 : Convert.ToDouble(hh1.UnitPrice);
                                         h1.Money = h1.Price * h1.TheCount;
@@ -183,7 +188,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 list.Add(cjjj);
                             }
                         }
-                        new BaseDal<DataBase1JB_CJJJ>().Add(list);
+                        new BaseDal<DataBase2JB_CJJJ>().Add(list);
                         btnSearch.PerformClick();
                         MessageBox.Show("导入完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     }
@@ -222,7 +227,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             SaveFileDialog sfd = new SaveFileDialog();
-            sfd.FileName = "梦牌一厂检包--成检计件" + dtp.Value.ToString("yyyy年MM月") + ".xls";
+            sfd.FileName = "梦牌二厂检包--成检计件" + dtp.Value.ToString("yyyy年MM月") + ".xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
                 byte[] data = new ExcelHelper().DataTable2Excel(dt, "成检计件");
@@ -279,7 +284,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 using (IDbConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                 {
-                    var listMain = conn.Query<DataBase1JB_CJJJ>("select * from DataBase1JB_CJJJ WHERE theyear=" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                    var listMain = conn.Query<DataBase2JB_CJJJ>("select * from DataBase2JB_CJJJ WHERE theyear=" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
                     if (conn.State != ConnectionState.Open)
                     {
                         conn.Open();
@@ -287,9 +292,9 @@ namespace Monopy.PreceRateWage.WinForm
                     var transaction = conn.BeginTransaction();
                     foreach (var item in listMain)
                     {
-                        string sql1 = "delete from DataBase1JB_CJJJ_Child where DataBase1JB_CJJJ_Id='" + item.Id + "'";
-                        string sql2 = "delete from DataBase1JB_CJJJ_Result where DataBase1JB_CJJJ_Id='" + item.Id + "'";
-                        string sql3 = "delete from DataBase1JB_CJJJ where id='" + item.Id + "'";
+                        string sql1 = "delete from DataBase2JB_CJJJ_Child where DataBase2JB_CJJJ_Id='" + item.Id + "'";
+                        string sql2 = "delete from DataBase2JB_CJJJ_Result where DataBase2JB_CJJJ_Id='" + item.Id + "'";
+                        string sql3 = "delete from DataBase2JB_CJJJ where id='" + item.Id + "'";
                         conn.Execute(sql1, null, transaction);
                         conn.Execute(sql2, null, transaction);
                         conn.Execute(sql3, null, transaction);
@@ -381,7 +386,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataTable dt;
             using (DataHelper dh = new DataHelper(DataHelper.DataType.Sqlclient, ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
             {
-                dt = dh.ExecuteQuery("Select1CJJJ", paras, CommandType.StoredProcedure);
+                dt = dh.ExecuteQuery("Select2CJJJ", paras, CommandType.StoredProcedure);
             }
             if (dt.Rows.Count > 0)
             {

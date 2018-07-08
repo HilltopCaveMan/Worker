@@ -664,7 +664,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase1JB_KFSS GetTotalDataBase1JB_KFSS(List<DataBase1JB_KFSS> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase1JB_KFSS { UserName = "合计", McMoney = 0.ToString(), McCount = 0.ToString(), LbMoney = 0.ToString() } : new DataBase1JB_KFSS { UserName = "合计", McCount = list.Sum(t => string.IsNullOrEmpty(t.McCount) ? 0M : Convert.ToDecimal(t.McCount)).ToString(), LbCount = list.Sum(t => string.IsNullOrEmpty(t.LbCount) ? 0M : Convert.ToDecimal(t.LbCount)).ToString(), McMoney = list.Sum(t => string.IsNullOrEmpty(t.McMoney) ? 0M : Convert.ToDecimal(t.McMoney)).ToString(), LbMoney = list.Sum(t => string.IsNullOrEmpty(t.LbMoney) ? 0M : Convert.ToDecimal(t.LbMoney)).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase1JB_KFSS { UserName = "合计", Count = 0.ToString(), JE = 0.ToString()} : new DataBase1JB_KFSS { UserName = "合计", Count = list.Sum(t => string.IsNullOrEmpty(t.Count) ? 0M : Convert.ToDecimal(t.Count)).ToString(), JE = list.Sum(t => string.IsNullOrEmpty(t.JE) ? 0M : Convert.ToDecimal(t.JE)).ToString() };
         }
 
         /// <summary>
@@ -1136,7 +1136,42 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase2JB_BZCQ GetTotalDataBase2JB_BZCQ(List<DataBase2JB_BZCQ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase2JB_BZCQ { No = "合计", CQTS = 0.ToString()} : new DataBase2JB_BZCQ { No = "合计", CQTS = list.Sum(t => decimal.TryParse(t.CQTS, out decimal d) ? d : 0M).ToString()};
+            return (list == null || list.Count == 0) ? new DataBase2JB_BZCQ { No = "合计", CQTS = 0.ToString() } : new DataBase2JB_BZCQ { No = "合计", CQTS = list.Sum(t => decimal.TryParse(t.CQTS, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂检包车间包装计件导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_ZZJJ GetTotalDataBase2JB_ZZJJ(List<DataBase2JB_ZZJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_ZZJJ { No = "合计", SL = 0.ToString(), HJ = 0.ToString() } : new DataBase2JB_ZZJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂检包车间组装工出勤导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_ZZCQ GetTotalDataBase2JB_ZZCQ(List<DataBase2JB_ZZCQ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_ZZCQ { No = "合计", CQTS = 0.ToString() } : new DataBase2JB_ZZCQ { No = "合计", CQTS = list.Sum(t => decimal.TryParse(t.CQTS, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂检包磨瓷计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="dateTime"></param>
+        /// <returns></returns>
+        public static DataBase2JB_MCJJ GetTotalDataBase2JB_MCJJ(List<DataBase2JB_MCJJ> list, DateTime dateTime)
+        {
+            if (list == null || list.Count == 0)
+            {
+                return new DataBase2JB_MCJJ() { PZ = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month };
+            }
+            return new DataBase2JB_MCJJ() { PZ = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, McCount = list.Sum(t => string.IsNullOrEmpty(t.McCount) ? 0 : Convert.ToDecimal(t.McCount)).ToString(), YkcpgCount = list.Sum(t => string.IsNullOrEmpty(t.YkcpgCount) ? 0 : Convert.ToDecimal(t.YkcpgCount)).ToString(), McMoney = list.Sum(t => string.IsNullOrEmpty(t.McMoney) ? 0 : Convert.ToDecimal(t.McMoney)).ToString(), YkcpgMoney = list.Sum(t => string.IsNullOrEmpty(t.YkcpgMoney) ? 0 : Convert.ToDecimal(t.YkcpgMoney)).ToString(), Money = list.Sum(t => string.IsNullOrEmpty(t.Money) ? 0m : Convert.ToDecimal(t.Money)).ToString() };
         }
 
         /// <summary>

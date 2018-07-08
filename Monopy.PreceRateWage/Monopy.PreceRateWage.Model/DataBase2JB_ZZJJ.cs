@@ -6,9 +6,9 @@ using System.Text;
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 开发试烧
+    /// 2组装计件
     /// </summary>
-    public class DataBase1JB_KFSS
+    public class DataBase2JB_ZZJJ
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -17,29 +17,14 @@ namespace Monopy.PreceRateWage.Model
         public int TheMonth { get; set; }
 
         /// <summary>
-        /// 工厂
-        /// </summary>
-        public string Factory { get; set; }
-
-        /// <summary>
         /// 序号
         /// </summary>
         public string No { get; set; }
 
         /// <summary>
-        /// 车间
+        /// 岗位名称
         /// </summary>
-        public string CJ { get; set; }
-
-        /// <summary>
-        /// 人员编码
-        /// </summary>
-        public string UserCode { get; set; }
-
-        /// <summary>
-        /// 姓名
-        /// </summary>
-        public string UserName { get; set; }
+        public string GWMC { get; set; }
 
         /// <summary>
         /// 类别
@@ -49,16 +34,32 @@ namespace Monopy.PreceRateWage.Model
         /// <summary>
         /// 数量
         /// </summary>
-        public string Count { get; set; }
+        public string SL { get; set; }
+
+        /// <summary>
+        /// 拆件（复检、验货、产品残）
+        /// </summary>
+        public string CJ { get; set; }
+
+        /// <summary>
+        /// 合计
+        /// </summary>
+        public string HJ { get; set; }
+
+        /// <summary>
+        /// 对应品种
+        /// </summary>
+        public string DYPZ { get; set; }
 
         /// <summary>
         /// 单价
         /// </summary>
-        public string  DJ { get; set; }
+        public string DJ { get; set; }
 
         /// <summary>
-        /// 金额
+        /// 计件金额
         /// </summary>
-        public string JE { get; set; }
+
+        public string JJJE { get; set; }
     }
 }

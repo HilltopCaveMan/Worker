@@ -1,6 +1,6 @@
 ﻿namespace Monopy.PreceRateWage.WinForm
 {
-    partial class Frm2JB_BZJJ
+    partial class Frm2JB_ZZCQ
     {
         /// <summary>
         /// Required designer variable.
@@ -35,9 +35,11 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel1 = new DevComponents.DotNetBar.Controls.GroupPanel();
+            this.CmbUserName = new System.Windows.Forms.ComboBox();
+            this.CmbUserCode = new System.Windows.Forms.ComboBox();
+            this.labelX7 = new DevComponents.DotNetBar.LabelX();
+            this.labelX5 = new DevComponents.DotNetBar.LabelX();
             this.dtp = new System.Windows.Forms.DateTimePicker();
-            this.txtLB = new CCWin.SkinControl.SkinTextBox();
-            this.labelX3 = new DevComponents.DotNetBar.LabelX();
             this.btnSearch = new DevComponents.DotNetBar.ButtonX();
             this.labelX1 = new DevComponents.DotNetBar.LabelX();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
@@ -63,9 +65,11 @@
             // 
             this.groupPanel1.CanvasColor = System.Drawing.SystemColors.Control;
             this.groupPanel1.ColorSchemeStyle = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.groupPanel1.Controls.Add(this.CmbUserName);
+            this.groupPanel1.Controls.Add(this.CmbUserCode);
+            this.groupPanel1.Controls.Add(this.labelX7);
+            this.groupPanel1.Controls.Add(this.labelX5);
             this.groupPanel1.Controls.Add(this.dtp);
-            this.groupPanel1.Controls.Add(this.txtLB);
-            this.groupPanel1.Controls.Add(this.labelX3);
             this.groupPanel1.Controls.Add(this.btnSearch);
             this.groupPanel1.Controls.Add(this.labelX1);
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -73,7 +77,7 @@
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
             this.groupPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(747, 74);
+            this.groupPanel1.Size = new System.Drawing.Size(892, 74);
             // 
             // 
             // 
@@ -105,6 +109,58 @@
             this.groupPanel1.TabIndex = 5;
             this.groupPanel1.Text = "查询";
             // 
+            // CmbUserName
+            // 
+            this.CmbUserName.Font = new System.Drawing.Font("宋体", 12F);
+            this.CmbUserName.FormattingEnabled = true;
+            this.CmbUserName.Location = new System.Drawing.Point(487, 6);
+            this.CmbUserName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbUserName.Name = "CmbUserName";
+            this.CmbUserName.Size = new System.Drawing.Size(105, 28);
+            this.CmbUserName.TabIndex = 44;
+            // 
+            // CmbUserCode
+            // 
+            this.CmbUserCode.Font = new System.Drawing.Font("宋体", 12F);
+            this.CmbUserCode.FormattingEnabled = true;
+            this.CmbUserCode.Location = new System.Drawing.Point(295, 6);
+            this.CmbUserCode.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CmbUserCode.Name = "CmbUserCode";
+            this.CmbUserCode.Size = new System.Drawing.Size(105, 28);
+            this.CmbUserCode.TabIndex = 45;
+            // 
+            // labelX7
+            // 
+            this.labelX7.AutoSize = true;
+            this.labelX7.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX7.Location = new System.Drawing.Point(428, 10);
+            this.labelX7.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX7.Name = "labelX7";
+            this.labelX7.Size = new System.Drawing.Size(54, 21);
+            this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX7.TabIndex = 42;
+            this.labelX7.Text = "姓名：";
+            // 
+            // labelX5
+            // 
+            this.labelX5.AutoSize = true;
+            this.labelX5.BackColor = System.Drawing.Color.Transparent;
+            // 
+            // 
+            // 
+            this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
+            this.labelX5.Location = new System.Drawing.Point(204, 10);
+            this.labelX5.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.labelX5.Name = "labelX5";
+            this.labelX5.Size = new System.Drawing.Size(85, 21);
+            this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
+            this.labelX5.TabIndex = 43;
+            this.labelX5.Text = "人员编号：";
+            // 
             // dtp
             // 
             this.dtp.CustomFormat = "yyyy-MM";
@@ -117,69 +173,10 @@
             this.dtp.Size = new System.Drawing.Size(113, 30);
             this.dtp.TabIndex = 12;
             // 
-            // txtLB
-            // 
-            this.txtLB.BackColor = System.Drawing.Color.Transparent;
-            this.txtLB.DownBack = null;
-            this.txtLB.Icon = null;
-            this.txtLB.IconIsButton = false;
-            this.txtLB.IconMouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtLB.IsPasswordChat = '\0';
-            this.txtLB.IsSystemPasswordChar = false;
-            this.txtLB.Lines = new string[0];
-            this.txtLB.Location = new System.Drawing.Point(245, 4);
-            this.txtLB.Margin = new System.Windows.Forms.Padding(0);
-            this.txtLB.MaxLength = 32767;
-            this.txtLB.MinimumSize = new System.Drawing.Size(37, 35);
-            this.txtLB.MouseBack = null;
-            this.txtLB.MouseState = CCWin.SkinClass.ControlState.Normal;
-            this.txtLB.Multiline = true;
-            this.txtLB.Name = "txtLB";
-            this.txtLB.NormlBack = null;
-            this.txtLB.Padding = new System.Windows.Forms.Padding(7, 6, 7, 6);
-            this.txtLB.ReadOnly = false;
-            this.txtLB.ScrollBars = System.Windows.Forms.ScrollBars.None;
-            this.txtLB.Size = new System.Drawing.Size(115, 35);
-            // 
-            // 
-            // 
-            this.txtLB.SkinTxt.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtLB.SkinTxt.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.txtLB.SkinTxt.Font = new System.Drawing.Font("微软雅黑", 9.75F);
-            this.txtLB.SkinTxt.Location = new System.Drawing.Point(7, 6);
-            this.txtLB.SkinTxt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.txtLB.SkinTxt.Multiline = true;
-            this.txtLB.SkinTxt.Name = "BaseText";
-            this.txtLB.SkinTxt.Size = new System.Drawing.Size(101, 23);
-            this.txtLB.SkinTxt.TabIndex = 0;
-            this.txtLB.SkinTxt.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txtLB.SkinTxt.WaterText = "";
-            this.txtLB.TabIndex = 8;
-            this.txtLB.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.txtLB.WaterColor = System.Drawing.Color.FromArgb(((int)(((byte)(127)))), ((int)(((byte)(127)))), ((int)(((byte)(127)))));
-            this.txtLB.WaterText = "";
-            this.txtLB.WordWrap = true;
-            // 
-            // labelX3
-            // 
-            this.labelX3.AutoSize = true;
-            this.labelX3.BackColor = System.Drawing.Color.Transparent;
-            // 
-            // 
-            // 
-            this.labelX3.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX3.Location = new System.Drawing.Point(195, 10);
-            this.labelX3.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.labelX3.Name = "labelX3";
-            this.labelX3.Size = new System.Drawing.Size(54, 21);
-            this.labelX3.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
-            this.labelX3.TabIndex = 5;
-            this.labelX3.Text = "类别：";
-            // 
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.Location = new System.Drawing.Point(373, 4);
+            this.btnSearch.Location = new System.Drawing.Point(648, 4);
             this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
             this.btnSearch.Size = new System.Drawing.Size(116, 35);
@@ -212,10 +209,10 @@
             this.groupPanel2.Controls.Add(this.tableLayoutPanel1);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel2.DrawTitleBox = false;
-            this.groupPanel2.Location = new System.Drawing.Point(0, 274);
+            this.groupPanel2.Location = new System.Drawing.Point(0, 314);
             this.groupPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(747, 80);
+            this.groupPanel2.Size = new System.Drawing.Size(892, 80);
             // 
             // 
             // 
@@ -268,7 +265,7 @@
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(741, 53);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(886, 53);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // btnViewExcel
@@ -278,7 +275,7 @@
             this.btnViewExcel.Location = new System.Drawing.Point(4, 4);
             this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewExcel.Name = "btnViewExcel";
-            this.btnViewExcel.Size = new System.Drawing.Size(140, 45);
+            this.btnViewExcel.Size = new System.Drawing.Size(169, 45);
             this.btnViewExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnViewExcel.Symbol = "";
             this.btnViewExcel.TabIndex = 1;
@@ -290,10 +287,10 @@
             this.btnImportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnImportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImportExcel.Location = new System.Drawing.Point(152, 4);
+            this.btnImportExcel.Location = new System.Drawing.Point(181, 4);
             this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(140, 45);
+            this.btnImportExcel.Size = new System.Drawing.Size(169, 45);
             this.btnImportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnImportExcel.Symbol = "";
             this.btnImportExcel.TabIndex = 0;
@@ -305,10 +302,10 @@
             this.btnExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.Location = new System.Drawing.Point(300, 4);
+            this.btnExportExcel.Location = new System.Drawing.Point(358, 4);
             this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(140, 45);
+            this.btnExportExcel.Size = new System.Drawing.Size(169, 45);
             this.btnExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel.Symbol = "";
             this.btnExportExcel.TabIndex = 2;
@@ -320,10 +317,10 @@
             this.btnNew.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnNew.ColorTable = DevComponents.DotNetBar.eButtonColor.BlueOrb;
             this.btnNew.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnNew.Location = new System.Drawing.Point(448, 4);
+            this.btnNew.Location = new System.Drawing.Point(535, 4);
             this.btnNew.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNew.Name = "btnNew";
-            this.btnNew.Size = new System.Drawing.Size(140, 45);
+            this.btnNew.Size = new System.Drawing.Size(169, 45);
             this.btnNew.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnNew.Symbol = "";
             this.btnNew.TabIndex = 3;
@@ -335,10 +332,10 @@
             this.btnRecount.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnRecount.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnRecount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecount.Location = new System.Drawing.Point(596, 4);
+            this.btnRecount.Location = new System.Drawing.Point(712, 4);
             this.btnRecount.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnRecount.Name = "btnRecount";
-            this.btnRecount.Size = new System.Drawing.Size(141, 45);
+            this.btnRecount.Size = new System.Drawing.Size(170, 45);
             this.btnRecount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRecount.Symbol = "";
             this.btnRecount.TabIndex = 6;
@@ -402,7 +399,7 @@
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(747, 200);
+            this.dgv.Size = new System.Drawing.Size(892, 240);
             this.dgv.TabIndex = 7;
             this.dgv.TitleBack = null;
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
@@ -441,19 +438,19 @@
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
-            // Frm2JB_BZJJ
+            // Frm2JB_ZZCQ
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(747, 354);
+            this.ClientSize = new System.Drawing.Size(892, 394);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.Name = "Frm2JB_BZJJ";
-            this.Text = "包装计件";
-            this.Load += new System.EventHandler(this.Frm2JB_BZJJ_Load);
+            this.Name = "Frm2JB_ZZCQ";
+            this.Text = "组装工出勤";
+            this.Load += new System.EventHandler(this.Frm2JB_ZZCQ_Load);
             this.groupPanel1.ResumeLayout(false);
             this.groupPanel1.PerformLayout();
             this.groupPanel2.ResumeLayout(false);
@@ -468,8 +465,6 @@
 
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel1;
         private System.Windows.Forms.DateTimePicker dtp;
-        private CCWin.SkinControl.SkinTextBox txtLB;
-        private DevComponents.DotNetBar.LabelX labelX3;
         private DevComponents.DotNetBar.ButtonX btnSearch;
         private DevComponents.DotNetBar.LabelX labelX1;
         private DevComponents.DotNetBar.Controls.GroupPanel groupPanel2;
@@ -484,5 +479,9 @@
         private System.Windows.Forms.ToolStripMenuItem 修改ToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 删除ToolStripMenuItem;
+        private System.Windows.Forms.ComboBox CmbUserName;
+        private System.Windows.Forms.ComboBox CmbUserCode;
+        private DevComponents.DotNetBar.LabelX labelX7;
+        private DevComponents.DotNetBar.LabelX labelX5;
     }
 }

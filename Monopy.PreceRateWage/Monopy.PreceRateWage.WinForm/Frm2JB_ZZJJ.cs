@@ -14,12 +14,12 @@ using System.Windows.Forms;
 
 namespace Monopy.PreceRateWage.WinForm
 {
-    public partial class Frm2JB_BZJJ : Office2007Form
+    public partial class Frm2JB_ZZJJ : Office2007Form
     {
         private string[] header;
         private DateTime selectTime;
 
-        public Frm2JB_BZJJ()
+        public Frm2JB_ZZJJ()
         {
             InitializeComponent();
             EnableGlass = false;
@@ -32,7 +32,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void Frm2JB_BZJJ_Load(object sender, EventArgs e)
+        private void Frm2JB_ZZJJ_Load(object sender, EventArgs e)
         {
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
             txtLB.Text = string.Empty;
@@ -57,7 +57,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板二厂——检包——包装计件.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板二厂——检包——组装计件.xlsx");
         }
 
         /// <summary>
@@ -67,14 +67,14 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnImportExcel_Click(object sender, EventArgs e)
         {
-            List<DataBase2JB_BZJJ> list = null;
+            List<DataBase2JB_ZZJJ> list = null;
             OpenFileDialog openFileDlg = new OpenFileDialog()
             {
                 Filter = "Excel文件|*.xlsx",
             };
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
-                list = new ExcelHelper<DataBase2JB_BZJJ>().ReadExcel(openFileDlg.FileName, 2, 5);
+                list = new ExcelHelper<DataBase2JB_ZZJJ>().ReadExcel(openFileDlg.FileName, 2, 5);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -88,7 +88,7 @@ namespace Monopy.PreceRateWage.WinForm
                     list[i].TheYear = selectTime.Year;
                     list[i].TheMonth = selectTime.Month;
                 }
-                if (Recount(list) && new BaseDal<DataBase2JB_BZJJ>().Add(list) > 0)
+                if (Recount(list) && new BaseDal<DataBase2JB_ZZJJ>().Add(list) > 0)
                 {
                     Enabled = true;
                     txtLB.Text = "";
@@ -117,11 +117,11 @@ namespace Monopy.PreceRateWage.WinForm
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                List<DataBase2JB_BZJJ> list = dgv.DataSource as List<DataBase2JB_BZJJ>;
+                List<DataBase2JB_ZZJJ> list = dgv.DataSource as List<DataBase2JB_ZZJJ>;
                 var hj = list[0];
                 list.Remove(hj);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2JB_BZJJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——检包——包装计件.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, selectTime.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2JB_ZZJJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——检包——组装计件.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, selectTime.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -145,8 +145,8 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DataBase2JB_BZJJ DataBase2JB_BZJJ = new DataBase2JB_BZJJ() { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month };
-            FrmModify<DataBase2JB_BZJJ> frm = new FrmModify<DataBase2JB_BZJJ>(DataBase2JB_BZJJ, header, OptionType.Add, Text, 4, 2);
+            DataBase2JB_ZZJJ DataBase2JB_ZZJJ = new DataBase2JB_ZZJJ() { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month };
+            FrmModify<DataBase2JB_ZZJJ> frm = new FrmModify<DataBase2JB_ZZJJ>(DataBase2JB_ZZJJ, header, OptionType.Add, Text, 5, 2);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnRecount.PerformClick();
@@ -163,11 +163,11 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnRecount_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            List<DataBase2JB_BZJJ> list = new BaseDal<DataBase2JB_BZJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList();
+            List<DataBase2JB_ZZJJ> list = new BaseDal<DataBase2JB_ZZJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList();
             Recount(list);
             foreach (var item in list)
             {
-                new BaseDal<DataBase2JB_BZJJ>().Edit(item);
+                new BaseDal<DataBase2JB_ZZJJ>().Edit(item);
             }
             Enabled = true;
             btnSearch.PerformClick();
@@ -201,15 +201,15 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var DataBase2JB_BZJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2JB_BZJJ;
-                if (DataBase2JB_BZJJ != null)
+                var DataBase2JB_ZZJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2JB_ZZJJ;
+                if (DataBase2JB_ZZJJ != null)
                 {
-                    if (DataBase2JB_BZJJ.No == "合计")
+                    if (DataBase2JB_ZZJJ.No == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase2JB_BZJJ> frm = new FrmModify<DataBase2JB_BZJJ>(DataBase2JB_BZJJ, header, OptionType.Modify, Text, 5, 2);
+                    FrmModify<DataBase2JB_ZZJJ> frm = new FrmModify<DataBase2JB_ZZJJ>(DataBase2JB_ZZJJ, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnRecount.PerformClick();
@@ -228,18 +228,18 @@ namespace Monopy.PreceRateWage.WinForm
         {
             if (dgv.SelectedRows.Count == 1)
             {
-                var DataBase2JB_BZJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2JB_BZJJ;
+                var DataBase2JB_ZZJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2JB_ZZJJ;
                 if (MessageBox.Show("警告：数据删除后不能恢复，确定要删除？", "删除警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                 {
-                    if (DataBase2JB_BZJJ != null)
+                    if (DataBase2JB_ZZJJ != null)
                     {
-                        if (DataBase2JB_BZJJ.No == "合计")
+                        if (DataBase2JB_ZZJJ.No == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + selectTime.ToString("yyyy年MM月dd日") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
                                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                                 {
-                                    if (conn.Execute("delete from DataBase2JB_BZJJ where TheYear=" + selectTime.Year.ToString() + " and TheMonth=" + selectTime.Month.ToString()) > 0)
+                                    if (conn.Execute("delete from DataBase2JB_ZZJJ where TheYear=" + selectTime.Year.ToString() + " and TheMonth=" + selectTime.Month.ToString()) > 0)
                                     {
                                         btnSearch.PerformClick();
                                         MessageBox.Show("全部删除完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -256,7 +256,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 return;
                             }
                         }
-                        FrmModify<DataBase2JB_BZJJ> frm = new FrmModify<DataBase2JB_BZJJ>(DataBase2JB_BZJJ, header, OptionType.Delete, Text, 5);
+                        FrmModify<DataBase2JB_ZZJJ> frm = new FrmModify<DataBase2JB_ZZJJ>(DataBase2JB_ZZJJ, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             btnSearch.PerformClick();
@@ -276,8 +276,8 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2JB_BZJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.LB.Contains(lb)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            datas.Insert(0, MyDal.GetTotalDataBase2JB_BZJJ(datas));
+            var datas = new BaseDal<DataBase2JB_ZZJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.LB.Contains(lb)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            datas.Insert(0, MyDal.GetTotalDataBase2JB_ZZJJ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
             {
@@ -287,7 +287,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.Rows[0].Frozen = true;
             dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
             dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
-            header = "cTime$cUser$年$月$序号$岗位名称$类别$数量$返包数量$合计$对应品种$单价$计件金额".Split('$');
+            header = "cTime$cUser$年$月$序号$岗位名称$类别$数量$拆件（复检、验货、产品残）$合计$对应品种$单价$计件金额".Split('$');
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
@@ -295,7 +295,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.ClearSelection();
         }
 
-        private bool Recount(List<DataBase2JB_BZJJ> list)
+        private bool Recount(List<DataBase2JB_ZZJJ> list)
         {
             try
             {
