@@ -10,6 +10,7 @@ namespace Monopy.PreceRateWage.Model
             //Database.CreateIfNotExists();
         }
         public virtual DbSet<DataBase1GZD> TDataBase1GZD { get; set; }
+        public virtual DbSet<DataBase2GZD> TDataBase2GZD { get; set; }
         public virtual DbSet<BaseGroup> TBaseGroup { get; set; }
         public virtual DbSet<BaseRole> TBaseRole { get; set; }
         public virtual DbSet<BaseUser> TBaseUser { get; set; }
@@ -317,6 +318,14 @@ namespace Monopy.PreceRateWage.Model
         /*=========================================二厂检包开始=========================================*/
         public virtual DbSet<DataBase2JB_BZJJ> TDataBase2JB_BZJJ { get; set; }
         public virtual DbSet<DataBase2JB_BZCQ> TDataBase2JB_BZCQ { get; set; }
+        public virtual DbSet<DataBase2JB_ZZJJ> TDataBase2JB_ZZJJ { get; set; }
+        public virtual DbSet<DataBase2JB_ZZCQ> TDataBase2JB_ZZCQ { get; set; }
+        public virtual DbSet<DataBase2JB_ZY> TDataBase2JB_ZY { get; set; }
+        public virtual DbSet<DataBase2JB_RKGJJ> TDataBase2JB_RKGJJ { get; set; }
+        public virtual DbSet<DataBase2JB_PMCMC> TDataBase2JB_PMCMC { get; set; }
+        public virtual DbSet<DataBase2JB_PMCMCYKC> TDataBase2JB_PMCMCYKC { get; set; }
+        public virtual DbSet<DataBase2JB_CJJJ> TDataBase2JB_CJJJ { get; set; }
+        public virtual DbSet<DataBase2JB_MCJJ> TDataBase2JB_MCJJ { get; set; }
         
     }
 }

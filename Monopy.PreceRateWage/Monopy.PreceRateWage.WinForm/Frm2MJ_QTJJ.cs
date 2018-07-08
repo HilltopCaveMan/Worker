@@ -88,6 +88,9 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase2MJ_QTJJ> list = dgv.DataSource as List<DataBase2MJ_QTJJ>;
+                var hj = list[0];
+                list.Remove(hj);
+                list.Add(hj);
                 if (new ExcelHelper<DataBase2MJ_QTJJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——模具——其他计件.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -99,6 +102,8 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+                list.Remove(hj);
+                list.Insert(0, hj);
                 Enabled = true;
             }
         }
@@ -274,7 +279,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase2MJ_QTJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (lb == "全部" ? true : t.LB == lb) && (pzmc == "全部" ? true : t.PZMC == pzmc)).ToList().OrderBy(t => t.No).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2MJ_QTJJ(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

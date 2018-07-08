@@ -1,14 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Monopy.PreceRateWage.Model
 {
     /// <summary>
-    /// 开发试烧
+    /// 4入库工计件PMC
     /// </summary>
-    public class DataBase1JB_KFSS
+    public class DataBase2JB_RKGJJ
     {
         public Guid Id { get; set; }
         public DateTime? CreateTime { get; set; }
@@ -16,10 +14,6 @@ namespace Monopy.PreceRateWage.Model
         public int TheYear { get; set; }
         public int TheMonth { get; set; }
 
-        /// <summary>
-        /// 工厂
-        /// </summary>
-        public string Factory { get; set; }
 
         /// <summary>
         /// 序号
@@ -27,38 +21,28 @@ namespace Monopy.PreceRateWage.Model
         public string No { get; set; }
 
         /// <summary>
-        /// 车间
+        /// 岗位名称
         /// </summary>
-        public string CJ { get; set; }
+        public string GWMC { get; set; }
 
         /// <summary>
-        /// 人员编码
+        /// 人员编号
         /// </summary>
         public string UserCode { get; set; }
 
         /// <summary>
-        /// 姓名
+        /// 人员姓名
         /// </summary>
         public string UserName { get; set; }
-
-        /// <summary>
-        /// 类别
-        /// </summary>
-        public string LB { get; set; }
-
-        /// <summary>
-        /// 数量
-        /// </summary>
-        public string Count { get; set; }
-
-        /// <summary>
-        /// 单价
-        /// </summary>
-        public string  DJ { get; set; }
 
         /// <summary>
         /// 金额
         /// </summary>
         public string JE { get; set; }
+
+        /// <summary>
+        /// 品种
+        /// </summary>
+        public virtual ICollection<DataBase2JB_RKGJJ_Child> Childs { get; set; }
     }
 }

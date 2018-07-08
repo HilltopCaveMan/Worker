@@ -18,132 +18,67 @@ namespace Monopy.PreceRateWage.WinForm
     {
         private string[] header;
         private DateTime selectTime;
-
+        private string _factoryNo;
         public Frm1JB_KFSS()
         {
             InitializeComponent();
             EnableGlass = false;
         }
 
-        private void UiControl()
-        {
-            if (Program.User.Code == "Admin")
-            {
-                return;
-            }
-            System.Reflection.FieldInfo[] fieldInfo = GetType().GetFields(System.Reflection.BindingFlags.NonPublic | System.Reflection.BindingFlags.Instance);
-            List<ContextMenuStrip> contextMenuStrip = new List<ContextMenuStrip>();
-            for (int i = 0; i < fieldInfo.Length; i++)
-            {
-                if (fieldInfo[i].FieldType == typeof(ButtonX))
-                {
-                    ((ButtonX)fieldInfo[i].GetValue(this)).Enabled = false;
-                    //Controls.Find(fieldInfo[i].Name, true)[0].Enabled = false;
-                    continue;
-                }
-
-                if (fieldInfo[i].FieldType == typeof(ContextMenuStrip))
-                {
-                    var tmp = (ContextMenuStrip)fieldInfo[i].GetValue(this);
-                    contextMenuStrip.Add(tmp);
-                    foreach (var item in tmp.Items)
-                    {
-                        if (item is ToolStripMenuItem t)
-                        {
-                            t.Enabled = false;
-                        }
-                    }
-                }
-            }
-
-            var dic = MenuBarHelper.FrmControlEnable(Program.User.Code);
-            foreach (var item in dic.Keys)
-            {
-                var cons = Controls.Find(item, true);
-                if (cons.Length > 0)
-                {
-                    cons[0].Enabled = dic[item];
-                    continue;
-                }
-                foreach (var contextMs in contextMenuStrip)
-                {
-                    foreach (var item2 in contextMs.Items)
-                    {
-                        if (item2 is ToolStripMenuItem x && x.Name == item)
-                        {
-                            x.Enabled = dic[item];
-                        }
-                    }
-                }
-            }
-        }
-
-        private void Frm1JB_KFSS_Load(object sender, EventArgs e)
-        {
-            UiControl();
-            dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
-            txtUserCode.Text = string.Empty;
-            btnSearch.PerformClick();
-        }
-
-        private void RefDgv(DateTime selectTime, string userCode)
-        {
-            foreach (DataGridViewColumn item in dgv.Columns)
-            {
-                item.Frozen = false;
-                item.Visible = true;
-            }
-            var datas = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.UserCode.Contains(userCode)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-            datas.Insert(0, MyDal.GetTotalDataBase1JB_KFSS(datas));
-            dgv.DataSource = datas;
-            for (int i = 0; i < 5; i++)
-            {
-                dgv.Columns[i].Visible = false;
-            }
-            dgv.Columns[10].Frozen = true;
-            dgv.Rows[0].Frozen = true;
-            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
-            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
-            header = "cTime$cUser$年$月$序号$人员编码$姓名$品种$磨瓷数量$冷补数量$磨瓷单价$冷补单价$磨瓷金额$冷补金额$金额".Split('$');
-            for (int i = 0; i < header.Length; i++)
-            {
-                dgv.Columns[i + 1].HeaderText = header[i];
-            }
-            dgv.ClearSelection();
-        }
-
-        private void btnSearch_Click(object sender, EventArgs e)
-        {
-            selectTime = dtp.Value;
-            RefDgv(selectTime, txtUserCode.Text);
-        }
-
-        private void btnViewExcel_Click(object sender, EventArgs e)
-        {
-            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——检包——小试磨瓷冷补计件.xlsx");
-        }
-
-        private bool Recount(List<DataBase1JB_KFSS> list)
+        public Frm1JB_KFSS(string args) : this()
         {
             try
             {
-                foreach (var item in list)
-                {
-                    var bDayMc = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "磨瓷" && t.TypesName == item.Pz);
-                    var bDayLb = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.PostName == "冷补" && t.TypesName == item.Pz);
-                    item.McUP = bDayMc == null ? "0" : bDayMc.UnitPrice;
-                    item.LbUP = bDayLb == null ? "0" : bDayLb.UnitPrice;
-                    item.McMoney = string.IsNullOrEmpty(item.McCount) ? string.Empty : (Convert.ToDecimal(item.McCount) * Convert.ToDecimal(item.McUP)).ToString();
-                    item.LbMoney = string.IsNullOrEmpty(item.LbCount) ? string.Empty : (Convert.ToDecimal(item.LbCount) * Convert.ToDecimal(item.LbUP)).ToString();
-                }
-                return true;
+                _factoryNo = args;
+
             }
-            catch
+            catch (Exception ex)
             {
-                return false;
+                MessageBox.Show("配置错误，无法运行此界面，请联系管理员！系统错误信息为：" + ex.Message);
+                return;
             }
         }
 
+        #region 按钮事件
+
+        /// <summary>
+        /// 初始化
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void Frm1JB_KFSS_Load(object sender, EventArgs e)
+        {
+            dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
+            InitUI();
+            btnSearch.PerformClick();
+        }
+
+        /// <summary>
+        /// 查询
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            selectTime = dtp.Value;
+            RefDgv(selectTime, CmbUserCode.Text, CmbUserName.Text, CmbLB.Text);
+        }
+
+        /// <summary>
+        /// 查看模板
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void btnViewExcel_Click(object sender, EventArgs e)
+        {
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——检包——开发试烧.xlsx");
+        }
+
+        /// <summary>
+        /// 导入
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnImportExcel_Click(object sender, EventArgs e)
         {
             List<DataBase1JB_KFSS> list = null;
@@ -153,7 +88,7 @@ namespace Monopy.PreceRateWage.WinForm
             };
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
-                list = new ExcelHelper<DataBase1JB_KFSS>().ReadExcel(openFileDlg.FileName, 2, 5);
+                list = new ExcelHelper<DataBase1JB_KFSS>().ReadExcel(openFileDlg.FileName, 2, 6);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -185,6 +120,7 @@ namespace Monopy.PreceRateWage.WinForm
                         Enabled = true;
                         return;
                     }
+                    list[i].Factory = _factoryNo;
                     list[i].CreateUser = Program.User.ToString();
                     list[i].CreateTime = Program.NowTime;
                     list[i].TheYear = selectTime.Year;
@@ -193,7 +129,7 @@ namespace Monopy.PreceRateWage.WinForm
                 if (Recount(list) && new BaseDal<DataBase1JB_KFSS>().Add(list) > 0)
                 {
                     Enabled = true;
-                    txtUserCode.Text = "";
+                    InitUI();
                     btnSearch.PerformClick();
                     MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 }
@@ -205,6 +141,11 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
+        /// <summary>
+        /// 导出
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnExportExcel_Click(object sender, EventArgs e)
         {
             SaveFileDialog saveFileDlg = new SaveFileDialog()
@@ -218,7 +159,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.Remove(hj);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase1JB_KFSS>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——小试磨瓷冷补计件.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, selectTime.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1JB_KFSS>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——开发试烧.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, selectTime.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -235,18 +176,29 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
+
+        /// <summary>
+        /// 新增
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DataBase1JB_KFSS DataBase1JB_KFSS = new DataBase1JB_KFSS() { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month };
-            FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Add, Text, 4, 5);
+            DataBase1JB_KFSS DataBase1JB_KFSS = new DataBase1JB_KFSS() { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month, Factory = _factoryNo };
+            FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Add, Text, 5, 2);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnRecount.PerformClick();
-                txtUserCode.Text = string.Empty;
+                InitUI();
                 btnSearch.PerformClick();
             }
         }
 
+        /// <summary>
+        /// 重新计算
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void btnRecount_Click(object sender, EventArgs e)
         {
             Enabled = false;
@@ -279,6 +231,11 @@ namespace Monopy.PreceRateWage.WinForm
             }
         }
 
+        /// <summary>
+        /// 修改
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
         private void 修改ToolStripMenuItem_Click(object sender, EventArgs e)
         {
             if (dgv.SelectedRows.Count == 1)
@@ -286,12 +243,12 @@ namespace Monopy.PreceRateWage.WinForm
                 var DataBase1JB_KFSS = dgv.SelectedRows[0].DataBoundItem as DataBase1JB_KFSS;
                 if (DataBase1JB_KFSS != null)
                 {
-                    if (DataBase1JB_KFSS.UserName == "合计")
+                    if (DataBase1JB_KFSS.No == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Modify, Text, 4, 5);
+                    FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Modify, Text, 5, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnRecount.PerformClick();
@@ -310,13 +267,13 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1JB_KFSS != null)
                     {
-                        if (DataBase1JB_KFSS.UserName == "合计")
+                        if (DataBase1JB_KFSS.No == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + selectTime.ToString("yyyy年MM月dd日") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
                                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                                 {
-                                    if (conn.Execute("delete from DataBase1JB_KFSS where TheYear=" + selectTime.Year.ToString() + " and TheMonth=" + selectTime.Month.ToString()) > 0)
+                                    if (conn.Execute("delete from DataBase1JB_KFSS where TheYear=" + selectTime.Year.ToString() + " and TheMonth=" + selectTime.Month.ToString() + " and Factory='" + _factoryNo + "'") > 0)
                                     {
                                         btnSearch.PerformClick();
                                         MessageBox.Show("全部删除完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -333,7 +290,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 return;
                             }
                         }
-                        FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Delete, Text, 4, 5);
+                        FrmModify<DataBase1JB_KFSS> frm = new FrmModify<DataBase1JB_KFSS>(DataBase1JB_KFSS, header, OptionType.Delete, Text, 5);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             btnSearch.PerformClick();
@@ -342,5 +299,90 @@ namespace Monopy.PreceRateWage.WinForm
                 }
             }
         }
+
+        #endregion
+
+        #region 调用方法
+
+        private void RefCmbUserCode(List<DataBase1JB_KFSS> list)
+        {
+            var listTmp = list.GroupBy(t => t.UserCode).Select(t => t.Key).OrderBy(t => t).ToList();
+            CmbUserCode.DataSource = listTmp;
+            CmbUserCode.DisplayMember = "UserCode";
+            CmbUserCode.Text = string.Empty;
+        }
+
+        private void RefCmbUserName(List<DataBase1JB_KFSS> list)
+        {
+            var listTmp = list.GroupBy(t => t.UserName).Select(t => t.Key).OrderBy(t => t).ToList();
+            CmbUserName.DataSource = listTmp;
+            CmbUserName.DisplayMember = "UserName";
+            CmbUserName.Text = string.Empty;
+        }
+
+        private void RefCmbLB(List<DataBase1JB_KFSS> list)
+        {
+            var listTmp = list.GroupBy(t => t.LB).Select(t => t.Key).OrderBy(t => t).ToList();
+            CmbLB.DataSource = listTmp;
+            CmbLB.DisplayMember = "LB";
+            CmbLB.Text = string.Empty;
+        }
+
+        private void InitUI()
+        {
+            var list = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == _factoryNo && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            RefCmbUserCode(list);
+            RefCmbUserName(list);
+            RefCmbLB(list);
+        }
+
+        private void RefDgv(DateTime selectTime, string userCode, string userName, string lb)
+        {
+            foreach (DataGridViewColumn item in dgv.Columns)
+            {
+                item.Frozen = false;
+                item.Visible = true;
+            }
+            var datas = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName)) && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            datas.Insert(0, MyDal.GetTotalDataBase1JB_KFSS(datas));
+            dgv.DataSource = datas;
+            for (int i = 0; i < 5; i++)
+            {
+                dgv.Columns[i].Visible = false;
+            }
+            dgv.Columns[10].Frozen = true;
+            dgv.Rows[0].Frozen = true;
+            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
+            header = "cTime$cUser$年$月$工厂$序号$车间$人员编码$姓名$类别$数量（件）$单价$金额".Split('$');
+            for (int i = 0; i < header.Length; i++)
+            {
+                dgv.Columns[i + 1].HeaderText = header[i];
+            }
+            dgv.ClearSelection();
+        }
+
+        private bool Recount(List<DataBase1JB_KFSS> list)
+        {
+            try
+            {
+                foreach (var item in list)
+                {
+                    var bDayMc = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.WorkshopName == "检包车间" && t.Classification == "磨瓷" && t.TypesType == item.LB);
+
+                    item.DJ = bDayMc == null ? "0" : bDayMc.UnitPrice;
+
+                    item.JE = string.IsNullOrEmpty(item.DJ) ? string.Empty : (Convert.ToDecimal(item.DJ) * Convert.ToDecimal(item.Count)).ToString();
+
+                }
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+        }
+        #endregion
+
     }
 }

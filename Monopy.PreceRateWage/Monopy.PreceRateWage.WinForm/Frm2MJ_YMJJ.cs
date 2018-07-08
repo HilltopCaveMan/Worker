@@ -371,7 +371,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void RefGrid(DateTime dateTime)
         {
             List<DataBase2MJ_YMJJ> datas = new List<DataBase2MJ_YMJJ>();
-            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G001" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
+            var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dateTime.Year && h.CreateMonth == dateTime.Month && h.FactoryNo == "G002" && h.WorkshopName == "模具车间" && h.Classification == "运模" && h.PostName == "运模工").ToList();
 
             var baseQX = listMonth.Where(h => h.TypesType == "撤换全线").FirstOrDefault().UnitPrice;
             var baseDX = listMonth.Where(h => h.TypesType == "撤/换单线").FirstOrDefault().UnitPrice;
@@ -417,7 +417,7 @@ namespace Monopy.PreceRateWage.WinForm
             datas.Insert(0, MyDal.GetTotalDataBase2MJ_YMJJ(datas));
             datas.Insert(1, new DataBase2MJ_YMJJ { GW = "运模单价", CHQX1 = baseQX, CHDX1 = baseDX});
             dgv.DataSource = datas;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

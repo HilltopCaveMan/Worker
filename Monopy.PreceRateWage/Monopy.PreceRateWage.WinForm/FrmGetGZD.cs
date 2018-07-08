@@ -735,7 +735,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 }
                                 else
                                 {
-                                    DataBase1GZD gzd1cx = Calculation1XJX(list, item_cq);
+                                    DataBase1GZD gzd1cx = Calculation1CX(list, item_cq);
                                     if (gzd1cx == null)
                                     {
                                         continue;
@@ -744,7 +744,7 @@ namespace Monopy.PreceRateWage.WinForm
                                     list.Add(gzd1cx);
                                     listSave.Add(gzd1cx);
                                 }
-                                
+
                                 break;
 
                             case "青白坯库":
@@ -766,6 +766,135 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             new BaseDal<DataBase1GZD>().Add(listSave);
+            MethodInvoker invoke = () =>
+            {
+                btnRun.Enabled = true;
+                MessageBox.Show("计算完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            };
+            if (InvokeRequired)
+            {
+                Invoke(invoke);
+            }
+            else
+            {
+                invoke();
+            }
+        }
+
+        private void Calculation2Factory_New(object obj)
+        {
+            var gzd_work = obj as GZD_Work;
+            DateTime dateTime = gzd_work.Time;
+
+            List<DataBase2GZD> list = new List<DataBase2GZD>();
+            List<DataBase2GZD> listSave = new List<DataBase2GZD>();
+            var list_user = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).GroupBy(t => t.UserCode).Select(t => new { usercode = t.Key });
+            foreach (var item in list_user)
+            {
+                list.Clear();
+                List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item.usercode).ToList().OrderByDescending(t => decimal.TryParse(t.DayScq, out decimal d_scq) ? d_scq : 0M).ToList();
+                //var item_cq = list_CQ[0];
+                foreach (var item_cq in list_CQ)
+                {
+                    if (item_cq.Factory == "二厂")
+                    {
+                        switch (item_cq.Dept)
+                        {
+                            case "仓储":
+                                DataBase2GZD gzd2cc = Calculation2CC(list, item_cq);
+                                if (gzd2cc == null)
+                                {
+                                    continue;
+                                }
+                                list.Add(gzd2cc);
+                                listSave.Add(gzd2cc);
+                                break;
+
+                            case "检包车间":
+                                DataBase2GZD gzd2jb = Calculation2JB(list, item_cq);
+                                if (gzd2jb == null)
+                                {
+                                    continue;
+                                }
+                                list.Add(gzd2jb);
+                                listSave.Add(gzd2jb);
+                                break;
+
+                            case "模具车间":
+                                DataBase2GZD gzd2mj = Calculation2MJ(list, item_cq);
+                                if (gzd2mj == null)
+                                {
+                                    continue;
+                                }
+
+                                list.Add(gzd2mj);
+                                listSave.Add(gzd2mj);
+                                break;
+
+                            case "原料车间":
+                                DataBase2GZD gzd2yl = Calculation2YL(list, item_cq);
+                                if (gzd2yl == null)
+                                {
+                                    continue;
+                                }
+
+                                list.Add(gzd2yl);
+                                listSave.Add(gzd2yl);
+                                break;
+
+                            case "喷釉车间":
+                                DataBase2GZD gzd2py = Calculation2PY(list, item_cq);
+                                if (gzd2py == null)
+                                {
+                                    continue;
+                                }
+
+                                list.Add(gzd2py);
+                                listSave.Add(gzd2py);
+                                break;
+
+                            case "烧成车间":
+                                DataBase2GZD gzd2sc = Calculation2SC(list, item_cq);
+                                if (gzd2sc == null)
+                                {
+                                    continue;
+                                }
+
+                                list.Add(gzd2sc);
+                                listSave.Add(gzd2sc);
+                                break;
+
+                            case "成型车间":
+
+                                DataBase2GZD gzd2cx = Calculation2CX(list, item_cq);
+                                if (gzd2cx == null)
+                                {
+                                    continue;
+                                }
+
+                                list.Add(gzd2cx);
+                                listSave.Add(gzd2cx);
+                                break;
+
+                            case "青白坯库":
+                                if (item_cq.Position.Contains("成型拉坯工"))
+                                {
+                                    DataBase2GZD gzd2cx_lp = Calculation2CX_BJLP(list, item_cq);
+                                    if (gzd2cx_lp == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    list.Add(gzd2cx_lp);
+                                    listSave.Add(gzd2cx_lp);
+                                }
+                                break;
+                        }
+                    }
+                }
+            }
+
+            new BaseDal<DataBase2GZD>().Add(listSave);
             MethodInvoker invoke = () =>
             {
                 btnRun.Enabled = true;
@@ -2100,6 +2229,19 @@ namespace Monopy.PreceRateWage.WinForm
                     trCalculation = new Thread(new ParameterizedThreadStart(Calculation1Factory_New));
                     break;
                 case "二厂":
+                    using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+                    {
+                        obj = conn.ExecuteScalar("select count(id) from DataBase2GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                        if (Convert.ToInt32(obj) > 0)
+                        {
+                            if (MessageBox.Show("已经存在【" + cmbFactory.Text + "】数据，重新计算将会删除已存在的数据，确定继续？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
+                            {
+                                return;
+                            }
+                            conn.Execute("delete DataBase2GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                        }
+                    }
+                    trCalculation = new Thread(new ParameterizedThreadStart(Calculation2Factory_New));
                     break;
                 case "三厂":
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
@@ -2154,7 +2296,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1CC" };
 
             //入职补助
-            var xt = new BaseDal<DataBaseGeneral_XT>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "仓储");
+            var xt = new BaseDal<DataBaseGeneral_XT>().Get(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "仓储");
             if (xt != null)
             {
                 gzd.RZBZ = xt.BZJE;
@@ -2234,8 +2376,8 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1JB" };
 
             //入职补助。
-            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
-            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
             gzd.RZBZ = (d2_rzbz + m_rzbz).ToString();
 
             //计件工资1
@@ -2273,10 +2415,10 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             //开发试烧补助
-            var kfss = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            var kfss = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
             if (kfss != null && kfss.Count > 0)
             {
-                gzd.SSBZ = kfss.Sum(t => decimal.TryParse(t.Money, out decimal d_tp) ? d_tp : 0M).ToString();
+                gzd.SSBZ = kfss.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M).ToString();
             }
 
             //车间奖金/罚款
@@ -2310,7 +2452,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1MJ" };
 
             //入职补助
-            var xt = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "模具").ToList();
+            var xt = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "模具").ToList();
             if (xt != null && xt.Count > 0)
             {
                 gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
@@ -2391,7 +2533,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             //车间奖金/罚款
-            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "模具" && t.TheType == "workshop" && t.FactoryNo == "1");
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "原料" && t.TheType == "workshop" && t.FactoryNo == "1");
             if (cjjc != null)
             {
                 gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
@@ -2420,8 +2562,8 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1PY" };
 
             //入职补助。
-            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
-            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
             gzd.RZBZ = (d2_rzbz + m_rzbz).ToString();
 
             //计件工资1
@@ -2509,7 +2651,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1SC" };
 
             //入职补助。
-            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("烧成")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("烧成")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
             gzd.RZBZ = d2_rzbz.ToString();
 
             //计件工资1
@@ -2583,7 +2725,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1XJX" };
 
             //入职补助。
-            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("修检线")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("修检线")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
             gzd.RZBZ = d2_rzbz.ToString();
 
             //计件工资1
@@ -2638,17 +2780,17 @@ namespace Monopy.PreceRateWage.WinForm
         /// <returns></returns>
         private DataBase1GZD Calculation1CX_BJLP(List<DataBase1GZD> list, DataBaseGeneral_CQ item_CQ)
         {
-            if (list.Count > 0 && list.Where(t => t.CalculationType == "3CX_BJLP").Count() > 0)
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "1CX_BJLP").Count() > 0)
             {
                 return null;
             }
             DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
             List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
 
-            DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "3CX_BJLP" };
+            DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1CX_BJLP" };
 
             //入职补助
-            var xt = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "半检拉坯").ToList();
+            var xt = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "半检拉坯").ToList();
             if (xt != null && xt.Count > 0)
             {
                 gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
@@ -2678,6 +2820,615 @@ namespace Monopy.PreceRateWage.WinForm
                 d_pmcps = pmcps.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m);
             }
             gzd.PSFK = d_pmcps > 0M ? d_pmcps.ToString() : string.Empty;
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 成型车间工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase1GZD Calculation1CX(List<DataBase1GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "1CX").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1CX" };
+
+            //入职补助
+            var xt = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
+            if (xt != null && xt.Count > 0)
+            {
+                gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
+
+            //变产补助还未做
+
+            if (!string.IsNullOrEmpty(gzd.RZBZ) && !string.IsNullOrEmpty(gzd.BCBZ))
+            {
+                BJ(new DataBaseMsg { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = "系统报警", IsDone = false, IsRead = false, MsgTitle = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据", Msg = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据,工号:{gzd.UserCode}，姓名:{gzd.UserName}", MsgClass = "成型车间报警", UserCode = xt.FirstOrDefault().CreateUser.Split('_')[0] }, true);
+            }
+
+            //计件工资1
+            var xjdybg = new BaseDal<DataBase1CX_CX_06JJ_GR>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (xjdybg != null)
+            {
+                gzd.JJGZ1 = xjdybg.GRHJ;
+            }
+
+            //计件工资2
+            var xjbg = new BaseDal<DataBase1CX_XJBG>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (xjbg != null || xjbg.Count != 0)
+            {
+                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
+                gzd.JJGZ2 = (xjbg.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M) + jjgz2).ToString();
+            }
+
+            //计件工资3
+            var qtjj = new BaseDal<DataBase1CX_QTJJ>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (qtjj != null || qtjj.Count != 0)
+            {
+                decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
+                gzd.JJGZ3 = (qtjj.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M) + jjgz3).ToString();
+            }
+
+            //试烧补助
+            var kfss = new BaseDal<DataBase1CX_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (kfss != null && kfss.Count > 0)
+            {
+                gzd.SSBZ = (kfss.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //破损补助
+            var psbz = new BaseDal<DataBase1CX_PSBZ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (psbz != null && psbz.Count > 0)
+            {
+                gzd.PSBZ = (psbz.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "成型" && t.TheType == "workshop" && t.FactoryNo == "1");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            //辅料奖罚
+            var fljf = new BaseDal<DataBase1CX_FLJF>().GetList(t => t.TheYear.Equals(dateTime.Year) && t.TheMonth.Equals(dateTime.Month) && t.UserCode.Equals(item_CQ.UserCode)).ToList();
+
+            if (fljf.Count > 0)
+            {
+                gzd.FLFK = fljf.Sum(t => string.IsNullOrEmpty(t.FLFK) ? 0M : Convert.ToDecimal(t.FLFK)).ToString();
+            }
+
+
+            return gzd;
+        }
+
+        #endregion
+
+        #region 二厂工资计算
+
+        /// <summary>
+        /// 仓储车间工资计算
+        /// </summary>
+        /// <param name="item_CQ">出勤</param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2CC(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2CC").Count() > 0)
+            {
+                return null;
+            }
+
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2CC" };
+
+            //入职补助
+            var xt = new BaseDal<DataBaseGeneral_XT>().Get(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "仓储");
+            if (xt != null)
+            {
+                gzd.RZBZ = xt.BZJE;
+            }
+
+            //计件工资1
+            var jjgz = new BaseDal<DataBase2CC_CJB>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (jjgz != null)
+            {
+                gzd.JJGZ1 = jjgz.HJ;
+            }
+
+            //辅助验货
+            var fzyh = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "仓储" && t.FactoryNo == "G002").ToList();
+            if (fzyh != null && fzyh.Count > 0)
+            {
+                gzd.FZYH = fzyh.Sum(t => decimal.TryParse(t.Money, out decimal d_tp) ? d_tp : 0M).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjj = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "仓储" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjj != null)
+            {
+                gzd.CJJJ = cjjj.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjj.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 模具车间工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2MJ(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2MJ").Count() > 0)
+            {
+                return null;
+            }
+
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2MJ" };
+
+            //入职补助
+            var xt = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "模具").ToList();
+            if (xt != null && xt.Count > 0)
+            {
+                gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
+
+            //计件工资1
+            var pmcdj = new BaseDal<DataBase2MJ_PMCDJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            var pmcxj = new BaseDal<DataBase2MJ_PMCXJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (pmcdj != null && pmcdj.Count > 0 && pmcxj != null && pmcxj.Count > 0)
+            {
+
+                decimal.TryParse(gzd.JJGZ1, out decimal jjgz1);
+                gzd.JJGZ1 = (pmcdj.Sum(t => t.Childs.Sum(x => decimal.TryParse(x.Money, out decimal d_tp) ? d_tp : 0M)) + pmcxj.Sum(t => t.Childs.Sum(x => decimal.TryParse(x.Money, out decimal d) ? d : 0M)) + jjgz1).ToString();
+            }
+
+            //计件工资2
+            var ymjj = new BaseDal<DataBase2MJ_YMJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (ymjj != null && ymjj.Count > 0)
+            {
+
+                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
+                gzd.JJGZ2 = (ymjj.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + jjgz2).ToString();
+            }
+
+            //计件工资3
+            var xsgjj = new BaseDal<DataBase2MJ_QTJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (xsgjj != null && xsgjj.Count > 0)
+            {
+
+                decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
+                gzd.JJGZ3 = (xsgjj.Sum(t => decimal.TryParse(t.JEHJ, out decimal d) ? d : 0M) + jjgz3).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "模具" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 喷釉工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2PY(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2PY").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2PY" };
+
+            //入职补助。
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G002" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("喷釉")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
+            gzd.RZBZ = (d2_rzbz + m_rzbz).ToString();
+
+            //计件工资1
+            var pygjj = new BaseDal<DataBase2PY_CJB>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && (t.GZ == "喷釉工（手工）" || t.GZ == "喷釉工（机械）")).ToList();
+            if (pygjj != null && pygjj.Count > 0)
+            {
+                decimal.TryParse(gzd.JJGZ1, out decimal jjgz1);
+                gzd.JJGZ1 = (pygjj.Sum(t => decimal.TryParse(t.PYGSGJJ, out decimal d_tp) ? d_tp : 0M) + pygjj.Sum(t => decimal.TryParse(t.PYGJXJJ, out decimal d) ? d : 0M) + jjgz1).ToString();
+            }
+
+            //计件工资2
+            var csgjj = new BaseDal<DataBase2PY_CJB>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && (t.GZ == "擦水工（手工）" || t.GZ == "擦水工（机械）")).ToList();
+            if (csgjj != null && csgjj.Count > 0)
+            {
+                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
+                gzd.JJGZ2 = (csgjj.Sum(t => decimal.TryParse(t.CSGJXJJ, out decimal d_tp) ? d_tp : 0M) + csgjj.Sum(t => decimal.TryParse(t.CSGSGJJ, out decimal d) ? d : 0M) + jjgz2).ToString();
+            }
+
+            //考核工资1
+            var pygygz = new BaseDal<DataBase2PY_CJB_YGZ>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (pygygz != null && pygygz.Count > 0)
+            {
+                decimal.TryParse(gzd.KHGZ1, out decimal khgz1);
+                gzd.KHGZ1 = (pygjj.Sum(t => decimal.TryParse(t.PYGSGKH, out decimal d_tp) ? d_tp : 0M) + pygjj.Sum(t => decimal.TryParse(t.PYGJXKH, out decimal d) ? d : 0M) + pygygz.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + khgz1).ToString();
+            }
+
+            //考核工资2
+            decimal.TryParse(gzd.KHGZ2, out decimal khgz2);
+            gzd.JJGZ2 = (csgjj.Sum(t => decimal.TryParse(t.CSGJJKH, out decimal d_tp) ? d_tp : 0M) + csgjj.Sum(t => decimal.TryParse(t.CSGSGKH, out decimal d) ? d : 0M) + khgz2).ToString();
+
+
+            //试烧补助
+            var kfss = new BaseDal<DataBaseGeneral_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.FactoryNo == "G002" && t.Dept.Contains("喷釉")).ToList();
+            var jsbz = new BaseDal<DataBase2PY_JSBZ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+
+            if (kfss != null && kfss.Count > 0 && jsbz != null && jsbz.Count > 0)
+            {
+                gzd.SSBZ = (kfss.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m) + jsbz.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "喷釉" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            //破损罚款
+            var pmcps = new BaseDal<DataBaseGeneral_PMCPS>().GetList(t => t.TheYear.Equals(dateTime.Year) && t.TheMonth.Equals(dateTime.Month) && t.FactoryNo.Equals("G002") && t.Dept.Equals("喷釉") && t.UserCode.Equals(item_CQ.UserCode)).ToList();
+            decimal d_pmcps = 0m;
+            if (pmcps.Count > 0)
+            {
+                d_pmcps = pmcps.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m);
+            }
+            gzd.PSFK = d_pmcps > 0M ? d_pmcps.ToString() : string.Empty;
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 烧成工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2SC(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2SC").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2SC" };
+
+            //入职补助。
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("烧成")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            gzd.RZBZ = d2_rzbz.ToString();
+
+            //计件工资1
+            var zygjj = new BaseDal<DataBase2SC_CJB>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (zygjj != null && zygjj.Count > 0)
+            {
+                decimal.TryParse(gzd.JJGZ1, out decimal jjgz1);
+                gzd.JJGZ1 = (zygjj.Sum(t => decimal.TryParse(t.ZYGDJJ, out decimal d_tp) ? d_tp : 0M) + jjgz1).ToString();
+            }
+
+            //考核工资1
+            if (zygjj != null && zygjj.Count > 0)
+            {
+                decimal.TryParse(gzd.KHGZ1, out decimal khjj1);
+                gzd.KHGZ1 = (zygjj.Sum(t => decimal.TryParse(t.ZYGDKH, out decimal d_tp) ? d_tp : 0M) + khjj1).ToString();
+            }
+
+            //试烧补助
+            var kfss = new BaseDal<DataBaseGeneral_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.FactoryNo == "G002" && t.Dept.Contains("烧成")).ToList();
+            var jsbz = new BaseDal<DataBase1SC_JSBZ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.FactoryNo == "G002" && t.CJ.Contains("烧成")).ToList();
+
+            if (kfss != null && kfss.Count > 0 && jsbz != null && jsbz.Count > 0)
+            {
+                gzd.SSBZ = (kfss.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m) + jsbz.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "烧成" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            //破损罚款
+            var pmcps = new BaseDal<DataBaseGeneral_PMCPS>().GetList(t => t.TheYear.Equals(dateTime.Year) && t.TheMonth.Equals(dateTime.Month) && t.FactoryNo.Equals("G002") && t.Dept.Equals("烧成") && t.UserCode.Equals(item_CQ.UserCode)).ToList();
+            decimal d_pmcps = 0m;
+            if (pmcps.Count > 0)
+            {
+                d_pmcps = pmcps.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m);
+            }
+            gzd.PSFK = d_pmcps > 0M ? d_pmcps.ToString() : string.Empty;
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 原料车间工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2YL(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2YL").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2YL" };
+
+            //计件工资1
+            var jjgz = new BaseDal<DataBase2YL_XCJJ>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (jjgz != null)
+            {
+                gzd.JJGZ1 = jjgz.JJJE;
+            }
+
+            //计件工资2
+            var grjj = new BaseDal<DataBase2YL_GRJJ>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (grjj != null)
+            {
+                gzd.JJGZ2 = grjj.JJGZ;
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "原料" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 半检拉坯工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2CX_BJLP(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2CX_BJLP").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2CX_BJLP" };
+
+            //入职补助
+            var xt = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "半检拉坯").ToList();
+            if (xt != null && xt.Count > 0)
+            {
+                gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
+
+            //计件工资1、考核金额1
+            var xjdybg = new BaseDal<DataBase2CX_BJLP_CJTB>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (xjdybg != null)
+            {
+                gzd.JJGZ1 = xjdybg.JJJE;
+                gzd.KHGZ1 = xjdybg.KHJE;
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "半检拉坯" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            //破损罚款
+            var pmcps = new BaseDal<DataBaseGeneral_PMCPS>().GetList(t => t.TheYear.Equals(dateTime.Year) && t.TheMonth.Equals(dateTime.Month) && t.FactoryNo.Equals("G002") && t.Dept.Equals("半检拉坯") && t.UserCode.Equals(item_CQ.UserCode)).ToList();
+            decimal d_pmcps = 0m;
+            if (pmcps.Count > 0)
+            {
+                d_pmcps = pmcps.Sum(t => decimal.TryParse(t.Money, out decimal d) ? d : 0m);
+            }
+            gzd.PSFK = d_pmcps > 0M ? d_pmcps.ToString() : string.Empty;
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 成型车间工资计算
+        /// </summary>
+        /// <param name="list"></param>
+        /// <param name="item_CQ"></param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2CX(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2CX").Count() > 0)
+            {
+                return null;
+            }
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2CX" };
+
+            //入职补助
+            var xt = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
+            if (xt != null && xt.Count > 0)
+            {
+                gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
+
+            //变产补助还未做
+
+            if (!string.IsNullOrEmpty(gzd.RZBZ) && !string.IsNullOrEmpty(gzd.BCBZ))
+            {
+                BJ(new DataBaseMsg { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = "系统报警", IsDone = false, IsRead = false, MsgTitle = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据", Msg = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据,工号:{gzd.UserCode}，姓名:{gzd.UserName}", MsgClass = "成型车间报警", UserCode = xt.FirstOrDefault().CreateUser.Split('_')[0] }, true);
+            }
+
+            //计件工资1
+            var xjdybg = new BaseDal<DataBase2CX_CXJJ>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            if (xjdybg != null)
+            {
+                gzd.JJGZ1 = xjdybg.GZE;
+            }
+
+            //计件工资2
+            var xjbg = new BaseDal<DataBase2CX_XJBG>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (xjbg != null || xjbg.Count != 0)
+            {
+                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
+                gzd.JJGZ2 = (xjbg.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M) + jjgz2).ToString();
+            }
+
+            //计件工资3
+            var sfbz = new BaseDal<DataBase2CX_SFBZ>().GetList(t => t.SFCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (sfbz != null || sfbz.Count != 0)
+            {
+                decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
+                gzd.JJGZ3 = (sfbz.Sum(t => decimal.TryParse(t.SFBZ, out decimal d_tp) ? d_tp : 0M) + jjgz3).ToString();
+            }
+
+            //试烧补助
+            var kfss = new BaseDal<DataBase2CX_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (kfss != null && kfss.Count > 0)
+            {
+                gzd.SSBZ = (kfss.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //破损补助
+            var psbz = new BaseDal<DataBase2CX_PSBZ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (psbz != null && psbz.Count > 0)
+            {
+                gzd.PSBZ = (psbz.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0m)).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "成型" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
+
+            //辅料奖罚
+            var fljf = new BaseDal<DataBase2CX_FLJF>().GetList(t => t.TheYear.Equals(dateTime.Year) && t.TheMonth.Equals(dateTime.Month) && t.UserCode.Equals(item_CQ.UserCode)).ToList();
+
+            if (fljf.Count > 0)
+            {
+                gzd.FLFK = fljf.Sum(t => string.IsNullOrEmpty(t.FLFK) ? 0M : Convert.ToDecimal(t.FLFK)).ToString();
+            }
+
+
+            return gzd;
+        }
+
+        /// <summary>
+        /// 检包车间工资计算
+        /// </summary>
+        /// <param name="item_CQ">出勤</param>
+        /// <returns></returns>
+        private DataBase2GZD Calculation2JB(List<DataBase2GZD> list, DataBaseGeneral_CQ item_CQ)
+        {
+            if (list.Count > 0 && list.Where(t => t.CalculationType == "2JB").Count() > 0)
+            {
+                return null;
+            }
+
+            List<DataBaseGeneral_CQ> list_CQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == item_CQ.TheYear && t.TheMonth == item_CQ.TheMonth && t.UserCode == item_CQ.UserCode && t.Factory == item_CQ.Factory && t.Dept == item_CQ.Dept).ToList();
+
+            DateTime dateTime = new DateTime(item_CQ.TheYear, item_CQ.TheMonth, 1);
+
+            DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2JB" };
+
+            //入职补助。
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var m_rzbz = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.FactoryNo == "G002" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("检包")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M);
+            gzd.RZBZ = (d2_rzbz + m_rzbz).ToString();
+
+            //计件工资1
+            var bzcq = new BaseDal<DataBase2JB_BZCQ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            var zzcq = new BaseDal<DataBase2JB_ZZCQ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            var rkgjj = new BaseDal<DataBase2JB_RKGJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+
+            decimal.TryParse(gzd.JJGZ1, out decimal jjgz1);
+            gzd.JJGZ1 = (bzcq.Sum(t => decimal.TryParse(t.GRJJ, out decimal d) ? d : 0M) + zzcq.Sum(t => decimal.TryParse(t.GRJJ, out decimal d) ? d : 0M) + rkgjj.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + jjgz1).ToString();
+
+
+            //计件工资2未完成
+            var jjrlr = new BaseDal<DataBase1JB_JJRLR>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            jjrlr = jjrlr.Where(t => t.IsKF_Manager && t.IsPG_Manager && t.IsPMC_Manager).ToList();
+            if (jjrlr != null && jjrlr.Count > 0)
+            {
+                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
+                gzd.JJGZ2 = (jjrlr.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + jjgz2).ToString();
+            }
+
+            //辅助验货
+            var fzyh = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "检包" && t.FactoryNo == "G001").ToList();
+            if (fzyh != null && fzyh.Count > 0)
+            {
+                gzd.FZYH = fzyh.Sum(t => decimal.TryParse(t.Money, out decimal d_tp) ? d_tp : 0M).ToString();
+            }
+
+            //开发试烧补助
+            var kfss = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (kfss != null && kfss.Count > 0)
+            {
+                gzd.SSBZ = kfss.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M).ToString();
+            }
+
+            //车间奖金/罚款
+            var cjjc = new BaseDal<DataBaseGeneral_JC_Dept>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "检包" && t.TheType == "workshop" && t.FactoryNo == "2");
+            if (cjjc != null)
+            {
+                gzd.CJJJ = cjjc.Sum(t => string.IsNullOrEmpty(t.J) ? 0M : Convert.ToDecimal(t.J)).ToString();
+                gzd.CJFK = cjjc.Sum(t => string.IsNullOrEmpty(t.C) ? 0M : Convert.ToDecimal(t.J)).ToString();
+
+            }
 
             return gzd;
         }
