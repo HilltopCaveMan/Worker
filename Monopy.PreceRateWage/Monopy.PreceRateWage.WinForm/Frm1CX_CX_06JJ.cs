@@ -424,7 +424,7 @@ namespace Monopy.PreceRateWage.WinForm
                         return null;
                     }
                     itemResult.YJPL = itemDay.GRKHZB1;
-                    itemResult.MBYJL = itemDay.GRJSB1;
+                    itemResult.MBYJL = itemDay.GRKHZB3;
                     itemResult.SFBZ = itemDay.GRJLDJ1;
                     itemResult.XFBS = itemDay.GRFKDJ1;
 

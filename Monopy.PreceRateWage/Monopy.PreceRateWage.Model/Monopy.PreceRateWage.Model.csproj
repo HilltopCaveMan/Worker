@@ -163,11 +163,13 @@
     <Compile Include="DataBase2CX_SFBZ.cs" />
     <Compile Include="DataBase2CX_XJBG.cs" />
     <Compile Include="DataBase2GZD.cs" />
+    <Compile Include="DataBase2JB_BJSSJJ.cs" />
     <Compile Include="DataBase2JB_BZCQ.cs" />
     <Compile Include="DataBase2JB_BZJJ.cs" />
     <Compile Include="DataBase2JB_CJJJ.cs" />
     <Compile Include="DataBase2JB_CJJJ_Child.cs" />
     <Compile Include="DataBase2JB_CJJJ_Result.cs" />
+    <Compile Include="DataBase2JB_FJJJ.cs" />
     <Compile Include="DataBase2JB_MCJJ.cs" />
     <Compile Include="DataBase2JB_PMCMC.cs" />
     <Compile Include="DataBase2JB_PMCMCYKC.cs" />

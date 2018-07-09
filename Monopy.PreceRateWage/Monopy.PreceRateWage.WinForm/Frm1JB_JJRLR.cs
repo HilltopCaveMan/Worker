@@ -822,7 +822,7 @@ namespace Monopy.PreceRateWage.WinForm
             var data = new BaseDal<DataBase1JB_JJRLR>().Get(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
             if (data != null)
             {
-                var msg = new DataBaseMsg { ID = Guid.NewGuid(), UserCode = data.CreateUser.Split('_')[0], MsgTitle = "审核退回", IsDone = false, IsRead = false, CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), MsgClass = "审核退回", Msg = $"{dateTime.Year}年{dateTime.Month}月三厂检包计件被审核退回，退回人：{Program.User.Code}_{Program.User.Name}" };
+                var msg = new DataBaseMsg { ID = Guid.NewGuid(), UserCode = data.CreateUser.Split('_')[0], MsgTitle = "审核退回", IsDone = false, IsRead = false, CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), MsgClass = "审核退回", Msg = $"{dateTime.Year}年{dateTime.Month}月一厂检包计件被审核退回，退回人：{Program.User.Code}_{Program.User.Name}" };
                 new BaseDal<DataBaseMsg>().Add(msg);
             }
         }
