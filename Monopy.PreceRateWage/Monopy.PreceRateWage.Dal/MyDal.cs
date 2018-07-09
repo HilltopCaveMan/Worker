@@ -1174,6 +1174,27 @@ namespace Monopy.PreceRateWage.Dal
             return new DataBase2JB_MCJJ() { PZ = "合计", TheYear = dateTime.Year, TheMonth = dateTime.Month, McCount = list.Sum(t => string.IsNullOrEmpty(t.McCount) ? 0 : Convert.ToDecimal(t.McCount)).ToString(), YkcpgCount = list.Sum(t => string.IsNullOrEmpty(t.YkcpgCount) ? 0 : Convert.ToDecimal(t.YkcpgCount)).ToString(), McMoney = list.Sum(t => string.IsNullOrEmpty(t.McMoney) ? 0 : Convert.ToDecimal(t.McMoney)).ToString(), YkcpgMoney = list.Sum(t => string.IsNullOrEmpty(t.YkcpgMoney) ? 0 : Convert.ToDecimal(t.YkcpgMoney)).ToString(), Money = list.Sum(t => string.IsNullOrEmpty(t.Money) ? 0m : Convert.ToDecimal(t.Money)).ToString() };
         }
 
+
+        /// <summary>
+        /// 二厂检包车间复检计件导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_FJJJ GetTotalDataBase2JB_FJJJ(List<DataBase2JB_FJJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_FJJJ { No = "合计", SL = 0.ToString(), JJJE = 0.ToString() } : new DataBase2JB_FJJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂检包车间补胶、试水计件导入合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2JB_BJSSJJ GetTotalDataBase2JB_BJSSJJ(List<DataBase2JB_BJSSJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2JB_BJSSJJ { No = "合计", SL = 0.ToString(), JJJE = 0.ToString() } : new DataBase2JB_BJSSJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
+        }
+
         /// <summary>
         /// 获得该月总共多少天
         /// </summary>

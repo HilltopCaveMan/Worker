@@ -440,6 +440,12 @@
     <Compile Include="Frm2CX_XJBG.Designer.cs">
       <DependentUpon>Frm2CX_XJBG.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2JB_BJSSJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2JB_BJSSJJ.Designer.cs">
+      <DependentUpon>Frm2JB_BJSSJJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2JB_BZCQ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -457,6 +463,12 @@
     </Compile>
     <Compile Include="Frm2JB_CJJJ.Designer.cs">
       <DependentUpon>Frm2JB_CJJJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2JB_FJJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2JB_FJJJ.Designer.cs">
+      <DependentUpon>Frm2JB_FJJJ.cs</DependentUpon>
     </Compile>
     <Compile Include="Frm2JB_HS.cs">
       <SubType>Form</SubType>
@@ -1535,6 +1547,9 @@
     <EmbeddedResource Include="Frm2CX_XJBG.resx">
       <DependentUpon>Frm2CX_XJBG.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2JB_BJSSJJ.resx">
+      <DependentUpon>Frm2JB_BJSSJJ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm2JB_BZCQ.resx">
       <DependentUpon>Frm2JB_BZCQ.cs</DependentUpon>
     </EmbeddedResource>
@@ -1543,6 +1558,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2JB_CJJJ.resx">
       <DependentUpon>Frm2JB_CJJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2JB_FJJJ.resx">
+      <DependentUpon>Frm2JB_FJJJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2JB_HS.resx">
       <DependentUpon>Frm2JB_HS.cs</DependentUpon>
@@ -2696,6 +2714,9 @@
     <None Include="Excel\模板二厂——检包——包装计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——检包——复检计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——检包——磨瓷计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2703,6 +2724,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——检包——组装计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——检包——补胶、试水计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——模具——其他计件.xlsx">
@@ -2846,6 +2870,9 @@
     <None Include="Excel\模板导出二厂——检包——包装计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板导出二厂——检包——复检计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板导出二厂——检包——磨瓷计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2853,6 +2880,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——检包——组装计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——检包——补胶、试水计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——模具——其他计件.xlsx">
