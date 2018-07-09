@@ -13,7 +13,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1CX_BCBZ : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$工段$线位$人员编码$姓名$原产品名称$变更产品名称$类别$应给人数$实给人数$上线时间$上线第几月$金额$备注$金额$实际金额$当月出勤天数$按应出勤天数$补助金额$补余额".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$工段$线位$人员编码$姓名$原产品名称$变更产品名称$类别$应给人数$实给人数$上线时间$上线第几月$金额$补助天数$备注$实补助天数$实出勤$应出勤$补助金额$补余额".Split('$');
 
         public Frm1CX_BCBZ()
         {
@@ -120,7 +120,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void BtnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板三厂——成型——变产表.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——成型——变产表.xlsx");
         }
 
         private bool Recount(List<DataBase1CX_BCBZ> list, out List<DataBase1CX_BCTZ> listTZ)
@@ -140,6 +140,12 @@ namespace Monopy.PreceRateWage.WinForm
                     return false;
                 }
                 var listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && t.Classification == "变产补助");
+
+                if (listMonth == null || listMonth.Count() == 0)
+                {
+                    MessageBox.Show("没有月工资数据，无法计算，导入月工资后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
 
                 //台账最大No
                 var tmpNo = new BaseDal<DataBase1CX_BCTZ>().GetList().ToList().OrderByDescending(t => int.TryParse(t.No, out int ino) ? ino : 0).FirstOrDefault();
@@ -163,72 +169,54 @@ namespace Monopy.PreceRateWage.WinForm
 
                     if (!item.IsBYE)
                     {
+                        decimal.TryParse(item.BZTS, out decimal bzts);
+                        decimal.TryParse(item.JE, out decimal je);
+                        decimal.TryParse(item.YGRS, out decimal ygrs);
+                        decimal.TryParse(item.SGRS, out decimal sgrs);
+                        if (ygrs < sgrs)
+                        {
+                            je = je * sgrs / ygrs;
+                        }
+
                         if (boolTime && timeSX.Year == dtp.Value.Year && timeSX.Month == dtp.Value.Month)
                         {
                             //上线时间==当前时间
                             var ts = MyDal.GetMonthTotalDays(dtp.Value) - timeSX.Day + 1 - MyDal.GetDaysByTimeAndWeek(timeSX, DayOfWeek.Sunday);
                             if (ts < scq)
                             {
-                                item.DYCQTS = ts.ToString();
+                                item.SJBTS = ts.ToString();
                             }
                             else
                             {
-                                item.DYCQTS = scq.ToString();
+                                item.SJBTS = scq.ToString();
+                            }
+                            decimal.TryParse(item.SJBTS, out decimal sjbzts);
+                            if (string.IsNullOrEmpty(item.BZTS))
+                            {
+                                item.BZJE = (je / 26 * sjbzts).ToString();
+                            }
+                            else
+                            {
+                                item.BZJE = (je / 26 * bzts).ToString();
                             }
                         }
                         else
                         {
-                            item.DYCQTS = scq.ToString();
+                            item.SJBTS = scq.ToString();
+                            if (string.IsNullOrEmpty(item.BZTS))
+                            {
+                                item.BZJE = item.JE;
+                            }
+                            else
+                            {
+                                item.BZJE = (je / 26 * bzts).ToString();
+                            }
                         }
-
-                        decimal.TryParse(item.DYCQTS, out decimal pp);
-
-                        item.YCQTS = ycq.ToString();
-
-                        var itemMonth = listMonth.Where(t => t.ProductType == item.LB && t.MonthData == item.SXDJY).FirstOrDefault();
-                        if (itemMonth == null)
-                        {
-                            item.IsBYE = true;
-                            continue;
-                        }
+                        
+                        item.YCQ = ycq.ToString();
+                        item.SCQ = scq.ToString();
                         item.IsBYE = false;
-                        item.JE = itemMonth.MoneyBCBZ;
-                        decimal.TryParse(item.JE, out decimal je);
-                        int.TryParse(item.YGRS, out int ygrs);
-                        int.TryParse(item.SGRS, out int sgrs);
-                        //if (ygrs >= sgrs)
-                        //{
-                        //    item.SJJE = item.JE;
-                        //}
-                        //else
-                        //{
-                        //    item.SJJE = (je * ygrs / sgrs).ToString();
-                        //}
 
-                        //decimal.TryParse(item.SJJE, out decimal oo);
-                        //补助金额计算方式发生改变2018/2/3修改
-                        //if (ycq < 26)
-                        //{
-                        //    if (pp < ycq)
-                        //    {
-                        //        item.BZJE = (oo * pp / 26).ToString();
-                        //    }
-                        //    else
-                        //    {
-                        //        item.BZJE = oo.ToString();
-                        //    }
-                        //}
-                        //else
-                        //{
-                        //    if (pp < ycq)
-                        //    {
-                        //        item.BZJE = (oo * pp / 26).ToString();
-                        //    }
-                        //    else
-                        //    {
-                        //        item.BZJE = oo.ToString();
-                        //    }
-                        //}
                     }
 
                     //生成台账
@@ -309,7 +297,24 @@ namespace Monopy.PreceRateWage.WinForm
                     Enabled = true;
                     return;
                 }
-
+                int.TryParse(list[i].YGRS, out int ygrs);
+                int.TryParse(list[i].SGRS, out int sgrs);
+                //应给人数验证
+                if (ygrs > sgrs)
+                {
+                    MessageBox.Show($"工段：{list[i].GD},姓名：{list[i].UserName},人员编码：{list[i].UserCode}，的应给人数大于是实给人数 ！");
+                    Enabled = true;
+                    return;
+                }
+                //补助天数验证
+                int.TryParse(list[i].BZTS, out int bzts);
+                int.TryParse(list[i].SJBTS, out int sjbts);
+                if (bzts > sjbts)
+                {
+                    MessageBox.Show($"工段：{list[i].GD},姓名：{list[i].UserName},人员编码：{list[i].UserCode}，的补助天数大于实际补助天数 ！");
+                    Enabled = true;
+                    return;
+                }
                 list[i].GD = list[i].GD.Replace("区", "") + "区";
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
@@ -317,7 +322,7 @@ namespace Monopy.PreceRateWage.WinForm
                 list[i].TheMonth = dtp.Value.Month;
             }
             var boolOK = Recount(list, out List<DataBase1CX_BCTZ> listTZ);
-            bool result = CheckParameter(list);
+
             if (new BaseDal<DataBase1CX_BCBZ>().Add(list) > 0)
             {
                 if (boolOK)
@@ -325,18 +330,7 @@ namespace Monopy.PreceRateWage.WinForm
                     //台账处理
                     //先删除台账中这个月的旧数据。
                     new BaseDal<DataBase1CX_BCTZ>().ExecuteSqlCommand("delete from DataBase1CX_BCTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month);
-                    //现有台账数据补全，主要是初始数据部分列缺失。
-                    //var listOldTZ = new BaseDal<DataBase1CX_BCTZ>().GetList();
-                    //foreach (var item in listTZ)
-                    //{
-                    //    var itemOldTZ = listOldTZ.Where(t => t.GD == item.GD && t.XW == item.XW && t.UserCode == item.UserCode && t.BGCPMC == item.BGCPMC && t.LB == item.LB).FirstOrDefault();
-                    //    if (itemOldTZ != null && (string.IsNullOrEmpty(itemOldTZ.YCPMC) || string.IsNullOrEmpty(itemOldTZ.BCSJ)))
-                    //    {
-                    //        itemOldTZ.YCPMC = item.YCPMC;
-                    //        itemOldTZ.BCSJ = item.BCSJ;
-                    //    }
-                    //    new BaseDal<DataBase1CX_BCTZ>().Edit(itemOldTZ);
-                    //}
+
                     if (new BaseDal<DataBase1CX_BCTZ>().Add(listTZ) <= 0)
                     {
                         MessageBox.Show("台账保存失败！", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -353,16 +347,6 @@ namespace Monopy.PreceRateWage.WinForm
             }
             InitUI();
             Enabled = true;
-        }
-
-        private bool CheckParameter(List<DataBase1CX_BCBZ> list)
-        {
-            //var tmpNo = new BaseDal<DataBase1CX_BCTZ>().GetList(t=>t.TheYear)
-            //foreach (var item in list)
-            //{
-
-            //}
-            return true;
         }
 
         private void btnImportExcel_Click(object sender, EventArgs e)
@@ -390,7 +374,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase1CX_BCBZ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出三厂——成型——变产表.xlsx", saveFileDlg.FileName, list, 2, 6, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1CX_BCBZ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——成型——变产表.xlsx", saveFileDlg.FileName, list, 2, 6, 1, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -478,7 +462,7 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
-                    FrmModify<DataBase1CX_BCBZ> frm = new FrmModify<DataBase1CX_BCBZ>(DataBase1CX_BCBZ, header, OptionType.Modify, Text, 5, 6);
+                    FrmModify<DataBase1CX_BCBZ> frm = new FrmModify<DataBase1CX_BCBZ>(DataBase1CX_BCBZ, header, OptionType.Modify, Text, 5, 5);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
@@ -604,24 +588,31 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void BtnYZ_Click(object sender, EventArgs e)
         {
-            var datas = new BaseDal<DataBase1CX_BCBZ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && !t.IsBYE).ToList();
             bool IsOk = true;
-            //金额验证
-            foreach (var item in datas)
-            {
-                //decimal.TryParse(item.JE_NotUsed, out decimal je_cj);
-                decimal.TryParse(item.JE, out decimal je);
-                //if (Math.Abs(je_cj - je) > 0M)
-                //{
-                //    IsOk = false;
-                //    MessageBox.Show($"车间金额和计算金额不一致：工段：{item.GD}，线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}，变产产品：{item.BGCPMC}，计算金额：【{item.JE}】，不一致！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                //}
-            }
+            var listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && t.Classification == "变产补助");
+
             //台账验证上线月份
-            datas = new BaseDal<DataBase1CX_BCBZ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            var datas = new BaseDal<DataBase1CX_BCBZ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
             DateTime dateTime2 = new DateTime(dtp.Value.Year, dtp.Value.Month, 1);
             foreach (var item in datas)
             {
+
+                int.TryParse(item.YGRS, out int ygrs);
+                int.TryParse(item.SGRS, out int sgrs);
+                //应给人数验证
+                if (ygrs > sgrs)
+                {
+                    MessageBox.Show($"工段：{item.GD},姓名：{item.UserName},人员编码：{item.UserCode}，的应给人数大于是实给人数 ！");
+                    IsOk = false;
+                }
+                //补助天数验证
+                int.TryParse(item.BZTS, out int bzts);
+                int.TryParse(item.SJBTS, out int sjbts);
+                if (bzts > sjbts)
+                {
+                    MessageBox.Show($"工段：{item.GD},姓名：{item.UserName},人员编码：{item.UserCode}，的补助天数大于实际补助天数 ！");
+                    IsOk = false;
+                }
                 if (DateTime.TryParse(item.SXSJ, out DateTime dateTime))
                 {
                     if (dateTime.Year == dateTime2.Year && dateTime.Month == dateTime2.Month)
@@ -662,6 +653,23 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     IsOk = false;
                     MessageBox.Show($"变产时间错误：工段：{item.GD}，线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}，变产产品：{item.BGCPMC}，变产时间/上线时间：【{item.SXSJ}】，不是有效的日期格式！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                
+                var tmp = listMonth.Where(t => t.ProductType == item.LB && t.MonthData == item.SXDJY).FirstOrDefault();
+                if (tmp == null)
+                {
+                    MessageBox.Show($"月工资：没有产品类别：{item.LB},月份：{item.SXDJY}对应的月工资数据 ！");
+                    IsOk = false;
+                }
+                else
+                {
+                    int.TryParse(item.JE, out int je);
+                    int.TryParse(tmp.MoneyBCBZ, out int bcbz);
+                    if (je != bcbz)
+                    {
+                        MessageBox.Show($"金额：{item.GD},姓名：{item.UserName},人员编码：{item.UserCode}，金额：{item.JE}，与月工资类别、月份对应的金额不一致，月工资对应的变产补助为{tmp.MoneyBCBZ} ！");
+                        IsOk = false;
+                    }
                 }
             }
 
