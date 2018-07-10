@@ -97,8 +97,8 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listKH = list.GroupBy(t => new { t.BZ, t.BZName }).Select(t => new { t.Key.BZ, t.Key.BZName, Je = t.Sum(x => decimal.TryParse(x.KHGZ, out decimal d) ? d : 0m) });
-                var listJJ = list.GroupBy(t => new { t.BZ, t.BZName }).Select(t => new { t.Key.BZ, t.Key.BZName, Je = t.Sum(x => decimal.TryParse(x.JJGZ, out decimal d) ? d : 0m) });
+                var listKH = list.GroupBy(t => new { t.BZ, t.BZName }).Select(t => new { t.Key.BZ, t.Key.BZName, CLKH = t.Sum(x => decimal.TryParse(x.KHGZ, out decimal d) ? d : 0m) });
+                var listJJ = list.GroupBy(t => new { t.BZ, t.BZName }).Select(t => new { t.Key.BZ, t.Key.BZName, CLKH = t.Sum(x => decimal.TryParse(x.JJGZ, out decimal d) ? d : 0m) });
                 var listMonth = new BaseDal<DataBaseDay>().Get(h => h.FactoryNo == "G001" && h.WorkshopName == "成型车间" && h.PostName == "注修工" && h.Classification == "产质量考核");
 
                 var listGr = new List<DataBase1CX_CX_06JJ_GR>();
@@ -130,21 +130,21 @@ namespace Monopy.PreceRateWage.WinForm
                         return null;
                     }
 
-                    itemGr.KHGZ = xx.FirstOrDefault().Je.ToString();
-                    itemGr.JJGZ = xx.FirstOrDefault().Je.ToString();
+                    itemGr.KHGZ = xx.FirstOrDefault().CLKH.ToString();
+                    itemGr.JJGZ = xx.FirstOrDefault().CLKH.ToString();
                     var yy = listJJKHTB.Where(t => t.BZBM == itemGr.BZBM).Count();
-                    itemGr.KHGZGR = (xx.FirstOrDefault().Je / yy).ToString();
+                    itemGr.KHGZGR = (xx.FirstOrDefault().CLKH / yy).ToString();
                     if (listMonth != null)
                     {
                         decimal.TryParse(listMonth.KHJEXFD, out decimal khxfd);
-                        if (xx.FirstOrDefault().Je / yy < khxfd)
+                        if (xx.FirstOrDefault().CLKH / yy < khxfd)
                         {
                             itemGr.KHGZGR = khxfd.ToString();
                         }
                     }
                     
-                    itemGr.JJGZGR = (jj.FirstOrDefault().Je / yy).ToString();
-                    itemGr.GRHJ = ((xx.FirstOrDefault().Je + jj.FirstOrDefault().Je) / yy).ToString();
+                    itemGr.JJGZGR = (jj.FirstOrDefault().CLKH / yy).ToString();
+                    itemGr.GRHJ = ((xx.FirstOrDefault().CLKH + jj.FirstOrDefault().CLKH) / yy).ToString();
                     listGr.Add(itemGr);
                     no++;
                 }

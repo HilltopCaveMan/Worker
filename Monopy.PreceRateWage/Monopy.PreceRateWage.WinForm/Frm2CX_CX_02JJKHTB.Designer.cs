@@ -1,6 +1,6 @@
 ﻿namespace Monopy.PreceRateWage.WinForm
 {
-    partial class Frm1CX_CX_02JJKHTB
+    partial class Frm2CX_CX_02JJKHTB
     {
         /// <summary>
         /// Required designer variable.
@@ -815,7 +815,7 @@
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
             this.dgv.TitleBackColorEnd = System.Drawing.Color.FromArgb(((int)(((byte)(83)))), ((int)(((byte)(196)))), ((int)(((byte)(242)))));
             // 
-            // Frm1CX_CX_02JJKHTB
+            // Frm2CX_CX_02JJKHTB
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
@@ -826,11 +826,11 @@
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "Frm1CX_CX_02JJKHTB";
+            this.Name = "Frm2CX_CX_02JJKHTB";
             this.Text = "注浆模型提报";
-            this.Load += new System.EventHandler(this.Frm1CX_CX_02JJKHTB_Load);
-            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Frm1CX_CX_02JJKHTB_DragDrop);
-            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Frm1CX_CX_02JJKHTB_DragEnter);
+            this.Load += new System.EventHandler(this.Frm2CX_CX_02JJKHTB_Load);
+            this.DragDrop += new System.Windows.Forms.DragEventHandler(this.Frm2CX_CX_02JJKHTB_DragDrop);
+            this.DragEnter += new System.Windows.Forms.DragEventHandler(this.Frm2CX_CX_02JJKHTB_DragEnter);
             this.contextMenuStrip1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.groupPanel2.ResumeLayout(false);
