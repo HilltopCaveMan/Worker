@@ -328,6 +328,8 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase2JB_MCJJ> TDataBase2JB_MCJJ { get; set; }
         public virtual DbSet<DataBase2JB_FJJJ> TDataBase2JB_FJJJ { get; set; }
         public virtual DbSet<DataBase2JB_BJSSJJ> TDataBase2JB_BJSSJJ { get; set; }
+        public virtual DbSet<DataBase2CX_BCTZ> TDataBase2CX_BCTZ { get; set; }
+        public virtual DbSet<DataBase2CX_BCBZ> TDataBase2CX_BCBZ { get; set; }
         
     }
 }

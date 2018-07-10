@@ -84,6 +84,8 @@
     <Compile Include="DataBase1CX_BJLP_01_LPYB.cs" />
     <Compile Include="DataBase1CX_BJLP_01_LPYB_Child.cs" />
     <Compile Include="DataBase1CX_PSBZ.cs" />
+    <Compile Include="DataBase2CX_BCBZ.cs" />
+    <Compile Include="DataBase2CX_BCTZ.cs" />
     <Compile Include="DataBase2CX_BJLP_BJJJ.cs" />
     <Compile Include="DataBase1CX_CXJJ.cs" />
     <Compile Include="DataBase1CX_CX_02JJKHTB.cs" />
