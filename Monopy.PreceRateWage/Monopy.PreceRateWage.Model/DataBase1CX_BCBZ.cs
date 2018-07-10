@@ -96,14 +96,14 @@ namespace Monopy.PreceRateWage.Model
         public string SJBTS { get; set; }
 
         /// <summary>
-        /// 当月出勤天数
+        /// 实出勤
         /// </summary>
-        public string DYCQTS { get; set; }
+        public string SCQ { get; set; }
 
         /// <summary>
-        /// 应出勤天数
+        /// 应出勤
         /// </summary>
-        public string YCQTS { get; set; }
+        public string YCQ { get; set; }
 
         /// <summary>
         /// 补助金额

@@ -352,62 +352,62 @@ namespace Monopy.PreceRateWage.WinForm
                     MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的大窑月报和回烧月报数据，导入后重新计算！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                int dtl = 0;//大套类
-                int gbl = 0;//挂便类
-                int ltl = 0;//连体类
-                int sxl = 0;//水箱类
-                int cz = 0;//槽子
-                int gpl = 0;//柜盆类
-                int p = 0;//盆类
-                int z = 0;//柱类
-                int g = 0;//盖
+                decimal dtl = 0;//大套类
+                decimal gbl = 0;//挂便类
+                decimal ltl = 0;//连体类
+                decimal sxl = 0;//水箱类
+                decimal cz = 0;//槽子
+                decimal gpl = 0;//柜盆类
+                decimal p = 0;//盆类
+                decimal z = 0;//柱类
+                decimal g = 0;//盖
                 foreach (var item in listZY)
                 {
                     switch (item.CPMC)
                     {
                         case "10-大套类":
-                            int.TryParse(item.CPDJ_HG, out int dthg);
-                            int.TryParse(item.CPDJ_M, out int dtm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal dthg);
+                            decimal.TryParse(item.CPDJ_M, out decimal dtm);
                             dtl += (dthg + dtm);
                             break;
                         case "10-挂便类":
-                            int.TryParse(item.CPDJ_HG, out int gbhg);
-                            int.TryParse(item.CPDJ_M, out int gbm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal gbhg);
+                            decimal.TryParse(item.CPDJ_M, out decimal gbm);
                             gbl += (gbhg + gbm);
                             break;
                         case "10-连体类":
-                            int.TryParse(item.CPDJ_HG, out int lthg);
-                            int.TryParse(item.CPDJ_M, out int ltm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal lthg);
+                            decimal.TryParse(item.CPDJ_M, out decimal ltm);
                             ltl += (lthg + ltm);
                             break;
                         case "10-水箱类":
-                            int.TryParse(item.CPDJ_HG, out int sxhg);
-                            int.TryParse(item.CPDJ_M, out int sxm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal sxhg);
+                            decimal.TryParse(item.CPDJ_M, out decimal sxm);
                             sxl += (sxhg + sxm);
                             break;
                         case "10-槽子":
-                            int.TryParse(item.CPDJ_HG, out int czhg);
-                            int.TryParse(item.CPDJ_M, out int czm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal czhg);
+                            decimal.TryParse(item.CPDJ_M, out decimal czm);
                             cz += (czhg + czm);
                             break;
                         case "10-柜盆类":
-                            int.TryParse(item.CPDJ_HG, out int gphg);
-                            int.TryParse(item.CPDJ_M, out int gpm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal gphg);
+                            decimal.TryParse(item.CPDJ_M, out decimal gpm);
                             gpl += (gphg + gpm);
                             break;
                         case "10-盆类":
-                            int.TryParse(item.CPDJ_HG, out int phg);
-                            int.TryParse(item.CPDJ_M, out int pm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal phg);
+                            decimal.TryParse(item.CPDJ_M, out decimal pm);
                             p += (phg + pm);
                             break;
                         case "10-柱类":
-                            int.TryParse(item.CPDJ_HG, out int zhg);
-                            int.TryParse(item.CPDJ_M, out int zm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal zhg);
+                            decimal.TryParse(item.CPDJ_M, out decimal zm);
                             z += (zhg + zm);
                             break;
                         case "30-盖":
-                            int.TryParse(item.CPDJ_HG, out int ghg);
-                            int.TryParse(item.CPDJ_M, out int gm);
+                            decimal.TryParse(item.CPDJ_HG, out decimal ghg);
+                            decimal.TryParse(item.CPDJ_M, out decimal gm);
                             g += (ghg + gm);
                             break;
                     }
@@ -415,111 +415,111 @@ namespace Monopy.PreceRateWage.WinForm
 
 
                 //补胶对数
-                int bjds_bdt = dtl;//补大套
-                int bjds_bgb = gbl + cz;//补挂便、蹲便类、槽子
-                int bjds_blt = ltl;//补连体
-                int bjds_bgp = gpl;//补柜盆
-                int bjds_bsx = sxl + g;//补水箱（含盖）
-                int bjds_bmj = p + z;// 补面具、台盆、柱
+                decimal bjds_bdt = dtl;//补大套
+                decimal bjds_bgb = gbl + cz;//补挂便、蹲便类、槽子
+                decimal bjds_blt = ltl;//补连体
+                decimal bjds_bgp = gpl;//补柜盆
+                decimal bjds_bsx = sxl + g;//补水箱（含盖）
+                decimal bjds_bmj = p + z;// 补面具、台盆、柱
                 //试水对数
-                int ssds_dt = dtl * 2;//试水大套
-                int ssds_lt = ltl * 3;//试水连体
-                int ssds_ltysf = ltl;//连体养水封（含内销连体）
+                decimal ssds_dt = dtl * 2;//试水大套
+                decimal ssds_lt = ltl * 3;//试水连体
+                decimal ssds_ltysf = ltl;//连体养水封（含内销连体）
                 //品种对应类别
-                int lb_bdt = 0;//补大套
-                int lb_bgb = 0;//补挂便、蹲便类、槽子
-                int lb_blt = 0;//补连体
-                int lb_bgp = 0;//补柜盆
-                int lb_bsx = 0;//补水箱（含盖）
-                int lb_bmj = 0;// 补面具、台盆、柱
-                int lb_dt = 0;//试水大套
-                int lb_lt = 0;//试水连体
-                int lb_ltysf = 0;//连体养水封（含内销连体）
+                decimal lb_bdt = 0;//补大套
+                decimal lb_bgb = 0;//补挂便、蹲便类、槽子
+                decimal lb_blt = 0;//补连体
+                decimal lb_bgp = 0;//补柜盆
+                decimal lb_bsx = 0;//补水箱（含盖）
+                decimal lb_bmj = 0;// 补面具、台盆、柱
+                decimal lb_dt = 0;//试水大套
+                decimal lb_lt = 0;//试水连体
+                decimal lb_ltysf = 0;//连体养水封（含内销连体）
 
                 foreach (var item in list)
                 {
                     switch (item.PZDYLB)
                     {
                         case "补大套":
-                            int.TryParse(item.SL, out int dtsl);
+                            decimal.TryParse(item.SL, out decimal dtsl);
                             lb_bdt += dtsl;
                             break;
                         case "补挂便、蹲便类、槽子":
-                            int.TryParse(item.SL, out int gbsl);
+                            decimal.TryParse(item.SL, out decimal gbsl);
                             lb_bgb += gbsl;
                             break;
                         case "补连体":
-                            int.TryParse(item.SL, out int ltsl);
+                            decimal.TryParse(item.SL, out decimal ltsl);
                             lb_blt += ltsl;
                             break;
                         case "补柜盆":
-                            int.TryParse(item.SL, out int pgsl);
+                            decimal.TryParse(item.SL, out decimal pgsl);
                             lb_bgp += pgsl;
                             break;
                         case "补水箱（含盖）":
-                            int.TryParse(item.SL, out int sxsl);
+                            decimal.TryParse(item.SL, out decimal sxsl);
                             lb_bsx += sxsl;
                             break;
                         case "补面具、台盆、柱":
-                            int.TryParse(item.SL, out int mjsl);
+                            decimal.TryParse(item.SL, out decimal mjsl);
                             lb_bmj += mjsl;
                             break;
                         case "试水大套":
-                            int.TryParse(item.SL, out int ssdtsl);
+                            decimal.TryParse(item.SL, out decimal ssdtsl);
                             lb_dt += ssdtsl;
                             break;
                         case "试水连体":
-                            int.TryParse(item.SL, out int ssltsl);
+                            decimal.TryParse(item.SL, out decimal ssltsl);
                             lb_lt += ssltsl;
                             break;
                         case "连体养水封（含内销连体）":
-                            int.TryParse(item.SL, out int ysfsl);
+                            decimal.TryParse(item.SL, out decimal ysfsl);
                             lb_ltysf += ysfsl;
                             break;
                     }
                 }
 
-                if (bjds_bdt > lb_bdt)
+                if (bjds_bdt <= lb_bdt)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补大套对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bgb > lb_bgb)
+                if (bjds_bgb <= lb_bgb)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补挂便、蹲便类、槽子对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_blt > lb_blt)
+                if (bjds_blt <= lb_blt)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补连体对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bgp > lb_bgp)
+                if (bjds_bgp <= lb_bgp)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补柜盆对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bsx > lb_bsx)
+                if (bjds_bsx <= lb_bsx)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补水箱（含盖）对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bmj > lb_bmj)
+                if (bjds_bmj <= lb_bmj)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补面具、台盆、柱对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_dt > lb_lt)
+                if (ssds_dt <= lb_lt)
                 {
                     MessageBox.Show("类别为试水的品种对应类别为试水大套对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_lt > lb_bdt)
+                if (ssds_lt <= lb_bdt)
                 {
                     MessageBox.Show("类别为试水的品种对应类别为连体养水封（含内销连体）对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_ltysf > lb_ltysf)
+                if (ssds_ltysf <= lb_ltysf)
                 {
                     MessageBox.Show("类别为试水的品种对应类别为补大套对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;

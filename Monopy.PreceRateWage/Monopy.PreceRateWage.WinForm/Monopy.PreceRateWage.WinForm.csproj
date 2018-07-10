@@ -2567,6 +2567,7 @@
     <None Include="Excel\模板一厂——成型——其他计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——成型——变产表.xlsx" />
     <None Include="Excel\模板一厂——成型——吊链地摊.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2781,6 +2782,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——成型——其他计件.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出一厂——成型——变产表.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出一厂——成型——吊链地摊.xlsx">

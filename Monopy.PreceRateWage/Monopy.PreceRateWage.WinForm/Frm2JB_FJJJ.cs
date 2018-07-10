@@ -20,7 +20,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm2JB_FJJJ : Office2007Form
     {
-        private string[] header = "id$Time$User$Year$Month$序号$岗位名称$人员编码$姓名$类别$品种对应类别$数量$单价$计件金额$IsPG_Check$品管审核时间$品管审核人".Split('$');
+        private string[] header = "Time$User$Year$Month$序号$岗位名称$人员编码$姓名$类别$品种对应类别$数量$单价$计件金额$IsPG_Check$品管审核时间$品管审核人".Split('$');
 
         private Thread threadSh;
 
@@ -49,7 +49,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     if (theOne.PG_Time != null)
                     {
-                        dic.Add(lblPG, new InvokeData(this) { Text = theOne.IsPG_Check ? "品管审核" : "品管退回", BackColor = theOne.IsPG_Check ? Color.Lime : Color.Red });
+                        dic.Add(lblPG, new InvokeData(this) { Text = theOne.IsPG_Check ? "品管审核确认" : "品管退回", BackColor = theOne.IsPG_Check ? Color.Lime : Color.Red });
                     }
                     else
                     {
@@ -153,9 +153,9 @@ namespace Monopy.PreceRateWage.WinForm
         private void Frm2JB_FJJJ_Load(object sender, EventArgs e)
         {
             dtp.Value = new DateTime(Program.NowTime.Year, Program.NowTime.Month, 1);
-
-            btnMonthSearch.PerformClick();
+            InitUI();
             UiControl();
+            btnMonthSearch.PerformClick();
             threadSh = new Thread(CheckSh)
             {
                 IsBackground = true
@@ -242,7 +242,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2JB_FJJJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——检包——复检计件.xlsx", saveFileDlg.FileName, list, 2, 5, 2, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2JB_FJJJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——检包——复检计件.xlsx", saveFileDlg.FileName, list, 2, 5, 3, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -283,7 +283,8 @@ namespace Monopy.PreceRateWage.WinForm
                                 new BaseDal<DataBase2JB_FJJJ>().Delete(item);
                             }
                         }
-                        btnRecount.PerformClick();
+                        InitUI();
+                        btnMonthSearch.PerformClick();
                         return;
                     }
                 }
@@ -291,11 +292,11 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase2JB_FJJJ != null)
                     {
-                        FrmModify<DataBase2JB_FJJJ> frm = new FrmModify<DataBase2JB_FJJJ>(DataBase2JB_FJJJ, header, OptionType.Delete, Text, 2, 10);
+                        FrmModify<DataBase2JB_FJJJ> frm = new FrmModify<DataBase2JB_FJJJ>(DataBase2JB_FJJJ, header, OptionType.Delete, Text, 5, 3);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-                            btnRecount.PerformClick();
+                            btnMonthSearch.PerformClick();
                         }
                     }
                 }
@@ -397,7 +398,7 @@ namespace Monopy.PreceRateWage.WinForm
 
             datas.Insert(0, MyDal.GetTotalDataBase2JB_FJJJ(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < header.Length; i++)
+            for (int i = 0; i < header.Length + 1; i++)
             {
                 if (i < 5 || i > 13)
                 {
@@ -479,9 +480,10 @@ namespace Monopy.PreceRateWage.WinForm
             if (new BaseDal<DataBase2JB_FJJJ>().Add(list) > 0)
             {
                 Enabled = true;
+                InitUI();
                 btnMonthSearch.PerformClick();
                 MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                InitUI();
+
             }
             Enabled = true;
         }
@@ -501,7 +503,7 @@ namespace Monopy.PreceRateWage.WinForm
                     string sql = string.Empty;
 
                     sql = "update DataBase2JB_FJJJ set isPG_check=1,pg_time=getdate(),pg_user='" + Program.User.Name + "'where TheYear=" + dateTime.Year.ToString() + " and TheMonth=" + dateTime.Month.ToString();
-                    
+
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                     {
                         if (conn.Execute(sql) > 0)
