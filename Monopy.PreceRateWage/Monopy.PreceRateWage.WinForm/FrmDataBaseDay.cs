@@ -135,7 +135,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     item.CreateYear = dtp.Value.Year;
                     item.CreateMonth = dtp.Value.Month;
-                    var tmp = new BaseDal<DataBaseDay>().Get(t => t.FactoryNo == item.FactoryNo && t.WorkshopName == item.WorkshopName && t.PostName == item.PostName && t.Classification == item.Classification && t.JBXW == item.JBXW && t.TypesName == item.TypesName && t.TypesType == item.TypesType);
+                    var tmp = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == item.CreateYear && t.CreateMonth == item.CreateMonth && t.FactoryNo == item.FactoryNo && t.WorkshopName == item.WorkshopName && t.PostName == item.PostName && t.Classification == item.Classification && t.JBXW == item.JBXW && t.TypesName == item.TypesName && t.TypesType == item.TypesType);
                     if (tmp != null)
                     {
                         MessageBox.Show("已经存在：" + item.ToString(), "数据错误，导入失败！", MessageBoxButtons.OK, MessageBoxIcon.Stop);

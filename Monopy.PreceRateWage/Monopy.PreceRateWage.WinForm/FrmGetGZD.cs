@@ -2849,6 +2849,11 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             //变产补助还未做
+            var bcbz = new BaseDal<DataBase1CX_BCBZ>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (bcbz != null && bcbz.Count > 0)
+            {
+                gzd.BCBZ = bcbz.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
 
             if (!string.IsNullOrEmpty(gzd.RZBZ) && !string.IsNullOrEmpty(gzd.BCBZ))
             {
@@ -3302,7 +3307,11 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             //变产补助还未做
-
+            var bcbz = new BaseDal<DataBase2CX_BCBZ>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            if (bcbz != null && bcbz.Count > 0)
+            {
+                gzd.BCBZ = bcbz.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
+            }
             if (!string.IsNullOrEmpty(gzd.RZBZ) && !string.IsNullOrEmpty(gzd.BCBZ))
             {
                 BJ(new DataBaseMsg { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = "系统报警", IsDone = false, IsRead = false, MsgTitle = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据", Msg = $"{dateTime.Year.ToString()}年{dateTime.Month.ToString()}月，入职补助和变产补助同一个人都有数据,工号:{gzd.UserCode}，姓名:{gzd.UserName}", MsgClass = "成型车间报警", UserCode = xt.FirstOrDefault().CreateUser.Split('_')[0] }, true);
@@ -3398,17 +3407,18 @@ namespace Monopy.PreceRateWage.WinForm
             gzd.JJGZ1 = (bzcq.Sum(t => decimal.TryParse(t.GRJJ, out decimal d) ? d : 0M) + zzcq.Sum(t => decimal.TryParse(t.GRJJ, out decimal d) ? d : 0M) + rkgjj.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + jjgz1).ToString();
 
 
-            //计件工资2未完成
-            var jjrlr = new BaseDal<DataBase1JB_JJRLR>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
-            jjrlr = jjrlr.Where(t => t.IsKF_Manager && t.IsPG_Manager && t.IsPMC_Manager).ToList();
-            if (jjrlr != null && jjrlr.Count > 0)
-            {
-                decimal.TryParse(gzd.JJGZ2, out decimal jjgz2);
-                gzd.JJGZ2 = (jjrlr.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M) + jjgz2).ToString();
-            }
+            //计件工资2
+            var fjjj = new BaseDal<DataBase2JB_FJJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.IsPG_Check == true).ToList();
+            var bjssjj = new BaseDal<DataBase2JB_BJSSJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            var mcjj = new BaseDal<DataBase2JB_MCJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            var cjjj = new BaseDal<DataBase2JB_CJJJ>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+
+            double.TryParse(gzd.JJGZ2, out double jjgz2);
+            gzd.JJGZ2 = (fjjj.Sum(t => double.TryParse(t.JJJE, out double d) ? d : 0) + bjssjj.Sum(t => double.TryParse(t.JJJE, out double d) ? d : 0) + mcjj.Sum(t => double.TryParse(t.Money, out double d) ? d : 0) + cjjj.Sum(t => t.Results.Sum(x => x.Money)) + jjgz2).ToString();
+
 
             //辅助验货
-            var fzyh = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "检包" && t.FactoryNo == "G001").ToList();
+            var fzyh = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.Dept == "检包" && t.FactoryNo == "G002").ToList();
             if (fzyh != null && fzyh.Count > 0)
             {
                 gzd.FZYH = fzyh.Sum(t => decimal.TryParse(t.Money, out decimal d_tp) ? d_tp : 0M).ToString();

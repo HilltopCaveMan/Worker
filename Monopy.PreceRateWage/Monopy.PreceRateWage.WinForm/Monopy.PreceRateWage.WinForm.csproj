@@ -368,6 +368,18 @@
     <Compile Include="Frm1MJ_RGTB.Designer.cs">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_BCBZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_BCBZ.Designer.cs">
+      <DependentUpon>Frm2CX_BCBZ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_BCTZ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_BCTZ.Designer.cs">
+      <DependentUpon>Frm2CX_BCTZ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_BJLP_BJJJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1511,6 +1523,12 @@
     <EmbeddedResource Include="Frm1MJ_RGTB.resx">
       <DependentUpon>Frm1MJ_RGTB.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_BCBZ.resx">
+      <DependentUpon>Frm2CX_BCBZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_BCTZ.resx">
+      <DependentUpon>Frm2CX_BCTZ.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_BJLP_BJJJ.resx">
       <DependentUpon>Frm2CX_BJLP_BJJJ.cs</DependentUpon>
     </EmbeddedResource>
@@ -2516,6 +2534,9 @@
     <Content Include="Excel\模板导出三厂——成型——师傅补助.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Excel\一厂二厂工资单导出格式.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板一厂——仓储——入职表.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
