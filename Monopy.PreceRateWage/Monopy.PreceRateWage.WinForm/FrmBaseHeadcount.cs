@@ -26,12 +26,18 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitCmbFactory()
         {
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
-            {
-                List<string> list = conn.Query<string>("select distinct Factory from BaseHeadcounts").ToList();
-                list.Insert(0, "全部");
-                cmbFactory.DataSource = list;
-            }
+            //using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+            //{
+            //    List<string> list = conn.Query<string>("select distinct Factory from BaseHeadcounts").ToList();
+            //    list.Insert(0, "全部");
+            //    cmbFactory.DataSource = list;
+            //}
+            List<string> list = new List<string>();
+            list.Insert(0, "全部");
+            list.Insert(1, "一厂");
+            list.Insert(2, "二厂");
+            list.Insert(3, "三厂");
+            cmbFactory.DataSource = list;
         }
 
         private void cmbFactory_SelectedIndexChanged(object sender, EventArgs e)

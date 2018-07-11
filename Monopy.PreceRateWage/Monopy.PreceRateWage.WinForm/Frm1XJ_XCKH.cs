@@ -334,7 +334,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var sjk = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "修检线" && t.PostName == "线长费" && t.JBXW == item.XW);
                     if (sjk == null)
                     {
-                        MessageBox.Show("基础数据中没有【线长费】数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("基础数据中没有岗位名称：【线长费】，检包线位：【" + item.XW + "】的数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 

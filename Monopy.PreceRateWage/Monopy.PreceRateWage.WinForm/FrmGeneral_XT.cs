@@ -223,7 +223,7 @@ namespace Monopy.PreceRateWage.WinForm
                 btnSearch.PerformClick();
                 MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
-            
+
         }
 
         /// <summary>
@@ -540,7 +540,7 @@ namespace Monopy.PreceRateWage.WinForm
                         }
                         item.XTZE = totalMoney.ToString();
                         decimal.TryParse(item.SXJE, out decimal sxje);
-                        item.HD = (totalMoney - sxje).ToString();
+                        item.HD = (sxje - totalMoney).ToString();
                     }
 
 
@@ -616,7 +616,7 @@ namespace Monopy.PreceRateWage.WinForm
                 if (hd < 0)
                 {
                     IsOk = false;
-                    MessageBox.Show($"核对数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"学徒总额超上限金额：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

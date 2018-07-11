@@ -347,6 +347,13 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 var listTJ = new BaseDal<DataBase2YL_XCYLTJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).GroupBy(m => m.LB).ToList().Select(x => new { LB = x.Key, SL = x.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M) });
 
+                if (listTJ == null || listTJ.Count() == 0)
+                {
+                    MessageBox.Show("卸车原料统计信息未录入，请先录入原料统计信息!!", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    return false;
+                }
+
                 var tmp = list.GroupBy(t => t.LB).ToList().Select(x => new { LB = x.Key, SL = x.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M) });
 
                 foreach (var item in tmp)

@@ -335,7 +335,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBaseGeneral_XTDay> list = new ExcelHelper<DataBaseGeneral_XTDay>().ReadExcel(fileName, 2, 8, 0, 0, 0, true);
+            List<DataBaseGeneral_XTDay> list = new ExcelHelper<DataBaseGeneral_XTDay>().ReadExcel(fileName, 2, 6, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -344,6 +344,21 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
+                if (string.IsNullOrEmpty(list[i].UserCode) || string.IsNullOrEmpty(list[i].UserName))
+                {
+                    list.RemoveAt(i);
+                    if (i > 0)
+                    {
+                        i--;
+                    }
+                    else
+                    {
+                        i = -1;
+                    }
+                    continue;
+
+                }
+
                 if (!MyDal.IsUserCodeAndNameOK(list[i].UserCode, list[i].UserName, out string userNameERP))
                 {
                     MessageBox.Show("工号：【" + list[i].UserCode + "】,姓名：【" + list[i].UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -444,7 +459,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     item.XTZE = totalMoney.ToString();
                     decimal.TryParse(item.SXJE, out decimal sxje);
-                    item.HD = (totalMoney - sxje).ToString();
+                    item.HD = (sxje - totalMoney).ToString();
 
                     //生成台账
                     if (!string.IsNullOrEmpty(item.BZJE))
@@ -484,7 +499,7 @@ namespace Monopy.PreceRateWage.WinForm
                 if (hd < 0)
                 {
                     IsOk = false;
-                    MessageBox.Show($"核对数不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show($"学徒总额超上限金额：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 return IsOk;
             }

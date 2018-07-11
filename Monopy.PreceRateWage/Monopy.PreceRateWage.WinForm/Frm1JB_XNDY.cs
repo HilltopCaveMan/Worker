@@ -124,7 +124,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     new BaseDal<DataBase1JB_XNDY>().Edit(item);
                 }
-                
+
                 btnSearch.PerformClick();
                 MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -308,12 +308,18 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listTJ = new BaseDal<DataBase1JB_XWRYCQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
+                var listTJ = new BaseDal<DataBase1JB_XWRYCQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+
+                if (listTJ == null || listTJ.Count == 0)
+                {
+                    MessageBox.Show("请先导入线内出勤数据！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return false;
+                }
 
                 foreach (var item in list)
                 {
-                    var tmp = listTJ.Where(h => h.GWMC == item.GW && h.XW == item.XW).FirstOrDefault();
-                    item.SJBZ = tmp.WorkDay;
+                    decimal tmp = listTJ.Where(h => h.GWMC == item.GW && h.XW == item.XW).ToList().Sum(x => decimal.TryParse(x.WorkDay, out decimal d) ? d : 0M);
+                    item.SJBZ = tmp.ToString();
                     decimal.TryParse(item.SJBZ, out decimal sjbz);
                     decimal.TryParse(item.BZ, out decimal bz);
                     if (bz - sjbz < 0)
