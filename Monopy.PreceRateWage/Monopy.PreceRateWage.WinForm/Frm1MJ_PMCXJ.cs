@@ -399,22 +399,14 @@ namespace Monopy.PreceRateWage.WinForm
                             try
                             {
                                 string sqlMain = "delete from DataBase1MJ_PMCXJ where id=@id";
-                                string sqlChild = "delete from DataBase1MJ_PMCXJ_Child where DataBase1MJ_PMCXJ_Id=@id";
+                                string sqlChild = "delete from DataBase1MJ_PMCXJ where DataBase1MJ_PMCXJ_Id=@id";
                                 foreach (var item in list)
                                 {
                                     conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
                                     conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
 
                                 }
-
-                                //string sqlMain = "delete from DataBase1MJ_PMCXJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and rq=" + dateTime.Day;
-                                //string sqlChild = "delete from DataBase1MJ_PMCXJ_Child where DataBase1MJ_PMCXJ_id=@id";
-                                //foreach (var item in list)
-                                //{
-                                //    conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
-
-                                //}
-                                //conn.Execute(sqlMain, dbTransaction, null, null);
+                               
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)

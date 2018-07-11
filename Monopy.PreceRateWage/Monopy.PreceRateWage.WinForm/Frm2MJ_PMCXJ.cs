@@ -398,14 +398,15 @@ namespace Monopy.PreceRateWage.WinForm
                             IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase2MJ_PMCXJ where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and rq=" + dateTime.Day;
-                                string sqlChild = "delete from DataBase2MJ_PMCXJ_Child where DataBase2MJ_PMCXJ_id=@id";
+                                string sqlMain = "delete from DataBase2MJ_PMCXJ where id=@id";
+                                string sqlChild = "delete from DataBase2MJ_PMCXJ where DataBase2MJ_PMCXJ_Id=@id";
                                 foreach (var item in list)
                                 {
                                     conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);
+                                    conn.Execute(sqlMain, new { id = item.Id.ToString() }, dbTransaction, null, null);
 
                                 }
-                                conn.Execute(sqlMain, dbTransaction, null, null);
+                               
                                 dbTransaction.Commit();
                             }
                             catch (Exception ex)
@@ -672,7 +673,6 @@ namespace Monopy.PreceRateWage.WinForm
                 dr_sum[j] = tp[j - 11];
             }
             dr_sum["GW"] = "合计";
-            dr_sum["Id"] = string.Empty;
             dt.Rows.InsertAt(dr_sum, 2);
             string[] header = "金额$ID$time$user$Year$Month$序号$岗位$人员编码$姓名$日期".Split('$');
             dgv.DataSource = dt;
