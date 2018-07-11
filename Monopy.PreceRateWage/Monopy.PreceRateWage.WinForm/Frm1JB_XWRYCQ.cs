@@ -154,24 +154,24 @@ namespace Monopy.PreceRateWage.WinForm
                     item.TheMonth = selectTime.Month;
                     item.TheDay = selectTime.Day;
                 }
-                //if (YZ1(list) && YZ2(list) && YZ3(list) && YZ4(list) && YZ5(list))
-                //{
-                RecountSetp1(list);
-                RecountSetp2(list);
-                if (new BaseDal<DataBase1JB_XWRYCQ>().Add(list) > 0)
+                if (YZ3(list) && YZ5(list))
                 {
-                    Enabled = true;
-                    InitUI();
-                    btnSearch.PerformClick();
-                    btnRecount.PerformClick();
-                    btnSearch.PerformClick();
-                    MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    RecountSetp1(list);
+                    RecountSetp2(list);
+                    if (new BaseDal<DataBase1JB_XWRYCQ>().Add(list) > 0)
+                    {
+                        Enabled = true;
+                        InitUI();
+                        btnSearch.PerformClick();
+                        btnRecount.PerformClick();
+                        btnSearch.PerformClick();
+                        MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
+                    else
+                    {
+                        MessageBox.Show("导入失败，请检查Excel数据是否正确或者网络是否正确！", "失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
-                else
-                {
-                    MessageBox.Show("导入失败，请检查Excel数据是否正确或者网络是否正确！", "失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                }
-                //}
                 Enabled = true;
             }
         }
@@ -621,17 +621,29 @@ namespace Monopy.PreceRateWage.WinForm
         //    return result;
         //}
 
-        //private bool YZ3(List<DataBase1JB_XWRYCQ> list)
-        //{
-        //    var list2 = list.Where(t => t.GWMC == "配送").Sum(t => string.IsNullOrEmpty(t.WorkDay) ? 0M : Convert.ToDecimal(t.WorkDay));
-        //    var list4 = new BaseDal<BaseHeadcount>().GetList(t => t.Factory == "三厂" && t.DeptName == "检包车间" && t.Name == "配送" && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList().Sum(t => string.IsNullOrEmpty(t.UserCount) ? 0M : Convert.ToDecimal(t.UserCount));
-        //    var result = list2 <= list4;
-        //    if (!result)
-        //    {
-        //        MessageBox.Show("公司定员：配送，合计：【" + list4.ToString() + "】人" + Environment.NewLine + "导入数据：配送，合计：【" + list2.ToString() + "】人", "验证失败，无法导入，请检查！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //    }
-        //    return result;
-        //}
+        private bool YZ3(List<DataBase1JB_XWRYCQ> list)
+        {
+            var listGW = list.GroupBy(t => t.GWMC);
+            bool result = true;
+            foreach (var item in listGW)
+            {
+                List<DataBase1JB_XWRYCQ> sl = item.ToList<DataBase1JB_XWRYCQ>();//分组后的集合 
+                var listxw = sl.GroupBy(t => t.XW);
+                foreach (var itemxw in listxw)
+                {
+                    var list2 = list.Where(t => t.GWMC == item.Key && t.XW == itemxw.Key).Sum(t => string.IsNullOrEmpty(t.WorkDay) ? 0M : Convert.ToDecimal(t.WorkDay));
+                    var list4 = new BaseDal<BaseHeadcount>().GetList(t => t.Factory == "一厂" && t.DeptName == "检包车间" && t.Name == item.Key && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList().Sum(t => string.IsNullOrEmpty(t.UserCount) ? 0M : Convert.ToDecimal(t.UserCount));
+                    result = list2 <= list4;
+                    if (!result)
+                    {
+                        MessageBox.Show("公司定员：" + item.Key + "，合计：【" + list4.ToString() + "】人" + Environment.NewLine + "导入数据：" + item.Key + "，合计：【" + list2.ToString() + "】人", "验证失败，无法导入，请检查！！！", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return result;
+                    }
+                }
+            }
+
+            return result;
+        }
 
         //private bool YZ4(List<DataBase1JB_XWRYCQ> list)
         //{
@@ -645,19 +657,19 @@ namespace Monopy.PreceRateWage.WinForm
         //    return result;
         //}
 
-        //private bool YZ5(List<DataBase1JB_XWRYCQ> list)
-        //{
-        //    var list1 = list.Where(t => t.UserCode.Length == 6).GroupBy(t => t.UserCode).Select(t => new { UserCode = t.Key, Count = t.Sum(x => (string.IsNullOrEmpty(x.StudyDay) ? 0M : Convert.ToDecimal(x.StudyDay)) + (string.IsNullOrEmpty(x.WorkDay) ? 0M : Convert.ToDecimal(x.WorkDay))) }).Where(t => t.Count > 1M);
-        //    if (list1.Count() > 0)
-        //    {
-        //        MessageBox.Show("导入的文档中：【" + list1.FirstOrDefault().UserCode + "】，天数大于1，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-        //        return false;
-        //    }
-        //    else
-        //    {
-        //        return true;
-        //    }
-        //}
+        private bool YZ5(List<DataBase1JB_XWRYCQ> list)
+        {
+            var list1 = list.Where(t => t.UserCode.Length == 6).GroupBy(t => t.UserCode).Select(t => new { UserCode = t.Key, Count = t.Sum(x => (string.IsNullOrEmpty(x.StudyDay) ? 0M : Convert.ToDecimal(x.StudyDay)) + (string.IsNullOrEmpty(x.WorkDay) ? 0M : Convert.ToDecimal(x.WorkDay))) }).Where(t => t.Count > 1M);
+            if (list1.Count() > 0)
+            {
+                MessageBox.Show("导入的文档中：【" + list1.FirstOrDefault().UserCode + "】，天数大于1，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
 
         #endregion
 

@@ -369,6 +369,11 @@ namespace Monopy.PreceRateWage.WinForm
                 foreach (var item in list)
                 {
                     var type = listTJ.Where(t => t.TypesType == item.PZLB && t.Classification == item.LB).FirstOrDefault();
+                    if (type == null)
+                    {
+                        MessageBox.Show("指标数据中没有品种对应类别：【" + item.PZLB + "】，类别：【" + item.LB + "】的数据，请联系相关人员先导入数据，在【重新计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return true;
+                    }
                     item.DJ = type.UnitPrice;
                     decimal.TryParse(item.DJ, out decimal dj);
                     decimal.TryParse(item.JS, out decimal sl);

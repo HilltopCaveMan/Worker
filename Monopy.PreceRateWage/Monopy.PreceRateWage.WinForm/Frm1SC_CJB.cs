@@ -257,7 +257,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1SC_CJB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase1SC_CJB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1SC_CJB(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
@@ -359,8 +359,8 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         case "装窑工（大）":
                             DataBase1SC_ZYJJHKH zygd = new BaseDal<DataBase1SC_ZYJJHKH>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("G001") && t.Code == item.GH).ToList().FirstOrDefault();
-                            item.ZYGDJJ = zygd.JJ;
-                            item.ZYGDKH = zygd.KH;
+                            item.ZYGDJJ = zygd == null ? "0" : zygd.JJ;
+                            item.ZYGDKH = zygd == null ? "0" : zygd.KH;
                             decimal.TryParse(item.ZYGDJJ, out decimal jj);
                             decimal.TryParse(item.ZYGDKH, out decimal kh);
                             totalJJCount += jj;
@@ -368,10 +368,18 @@ namespace Monopy.PreceRateWage.WinForm
                             break;
                         case "补瓷工":
                             DataBase1SC_HSY_BCKH bc = new BaseDal<DataBase1SC_HSY_BCKH>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).FirstOrDefault();
-                            decimal.TryParse(bc.KHJJ, out decimal khjj);
-                            decimal.TryParse(item.YCQ, out decimal ycq);
-                            decimal.TryParse(item.SCQ, out decimal scq);
-                            item.BCKH = (khjj / ycq * scq).ToString();
+                            if (bc == null)
+                            {
+                                item.BCKH = "0";
+                            }
+                            else
+                            {
+                                decimal.TryParse(bc.KHJJ, out decimal khjj);
+                                decimal.TryParse(item.YCQ, out decimal ycq);
+                                decimal.TryParse(item.SCQ, out decimal scq);
+                                item.BCKH = (khjj / ycq * scq).ToString();
+                            }
+
                             break;
                     }
                 }
