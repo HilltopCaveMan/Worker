@@ -404,6 +404,42 @@
     <Compile Include="Frm2CX_CXJJ.Designer.cs">
       <DependentUpon>Frm2CX_CXJJ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_CX_01CXYB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_01CXYB.Designer.cs">
+      <DependentUpon>Frm2CX_CX_01CXYB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_CX_02JJKHTB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_02JJKHTB.Designer.cs">
+      <DependentUpon>Frm2CX_CX_02JJKHTB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_CX_04XTQKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_04XTQKH.Designer.cs">
+      <DependentUpon>Frm2CX_CX_04XTQKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_CX_06JJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_06JJ.Designer.cs">
+      <DependentUpon>Frm2CX_CX_06JJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_CX_06JJ_GR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_06JJ_GR.Designer.cs">
+      <DependentUpon>Frm2CX_CX_06JJ_GR.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frm2CX_CX_07DLDT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_CX_07DLDT.Designer.cs">
+      <DependentUpon>Frm2CX_CX_07DLDT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_FLJF.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1540,6 +1576,24 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_CXJJ.resx">
       <DependentUpon>Frm2CX_CXJJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_01CXYB.resx">
+      <DependentUpon>Frm2CX_CX_01CXYB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_02JJKHTB.resx">
+      <DependentUpon>Frm2CX_CX_02JJKHTB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_04XTQKH.resx">
+      <DependentUpon>Frm2CX_CX_04XTQKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_06JJ.resx">
+      <DependentUpon>Frm2CX_CX_06JJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_06JJ_GR.resx">
+      <DependentUpon>Frm2CX_CX_06JJ_GR.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_CX_07DLDT.resx">
+      <DependentUpon>Frm2CX_CX_07DLDT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_FLJF.resx">
       <DependentUpon>Frm2CX_FLJF.cs</DependentUpon>
@@ -2722,6 +2776,15 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——成型——学徒期名单.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——成型——成型计件个人.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板二厂——成型——注修工成型计件.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板二厂——成型半检拉坯——半检计件.xlsx">

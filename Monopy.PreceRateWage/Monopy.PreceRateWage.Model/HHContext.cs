@@ -330,6 +330,17 @@ namespace Monopy.PreceRateWage.Model
         public virtual DbSet<DataBase2JB_BJSSJJ> TDataBase2JB_BJSSJJ { get; set; }
         public virtual DbSet<DataBase2CX_BCTZ> TDataBase2CX_BCTZ { get; set; }
         public virtual DbSet<DataBase2CX_BCBZ> TDataBase2CX_BCBZ { get; set; }
+        /*=========================================二厂检包成型结束=========================================*/
+
+        /*=========================================二厂成型计件开始=========================================*/
+        public virtual DbSet<DataBase2CX_CX_04XTQKH> TDataBase2CX_CX_04XTQKH { get; set; }
+        public virtual DbSet<DataBase2CX_CX_07DLDT> TDataBase2CX_CX_07DLDT { get; set; }
+        public virtual DbSet<DataBase2CX_CX_02JJKHTB> TDataBase2CX_CX_02JJKHTB { get; set; }
+        public virtual DbSet<DataBase2CX_CX_02JJKHTB_Out> TDataBase2CX_CX_02JJKHTB_Out { get; set; }
+        public virtual DbSet<DataBase2CX_CX_06JJ> TDataBase2CX_CX_06JJ { get; set; }
+        public virtual DbSet<DataBase2CX_CX_03JJ_7T> TDataBase2CX_CX_03JJ_7T { get; set; }
+        public virtual DbSet<DataBase2CX_CX_01CXYB> TDataBase2CX_CX_01CXYB { get; set; }
+        public virtual DbSet<DataBase2CX_CX_06JJ_GR> TDataBase2CX_CX_06JJ_GR { get; set; }
         
     }
 }

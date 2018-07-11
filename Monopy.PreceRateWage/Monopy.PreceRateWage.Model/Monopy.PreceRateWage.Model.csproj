@@ -154,6 +154,14 @@
     <Compile Include="DataBase2CX_BJLP_BJYB.cs" />
     <Compile Include="DataBase2CX_BJLP_CJTB.cs" />
     <Compile Include="DataBase2CX_CXJJ.cs" />
+    <Compile Include="DataBase2CX_CX_01CXYB.cs" />
+    <Compile Include="DataBase2CX_CX_02JJKHTB.cs" />
+    <Compile Include="DataBase2CX_CX_02JJKHTB_Out.cs" />
+    <Compile Include="DataBase2CX_CX_03JJ_7T.cs" />
+    <Compile Include="DataBase2CX_CX_04XTQKH.cs" />
+    <Compile Include="DataBase2CX_CX_06JJ.cs" />
+    <Compile Include="DataBase2CX_CX_06JJ_GR.cs" />
+    <Compile Include="DataBase2CX_CX_07DLDT.cs" />
     <Compile Include="DataBase2CX_FLJF.cs" />
     <Compile Include="DataBase2CX_GHDR.cs" />
     <Compile Include="DataBase2CX_JSY_01CXJSYKH_01CSZL.cs" />
