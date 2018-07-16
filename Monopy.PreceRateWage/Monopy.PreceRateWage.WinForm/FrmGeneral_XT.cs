@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class FrmGeneral_XT : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$工厂$车间$序号$工种$人员编码$姓名$第几个月$补助天数$应出勤天数$学徒标准$学徒月工资$实出勤$应出勤$补助金额$以得学徒总额$上限金额$核对$是否补差额".Split('$');
+        private string[] header = "创建日期$创建人$年$月$工厂$车间$序号$工种$人员编码$姓名$第几个月$补助天数$应出勤天数$学徒标准$学徒月工资$实出勤$应出勤$补助金额$已得学徒总额$上限金额$核对$是否补差额".Split('$');
         private string _factoryNo;
         private string _workShop;
         public FrmGeneral_XT()

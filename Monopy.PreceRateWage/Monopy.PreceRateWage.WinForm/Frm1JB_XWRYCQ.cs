@@ -579,12 +579,13 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             a.TotalTBGZE = totalJBGZ == 0 ? string.Empty : totalJBGZ.ToString();
                             a.TBGZE = string.IsNullOrEmpty(a.TotalTBGZE) || string.IsNullOrEmpty(a.GWZCQ) || string.IsNullOrEmpty(a.WorkDay) ? string.Empty : (Convert.ToDecimal(a.TotalTBGZE) / Convert.ToDecimal(a.GWZCQ) * Convert.ToDecimal(a.WorkDay)).ToString();
-                            decimal.TryParse(a.TBGZE, out decimal tb);
-                            decimal.TryParse(a.DGWGZ, out decimal dg);
-                            a.HJ = (tb + dg).ToString();
+                           
                         }
                     }
                 }
+                decimal.TryParse(item.TBGZE, out decimal tb);
+                decimal.TryParse(item.DGWGZ, out decimal dg);
+                item.HJ = (tb + dg).ToString();
             }
         }
 

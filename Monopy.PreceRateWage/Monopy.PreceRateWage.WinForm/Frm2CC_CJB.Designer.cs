@@ -94,8 +94,7 @@
             this.dgv.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgv.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgv.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.Location = new System.Drawing.Point(0, 74);
-            this.dgv.Margin = new System.Windows.Forms.Padding(4);
+            this.dgv.Location = new System.Drawing.Point(0, 59);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
@@ -116,7 +115,7 @@
             this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(1067, 408);
+            this.dgv.Size = new System.Drawing.Size(800, 327);
             this.dgv.TabIndex = 16;
             this.dgv.TitleBack = null;
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
@@ -130,18 +129,18 @@
             this.toolStripMenuItem2,
             this.删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 66);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(107, 34);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(103, 6);
             // 
             // 删除ToolStripMenuItem
             // 
             this.删除ToolStripMenuItem.ForeColor = System.Drawing.Color.Red;
             this.删除ToolStripMenuItem.Name = "删除ToolStripMenuItem";
-            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
+            this.删除ToolStripMenuItem.Size = new System.Drawing.Size(106, 24);
             this.删除ToolStripMenuItem.Text = "删除";
             this.删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
@@ -152,17 +151,16 @@
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel1.Controls.Add(this.btnRecount, 0, 0);
+            this.tableLayoutPanel1.Controls.Add(this.btnRecount, 3, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnViewExcel, 0, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnImportExcel, 1, 0);
             this.tableLayoutPanel1.Controls.Add(this.btnExportExcel, 2, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(652, 53);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(489, 40);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // btnRecount
@@ -170,10 +168,9 @@
             this.btnRecount.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnRecount.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnRecount.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnRecount.Location = new System.Drawing.Point(167, 4);
-            this.btnRecount.Margin = new System.Windows.Forms.Padding(4);
+            this.btnRecount.Location = new System.Drawing.Point(369, 3);
             this.btnRecount.Name = "btnRecount";
-            this.btnRecount.Size = new System.Drawing.Size(155, 45);
+            this.btnRecount.Size = new System.Drawing.Size(117, 34);
             this.btnRecount.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnRecount.Symbol = "";
             this.btnRecount.TabIndex = 8;
@@ -184,10 +181,9 @@
             // 
             this.btnViewExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnViewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewExcel.Location = new System.Drawing.Point(4, 4);
-            this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnViewExcel.Location = new System.Drawing.Point(3, 3);
             this.btnViewExcel.Name = "btnViewExcel";
-            this.btnViewExcel.Size = new System.Drawing.Size(155, 45);
+            this.btnViewExcel.Size = new System.Drawing.Size(116, 34);
             this.btnViewExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnViewExcel.Symbol = "";
             this.btnViewExcel.TabIndex = 1;
@@ -199,10 +195,9 @@
             this.btnImportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnImportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImportExcel.Location = new System.Drawing.Point(330, 4);
-            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnImportExcel.Location = new System.Drawing.Point(125, 3);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(155, 45);
+            this.btnImportExcel.Size = new System.Drawing.Size(116, 34);
             this.btnImportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnImportExcel.Symbol = "";
             this.btnImportExcel.TabIndex = 0;
@@ -214,10 +209,9 @@
             this.btnExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.Location = new System.Drawing.Point(493, 4);
-            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4);
+            this.btnExportExcel.Location = new System.Drawing.Point(247, 3);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(155, 45);
+            this.btnExportExcel.Size = new System.Drawing.Size(116, 34);
             this.btnExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel.Symbol = "";
             this.btnExportExcel.TabIndex = 2;
@@ -227,10 +221,9 @@
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.Location = new System.Drawing.Point(656, 4);
-            this.btnSearch.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSearch.Location = new System.Drawing.Point(492, 3);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(116, 35);
+            this.btnSearch.Size = new System.Drawing.Size(87, 28);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.Symbol = "";
             this.btnSearch.TabIndex = 4;
@@ -244,10 +237,9 @@
             this.groupPanel2.Controls.Add(this.tableLayoutPanel1);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel2.DrawTitleBox = false;
-            this.groupPanel2.Location = new System.Drawing.Point(0, 482);
-            this.groupPanel2.Margin = new System.Windows.Forms.Padding(4);
+            this.groupPanel2.Location = new System.Drawing.Point(0, 386);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(1067, 80);
+            this.groupPanel2.Size = new System.Drawing.Size(800, 64);
             // 
             // 
             // 
@@ -293,9 +285,8 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanel1.DrawTitleBox = false;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
-            this.groupPanel1.Margin = new System.Windows.Forms.Padding(4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(1067, 74);
+            this.groupPanel1.Size = new System.Drawing.Size(800, 59);
             // 
             // 
             // 
@@ -332,11 +323,10 @@
             this.dtp.CustomFormat = "yyyy-MM";
             this.dtp.Font = new System.Drawing.Font("宋体", 12F);
             this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp.Location = new System.Drawing.Point(72, 4);
-            this.dtp.Margin = new System.Windows.Forms.Padding(4);
+            this.dtp.Location = new System.Drawing.Point(54, 3);
             this.dtp.Name = "dtp";
             this.dtp.ShowUpDown = true;
-            this.dtp.Size = new System.Drawing.Size(113, 30);
+            this.dtp.Size = new System.Drawing.Size(86, 26);
             this.dtp.TabIndex = 35;
             // 
             // labelX1
@@ -347,10 +337,9 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(13, 9);
-            this.labelX1.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX1.Location = new System.Drawing.Point(10, 7);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(54, 21);
+            this.labelX1.Size = new System.Drawing.Size(44, 18);
             this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX1.TabIndex = 34;
             this.labelX1.Text = "日期：";
@@ -359,20 +348,18 @@
             // 
             this.CmbUserName.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbUserName.FormattingEnabled = true;
-            this.CmbUserName.Location = new System.Drawing.Point(496, 4);
-            this.CmbUserName.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbUserName.Location = new System.Drawing.Point(372, 3);
             this.CmbUserName.Name = "CmbUserName";
-            this.CmbUserName.Size = new System.Drawing.Size(105, 28);
+            this.CmbUserName.Size = new System.Drawing.Size(80, 24);
             this.CmbUserName.TabIndex = 32;
             // 
             // CmbUserCode
             // 
             this.CmbUserCode.Font = new System.Drawing.Font("宋体", 12F);
             this.CmbUserCode.FormattingEnabled = true;
-            this.CmbUserCode.Location = new System.Drawing.Point(304, 4);
-            this.CmbUserCode.Margin = new System.Windows.Forms.Padding(4);
+            this.CmbUserCode.Location = new System.Drawing.Point(228, 3);
             this.CmbUserCode.Name = "CmbUserCode";
-            this.CmbUserCode.Size = new System.Drawing.Size(105, 28);
+            this.CmbUserCode.Size = new System.Drawing.Size(80, 24);
             this.CmbUserCode.TabIndex = 33;
             // 
             // labelX7
@@ -383,10 +370,9 @@
             // 
             // 
             this.labelX7.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX7.Location = new System.Drawing.Point(437, 8);
-            this.labelX7.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX7.Location = new System.Drawing.Point(328, 6);
             this.labelX7.Name = "labelX7";
-            this.labelX7.Size = new System.Drawing.Size(54, 21);
+            this.labelX7.Size = new System.Drawing.Size(44, 18);
             this.labelX7.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX7.TabIndex = 30;
             this.labelX7.Text = "姓名：";
@@ -399,24 +385,22 @@
             // 
             // 
             this.labelX5.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX5.Location = new System.Drawing.Point(213, 8);
-            this.labelX5.Margin = new System.Windows.Forms.Padding(4);
+            this.labelX5.Location = new System.Drawing.Point(160, 6);
             this.labelX5.Name = "labelX5";
-            this.labelX5.Size = new System.Drawing.Size(85, 21);
+            this.labelX5.Size = new System.Drawing.Size(68, 18);
             this.labelX5.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX5.TabIndex = 31;
             this.labelX5.Text = "人员编码：";
             // 
             // Frm2CC_CJB
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 562);
+            this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
-            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "Frm2CC_CJB";
             this.Text = "仓储车间报";
             this.Load += new System.EventHandler(this.Frm2CC_CJB_Load);

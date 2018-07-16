@@ -16,7 +16,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class FrmGeneral_XTDay : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$工厂$序号$车间$工种$人员编码$姓名$补助天数$学徒日工$实出勤$应出勤$补助金额$以得学徒总额$上限金额$核对".Split('$');
+        private string[] header = "创建日期$创建人$年$月$工厂$序号$车间$工种$人员编码$姓名$补助天数$学徒日工$实出勤$应出勤$补助金额$已得学徒总额$上限金额$核对".Split('$');
         private string _workShop;
         private string _factoryNo;
 
@@ -107,7 +107,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 7, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -335,7 +335,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBaseGeneral_XTDay> list = new ExcelHelper<DataBaseGeneral_XTDay>().ReadExcel(fileName, 2, 6, 0, 0, 0, true);
+            List<DataBaseGeneral_XTDay> list = new ExcelHelper<DataBaseGeneral_XTDay>().ReadExcel(fileName, 2, 7, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -409,7 +409,16 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 var itemTmp = list.FirstOrDefault();
-                var listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains(_workShop));
+                var listHrCQ = new List<DataBaseGeneral_CQ>();
+                if (_workShop == "成型拉坯工")
+                {
+                    listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains("成型车间") && t.Position == _workShop).ToList();
+                }
+                else
+                {
+                    listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains(_workShop)).ToList();
+                }
+                
                 if (listHrCQ == null || listHrCQ.Count() == 0)
                 {
                     MessageBox.Show("没有出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

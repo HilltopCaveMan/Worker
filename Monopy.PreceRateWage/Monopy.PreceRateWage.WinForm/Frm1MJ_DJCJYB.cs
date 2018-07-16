@@ -109,7 +109,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("基础数据库中没有信息，导入时自动过滤的有：" + Environment.NewLine + sb.ToString().TrimEnd(','), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (new BaseDal<DataBase1MJ_DJCJYB>().Add(list) > 0)
+                if (NewMethod(list) && new BaseDal<DataBase1MJ_DJCJYB>().Add(list) > 0)
                 {
                     Enabled = true;
                     txtCPMC.Text = "";
@@ -209,7 +209,9 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                 }
             }
-            NewMethod();
+            var list = new BaseDal<DataBase1MJ_DJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            NewMethod(list);
+            MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "验证完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         /// <summary>
@@ -328,13 +330,13 @@ namespace Monopy.PreceRateWage.WinForm
             new BaseDal<DataBaseMsg>().Add(msg);
         }
 
-        private void NewMethod()
+        private bool NewMethod(List<DataBase1MJ_DJCJYB> list)
         {
-            var datas = new BaseDal<DataBase1MJ_DJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList().GroupBy(t => t.CPMC).Select(t => new { User = t.Max(x => x.CreateUser), CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCLJ, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
+            var datas = list.GroupBy(t => t.CPMC).Select(t => new { User = t.Max(x => x.CreateUser), CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCLJ, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
             if (datas.Count == 0)
             {
                 MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "没有数据，无法验证！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return;
+                return false;
             }
             using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
             {
@@ -350,11 +352,13 @@ namespace Monopy.PreceRateWage.WinForm
                             //报警
                             string userCode = conn.ExecuteScalar("SELECT a.CreateUser from DataBase1MJ_PMCDJ a left JOIN DataBase1MJ_PMCDJ_Child b on a.Id=b.DataBase1MJ_PMCDJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc", new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC }).ToString().Split('_')[0];
                             bj(userCode, item.CPMC, mx, item.Count);
+                            return false;
                         }
                     }
                 }
             }
-            MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "验证完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            return true;
+
         }
 
 

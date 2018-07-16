@@ -402,7 +402,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 var listMonth = new BaseDal<DataBaseDay>().GetList(h => h.CreateYear == dtp.Value.Year && h.CreateMonth == dtp.Value.Month && h.FactoryNo == "G001" && h.WorkshopName == "仓储").ToList();
                 List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("一厂") && t.Dept.Contains("仓储")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
-
+                var baseZL = listMonth.Where(h => h.Classification == "装车、发货").ToList();
                 decimal total = 0;
                 decimal totalScq = 0;
 
@@ -436,6 +436,10 @@ namespace Monopy.PreceRateWage.WinForm
                         }
                         decimal.TryParse(x.Count, out decimal count);
                         decimal.TryParse(x.Price, out decimal price);
+                        if ((t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员")) && baseZL.Where(m => m.TypesName == cpmc) != null)
+                        {
+                            total += price * count;
+                        }
                         totalJj += price * count;
                     }
                     t.HJ = t.JJ = totalJj.ToString();
@@ -456,9 +460,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     if (t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员"))
                     {
-                        decimal.TryParse(t.JJ, out decimal count);
                         decimal.TryParse(t.SCQ, out decimal scq);
-                        total += count;
                         totalScq += scq;
                     }
 

@@ -399,7 +399,7 @@ namespace Monopy.PreceRateWage.WinForm
                             try
                             {
                                 string sqlMain = "delete from DataBase1MJ_PMCXJ where id=@id";
-                                string sqlChild = "delete from DataBase1MJ_PMCXJ where DataBase1MJ_PMCXJ_Id=@id";
+                                string sqlChild = "delete from DataBase1MJ_PMCXJ_Child where DataBase1MJ_PMCXJ_Id=@id";
                                 foreach (var item in list)
                                 {
                                     conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);

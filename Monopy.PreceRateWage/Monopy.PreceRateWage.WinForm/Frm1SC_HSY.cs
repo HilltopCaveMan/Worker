@@ -456,7 +456,7 @@ namespace Monopy.PreceRateWage.WinForm
                 }
                 else
                 {
-                    xCGKH.JF = (khdj - (mb - xbl) / (grjsb * grfkdj)).ToString();
+                    xCGKH.JF = (khdj + (mb - xbl) / (grjsb * grfkdj)).ToString();
                 }
                 decimal.TryParse(xCGKH.JF, out decimal jf);//奖罚
                 if (jf >= sfd)
