@@ -733,6 +733,17 @@ namespace Monopy.PreceRateWage.WinForm
                                     list.Add(gzd1cx_dng);
                                     listSave.Add(gzd1cx_dng);
                                 }
+                                else if (item_cq.Position.Contains("成型拉坯工"))
+                                {
+                                    DataBase1GZD gzd1cx_lp = Calculation1CX_BJLP(list, item_cq);
+                                    if (gzd1cx_lp == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    list.Add(gzd1cx_lp);
+                                    listSave.Add(gzd1cx_lp);
+                                }
                                 else
                                 {
                                     DataBase1GZD gzd1cx = Calculation1CX(list, item_cq);
@@ -746,20 +757,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 }
 
                                 break;
-
-                            case "青白坯库":
-                                if (item_cq.Position.Contains("成型拉坯工"))
-                                {
-                                    DataBase1GZD gzd1cx_lp = Calculation1CX_BJLP(list, item_cq);
-                                    if (gzd1cx_lp == null)
-                                    {
-                                        continue;
-                                    }
-
-                                    list.Add(gzd1cx_lp);
-                                    listSave.Add(gzd1cx_lp);
-                                }
-                                break;
+                           
                         }
                     }
                 }
@@ -866,17 +864,6 @@ namespace Monopy.PreceRateWage.WinForm
 
                             case "成型车间":
 
-                                DataBase2GZD gzd2cx = Calculation2CX(list, item_cq);
-                                if (gzd2cx == null)
-                                {
-                                    continue;
-                                }
-
-                                list.Add(gzd2cx);
-                                listSave.Add(gzd2cx);
-                                break;
-
-                            case "青白坯库":
                                 if (item_cq.Position.Contains("成型拉坯工"))
                                 {
                                     DataBase2GZD gzd2cx_lp = Calculation2CX_BJLP(list, item_cq);
@@ -888,7 +875,20 @@ namespace Monopy.PreceRateWage.WinForm
                                     list.Add(gzd2cx_lp);
                                     listSave.Add(gzd2cx_lp);
                                 }
+                                else
+                                {
+                                    DataBase2GZD gzd2cx = Calculation2CX(list, item_cq);
+                                    if (gzd2cx == null)
+                                    {
+                                        continue;
+                                    }
+
+                                    list.Add(gzd2cx);
+                                    listSave.Add(gzd2cx);
+                                }
+                               
                                 break;
+                          
                         }
                     }
                 }

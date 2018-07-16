@@ -157,6 +157,12 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
                     }
+
+                    if (_factoryNo != "G003" && !string.IsNullOrEmpty(item.Money) && item.UserCode.Substring(0, 1).ToUpper() != "M")
+                    {
+                        MessageBox.Show("工号：【" + item.GH + "】,姓名：【" + item.UserName + "】,必须有对应的M编码", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     item.Money = string.IsNullOrEmpty(item.Money) ? 0.ToString() : item.Money;
                     item.GH = string.IsNullOrEmpty(item.GH) ? string.Empty : item.GH;
                     item.UserCode = string.IsNullOrEmpty(item.UserCode) ? string.Empty : item.UserCode;

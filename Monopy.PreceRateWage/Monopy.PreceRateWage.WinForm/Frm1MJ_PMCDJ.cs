@@ -382,8 +382,9 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var id = dgv.SelectedRows[0].Cells["Id"].Value.ToString();
+                var gw = dgv.SelectedRows[0].Cells["GW"].Value.ToString();
                 DateTime dateTime = Convert.ToDateTime(dtp.text);
-                if (string.IsNullOrEmpty(id))
+                if (gw == "合计")
                 {
                     if (MessageBox.Show("要删除" + dtp.text + "所有数据吗？删除后不可恢复！！", "操作确认", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) == DialogResult.Yes)
                     {
@@ -670,7 +671,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dr_sum[j] = tp[j - 11];
             }
             dr_sum["GW"] = "合计";
-            dr_sum["Id"] = string.Empty;
+            dr_sum["Id"] = Guid.NewGuid();
             dt.Rows.InsertAt(dr_sum, 2);
             string[] header = "金额$ID$time$user$Year$Month$序号$岗位$人员编码$姓名$日期".Split('$');
             dgv.DataSource = dt;

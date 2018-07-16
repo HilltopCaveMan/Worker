@@ -91,7 +91,7 @@ namespace Monopy.PreceRateWage.WinForm
                 new BaseDal<DataBase1CX_BJLP_01_JJ>().Delete(item);
             }
             List<DataBase1CX_BJLP_01_JJ> list = new List<DataBase1CX_BJLP_01_JJ>();
-            var datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory == "G001" && t.Dept == "青白坯库").ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory == "一厂" && t.Dept == "成型车间"&&t.Position== "成型拉坯工").ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             if (datas == null || datas.Count == 0)
             {
                 MessageBox.Show("出勤表里没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的数据！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -101,18 +101,20 @@ namespace Monopy.PreceRateWage.WinForm
 
             for (int i = 0; i < datas.Count; i++)
             {
-                DataBase1CX_BJLP_01_JJ DataBase1CX_BJLP_01_JJ = new DataBase1CX_BJLP_01_JJ();
-                DataBase1CX_BJLP_01_JJ.CreateUser = Program.User.ToString();
-                DataBase1CX_BJLP_01_JJ.CreateTime = Program.NowTime;
-                DataBase1CX_BJLP_01_JJ.TheYear = dtp.Value.Year;
-                DataBase1CX_BJLP_01_JJ.TheMonth = dtp.Value.Month;
-                DataBase1CX_BJLP_01_JJ.Id = new Guid();
-                DataBase1CX_BJLP_01_JJ.No = (i + 1).ToString();
-                DataBase1CX_BJLP_01_JJ.UserCode = datas[i].UserCode;
-                DataBase1CX_BJLP_01_JJ.UserName = datas[i].UserName;
-                DataBase1CX_BJLP_01_JJ.ZW = datas[i].Position;
-                DataBase1CX_BJLP_01_JJ.YCQ = datas[i].DayYcq;
-                DataBase1CX_BJLP_01_JJ.SCQ = datas[i].DayScq;
+                DataBase1CX_BJLP_01_JJ DataBase1CX_BJLP_01_JJ = new DataBase1CX_BJLP_01_JJ
+                {
+                    CreateUser = Program.User.ToString(),
+                    CreateTime = Program.NowTime,
+                    TheYear = dtp.Value.Year,
+                    TheMonth = dtp.Value.Month,
+                    Id = new Guid(),
+                    No = (i + 1).ToString(),
+                    UserCode = datas[i].UserCode,
+                    UserName = datas[i].UserName,
+                    ZW = datas[i].Position,
+                    YCQ = datas[i].DayYcq,
+                    SCQ = datas[i].DayScq
+                };
                 decimal.TryParse(DataBase1CX_BJLP_01_JJ.YCQ, out decimal ycq);
                 totalCount += ycq;
                 list.Add(DataBase1CX_BJLP_01_JJ);

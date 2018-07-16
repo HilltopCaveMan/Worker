@@ -185,7 +185,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-                            btnRecount.PerformClick();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -211,7 +211,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
 
                 }
-                btnRecount.PerformClick();
+                btnSearch.PerformClick();
                 return;
             }
             else
