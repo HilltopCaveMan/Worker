@@ -73,7 +73,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (openFileDlg.ShowDialog() == DialogResult.OK)
             {
                 Enabled = false;
-                list = new ExcelHelper<DataBase1MJ_XJCJYB>().ReadExcel(openFileDlg.FileName, 3, 6, 0, 0, 0, true);
+                list = new ExcelHelper<DataBase1MJ_XJCJYB>().ReadExcel(openFileDlg.FileName, 4, 6, 0, 0, 0, true);
                 if (list == null)
                 {
                     MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
