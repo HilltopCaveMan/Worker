@@ -420,8 +420,8 @@ namespace Monopy.PreceRateWage.WinForm
 
                 if (listTJ == null)
                 {
-                    MessageBox.Show("指标数据没有导入，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                    MessageBox.Show("指标数据没有导入，请联系相关人员先导入数据，在【重新计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return true;
                 }
 
                 foreach (var item in list)

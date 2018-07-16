@@ -360,11 +360,16 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "修检线" );
+                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "修检线").ToList();
 
                 foreach (var item in list)
                 {
                     var type = listTJ.Where(t => t.PostName == item.GZ && t.TypesName == item.CHMC).FirstOrDefault();
+                    if (type == null)
+                    {
+                        MessageBox.Show("指标数据中没有工种：【" + item.GZ + "】，存货名称：【" + item.CHMC + "】的数据，请联系相关人员先导入数据，在【重新计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return true;
+                    }
                     item.DJ = type.UnitPrice;
                     decimal.TryParse(item.DJ, out decimal dj);
                     decimal.TryParse(item.YJP, out decimal yjp);

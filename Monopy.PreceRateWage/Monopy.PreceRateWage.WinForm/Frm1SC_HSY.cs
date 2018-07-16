@@ -427,6 +427,11 @@ namespace Monopy.PreceRateWage.WinForm
             var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "烧成车间" && t.PostName == "补瓷工").FirstOrDefault();
             try
             {
+                if (listTJ == null)
+                {
+                    MessageBox.Show("没有指标数据，无法计算【补瓷考核】！");
+                    return null;
+                }
                 var zj = list.Where(t => t.CPMC == "总计").OrderByDescending(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).FirstOrDefault();
                 var xj = list.Where(t => t.CPMC == "30-盖").OrderByDescending(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).FirstOrDefault();
                 decimal.TryParse(zj.KYL, out decimal zjkyl);// 总计开窑量

@@ -643,16 +643,6 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
-        /// 一厂检包线内定员合计
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public static DataBase1JB_XNDY GetTotalDataBase1JB_XNDY(List<DataBase1JB_XNDY> list)
-        {
-            return (list == null || list.Count == 0) ? new DataBase1JB_XNDY { GW = "合计", SJBZ = 0.ToString() } : new DataBase1JB_XNDY { GW = "合计", SJBZ = list.Sum(t => decimal.TryParse(t.SJBZ, out decimal d) ? d : 0M).ToString() };
-        }
-
-        /// <summary>
         /// 一厂检包磨瓷冷补合计
         /// </summary>
         /// <param name="list"></param>
