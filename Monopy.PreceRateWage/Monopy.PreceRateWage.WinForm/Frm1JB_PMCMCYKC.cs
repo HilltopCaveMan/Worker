@@ -84,9 +84,9 @@ namespace Monopy.PreceRateWage.WinForm
                         IWorkbook workbook = null;
                         workbook = WorkbookFactory.Create(fs);
                         ISheet sheet = workbook.GetSheetAt(0);
-                        int i, j;
+                        int i;
                         string lb = string.Empty;
-                        for (i = 2; i <= sheet.LastRowNum; i++)
+                        for (i = 1; i <= sheet.LastRowNum; i++)
                         {
                             //IRow rowFirst = sheet.GetRow(1);
                             bool sign = true;
@@ -103,7 +103,7 @@ namespace Monopy.PreceRateWage.WinForm
                             if (sign)
                             {
                                 DataBase1JB_PMCMCYKC t = new DataBase1JB_PMCMCYKC { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
-                                t.No = (i - 2).ToString();
+                                t.No = (i - 1).ToString();
                                 t.LB = lb;
                                 if (string.IsNullOrEmpty(ExcelHelper.GetCellValue(row.GetCell(2))))
                                 {
@@ -172,7 +172,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase1JB_PMCMCYKC> list = dgv.DataSource as List<DataBase1JB_PMCMCYKC>;
-                if (new ExcelHelper<DataBase1JB_PMCMCYKC>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——磨瓷原库存月报.xlsx", saveFileDlg.FileName, list, 5, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM"), 1))
+                if (new ExcelHelper<DataBase1JB_PMCMCYKC>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——磨瓷原库存月报.xlsx", saveFileDlg.FileName, list, 1, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM"), 1))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -322,9 +322,9 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i].Visible = false;
             }
-            dgv.Rows[0].Frozen = true;
-            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
-            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
+            //dgv.Rows[0].Frozen = true;
+            //dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            //dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
 
             for (int i = 0; i < header.Length; i++)
             {

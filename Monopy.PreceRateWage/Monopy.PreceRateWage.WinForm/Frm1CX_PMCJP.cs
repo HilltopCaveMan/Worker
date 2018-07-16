@@ -319,7 +319,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             var datas = new List<DataBase1CX_PMCJP>();
 
-            datas = new BaseDal<DataBase1CX_PMCJP>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => t.UserCode).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            datas = new BaseDal<DataBase1CX_PMCJP>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
             RefGrid(datas);
 

@@ -413,7 +413,7 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(itemResult.ZJCS, out decimal ss);//注浆次数
                     decimal.TryParse(itemResult.MXS1, out decimal tt);//模型数1
                     decimal.TryParse(itemResult.ZJCS1, out decimal uu);//注浆次数1
-                    var vv = oo / (rr * ss + tt * uu);
+                    var vv = (rr * ss + tt * uu) == 0 ? 0 : oo / (rr * ss + tt * uu);
                     itemResult.SJJPL = vv.ToString();
                     itemResult.MBHGP = (rr * ss + tt * uu).ToString();
 

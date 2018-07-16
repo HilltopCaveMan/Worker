@@ -376,16 +376,18 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 if (string.IsNullOrEmpty(list[i].UserCode) || string.IsNullOrEmpty(list[i].UserName))
                 {
-                    list.RemoveAt(i);
-                    if (i > 0)
-                    {
-                        i--;
-                    }
-                    else
-                    {
-                        i = -1;
-                    }
-                    continue;
+                    MessageBox.Show("姓名或者人员编码不能有空!!!工号：【" + list[i].GH + "】,工段：【" + list[i].GD + "】,对应的姓名或者人员编码为空", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                    //list.RemoveAt(i);
+                    //if (i > 0)
+                    //{
+                    //    i--;
+                    //}
+                    //else
+                    //{
+                    //    i = -1;
+                    //}
+                    //continue;
 
                 }
 

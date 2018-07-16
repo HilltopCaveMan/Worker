@@ -21,7 +21,7 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1JB_PMCSY : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$类别名称$存货编码$存货名称$类别编码$开窑量$合格$回磨$磨等外$其它$磨残$风惊$超标$磨修$原修$漏检$合格率$最终合格率".Split('$');
+        private string[] header = "创建日期$创建人$年$月$序号$类别名称$存货编码$存货名称$类别编码$开窑量$合格$残$不合格$其他$合格率".Split('$');
 
         public Frm1JB_PMCSY()
         {
@@ -315,9 +315,9 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i].Visible = false;
             }
-            dgv.Rows[0].Frozen = true;
-            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
-            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
+            //dgv.Rows[0].Frozen = true;
+            //dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            //dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
 
             for (int i = 0; i < header.Length; i++)
             {

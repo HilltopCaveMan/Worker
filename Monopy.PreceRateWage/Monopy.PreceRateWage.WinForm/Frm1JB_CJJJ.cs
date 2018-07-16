@@ -90,6 +90,13 @@ namespace Monopy.PreceRateWage.WinForm
                                     tmpHeader = "水堵";
                                 }
                             }
+                            if (tmp == "内检")
+                            {
+                                if (tmpHeader == "盖" || tmpHeader == "连体盖")
+                                {
+                                    tmpHeader = "水箱类";
+                                }
+                            }
                             headers.Add(tmpHeader);
                         }
                         List<DataBase1JB_CJJJ> list = new List<DataBase1JB_CJJJ>();
@@ -137,7 +144,7 @@ namespace Monopy.PreceRateWage.WinForm
                                     }
                                 }
                                 double njsx = 0;//内检水箱
-                                double njg = 0;//内检盖
+                                //double njg = 0;//内检盖
                                 double njltl = 0;//内检连体类
 
                                 foreach (var item in cjjj.Childs)
@@ -148,10 +155,10 @@ namespace Monopy.PreceRateWage.WinForm
                                     {
                                         njsx = item.ChildCount;
                                     }
-                                    if (item.ChildName == "内检_盖")
-                                    {
-                                        njg = item.ChildCount;
-                                    }
+                                    //if (item.ChildName == "内检_盖")
+                                    //{
+                                    //    njg = item.ChildCount;
+                                    //}
                                     if (item.ChildName == "内检_连体类")
                                     {
                                         njltl = item.ChildCount;
@@ -176,7 +183,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 {
                                     if (item.Name == "水箱类")
                                     {
-                                        item.Money = (item.TheCount - njsx + (njsx + njg - njltl) / 2) * item.Price;
+                                        item.Money = (item.TheCount - (njsx + njltl) / 2) * item.Price;
                                     }
                                 }
 
@@ -403,7 +410,7 @@ namespace Monopy.PreceRateWage.WinForm
                     dr[i] = GetSumValue(dt, i);
                 }
                 dt.Rows.InsertAt(dr, 0);
-               
+
                 dgv.DataSource = dt;
                 for (int i = 0; i < dt.Columns.Count; i++)
                 {

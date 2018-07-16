@@ -126,7 +126,7 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = false;
                 var list = dgv.DataSource as List<DataBaseMonth>;
 
-                if (excelHelper.WriteExcle(Application.StartupPath + "\\Excel\\模板基础数据——月工资.xlsx", saveFileDlg.FileName, list, 2, 1, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (excelHelper.WriteExcle(Application.StartupPath + "\\Excel\\模板基础数据——月工资.xlsx", saveFileDlg.FileName, list, 2, 3, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
