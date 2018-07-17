@@ -121,8 +121,13 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 var list = excelHelper.ReadExcel(openFileDlg.FileName, 1, 3);
+                var listEnd = new List<DataBaseDay>();
                 foreach (var item in list)
                 {
+                    if (string.IsNullOrEmpty(item.FactoryNo))
+                    {
+                        continue;
+                    }
                     var mTp = item.GetType();
                     var propertyInfo = mTp.GetProperties();
                     for (int i = 0; i < propertyInfo.Length; i++)
@@ -142,13 +147,13 @@ namespace Monopy.PreceRateWage.WinForm
                         Enabled = true;
                         return;
                     }
+                    listEnd.Add(item);
                 }
-                new BaseDal<DataBaseDay>().Add(list);
+                new BaseDal<DataBaseDay>().Add(listEnd);
                 Enabled = true;
-                FrmDataBaseDay_Load(null, null);
+                btnSearch.PerformClick();
                 UpdateJBXW();
                 MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                Enabled = true;
             }
         }
 
@@ -178,8 +183,8 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DataBaseDay dataBaseDay = new DataBaseDay() { ID = Guid.NewGuid() };
-            FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Add, Text);
+            DataBaseDay dataBaseDay = new DataBaseDay() { ID = Guid.NewGuid(), CreateYear = dtp.Value.Year, CreateMonth = dtp.Value.Month };
+            FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Add, Text, 2);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnSearch.PerformClick();
@@ -193,7 +198,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var dataBaseDay = dgv.SelectedRows[0].DataBoundItem as DataBaseDay;
                 if (dataBaseDay != null)
                 {
-                    FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Modify, Text);
+                    FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Modify, Text, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         UpdateJBXW();
@@ -212,7 +217,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var dataBaseDay = dgv.SelectedRows[0].DataBoundItem as DataBaseDay;
                     if (dataBaseDay != null)
                     {
-                        FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Delete, Text);
+                        FrmModify<DataBaseDay> frm = new FrmModify<DataBaseDay>(dataBaseDay, header, OptionType.Delete, Text, 2);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             btnSearch.PerformClick();

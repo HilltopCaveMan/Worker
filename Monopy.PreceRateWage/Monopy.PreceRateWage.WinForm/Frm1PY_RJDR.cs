@@ -365,6 +365,11 @@ namespace Monopy.PreceRateWage.WinForm
                 foreach (var item in list)
                 {
                     var type = datas.Where(t => t.GH == item.GH).FirstOrDefault();
+                    if (type == null)
+                    {
+                        MessageBox.Show("总喷釉车间小件计件明细数据没有工号：【"+item.GH+"】的数据，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return false;
+                    }
                     item.PJJJ = type.JJJE;
                     decimal.TryParse(item.PJJJ, out decimal pjjj);
                     decimal.TryParse(item.JJ, out decimal jj);
