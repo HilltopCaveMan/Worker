@@ -436,7 +436,7 @@ namespace Monopy.PreceRateWage.WinForm
                         }
                         decimal.TryParse(x.Count, out decimal count);
                         decimal.TryParse(x.Price, out decimal price);
-                        if ((t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员")) && baseZL.Where(m => m.TypesName == cpmc) != null)
+                        if ((t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员")) && baseZL.Where(m => m.TypesName == cpmc).FirstOrDefault() != null)
                         {
                             total += price * count;
                         }

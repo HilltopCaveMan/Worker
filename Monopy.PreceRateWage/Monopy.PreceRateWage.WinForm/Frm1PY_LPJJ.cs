@@ -249,7 +249,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1PY_LPJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName)).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase1PY_LPJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName)).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1PY_LPJJ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)

@@ -79,8 +79,13 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 var list = excelHelper.ReadExcel(openFileDlg.FileName, 1, 3);
+                var listEnd = new List<DataBaseMonth>();
                 foreach (var item in list)
                 {
+                    if (string.IsNullOrEmpty(item.FactoryNo))
+                    {
+                        continue;
+                    }
                     var mTp = item.GetType();
                     var propertyInfo = mTp.GetProperties();
                     for (int i = 0; i < propertyInfo.Length; i++)
@@ -100,8 +105,9 @@ namespace Monopy.PreceRateWage.WinForm
                         Enabled = true;
                         return;
                     }
+                    listEnd.Add(item);
                 }
-                if (new BaseDal<DataBaseMonth>().Add(list) > 0)
+                if (new BaseDal<DataBaseMonth>().Add(listEnd) > 0)
                 {
                     Enabled = true;
                     FrmDataBaseMonth_Load(null, null);
@@ -158,7 +164,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var dataBaseMonth = dgv.SelectedRows[0].DataBoundItem as DataBaseMonth;
                 if (dataBaseMonth != null)
                 {
-                    FrmModify<DataBaseMonth> frm = new FrmModify<DataBaseMonth>(dataBaseMonth, header, OptionType.Modify, Text);
+                    FrmModify<DataBaseMonth> frm = new FrmModify<DataBaseMonth>(dataBaseMonth, header, OptionType.Modify, Text, 2);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -176,7 +182,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var dataBaseMonth = dgv.SelectedRows[0].DataBoundItem as DataBaseMonth;
                     if (dataBaseMonth != null)
                     {
-                        FrmModify<DataBaseMonth> frm = new FrmModify<DataBaseMonth>(dataBaseMonth, header, OptionType.Delete, Text);
+                        FrmModify<DataBaseMonth> frm = new FrmModify<DataBaseMonth>(dataBaseMonth, header, OptionType.Delete, Text, 2);
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             btnSearch.PerformClick();
@@ -256,7 +262,6 @@ namespace Monopy.PreceRateWage.WinForm
                         tmp.CreateMonth = dtpTo.Value.Month;
                         list.Add(tmp);
                     }
-
                 }
                 new BaseDal<DataBaseMonth>().Add(list);
                 btnSearch.PerformClick();
