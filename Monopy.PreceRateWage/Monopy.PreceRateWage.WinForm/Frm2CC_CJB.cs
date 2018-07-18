@@ -480,7 +480,7 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             decimal.TryParse(basePrice.ZB_JB_JJGZ, out decimal jjgz);
                             decimal.TryParse(t.SCQ, out decimal scq);
-                            t.FHYZB = scq != 0 ? ((total * jjgz) / (totalScq * scq)).ToString() : "0";
+                            t.FHYZB = scq != 0 ? (total * jjgz / totalScq * scq).ToString() : "0";
                             decimal.TryParse(t.FHYZB, out decimal fhyzb);
                             decimal.TryParse(t.JJ, out decimal jj);
                             t.HJ = (fhyzb + jj).ToString();

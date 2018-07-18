@@ -194,18 +194,16 @@ namespace Monopy.PreceRateWage.WinForm
 
                 if (yb == null || yb.Count == 0)
                 {
-                    var msg = new DataBaseMsg { ID = Guid.NewGuid(), UserCode = dt.Rows[i][2].ToString(), MsgTitle = "模具大件月报不存在PMC大件中的：【" + dt.Rows[i][0].ToString() + "】", MsgClass = "模具大件月报不存在PMC大件中的：【" + dt.Rows[i][0].ToString() + "】", Msg = dtp.Value.ToString("yyyy年MM月") + "，模具大件月报不存在PMC大件中的：【" + dt.Rows[i][0].ToString() + "】", IsDone = false, IsRead = false, CreateTime = Program.NowTime, CreateUser = "系统报警" };
-                    new BaseDal<DataBaseMsg>().Add(msg);
-                    msg.ID = Guid.NewGuid();
-                    msg.UserCode = Program.HrCode;
-                    new BaseDal<DataBaseMsg>().Add(msg);
+                    MessageBox.Show( dtp.Value.ToString("yyyy年MM月") + "，模具大件月报不存在PMC大件中的：【" + dt.Rows[i][0].ToString() + "】");
+                  
                 }
                 else
                 {
                     decimal.TryParse(dt.Rows[i][1].ToString(), out decimal yb_Count);
                     if (yb_Count > yb[0].Count)
                     {
-                        bj(dt.Rows[i][2].ToString().Split('_')[0], yb[0].CPMC, yb_Count, yb[0].Count);
+                        MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + yb[0].CPMC + "】，月报数量：【" + yb[0].Count + "】，日PMC大件明细数量：【" + yb_Count + "】。模具大件月报数量小于明细数量!!!");
+                       
                     }
                 }
             }
@@ -255,7 +253,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase1MJ_DJCJYB != null)
                     {
-                        if (DataBase1MJ_DJCJYB.No == "合计")
+                        if (DataBase1MJ_DJCJYB.CPMC == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
@@ -349,9 +347,7 @@ namespace Monopy.PreceRateWage.WinForm
                         decimal.TryParse(obj.ToString(), out decimal mx);
                         if (mx > item.Count)
                         {
-                            //报警
-                            string userCode = conn.ExecuteScalar("SELECT a.CreateUser from DataBase1MJ_PMCDJ a left JOIN DataBase1MJ_PMCDJ_Child b on a.Id=b.DataBase1MJ_PMCDJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc", new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC }).ToString().Split('_')[0];
-                            bj(userCode, item.CPMC, mx, item.Count);
+                            MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + item.CPMC + "】，月报数量：【" + item.Count + "】，日PMC大件明细数量：【" + mx.ToString() + "】。模具大件月报数量小于明细数量!!!");
                             return false;
                         }
                     }
