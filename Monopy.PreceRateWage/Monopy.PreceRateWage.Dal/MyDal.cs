@@ -1136,7 +1136,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase2JB_BZJJ GetTotalDataBase2JB_BZJJ(List<DataBase2JB_BZJJ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase2JB_BZJJ { No = "合计", SL = 0.ToString(), FBSL = 0.ToString(), HJ = 0.ToString() } : new DataBase2JB_BZJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), FBSL = list.Sum(t => decimal.TryParse(t.FBSL, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase2JB_BZJJ { No = "合计", SL = 0.ToString(), FBSL = 0.ToString(), HJ = 0.ToString(), JJJE = 0.ToString() } : new DataBase2JB_BZJJ { No = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), FBSL = list.Sum(t => decimal.TryParse(t.FBSL, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString(), JJJE = list.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>

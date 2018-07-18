@@ -319,31 +319,13 @@ namespace Monopy.PreceRateWage.WinForm
                         decimal.TryParse(obj.ToString(), out decimal mx);
                         if (mx > item.Count)
                         {
-                            //报警
-                            string userCode = conn.ExecuteScalar("SELECT a.CreateUser from DataBase1MJ_PMCXJ a left JOIN DataBase1MJ_PMCXJ_Child b on a.Id=b.DataBase1MJ_PMCXJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc", new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC }).ToString().Split('_')[0];
-                            bj(userCode, item.CPMC, mx, item.Count);
+                            MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + item.CPMC + "】，月报数量：【" + item.Count + "】，日PMC小件明细数量：【" + mx.ToString() + "】。明细大于月报！");
                             return false;
                         }
                     }
                 }
             }
             return true;
-        }
-
-        /// <summary>
-        /// 验证报警
-        /// </summary>
-        /// <param name="userCode"></param>
-        /// <param name="cpmb"></param>
-        /// <param name="mx"></param>
-        /// <param name="yb"></param>
-        private void bj(string userCode, string cpmb, decimal mx, decimal yb)
-        {
-            var msg = new DataBaseMsg { ID = Guid.NewGuid(), UserCode = userCode, MsgTitle = "模具小件月报数量大于明细数量", MsgClass = "模具小件月报数量大于明细数量", Msg = dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + cpmb + "】，月报数量：【" + yb.ToString() + "】，日PMC小件明细数量：【" + mx.ToString() + "】。明细大于月报，验证未通过！", IsDone = false, IsRead = false, CreateTime = Program.NowTime, CreateUser = "系统报警" };
-            new BaseDal<DataBaseMsg>().Add(msg);
-            msg.ID = Guid.NewGuid();
-            msg.UserCode = Program.HrCode;
-            new BaseDal<DataBaseMsg>().Add(msg);
         }
         #endregion
 

@@ -109,7 +109,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("基础数据库中没有信息，导入时自动过滤的有：" + Environment.NewLine + sb.ToString().TrimEnd(','), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (new BaseDal<DataBase2MJ_XJCJYB>().Add(list) > 0)
+                if (Recount(list) && new BaseDal<DataBase2MJ_XJCJYB>().Add(list) > 0)
                 {
                     Enabled = true;
                     txtCPMC.Text = "";
@@ -178,30 +178,13 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void btnRecount_Click(object sender, EventArgs e)
         {
-            var datas = new BaseDal<DataBase2MJ_XJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList().GroupBy(t => t.CPMC).Select(t => new { CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCSL, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
+            var datas = new BaseDal<DataBase2MJ_XJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
             if (datas.Count == 0)
             {
                 MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "没有数据，无法验证！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
-            {
-                foreach (var item in datas)
-                {
-                    string sql = "SELECT sum(CAST( b.[Count] as NUMERIC(18,3))) from DataBase2MJ_PMCXJ a left JOIN DataBase2MJ_PMCXJ_Child b on a.Id=b.DataBase2MJ_PMCXJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc";
-                    var obj = conn.ExecuteScalar(sql, new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC });
-                    if (obj != null)
-                    {
-                        decimal.TryParse(obj.ToString(), out decimal mx);
-                        if (mx > item.Count)
-                        {
-                            //报警
-                            string userCode = conn.ExecuteScalar("SELECT a.CreateUser from DataBase2MJ_PMCXJ a left JOIN DataBase2MJ_PMCXJ_Child b on a.Id=b.DataBase2MJ_PMCXJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc", new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC }).ToString().Split('_')[0];
-                            bj(userCode, item.CPMC, mx, item.Count);
-                        }
-                    }
-                }
-            }
+            Recount(datas);
             MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "验证完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -322,21 +305,29 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.ClearSelection();
         }
 
-        /// <summary>
-        /// 验证报警
-        /// </summary>
-        /// <param name="userCode"></param>
-        /// <param name="cpmb"></param>
-        /// <param name="mx"></param>
-        /// <param name="yb"></param>
-        private void bj(string userCode, string cpmb, decimal mx, decimal yb)
+        private bool Recount(List<DataBase2MJ_XJCJYB> lsit)
         {
-            var msg = new DataBaseMsg { ID = Guid.NewGuid(), UserCode = userCode, MsgTitle = "模具小件月报数量大于明细数量", MsgClass = "模具小件月报数量大于明细数量", Msg = dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + cpmb + "】，月报数量：【" + yb.ToString() + "】，日PMC小件明细数量：【" + mx.ToString() + "】。明细大于月报，验证未通过！", IsDone = false, IsRead = false, CreateTime = Program.NowTime, CreateUser = "系统报警" };
-            new BaseDal<DataBaseMsg>().Add(msg);
-            msg.ID = Guid.NewGuid();
-            msg.UserCode = Program.HrCode;
-            new BaseDal<DataBaseMsg>().Add(msg);
+            var datas = lsit.GroupBy(t => t.CPMC).Select(t => new { CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCSL, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
+            using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
+            {
+                foreach (var item in datas)
+                {
+                    string sql = "SELECT sum(CAST( b.[Count] as NUMERIC(18,3))) from DataBase2MJ_PMCXJ a left JOIN DataBase2MJ_PMCXJ_Child b on a.Id=b.DataBase2MJ_PMCXJ_Id where a.TheYear=@TheYear and a.TheMonth=@TheMonth and b.CPMC=@cpmc";
+                    var obj = conn.ExecuteScalar(sql, new { TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, cpmc = item.CPMC });
+                    if (obj != null)
+                    {
+                        decimal.TryParse(obj.ToString(), out decimal mx);
+                        if (mx > item.Count)
+                        {
+                            MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "产品名称:【" + item.CPMC + "】，月报数量：【" + item.Count + "】，日PMC小件明细数量：【" + mx.ToString() + "】。明细大于月报！");
+                            return false;
+                        }
+                    }
+                }
+            }
+            return true;
         }
+
         #endregion
 
     }
