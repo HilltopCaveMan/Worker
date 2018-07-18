@@ -184,6 +184,7 @@ namespace Monopy.PreceRateWage.WinForm
                                     if (item.Name == "水箱类")
                                     {
                                         item.Money = (item.TheCount - (njsx + njltl) / 2) * item.Price;
+                                        item.TheCount = item.TheCount - (njsx + njltl) / 2;
                                     }
                                 }
 
@@ -419,7 +420,7 @@ namespace Monopy.PreceRateWage.WinForm
                         dgv.Columns[i].Visible = false;
                     }
                 }
-                for (int i = 0; i < 6; i++)
+                for (int i = 0; i < 5; i++)
                 {
                     dgv.Columns[i].Visible = false;
                 }

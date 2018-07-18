@@ -83,6 +83,19 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = false;
                 for (int i = 0; i < list.Count; i++)
                 {
+                    if (list[i].No == "合计" || string.IsNullOrEmpty(list[i].No))
+                    {
+                        list.RemoveAt(i);
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                        else
+                        {
+                            i = -1;
+                        }
+                        continue;
+                    }
                     list[i].CreateUser = Program.User.ToString();
                     list[i].CreateTime = Program.NowTime;
                     list[i].TheYear = selectTime.Year;

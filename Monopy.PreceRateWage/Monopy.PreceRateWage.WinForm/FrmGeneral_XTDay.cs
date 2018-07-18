@@ -258,6 +258,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     new BaseDal<DataBaseGeneral_XTDay>().Delete(item);
                 }
+                new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
                 btnRecount.PerformClick();
                 return;
             }
