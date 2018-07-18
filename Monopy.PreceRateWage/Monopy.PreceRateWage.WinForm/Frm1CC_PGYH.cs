@@ -215,7 +215,7 @@ namespace Monopy.PreceRateWage.WinForm
                             //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month;
+                                string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and FactoryNo='" + _factoryNo + "'";
                                 //foreach (var item in list)
                                 //{
                                 conn.Execute(sqlMain, null, null);
@@ -245,8 +245,8 @@ namespace Monopy.PreceRateWage.WinForm
                             //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_PGYH where id=@id";
-                                conn.Execute(sqlMain, new { id = id }, null, null);
+                                string sqlMain = "delete from DataBase1CC_PGYH where id=@id and FactoryNo = @FactoryNo";
+                                conn.Execute(sqlMain, new { id = id, FactoryNo = _factoryNo }, null, null);
 
                                 //dbTransaction.Commit();
                             }
@@ -271,7 +271,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CC_PGYH>().GetList().ToList();
+            var list = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == _factoryNo).ToList();
             RefComCJ(list);
             RefCmbUserCode(list);
             RefCmbUserName(list);
@@ -311,7 +311,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (cj == "全部" ? true : t.CJ.Contains(cj)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ThenBy(t => t.UserCode).ToList();
+            var datas = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (cj == "全部" ? true : t.CJ.Contains(cj)) && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ThenBy(t => t.UserCode).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1CC_PGYH(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)

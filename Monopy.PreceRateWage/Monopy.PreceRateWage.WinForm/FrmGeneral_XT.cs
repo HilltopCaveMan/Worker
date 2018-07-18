@@ -318,13 +318,13 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBaseGeneral_XT>().Delete(item);
                     }
-                    new BaseDal<DataBaseGeneral_XT>().Delete(item);
+                    
                 }
+                new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
                 btnRecount.PerformClick();
                 return;
             }

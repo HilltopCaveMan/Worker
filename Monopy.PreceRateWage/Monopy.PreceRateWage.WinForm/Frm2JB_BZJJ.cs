@@ -83,6 +83,19 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = false;
                 for (int i = 0; i < list.Count; i++)
                 {
+                    if (list[i].GWMC == "合计" || list[i].No == "合计" || (string.IsNullOrEmpty(list[i].No) && list[i].GWMC != "备注"))
+                    {
+                        list.RemoveAt(i);
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                        else
+                        {
+                            i = -1;
+                        }
+                        continue;
+                    }
                     list[i].CreateUser = Program.User.ToString();
                     list[i].CreateTime = Program.NowTime;
                     list[i].TheYear = selectTime.Year;
@@ -301,6 +314,10 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 foreach (var item in list)
                 {
+                    if (item.GWMC == "备注")
+                    {
+                        continue;
+                    }
                     var baseDay = new BaseDal<DataBaseDay>().Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "检包车间" && t.PostName == item.GWMC && t.TypesType == item.LB);
                     if (baseDay == null)
                     {

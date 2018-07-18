@@ -83,6 +83,19 @@ namespace Monopy.PreceRateWage.WinForm
                 Enabled = false;
                 for (int i = 0; i < list.Count; i++)
                 {
+                    if (list[i].No == "合计" || string.IsNullOrEmpty(list[i].No))
+                    {
+                        list.RemoveAt(i);
+                        if (i > 0)
+                        {
+                            i--;
+                        }
+                        else
+                        {
+                            i = -1;
+                        }
+                        continue;
+                    }
                     list[i].CreateUser = Program.User.ToString();
                     list[i].CreateTime = Program.NowTime;
                     list[i].TheYear = selectTime.Year;
@@ -330,8 +343,8 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                var bzjj = new BaseDal<DataBase2JB_BZJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
-                DataBase2JB_BZJJ sum = new DataBase2JB_BZJJ();
+                var bzjj = new BaseDal<DataBase2JB_ZZJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+                DataBase2JB_ZZJJ sum = new DataBase2JB_ZZJJ();
                 if (bzjj == null || bzjj.Count == 0)
                 {
                     MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的组装计件提报数据，请先导入数据后，【重新计算】！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -339,7 +352,7 @@ namespace Monopy.PreceRateWage.WinForm
                 }
                 else
                 {
-                    sum = new DataBase2JB_BZJJ
+                    sum = new DataBase2JB_ZZJJ
                     {
                         JJJE = bzjj.Sum(t => decimal.TryParse(t.JJJE, out decimal d) ? d : 0M).ToString()
                     };

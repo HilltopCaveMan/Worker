@@ -47,11 +47,6 @@ namespace Monopy.PreceRateWage.Model
         public string HJ { get; set; }
 
         /// <summary>
-        /// 对应品种
-        /// </summary>
-        public string DYPZ { get; set; }
-
-        /// <summary>
         /// 单价
         /// </summary>
         public string DJ { get; set; }

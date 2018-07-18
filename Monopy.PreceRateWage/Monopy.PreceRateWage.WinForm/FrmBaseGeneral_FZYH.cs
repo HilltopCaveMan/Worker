@@ -112,8 +112,8 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     item.FactoryNo = _factoryNo;
                     item.Dept = _dept;
-                    item.TheYear = selectTime.Year;
-                    item.TheMonth = selectTime.Month;
+                    item.TheYear = dtp.Value.Year;
+                    item.TheMonth = dtp.Value.Month;
                 }
 
                 if (Recount(list) && new BaseDal<DataBaseGeneral_FZYH>().Add(list) > 0)
@@ -144,7 +144,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_FZYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出通用——辅助验货.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, selectTime.ToString("yyyy-MM-dd") + "-" + _dept))
+                if (new ExcelHelper<DataBaseGeneral_FZYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出通用——辅助验货.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM-dd") + "-" + _dept))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -163,7 +163,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void btnNew_Click(object sender, EventArgs e)
         {
-            DataBaseGeneral_FZYH DataBaseGeneral_JC = new DataBaseGeneral_FZYH() { Id = Guid.NewGuid(), TheYear = selectTime.Year, TheMonth = selectTime.Month, FactoryNo = _factoryNo, Dept = _dept };
+            DataBaseGeneral_FZYH DataBaseGeneral_JC = new DataBaseGeneral_FZYH() { Id = Guid.NewGuid(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, FactoryNo = _factoryNo, Dept = _dept };
             FrmModify<DataBaseGeneral_FZYH> frm = new FrmModify<DataBaseGeneral_FZYH>(DataBaseGeneral_JC, header, OptionType.Add, Text, 4, 2);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
@@ -220,7 +220,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         if (DataBaseGeneral_JC.No == "合计")
                         {
-                            if (MessageBox.Show("要删除，日期为：" + selectTime.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                            if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
                                 var list = dgv.DataSource as List<DataBaseGeneral_FZYH>;
                                 dgv.DataSource = null;
@@ -251,7 +251,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                List<DataBaseMonth> listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == _factoryNo && t.WorkshopName.Contains(_dept)).ToList();
+                List<DataBaseMonth> listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == _factoryNo && t.WorkshopName.Contains(_dept)&&string.IsNullOrEmpty(t.Classification)&&string.IsNullOrEmpty(t.MonthData)).ToList();
                 foreach (var item in list)
                 {
                     var month = listMonth.Where(t => t.PostName == item.GWMC).FirstOrDefault();
@@ -301,7 +301,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void btnRecount_Click(object sender, EventArgs e)
         {
-            var datas = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.FactoryNo == _factoryNo && t.Dept == _dept).ToList();
+            var datas = new BaseDal<DataBaseGeneral_FZYH>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.Dept == _dept).ToList();
             if (Recount(datas))
             {
                 foreach (var item in datas)

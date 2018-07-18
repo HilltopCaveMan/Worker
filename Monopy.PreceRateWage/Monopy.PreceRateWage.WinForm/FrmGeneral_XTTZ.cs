@@ -236,7 +236,8 @@ namespace Monopy.PreceRateWage.WinForm
                     var item = list.Where(t => t.TheYear == year && t.TheMonth == month && t.CJ == dt.Rows[j]["CJ"].ToString() && t.GW == dt.Rows[j]["GW"].ToString() && t.UserCode == dt.Rows[j]["UserCode"].ToString()).FirstOrDefault();
                     if (item != null)
                     {
-                        dt.Rows[j][columnsName] = item.Money;
+                        decimal.TryParse(item.Money, out decimal money);
+                        dt.Rows[j][columnsName] = money.ToString("0.00");
                     }
                 }
 
@@ -256,7 +257,7 @@ namespace Monopy.PreceRateWage.WinForm
                         totalCount += dTmp;
                     }
                 }
-                dt.Rows[i]["Count"] = totalCount.ToString();
+                dt.Rows[i]["Count"] = totalCount.ToString("0.00");
 
             }
             DataRow dr = dt.NewRow();
@@ -274,7 +275,7 @@ namespace Monopy.PreceRateWage.WinForm
                         d += dTmp;
                     }
                 }
-                dr[columnsName] = d.ToString();
+                dr[columnsName] = d.ToString("0.00");
             }
             dt.Rows.InsertAt(dr, 0);
             return dt;

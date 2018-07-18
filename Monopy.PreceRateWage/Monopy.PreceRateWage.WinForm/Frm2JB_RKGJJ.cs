@@ -94,7 +94,7 @@ namespace Monopy.PreceRateWage.WinForm
                 try
                 {
                     List<DataBase2JB_RKGJJ> list = new List<DataBase2JB_RKGJJ>();
-                    DateTime dateTime = DateTime.Now;
+                    DateTime dateTime = dtp.Value;
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;

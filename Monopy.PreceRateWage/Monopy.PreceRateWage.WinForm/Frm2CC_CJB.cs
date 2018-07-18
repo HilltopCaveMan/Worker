@@ -94,7 +94,7 @@ namespace Monopy.PreceRateWage.WinForm
                 try
                 {
                     List<DataBase2CC_CJB> list = new List<DataBase2CC_CJB>();
-                    DateTime dateTime = DateTime.Now;
+                    DateTime dateTime = dtp.Value;
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;
@@ -266,7 +266,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             var datas = new List<DataBase2CC_CJB>();
 
-            datas = new BaseDal<DataBase2CC_CJB>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => t.UserCode).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            datas = new BaseDal<DataBase2CC_CJB>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
             RefGrid(datas);
 
@@ -437,7 +437,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                         decimal.TryParse(x.Count, out decimal count);
                         decimal.TryParse(x.Price, out decimal price);
-                        if ((t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员")) && baseZL.Where(m => m.TypesName == cpmc) != null)
+                        if ((t.GWMC.Contains("装车工") || t.GWMC.Contains("叉车驾驶员")) && baseZL.Where(m => m.TypesName == cpmc).FirstOrDefault() != null)
                         {
                             total += price * count;
                         }
