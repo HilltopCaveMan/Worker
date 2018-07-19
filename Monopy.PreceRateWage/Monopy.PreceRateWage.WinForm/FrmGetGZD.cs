@@ -864,7 +864,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                             case "成型车间":
 
-                                if (item_cq.Position.Contains("成型拉坯工"))
+                                if (item_cq.Position.Contains("半检工"))
                                 {
                                     DataBase2GZD gzd2cx_lp = Calculation2CX_BJLP(list, item_cq);
                                     if (gzd2cx_lp == null)

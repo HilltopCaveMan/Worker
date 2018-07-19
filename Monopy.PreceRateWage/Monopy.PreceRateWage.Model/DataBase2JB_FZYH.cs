@@ -37,11 +37,6 @@ namespace Monopy.PreceRateWage.Model
         public string UserName { get; set; }
 
         /// <summary>
-        /// 性别
-        /// </summary>
-        public string XB { get; set; }
-
-        /// <summary>
         /// 验货天数
         /// </summary>
         public string DayCount { get; set; }

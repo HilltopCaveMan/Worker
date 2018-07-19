@@ -29,7 +29,7 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 _factoryNo = args.Split('-')[0];
-                _workShop = args.Split('-')[1];
+                _workShop = args.Split('-')[1] == "半检工" ? "成型车间" : args.Split('-')[1];
             }
             catch (Exception ex)
             {
@@ -322,7 +322,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         new BaseDal<DataBaseGeneral_XT>().Delete(item);
                     }
-                    
+
                 }
                 new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
                 btnRecount.PerformClick();
@@ -482,12 +482,23 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 var itemTmp = list.FirstOrDefault();
-                var listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains(_workShop));
-                if (listHrCQ == null || listHrCQ.Count() == 0)
+                List<DataBaseGeneral_CQ> listHrCQ = new List<DataBaseGeneral_CQ>();
+                List<DataBaseMonth> listMonth = new List<DataBaseMonth>();
+                if (_workShop == "半检工")
+                {
+                    listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains("成型车间") && t.Position == _workShop).ToList();
+                    listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == itemTmp.TheYear && t.CreateMonth == itemTmp.TheMonth && t.FactoryNo == _factoryNo && t.WorkshopName.Contains("成型车间") && t.PostName == _workShop).ToList();
+                }
+                else
+                {
+                    listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == (_factoryNo == "G001" ? "一厂" : "二厂") && t.Dept.Contains(_workShop)).ToList();
+                    listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == itemTmp.TheYear && t.CreateMonth == itemTmp.TheMonth && t.FactoryNo == _factoryNo && t.WorkshopName.Contains(_workShop)).ToList();
+                }
+                if (listHrCQ == null || listHrCQ.Count == 0)
                 {
                     MessageBox.Show("没有出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                var listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == itemTmp.TheYear && t.CreateMonth == itemTmp.TheMonth && t.FactoryNo == _factoryNo && t.WorkshopName.Contains(_workShop));
+
 
                 //台账最大No
                 var tmpNo = new BaseDal<DataBase1CC_XTTZ>().GetList().ToList().OrderByDescending(t => int.TryParse(t.No, out int ino) ? ino : 0).FirstOrDefault();
