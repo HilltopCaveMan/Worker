@@ -42,7 +42,7 @@ namespace Monopy.PreceRateWage.WinForm
             dgv.Rows[0].Frozen = true;
             dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
             dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
-            header = "创建日期$创建人$年$月$序号$岗位名称$工号$姓名$性别$验货天数$单价$金额".Split('$');
+            header = "创建日期$创建人$年$月$序号$岗位名称$工号$姓名$验货天数$单价$金额".Split('$');
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
@@ -58,7 +58,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void btnViewExcel_Click(object sender, EventArgs e)
         {
-            Process.Start(Application.StartupPath + "\\Excel\\模板一厂——检包——辅助验货.xlsx");
+            Process.Start(Application.StartupPath + "\\Excel\\模板二厂——检包——辅助验货.xlsx");
         }
 
         private void btnImportExcel_Click(object sender, EventArgs e)
@@ -129,7 +129,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2JB_FZYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——辅助验货.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM-dd")))
+                if (new ExcelHelper<DataBase2JB_FZYH>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——检包——辅助验货.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM-dd")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -210,7 +210,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (dgv.SelectedRows[0].DataBoundItem is DataBase2JB_FZYH DataBaseGeneral_JC)
                     {
-                        if (DataBaseGeneral_JC.No == "合计")
+                        if (DataBaseGeneral_JC.UserName == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
@@ -243,8 +243,8 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                List<DataBaseMonth> listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == "G002" && t.WorkshopName.Contains("检包车间")).ToList();
-                var pgyh = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == "G002" && t.CJ.Contains("检包车间") && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+                List<DataBaseMonth> listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName.Contains("检包车间")).ToList();
+                var pgyh = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == "G002" && t.CJ.Contains("检包") && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
                 if (pgyh == null || pgyh.Count == 0)
                 {
                     MessageBox.Show("工厂：G002,车间：检包车间,没有品管数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -266,10 +266,10 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var item in list)
                 {
-                    var month = listMonth.Where(t => t.PostName == item.GWMC && t.Gender == item.XB).FirstOrDefault();
+                    var month = listMonth.Where(t => t.PostName == item.GWMC && string.IsNullOrEmpty(t.Classification)).FirstOrDefault();
                     if (month == null)
                     {
-                        MessageBox.Show("没有月工资数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("月工资中没有岗位名称：【" + item.GWMC + "】数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     decimal.TryParse(item.DayCount, out decimal day);

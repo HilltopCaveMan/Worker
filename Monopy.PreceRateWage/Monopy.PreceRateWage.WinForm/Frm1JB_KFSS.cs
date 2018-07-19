@@ -330,7 +330,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == _factoryNo && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            var list = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == _factoryNo).ToList();
             RefCmbUserCode(list);
             RefCmbUserName(list);
             RefCmbLB(list);
@@ -346,7 +346,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1JB_KFSS>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode.Contains(userCode)) && (userName == "全部" ? true : t.UserName.Contains(userName)) && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1JB_KFSS(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 5; i++)
+            for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }

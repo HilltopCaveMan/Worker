@@ -23,6 +23,8 @@ namespace Monopy.PreceRateWage.WinForm
     {
         string[] header = "Time$User$Year$Month$工厂$序号$车间$人员编码$姓名$验货天数".Split('$');
         private string _factoryNo;
+        private string _workShop;
+
         public Frm1CC_PGYH()
         {
             InitializeComponent();
@@ -32,8 +34,8 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                _factoryNo = args;
-
+                _factoryNo = args.Split('-')[0];
+                _workShop = args.Split('-')[1];
             }
             catch (Exception ex)
             {
@@ -215,7 +217,7 @@ namespace Monopy.PreceRateWage.WinForm
                             //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and FactoryNo='" + _factoryNo + "'";
+                                string sqlMain = "delete from DataBase1CC_PGYH where theyear=" + dateTime.Year + " and themonth=" + dateTime.Month + " and FactoryNo='" + _factoryNo + "'" + " and CJ='" + _workShop + "'";
                                 //foreach (var item in list)
                                 //{
                                 conn.Execute(sqlMain, null, null);
@@ -245,8 +247,8 @@ namespace Monopy.PreceRateWage.WinForm
                             //IDbTransaction dbTransaction = conn.BeginTransaction();
                             try
                             {
-                                string sqlMain = "delete from DataBase1CC_PGYH where id=@id and FactoryNo = @FactoryNo";
-                                conn.Execute(sqlMain, new { id = id, FactoryNo = _factoryNo }, null, null);
+                                string sqlMain = "delete from DataBase1CC_PGYH where id=@id";
+                                conn.Execute(sqlMain, new { id = id }, null, null);
 
                                 //dbTransaction.Commit();
                             }
@@ -271,7 +273,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == _factoryNo).ToList();
+            var list = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == _factoryNo && t.CJ == _workShop).ToList();
             RefComCJ(list);
             RefCmbUserCode(list);
             RefCmbUserName(list);
@@ -280,10 +282,10 @@ namespace Monopy.PreceRateWage.WinForm
         private void RefComCJ(List<DataBase1CC_PGYH> list)
         {
             var listTmp = list.GroupBy(t => t.CJ).Select(t => t.Key).OrderBy(t => t).ToList();
-            listTmp.Insert(0, "全部");
+
             comCJ.DataSource = listTmp;
             comCJ.DisplayMember = "CJ";
-            comCJ.Text = "全部";
+            comCJ.Text = _workShop;
         }
 
         private void RefCmbUserCode(List<DataBase1CC_PGYH> list)

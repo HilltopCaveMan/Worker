@@ -269,7 +269,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2JB_BJSSJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gw == "全部" ? true : t.GW.Contains(gw)) && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase2JB_BJSSJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gw == "全部" ? true : t.GW.Contains(gw)) && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (lb == "全部" ? true : t.LB.Contains(lb))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2JB_BJSSJJ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
@@ -479,49 +479,49 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                 }
 
-                if (bjds_bdt <= lb_bdt)
+                if (bjds_bdt < lb_bdt)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补大套对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bgb <= lb_bgb)
+                if (bjds_bgb < lb_bgb)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补挂便、蹲便类、槽子对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_blt <= lb_blt)
+                if (bjds_blt < lb_blt)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补连体对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bgp <= lb_bgp)
+                if (bjds_bgp < lb_bgp)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补柜盆对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bsx <= lb_bsx)
+                if (bjds_bsx < lb_bsx)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补水箱（含盖）对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (bjds_bmj <= lb_bmj)
+                if (bjds_bmj < lb_bmj)
                 {
                     MessageBox.Show("类别为补胶的品种对应类别为补面具、台盆、柱对应的数量大于补胶对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_dt <= lb_lt)
+                if (ssds_dt < lb_dt)
                 {
                     MessageBox.Show("类别为试水的品种对应类别为试水大套对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_lt <= lb_bdt)
+                if (ssds_lt < lb_lt)
                 {
-                    MessageBox.Show("类别为试水的品种对应类别为连体养水封（含内销连体）对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("类别为试水的品种对应类别为试水连体对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
-                if (ssds_ltysf <= lb_ltysf)
+                if (ssds_ltysf < lb_ltysf)
                 {
-                    MessageBox.Show("类别为试水的品种对应类别为补大套对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("类别为试水的品种对应类别为连体养水封（含内销连体）对应的数量大于试水对数对应的合计，导入失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return false;
                 }
 

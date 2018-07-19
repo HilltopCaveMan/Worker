@@ -144,7 +144,7 @@ namespace Monopy.PreceRateWage.WinForm
         #region 调用方法
         private void InitUI()
         {
-            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
+            var list = new BaseDal<DataBase1CC_XTTZ>().GetList(t => t.CJ == _workShop && t.FactoryNo == _factoryNo && t.TimeBZ >= dtp1.Value && t.TimeBZ <= dtp2.Value).ToList();
             RefCmbCJ(list);
             RefCmbGW(list);
             RefCmbUserCode(list);
@@ -153,9 +153,9 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void RefCmbCJ(List<DataBase1CC_XTTZ> list)
         {
-            var listTmp = list.GroupBy(t => t.CJ == _workShop).Select(t => t.Key).OrderBy(t => t).ToList();
-            CmbCJ.DataSource = listTmp;
-            CmbCJ.DisplayMember = "CJ";
+            //var listTmp = list.GroupBy(t => t.CJ == _workShop).Select(t => t.Key).OrderBy(t => t).ToList();
+            //CmbCJ.DataSource = listTmp;
+            //CmbCJ.DisplayMember = "CJ";
             CmbCJ.Text = _workShop;
         }
 

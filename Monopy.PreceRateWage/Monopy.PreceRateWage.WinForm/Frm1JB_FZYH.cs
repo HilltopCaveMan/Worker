@@ -210,7 +210,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (dgv.SelectedRows[0].DataBoundItem is DataBase1JB_FZYH DataBaseGeneral_JC)
                     {
-                        if (DataBaseGeneral_JC.No == "合计")
+                        if (DataBaseGeneral_JC.UserName == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
@@ -244,7 +244,7 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 List<DataBaseMonth> listMonth = new BaseDal<DataBaseMonth>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName.Contains("检包车间")).ToList();
-                var pgyh = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == "G001" && t.CJ.Contains("检包车间") && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+                var pgyh = new BaseDal<DataBase1CC_PGYH>().GetList(t => t.FactoryNo == "G001" && t.CJ.Contains("检包") && t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
                 if (pgyh == null || pgyh.Count == 0)
                 {
                     MessageBox.Show("工厂：G001,车间：检包车间,没有品管数据，无法导入！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

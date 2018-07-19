@@ -274,7 +274,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var workbook = WorkbookFactory.Create(fs);
                     var sheet = workbook.GetSheetAt(0);
                     int i, j;
-                    var rowTitle = sheet.GetRow(0);
+                    var rowTitle = sheet.GetRow(1);
                     for (i = 2; i <= sheet.LastRowNum; i++)
                     {
                         var row = sheet.GetRow(i);

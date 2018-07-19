@@ -267,84 +267,86 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 dgv.Columns[i + 1].HeaderText = header[i];
             }
-
+            dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
+            dgv.Rows[0].DefaultCellStyle.SelectionBackColor = Color.Red;
             dgv.ClearSelection();
         }
 
         private void Import(string filePath)
         {
-            OpenFileDialog openFileDlg = new OpenFileDialog()
+            try
             {
-                Filter = "Excel文件|*.xlsx",
-            };
-            if (openFileDlg.ShowDialog() == DialogResult.OK)
-            {
-                try
+                List<DataBase2CX_BJLP_BJYB> list = new List<DataBase2CX_BJLP_BJYB>();
+                DateTime dateTime = dtp.Value;
+                using (FileStream fs = new FileStream(filePath, FileMode.Open, FileAccess.Read))
                 {
-                    List<DataBase2CX_BJLP_BJYB> list = new List<DataBase2CX_BJLP_BJYB>();
-                    DateTime dateTime = dtp.Value;
-                    using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
+                    IWorkbook workbook = null;
+                    workbook = WorkbookFactory.Create(fs);
+                    ISheet sheet = workbook.GetSheetAt(0);
+                    int i;
+                    string lb = string.Empty;
+                    for (i = 2; i <= sheet.LastRowNum; i++)
                     {
-                        IWorkbook workbook = null;
-                        workbook = WorkbookFactory.Create(fs);
-                        ISheet sheet = workbook.GetSheetAt(0);
-                        int i;
-                        string lb = string.Empty;
-                        for (i = 2; i <= sheet.LastRowNum; i++)
+                        bool sign = true;
+                        IRow row = sheet.GetRow(i);
+                        if (row == null)
                         {
-                            bool sign = true;
-                            IRow row = sheet.GetRow(i);
-                            if (row == null)
+                            continue;
+                        }
+                        if (ExcelHelper.GetCellValue(row.GetCell(0)).Contains("工号") && lb != ExcelHelper.GetCellValue(row.GetCell(0)).Split(':')[1])
+                        {
+                            sign = false;
+                            lb = ExcelHelper.GetCellValue(row.GetCell(0)).Split(':')[1].Trim();
+                        }
+                        if (sign)
+                        {
+                            DataBase2CX_BJLP_BJYB t = new DataBase2CX_BJLP_BJYB { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
+                            t.No = (i - 1).ToString();
+                            t.GH = lb;
+                            if (string.IsNullOrEmpty(ExcelHelper.GetCellValue(row.GetCell(3))))
                             {
-                                continue;
+                                t.GH = lb + "合计";
                             }
-                            if (ExcelHelper.GetCellValue(row.GetCell(0)).Contains("工号") && lb != ExcelHelper.GetCellValue(row.GetCell(0)).Split(':')[1])
+                            if (i == sheet.LastRowNum)
                             {
-                                sign = false;
-                                lb = ExcelHelper.GetCellValue(row.GetCell(0)).Split(':')[1];
+                                t.GH = "合计";
                             }
-                            if (sign)
-                            {
-                                DataBase2CX_BJLP_BJYB t = new DataBase2CX_BJLP_BJYB { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
-                                t.No = (i - 2).ToString();
-                                t.GH = lb;
+                            t.LBBM = ExcelHelper.GetCellValue(row.GetCell(1));
+                            t.LBMC = ExcelHelper.GetCellValue(row.GetCell(2));
+                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(3));
+                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(4));
+                            t.GC = ExcelHelper.GetCellValue(row.GetCell(5));
+                            t.GDBM = ExcelHelper.GetCellValue(row.GetCell(6));
+                            t.GDMC = ExcelHelper.GetCellValue(row.GetCell(7));
+                            t.KYL = ExcelHelper.GetCellValue(row.GetCell(8));
+                            t.YJP = ExcelHelper.GetCellValue(row.GetCell(9));
+                            t.JJ = ExcelHelper.GetCellValue(row.GetCell(10));
+                            t.PS = ExcelHelper.GetCellValue(row.GetCell(11));
+                            t.ZB = ExcelHelper.GetCellValue(row.GetCell(12));
+                            t.JLDJ = ExcelHelper.GetCellValue(row.GetCell(13));
+                            t.FKDJ = ExcelHelper.GetCellValue(row.GetCell(14));
+                            t.KHJE = ExcelHelper.GetCellValue(row.GetCell(15));
 
-                                t.LBBM = ExcelHelper.GetCellValue(row.GetCell(1));
-                                t.LBMC = ExcelHelper.GetCellValue(row.GetCell(2));
-                                t.UserCode = ExcelHelper.GetCellValue(row.GetCell(3));
-                                t.UserName = ExcelHelper.GetCellValue(row.GetCell(4));
-                                t.GC = ExcelHelper.GetCellValue(row.GetCell(5));
-                                t.GDBM = ExcelHelper.GetCellValue(row.GetCell(6));
-                                t.GDMC = ExcelHelper.GetCellValue(row.GetCell(7));
-                                t.KYL = ExcelHelper.GetCellValue(row.GetCell(8));
-                                t.YJP = ExcelHelper.GetCellValue(row.GetCell(9));
-                                t.JJ = ExcelHelper.GetCellValue(row.GetCell(10));
-                                t.PS = ExcelHelper.GetCellValue(row.GetCell(11));
-                                t.ZB = ExcelHelper.GetCellValue(row.GetCell(12));
-                                t.JLDJ = ExcelHelper.GetCellValue(row.GetCell(13));
-                                t.FKDJ = ExcelHelper.GetCellValue(row.GetCell(14));
-                                t.KHJE = ExcelHelper.GetCellValue(row.GetCell(15));
-
-                                list.Add(t);
-                            }
+                            list.Add(t);
                         }
                     }
-                    Recount(list);
-                    if (new BaseDal<DataBase2CX_BJLP_BJYB>().Add(list) > 0)
-                    {
-                        btnSearch.PerformClick();
-                        MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    }
-                    else
-                    {
-                        MessageBox.Show("导入失败，请检查Excel数据是否正确或者网络是否正确，基础数据是否完整！", "失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
                 }
-                catch (Exception ex)
+                Recount(list);
+                if (new BaseDal<DataBase2CX_BJLP_BJYB>().Add(list) > 0)
                 {
-                    MessageBox.Show(ex.Message);
+                    btnSearch.PerformClick();
+                    MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("导入失败，请检查Excel数据是否正确或者网络是否正确，基础数据是否完整！", "失败", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+
         }
 
         private void SaveImportData(string filePath)

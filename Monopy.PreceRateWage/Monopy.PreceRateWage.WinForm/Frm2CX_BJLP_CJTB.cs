@@ -262,7 +262,7 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase2CX_BJLP_CJTB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => t.No).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2CX_BJLP_CJTB(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 5; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
