@@ -328,7 +328,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "注修工");
                 foreach (var item in list)
                 {
-                    var itemDay = listDay.Where(t => t.TypesName == item.PZ).FirstOrDefault();
+                    var itemDay = listDay.Where(t => t.TypesName == item.PZ && t.Classification == item.LB).FirstOrDefault();
                     if (itemDay != null)
                     {
                         item.DJ = itemDay.UnitPrice;

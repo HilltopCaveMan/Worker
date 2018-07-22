@@ -136,7 +136,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var DataBase1CX_XJBG = dgv.SelectedRows[0].DataBoundItem as DataBase1CX_XJBG;
                 if (DataBase1CX_XJBG != null)
                 {
-                    if (DataBase1CX_XJBG.UserName == "合计")
+                    if (DataBase1CX_XJBG.GW == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -161,7 +161,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1CX_XJBG = dgv.SelectedRows[0].DataBoundItem as DataBase1CX_XJBG;
-                if (DataBase1CX_XJBG.No == "合计")
+                if (DataBase1CX_XJBG.GW == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -195,7 +195,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.GW != "合计")
                     {
                         new BaseDal<DataBase1CX_XJBG>().Delete(item);
                     }

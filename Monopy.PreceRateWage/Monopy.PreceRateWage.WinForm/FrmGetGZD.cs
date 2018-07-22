@@ -3318,10 +3318,10 @@ namespace Monopy.PreceRateWage.WinForm
             }
 
             //计件工资1
-            var xjdybg = new BaseDal<DataBase2CX_CXJJ>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
+            var xjdybg = new BaseDal<DataBase2CX_CX_06JJ_GR>().Get(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month);
             if (xjdybg != null)
             {
-                gzd.JJGZ1 = xjdybg.GZE;
+                gzd.JJGZ1 = xjdybg.GRHJ;
             }
 
             //计件工资2

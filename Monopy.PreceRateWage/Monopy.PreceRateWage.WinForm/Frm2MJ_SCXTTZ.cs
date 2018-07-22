@@ -89,7 +89,7 @@ namespace Monopy.PreceRateWage.WinForm
                 MessageBox.Show("没有数据，无法导出！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            string[] header = "车间$岗位名称$人员编号$姓名$合计金额".Split('$');
+            string[] header = "车间$岗位名称$人员编号$姓名$合计天数".Split('$');
             for (int i = 0; i < header.Length; i++)
             {
                 dt.Columns[i].Caption = header[i];

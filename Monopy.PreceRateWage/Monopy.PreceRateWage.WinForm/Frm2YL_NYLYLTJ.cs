@@ -41,6 +41,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearch_Click(object sender, EventArgs e)
         {
             RefDgv(dtp.Value);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -51,6 +52,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void btnSearchCS_Click(object sender, EventArgs e)
         {
             RefDgv1(dtp.Value);
+            dgv.ContextMenuStrip = contextMenuStrip1;
         }
 
         /// <summary>
@@ -258,7 +260,12 @@ namespace Monopy.PreceRateWage.WinForm
             for (int i = flag + 1; i < list.Count; i++)
             {
                 var item = list[i];
-
+                if (string.IsNullOrEmpty(item.NJMC) || string.IsNullOrEmpty(item.SCSL))
+                {
+                    list.Remove(item);
+                    i--;
+                    continue;
+                }
                 item.CreateTime = Program.NowTime;
                 item.CreateUser = Program.User.ToString();
                 item.TheYear = dtp.Value.Year;

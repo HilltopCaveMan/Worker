@@ -570,9 +570,13 @@ namespace Monopy.PreceRateWage.WinForm
                                 {
                                     list[i].RYBMBZ = list[i - 1].UserCode;
                                 }
-                                else
+                                else if (list[i].DHFQ.Contains(list[i + 1].UserName))
                                 {
                                     list[i].RYBMBZ = list[i + 1].UserCode;
+                                }
+                                else
+                                {
+                                    list[i].RYBMBZ = list[i - 1].RYBMBZ;
                                 }
                             }
                         }
@@ -636,7 +640,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var itemTmp in xxtmp)
                 {
-                    var jj = "1" + j.ToString().PadLeft(5, '0');
+                    var jj = "2" + j.ToString().PadLeft(5, '0');
                     foreach (var itemTmp2 in listTmp.Where(t => t.DHFQ == itemTmp.DHFQ).OrderBy(t => int.TryParse(t.GH, out int iGh) ? iGh : int.MaxValue))
                     {
                         listResult.Add(new DataBase2CX_CX_02JJKHTB_Out { GH = itemTmp2.GH, BZMC = itemTmp2.DHFQ, BZBM = jj, CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), No = j.ToString(), Id = Guid.NewGuid(), TheYear = item.TheYear, TheMonth = item.TheMonth });
@@ -656,6 +660,10 @@ namespace Monopy.PreceRateWage.WinForm
                     if (listRes != null)
                     {
                         itemResult.RYBMBZ = listRes.RYBMBZ;
+                    }
+                    else
+                    {
+                        itemResult.RYBMBZ = itemResult.UserCode;
                     }
                 }
 

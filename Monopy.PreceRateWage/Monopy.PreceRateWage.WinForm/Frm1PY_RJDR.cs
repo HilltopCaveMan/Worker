@@ -167,6 +167,7 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
+                        btnSearch.PerformClick();
                         btnRecount.PerformClick();
                     }
                 }
@@ -196,7 +197,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-                            btnRecount.PerformClick();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -221,7 +222,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase1PY_RJDR>().Delete(item);
                     }
                 }
-                btnRecount.PerformClick();
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -276,7 +277,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1PY_RJDR>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase1PY_RJDR>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1PY_RJDR(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
@@ -367,7 +368,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var type = datas.Where(t => t.GH == item.GH).FirstOrDefault();
                     if (type == null)
                     {
-                        MessageBox.Show("总喷釉车间小件计件明细数据没有工号：【"+item.GH+"】的数据，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("总喷釉车间小件计件明细数据没有工号：【" + item.GH + "】的数据，请联系相关人员先导入数据", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
                     item.PJJJ = type.JJJE;

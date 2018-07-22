@@ -131,7 +131,7 @@ namespace Monopy.PreceRateWage.WinForm
 
         private void Import(string fileName)
         {
-            List<DataBase2CX_KFSS> list = new ExcelHelper<DataBase2CX_KFSS>().ReadExcel(fileName, 1, 5);
+            List<DataBase2CX_KFSS> list = new ExcelHelper<DataBase2CX_KFSS>().ReadExcel(fileName, 2, 5);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

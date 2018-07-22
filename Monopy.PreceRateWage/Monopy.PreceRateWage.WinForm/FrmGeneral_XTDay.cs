@@ -107,7 +107,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日） .xlsx", saveFileDlg.FileName, list, 2, 7, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBaseGeneral_XTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——学徒——入职表（日）.xlsx", saveFileDlg.FileName, list, 2, 7, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -251,12 +251,11 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBaseGeneral_XTDay>().Delete(item);
                     }
-                    new BaseDal<DataBaseGeneral_XTDay>().Delete(item);
+                    
                 }
                 new BaseDal<DataBase1CC_XTTZ>().ExecuteSqlCommand("delete from DataBase1CC_XTTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month + "and CJ = '" + _workShop + "'" + "and FactoryNo = '" + _factoryNo + "'");
                 btnRecount.PerformClick();

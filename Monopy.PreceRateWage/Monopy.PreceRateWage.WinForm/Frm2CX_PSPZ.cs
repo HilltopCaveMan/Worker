@@ -49,7 +49,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2CX_PSBZ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.UserCode.Contains(gh)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            var datas = new BaseDal<DataBase2CX_PSBZ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.GH.Contains(gh)).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2CX_PSBZ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
@@ -84,8 +84,8 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && string.IsNullOrEmpty(t.Classification));
-                var listGH = new BaseDal<DataBase1CX_GHDR>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
+                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && string.IsNullOrEmpty(t.Classification));
+                var listGH = new BaseDal<DataBase2CX_GHDR>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
 
                 foreach (var item in list)
                 {
@@ -136,6 +136,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
+                if (string.IsNullOrEmpty(list[i].PZ))
+                {
+                    list.Remove(list[i]);
+                    i--;
+                    continue;
+                }
                 list[i].No = (i + 1).ToString();
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
@@ -256,7 +262,8 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
-                        btnRecount.PerformClick();
+                        btnSearch.PerformClick();
+
                     }
                 }
             }

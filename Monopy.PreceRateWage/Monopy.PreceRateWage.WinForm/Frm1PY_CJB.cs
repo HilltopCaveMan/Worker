@@ -17,7 +17,7 @@ namespace Monopy.PreceRateWage.WinForm
     public partial class Frm1PY_CJB : Office2007Form
     {
 
-        string[] header = "Time$User$Year$Month$序号$类别$工种$人员编号$姓名$工号$出勤天数$学徒天数$合计$实出勤$应出勤$喷釉工（手工）考核$喷釉工（手工）计件$喷釉工（机械）考核$喷釉工（机械）计件$擦水工（手工）考核$擦水工（手工）计件$擦水工（机械）考核$擦水工（机械）计件".Split('$');
+        string[] header = "Time$User$Year$Month$序号$类别$工种$人员编号$姓名$工号$出勤天数$学徒天数$喷釉工（手工）考核$喷釉工（手工）计件$喷釉工（机械）考核$喷釉工（机械）计件$擦水工（手工）考核$擦水工（手工）计件$擦水工（机械）考核$擦水工（机械）计件".Split('$');
         string[] headerygz = "创建日期$创建人$年$月$类别$工种$人员编码$姓名$工号$出勤天数$学徒天数$实出勤$应出勤$标准$金额".Split('$');
         public Frm1PY_CJB()
         {
@@ -156,7 +156,7 @@ namespace Monopy.PreceRateWage.WinForm
                 maxNo++;
             }
             DataBase1PY_CJB DataBase1PY_CJB = new DataBase1PY_CJB() { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month, No = maxNo.ToString() };
-            FrmModify<DataBase1PY_CJB> frm = new FrmModify<DataBase1PY_CJB>(DataBase1PY_CJB, header, OptionType.Add, Text, 5, 11);
+            FrmModify<DataBase1PY_CJB> frm = new FrmModify<DataBase1PY_CJB>(DataBase1PY_CJB, header, OptionType.Add, Text, 5, 8);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
                 btnRecount.PerformClick();
@@ -233,7 +233,12 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 if (dgv.SelectedRows[0].DataBoundItem is DataBase1PY_CJB DataBase1PY_CJB)
                 {
-                    FrmModify<DataBase1PY_CJB> frm = new FrmModify<DataBase1PY_CJB>(DataBase1PY_CJB, header, OptionType.Modify, Text, 5, 11);
+                    if (DataBase1PY_CJB.LB == "合计")
+                    {
+                        MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
+                    FrmModify<DataBase1PY_CJB> frm = new FrmModify<DataBase1PY_CJB>(DataBase1PY_CJB, header, OptionType.Modify, Text, 5, 8);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnRecount.PerformClick();
@@ -253,7 +258,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1PY_CJB = dgv.SelectedRows[0].DataBoundItem as DataBase1PY_CJB;
-                if (DataBase1PY_CJB.No == "合计")
+                if (DataBase1PY_CJB.LB == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -286,7 +291,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.LB != "合计")
                     {
                         new BaseDal<DataBase1PY_CJB>().Delete(item);
                     }
@@ -464,24 +469,24 @@ namespace Monopy.PreceRateWage.WinForm
 
                 foreach (var item in list)
                 {
-                    var data = datas.Where(x => x.Position == item.GZ && x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
-                    if (data == null)
-                    {
-                        item.SCQ = "0";
-                        item.YCQ = "0";
+                    //var data = datas.Where(x => x.Position == item.GZ && x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
+                    //if (data == null)
+                    //{
+                    //    item.SCQ = "0";
+                    //    item.YCQ = "0";
 
-                        MessageBox.Show("没有【" + item.UserName + "】的出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    //    MessageBox.Show("没有【" + item.UserName + "】的出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
-                    }
-                    else
-                    {
-                        item.SCQ = data.DayScq;
-                        item.YCQ = data.DayYcq;
-                    }
+                    //}
+                    //else
+                    //{
+                    //    item.SCQ = data.DayScq;
+                    //    item.YCQ = data.DayYcq;
+                    //}
                     //计算合计
                     decimal.TryParse(item.CQTS, out decimal cqts);
                     decimal.TryParse(item.XTTS, out decimal xtts);
-                    item.HJ = (cqts + xtts).ToString();
+                    //item.HJ = (cqts + xtts).ToString();
                     if (item.LB == "手工橱")
                     {
                         DataBase1PY_RJDR rjdr = new BaseDal<DataBase1PY_RJDR>().GetList(t =>t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && string.IsNullOrEmpty(t.LX_Remark) && t.GH == item.GH).ToList().FirstOrDefault();
@@ -574,6 +579,7 @@ namespace Monopy.PreceRateWage.WinForm
         {
             List<DataBase1PY_CJB_YGZ> dataBase1PY_CJB_YGZs = new List<DataBase1PY_CJB_YGZ>();
             var listTJ = new BaseDal<DataBaseMonth>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "喷釉车间" && t.Classification == "月工资" && t.PostName == "擦水工（手工）").FirstOrDefault();
+            List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("一厂") && t.Dept.Contains("喷釉")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
             foreach (var item in list)
             {
@@ -586,17 +592,44 @@ namespace Monopy.PreceRateWage.WinForm
                     xCGKH.UserName = item.UserName;
                     xCGKH.GH = item.GH;
                     xCGKH.CQTS = item.CQTS;
-                    xCGKH.XTTS = item.XTTS;
-                    xCGKH.SCQ = item.SCQ;
-                    xCGKH.YCQ = item.YCQ;
+                    //xCGKH.XTTS = item.XTTS;
+                    //xCGKH.SCQ = item.SCQ;
+                    //xCGKH.YCQ = item.YCQ;
                     if (listTJ == null)
                     {
                         xCGKH.BZ = "0";
-                        MessageBox.Show("没有月工资的数据，无法计算，导入月工资后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        //MessageBox.Show("没有月工资的数据，无法计算，导入月工资后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                     else
                     {
                         xCGKH.BZ = listTJ.MoneyRZBZ;
+                    }
+                    var data = datas.Where(x => x.Position == item.GZ && x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
+                    if (data == null)
+                    {
+                        xCGKH.SCQ = "0";
+                        xCGKH.YCQ = "0";
+
+                        MessageBox.Show("没有【" + item.UserName + "】的出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    }
+                    else
+                    {
+                        xCGKH.SCQ = data.DayScq;
+                        xCGKH.YCQ = data.DayYcq;
+                    }
+                    var xtMonth = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.CJ == "喷釉" && t.UserCode == item.UserCode).ToList();
+                    var xtDay = new BaseDal<DataBaseGeneral_XTDay>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.CJ == "喷釉" && t.UserCode == item.UserCode).ToList();
+
+                    if ((xtMonth == null || xtMonth.Count == 0) && (xtDay == null || xtDay.Count == 0))
+                    {
+                        xCGKH.XTTS = "0";
+                    }
+                    else
+                    {
+                        int month = xtMonth != null ? xtMonth.Sum(t => int.TryParse(t.BZTS, out int monthBzts) ? monthBzts : 0) : 0;
+                        int day = xtDay != null ? xtDay.Sum(t => int.TryParse(t.BZTS, out int dayBzts) ? dayBzts : 0) : 0;
+                        xCGKH.XTTS = (month + day).ToString();
                     }
                     decimal.TryParse(xCGKH.XTTS, out decimal xtts);
                     decimal.TryParse(xCGKH.SCQ, out decimal scq);

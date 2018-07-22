@@ -828,16 +828,6 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
-        /// 一厂成型车间成型计件合计
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public static DataBase1CX_CXJJ GetTotalDataBase1CX_CXJJ(List<DataBase1CX_CXJJ> list)
-        {
-            return (list == null || list.Count == 0) ? new DataBase1CX_CXJJ { GH = "合计", FQHB = 0.ToString(), GZE = 0.ToString() } : new DataBase1CX_CXJJ { GH = "合计", FQHB = list.Sum(t => decimal.TryParse(t.FQHB, out decimal d) ? d : 0M).ToString(), GZE = list.Sum(t => decimal.TryParse(t.GZE, out decimal d) ? d : 0M).ToString() };
-        }
-
-        /// <summary>
         /// 一厂成型车间破损补助导入合计
         /// </summary>
         /// <param name="list"></param>
@@ -994,7 +984,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase2MJ_YMJJ GetTotalDataBase2MJ_YMJJ(List<DataBase2MJ_YMJJ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase2MJ_YMJJ { No = "合计", JE = 0.ToString() } : new DataBase2MJ_YMJJ { No = "合计", JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase2MJ_YMJJ { No = "合计",CHDX1=0.ToString(),CHDX2=0.ToString(),CHQX1=0.ToString(),CHQX2=0.ToString(), JE = 0.ToString() } : new DataBase2MJ_YMJJ { No = "合计", CHDX1 = list.Sum(t => decimal.TryParse(t.CHDX1, out decimal d) ? d : 0M).ToString(), CHDX2 = list.Sum(t => decimal.TryParse(t.CHDX2, out decimal d) ? d : 0M).ToString(), CHQX1 = list.Sum(t => decimal.TryParse(t.CHQX1, out decimal d) ? d : 0M).ToString(), CHQX2 = list.Sum(t => decimal.TryParse(t.CHQX2, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
         }
 
 
@@ -1097,16 +1087,6 @@ namespace Monopy.PreceRateWage.Dal
         public static DataBase2CX_KFSS GetTotalDataBase2CX_KFSS(List<DataBase2CX_KFSS> list)
         {
             return (list == null || list.Count == 0) ? new DataBase2CX_KFSS { CJ = "合计", SL = 0.ToString(), JE = 0.ToString() } : new DataBase2CX_KFSS { CJ = "合计", SL = list.Sum(t => decimal.TryParse(t.SL, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
-        }
-
-        /// <summary>
-        /// 二厂成型车间成型计件合计
-        /// </summary>
-        /// <param name="list"></param>
-        /// <returns></returns>
-        public static DataBase2CX_CXJJ GetTotalDataBase2CX_CXJJ(List<DataBase2CX_CXJJ> list)
-        {
-            return (list == null || list.Count == 0) ? new DataBase2CX_CXJJ { GH = "合计", FQHB = 0.ToString(), GZE = 0.ToString() } : new DataBase2CX_CXJJ { GH = "合计", FQHB = list.Sum(t => decimal.TryParse(t.FQHB, out decimal d) ? d : 0M).ToString(), GZE = list.Sum(t => decimal.TryParse(t.GZE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>
@@ -1252,7 +1232,7 @@ namespace Monopy.PreceRateWage.Dal
         /// <returns></returns>
         public static DataBase2CX_CX_06JJ GetTotalDataBase2CX_CX_03JJ(List<DataBase2CX_CX_06JJ> list)
         {
-            return (list == null || list.Count == 0) ? new DataBase2CX_CX_06JJ { No = "合计", BZ = "合计", KYL = 0.ToString(), YJP = 0.ToString(), PSS = 0.ToString(), JPS = 0.ToString(), MXS = 0.ToString(), ZJCS = 0.ToString(), MXS1 = 0.ToString(), ZJCS1 = 0.ToString(), KHGZ = 0.ToString(), JJGZ = 0.ToString(), HJ = 0.ToString() } : new DataBase2CX_CX_06JJ { No = "合计", BZ = "合计", KYL = list.Sum(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).ToString(), YJP = list.Sum(t => decimal.TryParse(t.YJP, out decimal d) ? d : 0M).ToString(), PSS = list.Sum(t => decimal.TryParse(t.PSS, out decimal d) ? d : 0M).ToString(), JPS = list.Sum(t => decimal.TryParse(t.JPS, out decimal d) ? d : 0M).ToString(), DLSL = list.Sum(t => decimal.TryParse(t.DLSL, out decimal d) ? d : 0M).ToString(), MXS = list.Sum(t => decimal.TryParse(t.MXS, out decimal d) ? d : 0M).ToString(), ZJCS = list.Sum(t => decimal.TryParse(t.ZJCS, out decimal d) ? d : 0M).ToString(), MXS1 = list.Sum(t => decimal.TryParse(t.MXS1, out decimal d) ? d : 0M).ToString(), ZJCS1 = list.Sum(t => decimal.TryParse(t.ZJCS1, out decimal d) ? d : 0M).ToString(), KHGZ = list.Sum(t => decimal.TryParse(t.KHGZ, out decimal d) ? d : 0M).ToString(), JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString() };
+            return (list == null || list.Count == 0) ? new DataBase2CX_CX_06JJ { No = "合计", BZ = "合计", KYL = 0.ToString(), YJP = 0.ToString(), PSS = 0.ToString(), JPS = 0.ToString(), MXS = 0.ToString(), ZJCS = 0.ToString(), MXS1 = 0.ToString(), ZJCS1 = 0.ToString(), KHGZ = 0.ToString(), JJGZ = 0.ToString(), HJ = 0.ToString(),CLKH=0.ToString(),ZLKH=0.ToString() } : new DataBase2CX_CX_06JJ { No = "合计", BZ = "合计", KYL = list.Sum(t => decimal.TryParse(t.KYL, out decimal d) ? d : 0M).ToString(), YJP = list.Sum(t => decimal.TryParse(t.YJP, out decimal d) ? d : 0M).ToString(), PSS = list.Sum(t => decimal.TryParse(t.PSS, out decimal d) ? d : 0M).ToString(), JPS = list.Sum(t => decimal.TryParse(t.JPS, out decimal d) ? d : 0M).ToString(), DLSL = list.Sum(t => decimal.TryParse(t.DLSL, out decimal d) ? d : 0M).ToString(), MXS = list.Sum(t => decimal.TryParse(t.MXS, out decimal d) ? d : 0M).ToString(), ZJCS = list.Sum(t => decimal.TryParse(t.ZJCS, out decimal d) ? d : 0M).ToString(), MXS1 = list.Sum(t => decimal.TryParse(t.MXS1, out decimal d) ? d : 0M).ToString(), ZJCS1 = list.Sum(t => decimal.TryParse(t.ZJCS1, out decimal d) ? d : 0M).ToString(), KHGZ = list.Sum(t => decimal.TryParse(t.KHGZ, out decimal d) ? d : 0M).ToString(), JJGZ = list.Sum(t => decimal.TryParse(t.JJGZ, out decimal d) ? d : 0M).ToString(), HJ = list.Sum(t => decimal.TryParse(t.HJ, out decimal d) ? d : 0M).ToString(), CLKH = list.Sum(t => decimal.TryParse(t.CLKH, out decimal d) ? d : 0M).ToString(), ZLKH = list.Sum(t => decimal.TryParse(t.ZLKH, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>

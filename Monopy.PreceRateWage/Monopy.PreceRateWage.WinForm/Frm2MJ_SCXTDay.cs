@@ -92,7 +92,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2MJ_SCXTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出四厂——学徒——入职表.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2MJ_SCXTDay>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出四厂——学徒——入职表.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -235,12 +235,11 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No == "合计")
+                    if (item.No != "合计")
                     {
-                        list.Remove(item);
-                        continue;
+                        new BaseDal<DataBase2MJ_SCXTDay>().Delete(item);
                     }
-                    new BaseDal<DataBase2MJ_SCXTDay>().Delete(item);
+
                 }
                 btnRecount.PerformClick();
                 return;
@@ -376,7 +375,7 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
                 var itemTmp = list.FirstOrDefault();
-                var listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == "四厂");
+                var listHrCQ = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == itemTmp.TheYear && t.TheMonth == itemTmp.TheMonth && t.Factory == "二厂");
                 if (listHrCQ == null || listHrCQ.Count() == 0)
                 {
                     MessageBox.Show("没有出勤数据，无法计算，导入出勤后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -431,7 +430,7 @@ namespace Monopy.PreceRateWage.WinForm
                     //生成台账
                     if (!string.IsNullOrEmpty(item.BZJE))
                     {
-                        var itemTZ = new DataBase2MJ_SCXTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = item.TheYear, TheMonth = item.TheMonth, No = no.ToString(), TimeBZ = new DateTime(item.TheYear, item.TheMonth, 1), GW = item.GZ, UserCode = item.UserCode, UserName = item.UserName, Money = item.BZJE };
+                        var itemTZ = new DataBase2MJ_SCXTTZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = item.TheYear, TheMonth = item.TheMonth, No = no.ToString(), CJ = "模具", TimeBZ = new DateTime(item.TheYear, item.TheMonth, 1), GW = item.GZ, UserCode = item.UserCode, UserName = item.UserName, Money = item.BZTS };
                         listTZ.Add(itemTZ);
                     }
                     no++;

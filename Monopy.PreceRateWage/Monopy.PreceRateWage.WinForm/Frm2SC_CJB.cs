@@ -92,7 +92,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2SC_CJB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——烧成——车间报.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2SC_CJB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——烧成——车间报.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -257,7 +257,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2SC_CJB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase2SC_CJB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2SC_CJB(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
@@ -335,7 +335,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("一厂") && t.Dept.Contains("烧成")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+                List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("二厂") && t.Dept.Contains("烧成")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
                 foreach (var item in list)
                 {

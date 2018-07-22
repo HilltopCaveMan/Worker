@@ -77,7 +77,7 @@ namespace Monopy.PreceRateWage.WinForm
                 try
                 {
                     List<DataBase2CX_PMCJP> list = new List<DataBase2CX_PMCJP>();
-                    DateTime dateTime = DateTime.Now;
+                    DateTime dateTime = dtp.Value;
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;
@@ -174,7 +174,7 @@ namespace Monopy.PreceRateWage.WinForm
             sfd.FileName = "梦牌二厂成型--精坯月报-" + dtp.Value.ToString("yyyy年MM月") + ".xls";
             if (sfd.ShowDialog() == DialogResult.OK)
             {
-                byte[] data = new ExcelHelper().DataTable2Excel(dt, "精坯月报", "一工厂" + dtp.Value.ToString("yyyy年MM月") + "精坯月报");
+                byte[] data = new ExcelHelper().DataTable2Excel(dt, "精坯月报", "二工厂" + dtp.Value.ToString("yyyy年MM月") + "精坯月报");
                 try
                 {
                     if (sfd.FileName.Substring(sfd.FileName.Length - 4) != ".xls")
@@ -319,7 +319,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             var datas = new List<DataBase2CX_PMCJP>();
 
-            datas = new BaseDal<DataBase2CX_PMCJP>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => t.UserCode).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+            datas = new BaseDal<DataBase2CX_PMCJP>().GetList(t => (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && t.TheYear == dtp.Year && t.TheMonth == dtp.Month).ToList().OrderBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
             RefGrid(datas);
 

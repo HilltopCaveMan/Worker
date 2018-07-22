@@ -115,7 +115,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var DataBase2CX_CX_04XTQKH = dgv.SelectedRows[0].DataBoundItem as DataBase2CX_CX_04XTQKH;
                 if (DataBase2CX_CX_04XTQKH != null)
                 {
-                  
+
                     FrmModify<DataBase2CX_CX_04XTQKH> frm = new FrmModify<DataBase2CX_CX_04XTQKH>(DataBase2CX_CX_04XTQKH, header, OptionType.Modify, Text, 5);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
@@ -224,7 +224,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2CX_CX_04XTQKH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase2CX_CX_04XTQKH>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
             {

@@ -441,11 +441,11 @@ namespace Monopy.PreceRateWage.WinForm
 
                         if (kk >= mbhgp)
                         {
-                            itemResult.KHGZ = ((kk - mbhgp) * mm + sfbz).ToString();
+                            itemResult.KHGZ = ((kk - mbhgp) * mm * sfbz).ToString();
                         }
                         if (kk < mbhgp)
                         {
-                            itemResult.KHGZ = ((kk - mbhgp) * mm + xfbz).ToString();
+                            itemResult.KHGZ = ((kk - mbhgp) * mm * xfbz).ToString();
                         }
                     }
                     decimal.TryParse(itemResult.PSS, out decimal pss);//破损数

@@ -77,7 +77,7 @@ namespace Monopy.PreceRateWage.WinForm
                 try
                 {
                     List<DataBase1CX_PMCJP> list = new List<DataBase1CX_PMCJP>();
-                    DateTime dateTime = DateTime.Now;
+                    DateTime dateTime = dtp.Value;
                     using (FileStream fs = new FileStream(openFileDlg.FileName, FileMode.Open, FileAccess.Read))
                     {
                         IWorkbook workbook = null;

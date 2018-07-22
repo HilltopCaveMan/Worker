@@ -129,6 +129,7 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
+                        btnSearch.PerformClick();
                     }
                 }
             }
@@ -157,6 +158,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -181,7 +183,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase2YL_JJTB>().Delete(item);
                     }
                 }
-
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -254,6 +256,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
+                if (string.IsNullOrEmpty(list[i].PZ))
+                {
+                    list.Remove(list[i]);
+                    i--;
+                    continue;
+                }
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
                 list[i].TheYear = dtp.Value.Year;

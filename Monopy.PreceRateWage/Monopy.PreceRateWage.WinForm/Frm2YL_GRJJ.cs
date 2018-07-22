@@ -129,6 +129,7 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
+                        btnSearch.PerformClick();
                     }
                 }
             }
@@ -157,6 +158,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -181,7 +183,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase2YL_GRJJ>().Delete(item);
                     }
                 }
-
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -226,7 +228,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2YL_GRJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase2YL_GRJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName.Contains(userName))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2YL_GRJJ(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 5; i++)
@@ -254,6 +256,12 @@ namespace Monopy.PreceRateWage.WinForm
             Enabled = false;
             for (int i = 0; i < list.Count; i++)
             {
+                if (string.IsNullOrEmpty(list[i].GW))
+                {
+                    list.Remove(list[i]);
+                    i--;
+                    continue;
+                }
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
                 list[i].TheYear = dtp.Value.Year;
