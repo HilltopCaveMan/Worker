@@ -87,8 +87,8 @@ namespace Monopy.PreceRateWage.WinForm
         {
             try
             {
-                System.Globalization.CultureInfo Culinfo = System.Globalization.CultureInfo.CreateSpecificCulture("zh-Cn");
-                var dataDay = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "技术员");
+                //System.Globalization.CultureInfo Culinfo = System.Globalization.CultureInfo.CreateSpecificCulture("zh-Cn");
+                var dataDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "技术员").ToList();
 
                 foreach (var item in list)
                 {
@@ -96,25 +96,25 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(item.GDZTZL_MB, out decimal d4);
                     decimal.TryParse(item.GDZTZL_SJWC, out decimal e4);
                     decimal j4 = d4 - e4;
-                    item.GDZTZL_MB = d4.ToString("P", Culinfo);
-                    item.GDZTZL_SJWC = e4.ToString("P", Culinfo);
-                    item.GDZTZL_CL = (j4).ToString("P", Culinfo);
+                    item.GDZTZL_MB = d4.ToString();
+                    item.GDZTZL_SJWC = e4.ToString();
+                    item.GDZTZL_CL = (j4).ToString();
 
                     //工段差手质量
                     decimal.TryParse(item.GDCSZL_MB, out decimal f4);
                     decimal.TryParse(item.GDCSZL_SJWC, out decimal g4);
-                    decimal l4 = g4 - f4;
-                    item.GDCSZL_MB = f4.ToString("P", Culinfo);
-                    item.GDCSZL_SJWC = g4.ToString("P", Culinfo);
-                    item.GDCSZL_CL = (l4).ToString("P", Culinfo);
+                    decimal l4 = f4 - g4;
+                    item.GDCSZL_MB = f4.ToString();
+                    item.GDCSZL_SJWC = g4.ToString();
+                    item.GDCSZL_CL = (l4).ToString();
 
                     //工段工段产量
                     decimal.TryParse(item.GDGDCL_MB, out decimal h4);
                     decimal.TryParse(item.GDGDCL_SJWC, out decimal i4);
                     decimal n4 = i4 - h4;
-                    item.GDGDCL_SJWC = (i4).ToString("P", Culinfo);
-                    item.GDGDCL_MB = (h4).ToString("P", Culinfo);
-                    item.GDGDCL_CL = (n4).ToString("P", Culinfo);
+                    item.GDGDCL_SJWC = (i4).ToString();
+                    item.GDGDCL_MB = (h4).ToString();
+                    item.GDGDCL_CL = (n4).ToString();
 
                     var dataDayZTZL = dataDay.Where(t => t.Classification == "工段整体质量").FirstOrDefault();
                     var dataDayCSZL = dataDay.Where(t => t.Classification == "工段差手质量").FirstOrDefault();
@@ -156,7 +156,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         item.GDCSZL_KHJE = "0";
                     }
-                    else if (j4 >= 0)
+                    else if (l4 >= 0)
                     {
                         item.GDCSZL_KHJE = dataDayCSZL.UnitPrice;
                     }
@@ -179,17 +179,12 @@ namespace Monopy.PreceRateWage.WinForm
                     }
 
                     //工段整体产量
-                    if (n4 >= 0)
-                    {
-                        item.GDGDCL_KHJE = dataDayZTCL.UnitPrice;
-                    }
-                    else
-                    {
-                        decimal.TryParse(dataDayZTCL.UnitPrice, out decimal UnitPrice);
-                        decimal.TryParse(dataDayZTCL.GRJSB1, out decimal grjsb);
-                        decimal.TryParse(dataDayZTCL.GRJLDJ1, out decimal grjldj);
-                        item.GDGDCL_KHJE = (UnitPrice + n4 / grjsb * grjldj).ToString();
-                    }
+
+                    decimal.TryParse(dataDayZTCL.UnitPrice, out decimal ztclUnitPrice);
+                    decimal.TryParse(dataDayZTCL.GRJSB1, out decimal grjsb);
+                    decimal.TryParse(dataDayZTCL.GRJLDJ1, out decimal grjldj);
+                    item.GDGDCL_KHJE = (ztclUnitPrice + n4 / grjsb * grjldj).ToString();
+
                     decimal.TryParse(item.GDGDCL_KHJE, out decimal ztclkh);
                     decimal.TryParse(dataDayZTCL.KHJESFD, out decimal ZTCLsfd);
                     decimal.TryParse(dataDayZTCL.KHJEXFD, out decimal ZTCLxfd);
@@ -202,7 +197,7 @@ namespace Monopy.PreceRateWage.WinForm
                         item.GDGDCL_KHJE = ZTCLxfd.ToString();
                     }
 
-                    List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("一厂") && t.Dept.Contains("成型")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
+                    List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("二厂") && t.Dept.Contains("成型") && t.Position == "技术员").ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
                     var data = datas.Where(x => x.UserCode == item.UserCode && x.UserName == item.UserName).FirstOrDefault();
                     if (data == null)
@@ -257,7 +252,7 @@ namespace Monopy.PreceRateWage.WinForm
             for (int i = 0; i < flag - 1; i++)
             {
                 var item = list[i];
-                var kh = new DataBase2CX_JSY_01CXJSYKH_02KH { Id = item.Id, CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), GD = item.UserCode, UserCode = item.UserName, UserName = item.GH, GDZTZL_MB = item.SYKYL, GDZTZL_SJWC = item.BYKYL, GDGDCL_MB = item.MBZ, GDGDCL_SJWC = item.SJWC, No = item.No, TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month };
+                var kh = new DataBase2CX_JSY_01CXJSYKH_02KH { Id = item.Id, CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), GD = item.UserCode, UserCode = item.UserName, UserName = item.GH, GDZTZL_MB = item.SYKYL, GDZTZL_SJWC = item.BYKYL, GDCSZL_MB = item.SYYJP, GDCSZL_SJWC = item.BYYJP, GDGDCL_MB = item.MBZ, GDGDCL_SJWC = item.SJWC, No = item.No, TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month };
                 listKH.Add(kh);
             }
             for (int i = flag + 1; i < list.Count; i++)

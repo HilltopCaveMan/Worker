@@ -152,6 +152,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -176,6 +177,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase1CX_GHDR>().Delete(item);
                     }
                 }
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -232,14 +234,14 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase1CX_GHDR>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase1CX_GHDR>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH == gh)).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
 
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
-           
+
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];

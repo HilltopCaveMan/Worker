@@ -354,7 +354,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && !string.IsNullOrEmpty(t.TypesName));
+                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && !string.IsNullOrEmpty(t.TypesName));
                 var listResult = new List<DataBase2CX_CX_06JJ>();
                 foreach (var item in list)
                 {
@@ -382,18 +382,18 @@ namespace Monopy.PreceRateWage.WinForm
                         CKL = item.CKL
                     };
 
-                    var listXTQ = new BaseDal<DataBase2CX_CX_04XTQKH>().Get(t => t.UserCode == itemResult.UserCode);
+                    var listXTQ = new BaseDal<DataBase2CX_CX_04XTQKH>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.UserCode == itemResult.UserCode);
                     if (listXTQ != null)
                     {
                         itemResult.SFXTQ = listXTQ.SFXTQ;
                     }
 
-                    var listDLDT = new BaseDal<DataBase2CX_CX_07DLDT>().Get(t => t.UserCode == itemResult.UserCode && t.PZ == itemResult.CHMC);
+                    var listDLDT = new BaseDal<DataBase2CX_CX_07DLDT>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.UserCode == itemResult.UserCode && t.PZ == itemResult.CHMC);
                     if (listDLDT != null)
                     {
                         itemResult.GBTZDJ = listDLDT.DJ;
                     }
-                    var listTB = new BaseDal<DataBase2CX_CX_02JJKHTB>().Get(t => t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ);
+                    var listTB = new BaseDal<DataBase2CX_CX_02JJKHTB>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ && t.UserCode == item.UserCode);
                     if (listTB != null)
                     {
                         itemResult.MXS = listTB.MXS;
@@ -414,7 +414,7 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(itemResult.MXS1, out decimal tt);//模型数1
                     decimal.TryParse(itemResult.ZJCS1, out decimal uu);//注浆次数1
 
-                    var vv = oo / (rr * ss + tt * uu);//实际交坯率
+                    var vv = (rr * ss + tt * uu) == 0 ? 0 : oo / (rr * ss + tt * uu);//实际交坯率
                     itemResult.SJJPL = vv.ToString();
 
 
@@ -433,9 +433,10 @@ namespace Monopy.PreceRateWage.WinForm
                     decimal.TryParse(itemResult.CLZB, out decimal clzb);//产量指标
                     decimal.TryParse(itemResult.CLCJJDJ, out decimal clcjjdj);//产量超件奖单价
                     decimal.TryParse(itemResult.CLCJKDJ, out decimal clcjkdj);//产量亏件罚单价
-                    decimal.TryParse(itemResult.ZLFDZB, out decimal zlfdzb);//产量奋斗指标
+                    decimal.TryParse(itemResult.ZLDXZB, out decimal zldxzb);//产量奋斗指标
+                    decimal.TryParse(itemResult.ZLFDZB, out decimal zlfdzb);//质量奋斗指标
                     decimal.TryParse(itemDay.GRJLDJ4, out decimal grjldj4);//个人奖励单价4
-                    decimal.TryParse(itemDay.GRJLDJ3, out decimal grjldj3);//个人奖励单价3
+                    decimal.TryParse(itemDay.GRFKDJ3, out decimal grjldj3);//个人奖励单价3
                     //产量考核
                     if (string.IsNullOrEmpty(itemResult.CLZB) || clzb == 0)
                     {
@@ -454,7 +455,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
 
                     //质量考核
-                    if (string.IsNullOrEmpty(itemResult.ZLFDZB) || zlfdzb == 0)
+                    if (string.IsNullOrEmpty(itemResult.ZLDXZB) || zldxzb == 0)
                     {
                         itemResult.ZLKH = "0";
                     }
@@ -464,9 +465,9 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             itemResult.ZLKH = ((kk - jj * zlfdzb) * grjldj4).ToString();
                         }
-                        if (nn < zlfdzb)
+                        if (nn < zldxzb)
                         {
-                            itemResult.ZLKH = ((kk - jj * zlfdzb) * grjldj3).ToString();
+                            itemResult.ZLKH = ((kk - jj * zldxzb) * grjldj3).ToString();
                         }
                     }
 
@@ -479,12 +480,12 @@ namespace Monopy.PreceRateWage.WinForm
                     //计件工资
                     if (string.IsNullOrEmpty(itemResult.GBTZDJ))
                     {
-                        itemResult.JJGZ = (kk * mm - pss * mm * ckl + dl * 2).ToString();
+                        itemResult.JJGZ = (kk * mm - pss * mm * ckl - dl * 2).ToString();
                     }
                     else
                     {
                         decimal.TryParse(itemResult.GBTZDJ, out decimal gbtzdj);//个别调整单价
-                        itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl + dl * 2).ToString();
+                        itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl - dl * 2).ToString();
                     }
                     //合计
                     decimal.TryParse(itemResult.KHGZ, out decimal khgz);//考核工资
@@ -495,7 +496,7 @@ namespace Monopy.PreceRateWage.WinForm
                 }
                 return listResult;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 return null;
             }

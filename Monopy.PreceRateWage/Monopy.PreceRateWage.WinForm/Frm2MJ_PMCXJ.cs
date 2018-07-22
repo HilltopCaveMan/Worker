@@ -135,10 +135,10 @@ namespace Monopy.PreceRateWage.WinForm
                                 continue;
                             }
                             DataBase2MJ_PMCXJ t = new DataBase2MJ_PMCXJ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month };
-                            t.No = (i - 1).ToString();
-                            t.GW = ExcelHelper.GetCellValue(row.GetCell(0));
-                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(1));
-                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(2));
+                            t.No = ExcelHelper.GetCellValue(row.GetCell(0));
+                            t.GW = ExcelHelper.GetCellValue(row.GetCell(1));
+                            t.UserCode = ExcelHelper.GetCellValue(row.GetCell(2));
+                            t.UserName = ExcelHelper.GetCellValue(row.GetCell(3));
                             if (string.IsNullOrEmpty(t.UserCode) || string.IsNullOrEmpty(t.UserName))
                             {
                                 continue;
@@ -148,9 +148,9 @@ namespace Monopy.PreceRateWage.WinForm
                                 MessageBox.Show("工号：【" + t.UserCode + "】,姓名：【" + t.UserName + "】,与ERP中人员信息不一致" + Environment.NewLine + "ERP姓名为：【" + userNameERP + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                            t.RQ = ExcelHelper.GetCellValue(row.GetCell(3));
+                            t.RQ = ExcelHelper.GetCellValue(row.GetCell(4));
                             t.Childs = new List<DataBase2MJ_PMCXJ_Child>();
-                            for (j = 4; j < row.LastCellNum; j++)
+                            for (j = 5; j < row.LastCellNum; j++)
                             {
                                 var x = new DataBase2MJ_PMCXJ_Child { Id = Guid.NewGuid() };
                                 string cpmc = ExcelHelper.GetCellValue(rowFirst.GetCell(j));
@@ -399,7 +399,7 @@ namespace Monopy.PreceRateWage.WinForm
                             try
                             {
                                 string sqlMain = "delete from DataBase2MJ_PMCXJ where id=@id";
-                                string sqlChild = "delete from DataBase2MJ_PMCXJ where DataBase2MJ_PMCXJ_Id=@id";
+                                string sqlChild = "delete from DataBase2MJ_PMCXJ_Child where DataBase2MJ_PMCXJ_Id=@id";
                                 foreach (var item in list)
                                 {
                                     conn.Execute(sqlChild, new { id = item.Id.ToString() }, dbTransaction, null, null);

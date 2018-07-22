@@ -414,7 +414,7 @@ namespace Monopy.PreceRateWage.WinForm
                 List<DataBaseGeneral_CQ> datas = new BaseDal<DataBaseGeneral_CQ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.Factory.Contains("二厂") && t.Dept.Contains("成型")).ToList().OrderBy(t => t.Factory).ThenBy(t => t.Dept).ThenBy(t => int.TryParse(t.No, out int i) ? i : int.MaxValue).ToList();
 
 
-                var listGr = new BaseDal<DataBase2CX_CXJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
+                var listGr = new BaseDal<DataBase2CX_CX_06JJ_GR>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month);
                 if (listGr == null || listGr.Count() == 0)
                 {
                     MessageBox.Show("没有个人工资，请先完成计件，再计算！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -439,7 +439,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var tmpGr = listGr.Where(t => t.GH == item.TDGH).ToList();
                     if (tmpGr != null && tmpGr.Count() > 0)
                     {
-                        item.TDJJ = tmpGr.Sum(t => decimal.TryParse(t.GZE, out decimal d) ? d : 0M).ToString();
+                        item.TDJJ = tmpGr.Sum(t => decimal.TryParse(t.GRHJ, out decimal d) ? d : 0M).ToString();
                     }
                     decimal.TryParse(item.TDJJ, out decimal tdjj);
                     decimal.TryParse(item.BTBZ, out decimal btbz);

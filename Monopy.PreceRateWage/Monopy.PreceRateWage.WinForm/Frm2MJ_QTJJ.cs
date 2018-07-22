@@ -147,7 +147,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var DataBase2MJ_QTJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2MJ_QTJJ;
                 if (DataBase2MJ_QTJJ != null)
                 {
-                    if (DataBase2MJ_QTJJ.UserName == "合计")
+                    if (DataBase2MJ_QTJJ.GW == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -172,7 +172,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase2MJ_QTJJ = dgv.SelectedRows[0].DataBoundItem as DataBase2MJ_QTJJ;
-                if (DataBase2MJ_QTJJ.No == "合计")
+                if (DataBase2MJ_QTJJ.GW == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -185,7 +185,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-                            btnRecount.PerformClick();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -205,12 +205,12 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.GW != "合计")
                     {
                         new BaseDal<DataBase2MJ_QTJJ>().Delete(item);
                     }
                 }
-                btnRecount.PerformClick();
+                btnSearch.PerformClick();
                 return;
             }
             else

@@ -585,7 +585,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dr_sum[j] = tp[j - 5];
             }
             dr_sum["岗位"] = "合计";
-            dt.Rows.InsertAt(dr_sum, 3);
+            dt.Rows.InsertAt(dr_sum, 2);
             dgv.DataSource = dt;
             dgv.Columns[4].Frozen = true;
             for (int i = 0; i < 3; i++)
@@ -670,7 +670,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dr_sum[j] = tp[j - 11];
             }
             dr_sum["GW"] = "合计";
-            dr_sum["Id"] = string.Empty;
+            //dr_sum["Id"] = string.Empty;
             dt.Rows.InsertAt(dr_sum, 2);
             string[] header = "金额$ID$time$user$Year$Month$序号$岗位$人员编码$姓名$日期".Split('$');
             dgv.DataSource = dt;

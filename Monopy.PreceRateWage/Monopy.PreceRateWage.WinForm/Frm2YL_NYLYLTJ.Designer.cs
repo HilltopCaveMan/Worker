@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.groupPanel2 = new DevComponents.DotNetBar.Controls.GroupPanel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.btnViewExcel = new DevComponents.DotNetBar.ButtonX();
@@ -70,9 +70,10 @@
             this.groupPanel2.Controls.Add(this.tableLayoutPanel1);
             this.groupPanel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.groupPanel2.DrawTitleBox = false;
-            this.groupPanel2.Location = new System.Drawing.Point(0, 255);
+            this.groupPanel2.Location = new System.Drawing.Point(0, 319);
+            this.groupPanel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel2.Name = "groupPanel2";
-            this.groupPanel2.Size = new System.Drawing.Size(886, 64);
+            this.groupPanel2.Size = new System.Drawing.Size(1181, 80);
             // 
             // 
             // 
@@ -118,19 +119,21 @@
             this.tableLayoutPanel1.Controls.Add(this.btnExportExcel2, 3, 0);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 1;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(663, 40);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(884, 53);
             this.tableLayoutPanel1.TabIndex = 5;
             // 
             // btnViewExcel
             // 
             this.btnViewExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnViewExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnViewExcel.Location = new System.Drawing.Point(3, 3);
+            this.btnViewExcel.Location = new System.Drawing.Point(4, 4);
+            this.btnViewExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnViewExcel.Name = "btnViewExcel";
-            this.btnViewExcel.Size = new System.Drawing.Size(159, 34);
+            this.btnViewExcel.Size = new System.Drawing.Size(213, 45);
             this.btnViewExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnViewExcel.Symbol = "";
             this.btnViewExcel.TabIndex = 1;
@@ -142,9 +145,10 @@
             this.btnImportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnImportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.MagentaWithBackground;
             this.btnImportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnImportExcel.Location = new System.Drawing.Point(168, 3);
+            this.btnImportExcel.Location = new System.Drawing.Point(225, 4);
+            this.btnImportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnImportExcel.Name = "btnImportExcel";
-            this.btnImportExcel.Size = new System.Drawing.Size(159, 34);
+            this.btnImportExcel.Size = new System.Drawing.Size(213, 45);
             this.btnImportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnImportExcel.Symbol = "";
             this.btnImportExcel.TabIndex = 0;
@@ -156,9 +160,10 @@
             this.btnExportExcel.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel.Location = new System.Drawing.Point(333, 3);
+            this.btnExportExcel.Location = new System.Drawing.Point(446, 4);
+            this.btnExportExcel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportExcel.Name = "btnExportExcel";
-            this.btnExportExcel.Size = new System.Drawing.Size(159, 34);
+            this.btnExportExcel.Size = new System.Drawing.Size(213, 45);
             this.btnExportExcel.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel.Symbol = "";
             this.btnExportExcel.TabIndex = 2;
@@ -170,9 +175,10 @@
             this.btnExportExcel2.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
             this.btnExportExcel2.ColorTable = DevComponents.DotNetBar.eButtonColor.OrangeWithBackground;
             this.btnExportExcel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.btnExportExcel2.Location = new System.Drawing.Point(498, 3);
+            this.btnExportExcel2.Location = new System.Drawing.Point(667, 4);
+            this.btnExportExcel2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExportExcel2.Name = "btnExportExcel2";
-            this.btnExportExcel2.Size = new System.Drawing.Size(162, 34);
+            this.btnExportExcel2.Size = new System.Drawing.Size(213, 45);
             this.btnExportExcel2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnExportExcel2.Symbol = "";
             this.btnExportExcel2.TabIndex = 2;
@@ -197,8 +203,9 @@
             this.groupPanel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.groupPanel1.DrawTitleBox = false;
             this.groupPanel1.Location = new System.Drawing.Point(0, 0);
+            this.groupPanel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupPanel1.Name = "groupPanel1";
-            this.groupPanel1.Size = new System.Drawing.Size(886, 59);
+            this.groupPanel1.Size = new System.Drawing.Size(1181, 74);
             // 
             // 
             // 
@@ -233,9 +240,10 @@
             // btnSearchCS
             // 
             this.btnSearchCS.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearchCS.Location = new System.Drawing.Point(233, 3);
+            this.btnSearchCS.Location = new System.Drawing.Point(311, 4);
+            this.btnSearchCS.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearchCS.Name = "btnSearchCS";
-            this.btnSearchCS.Size = new System.Drawing.Size(94, 28);
+            this.btnSearchCS.Size = new System.Drawing.Size(125, 35);
             this.btnSearchCS.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearchCS.Symbol = "";
             this.btnSearchCS.TabIndex = 16;
@@ -252,9 +260,10 @@
             this.labelX2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
             this.labelX2.Font = new System.Drawing.Font("宋体", 12F);
             this.labelX2.ForeColor = System.Drawing.Color.Blue;
-            this.labelX2.Location = new System.Drawing.Point(363, 4);
+            this.labelX2.Location = new System.Drawing.Point(484, 5);
+            this.labelX2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX2.Name = "labelX2";
-            this.labelX2.Size = new System.Drawing.Size(396, 26);
+            this.labelX2.Size = new System.Drawing.Size(493, 33);
             this.labelX2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX2.Symbol = "";
             this.labelX2.SymbolColor = System.Drawing.Color.Red;
@@ -269,7 +278,8 @@
             // 
             // 
             this.lblPg.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblPg.Location = new System.Drawing.Point(999, 8);
+            this.lblPg.Location = new System.Drawing.Point(1332, 10);
+            this.lblPg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblPg.Name = "lblPg";
             this.lblPg.Size = new System.Drawing.Size(0, 0);
             this.lblPg.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -283,7 +293,8 @@
             // 
             // 
             this.lblLb2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblLb2.Location = new System.Drawing.Point(843, 8);
+            this.lblLb2.Location = new System.Drawing.Point(1124, 10);
+            this.lblLb2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblLb2.Name = "lblLb2";
             this.lblLb2.Size = new System.Drawing.Size(0, 0);
             this.lblLb2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -294,10 +305,11 @@
             this.dtp.CustomFormat = "yyyy-MM";
             this.dtp.Font = new System.Drawing.Font("宋体", 12F);
             this.dtp.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtp.Location = new System.Drawing.Point(54, 4);
+            this.dtp.Location = new System.Drawing.Point(72, 5);
+            this.dtp.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dtp.Name = "dtp";
             this.dtp.ShowUpDown = true;
-            this.dtp.Size = new System.Drawing.Size(86, 26);
+            this.dtp.Size = new System.Drawing.Size(113, 30);
             this.dtp.TabIndex = 12;
             // 
             // lblLb1
@@ -308,7 +320,8 @@
             // 
             // 
             this.lblLb1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblLb1.Location = new System.Drawing.Point(687, 8);
+            this.lblLb1.Location = new System.Drawing.Point(916, 10);
+            this.lblLb1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblLb1.Name = "lblLb1";
             this.lblLb1.Size = new System.Drawing.Size(0, 0);
             this.lblLb1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -322,7 +335,8 @@
             // 
             // 
             this.lblMc2.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblMc2.Location = new System.Drawing.Point(531, 8);
+            this.lblMc2.Location = new System.Drawing.Point(708, 10);
+            this.lblMc2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblMc2.Name = "lblMc2";
             this.lblMc2.Size = new System.Drawing.Size(0, 0);
             this.lblMc2.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -336,7 +350,8 @@
             // 
             // 
             this.lblMc1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.lblMc1.Location = new System.Drawing.Point(750, 17);
+            this.lblMc1.Location = new System.Drawing.Point(1000, 21);
+            this.lblMc1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.lblMc1.Name = "lblMc1";
             this.lblMc1.Size = new System.Drawing.Size(0, 0);
             this.lblMc1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
@@ -345,9 +360,10 @@
             // btnSearch
             // 
             this.btnSearch.AccessibleRole = System.Windows.Forms.AccessibleRole.PushButton;
-            this.btnSearch.Location = new System.Drawing.Point(143, 3);
+            this.btnSearch.Location = new System.Drawing.Point(191, 4);
+            this.btnSearch.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSearch.Name = "btnSearch";
-            this.btnSearch.Size = new System.Drawing.Size(87, 28);
+            this.btnSearch.Size = new System.Drawing.Size(116, 35);
             this.btnSearch.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.btnSearch.Symbol = "";
             this.btnSearch.TabIndex = 4;
@@ -362,9 +378,10 @@
             // 
             // 
             this.labelX1.BackgroundStyle.CornerType = DevComponents.DotNetBar.eCornerType.Square;
-            this.labelX1.Location = new System.Drawing.Point(10, 8);
+            this.labelX1.Location = new System.Drawing.Point(13, 10);
+            this.labelX1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.labelX1.Name = "labelX1";
-            this.labelX1.Size = new System.Drawing.Size(44, 18);
+            this.labelX1.Size = new System.Drawing.Size(54, 21);
             this.labelX1.Style = DevComponents.DotNetBar.eDotNetBarStyle.StyleManagerControlled;
             this.labelX1.TabIndex = 0;
             this.labelX1.Text = "日期：";
@@ -373,58 +390,59 @@
             // 
             this.dgv.AllowUserToAddRows = false;
             this.dgv.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle16.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
-            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle16;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(231)))), ((int)(((byte)(246)))), ((int)(((byte)(253)))));
+            this.dgv.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             this.dgv.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             this.dgv.BackgroundColor = System.Drawing.SystemColors.Window;
             this.dgv.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dgv.ColumnFont = null;
             this.dgv.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
-            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle17.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
-            dataGridViewCellStyle17.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle17.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle17.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle17;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(247)))), ((int)(((byte)(246)))), ((int)(((byte)(239)))));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgv.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgv.ColumnSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle18.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle18.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle18.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
-            dataGridViewCellStyle18.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgv.DefaultCellStyle = dataGridViewCellStyle18;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(59)))), ((int)(((byte)(188)))), ((int)(((byte)(240)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgv.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgv.EnableHeadersVisualStyles = false;
             this.dgv.GridColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.dgv.HeadFont = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
             this.dgv.HeadSelectForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.Location = new System.Drawing.Point(0, 59);
+            this.dgv.Location = new System.Drawing.Point(0, 74);
+            this.dgv.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dgv.MultiSelect = false;
             this.dgv.Name = "dgv";
             this.dgv.ReadOnly = true;
             this.dgv.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle19.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle19.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
-            dataGridViewCellStyle19.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle19.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle19.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle19.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle19;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("宋体", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(134)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
             this.dgv.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            this.dgv.RowsDefaultCellStyle = dataGridViewCellStyle5;
             this.dgv.RowTemplate.Height = 23;
             this.dgv.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgv.Size = new System.Drawing.Size(886, 196);
+            this.dgv.Size = new System.Drawing.Size(1181, 245);
             this.dgv.TabIndex = 14;
             this.dgv.TitleBack = null;
             this.dgv.TitleBackColorBegin = System.Drawing.Color.White;
@@ -439,36 +457,38 @@
             this.toolStripMenuItem1,
             this.全部删除ToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 40);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(211, 72);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(207, 6);
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 6);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(207, 6);
             // 
             // 全部删除ToolStripMenuItem
             // 
             this.全部删除ToolStripMenuItem.BackColor = System.Drawing.Color.Red;
             this.全部删除ToolStripMenuItem.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
             this.全部删除ToolStripMenuItem.Name = "全部删除ToolStripMenuItem";
-            this.全部删除ToolStripMenuItem.Size = new System.Drawing.Size(180, 24);
+            this.全部删除ToolStripMenuItem.Size = new System.Drawing.Size(210, 28);
             this.全部删除ToolStripMenuItem.Text = "全部删除";
+            this.全部删除ToolStripMenuItem.Click += new System.EventHandler(this.删除ToolStripMenuItem_Click);
             // 
             // Frm2YL_NYLYLTJ
             // 
             this.AllowDrop = true;
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(886, 319);
+            this.ClientSize = new System.Drawing.Size(1181, 399);
             this.Controls.Add(this.dgv);
             this.Controls.Add(this.groupPanel2);
             this.Controls.Add(this.groupPanel1);
             this.DoubleBuffered = true;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Frm2YL_NYLYLTJ";
             this.Text = "泥、釉料原料统计";
             this.Load += new System.EventHandler(this.Frm2YL_NYLYLTJ_Load);

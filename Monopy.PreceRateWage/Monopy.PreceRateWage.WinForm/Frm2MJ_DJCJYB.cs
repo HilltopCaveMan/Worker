@@ -109,7 +109,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("基础数据库中没有信息，导入时自动过滤的有：" + Environment.NewLine + sb.ToString().TrimEnd(','), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
-                if (NewMethod() && new BaseDal<DataBase2MJ_DJCJYB>().Add(list) > 0)
+                if (NewMethod(list) && new BaseDal<DataBase2MJ_DJCJYB>().Add(list) > 0)
                 {
                     Enabled = true;
                     txtCPMC.Text = "";
@@ -205,7 +205,8 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                 }
             }
-            NewMethod();
+            var list = new BaseDal<DataBase2MJ_DJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            NewMethod(list);
             MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "验证完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
@@ -250,7 +251,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     if (DataBase2MJ_DJCJYB != null)
                     {
-                        if (DataBase2MJ_DJCJYB.No == "合计")
+                        if (DataBase2MJ_DJCJYB.CPMC == "合计")
                         {
                             if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
@@ -325,9 +326,9 @@ namespace Monopy.PreceRateWage.WinForm
             new BaseDal<DataBaseMsg>().Add(msg);
         }
 
-        private bool NewMethod()
+        private bool NewMethod(List<DataBase2MJ_DJCJYB> list)
         {
-            var datas = new BaseDal<DataBase2MJ_DJCJYB>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList().GroupBy(t => t.CPMC).Select(t => new { User = t.Max(x => x.CreateUser), CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCLJ, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
+            var datas = list.GroupBy(t => t.CPMC).Select(t => new { User = t.Max(x => x.CreateUser), CPMC = t.Key, Count = t.Sum(x => decimal.TryParse(x.SCLJ, out decimal sclj) ? sclj : 0M) }).Where(t => t.Count > 0M).ToList();
             if (datas.Count == 0)
             {
                 MessageBox.Show(dtp.Value.ToString("yyyy年MM月") + "没有数据，无法验证！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);

@@ -136,7 +136,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var DataBase2CX_XJBG = dgv.SelectedRows[0].DataBoundItem as DataBase2CX_XJBG;
                 if (DataBase2CX_XJBG != null)
                 {
-                    if (DataBase2CX_XJBG.UserName == "合计")
+                    if (DataBase2CX_XJBG.GW == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -161,7 +161,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase2CX_XJBG = dgv.SelectedRows[0].DataBoundItem as DataBase2CX_XJBG;
-                if (DataBase2CX_XJBG.No == "合计")
+                if (DataBase2CX_XJBG.GW == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -174,7 +174,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-                            btnRecount.PerformClick();
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -194,12 +194,12 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.GW != "合计")
                     {
                         new BaseDal<DataBase2CX_XJBG>().Delete(item);
                     }
                 }
-                btnRecount.PerformClick();
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -379,7 +379,7 @@ namespace Monopy.PreceRateWage.WinForm
                                     }
                                 }
                             }
-                            if (sign)
+                            if (!sign)
                             {
                                 MessageBox.Show("精坯月报中没有姓名：【" + item.UserName + "】，品种名称：【" + item.PZMC + "】的记录！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return false;

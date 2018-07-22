@@ -585,11 +585,11 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show($"工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}！有多条记录！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                var totalCount = tmp.Sum(t => string.IsNullOrEmpty(t.BZTS) ? 0 : Convert.ToInt32(t.BZTS));
+                var totalCount = tmp.Sum(t => string.IsNullOrEmpty(t.BZTS) ? 0 : Convert.ToDecimal(t.BZTS));
 
-                int.TryParse(item.SCQ, out int scq);
-                int.TryParse(item.YCQTS, out int ycqts);
-                int.TryParse(item.YCQ, out int ycq);
+                decimal.TryParse(item.SCQ, out decimal scq);
+                decimal.TryParse(item.YCQTS, out decimal ycqts);
+                decimal.TryParse(item.YCQ, out decimal ycq);
                 //验证补助天数
                 if (totalCount > scq)
                 {

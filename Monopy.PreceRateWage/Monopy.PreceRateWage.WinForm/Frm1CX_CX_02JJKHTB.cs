@@ -570,9 +570,13 @@ namespace Monopy.PreceRateWage.WinForm
                                 {
                                     list[i].RYBMBZ = list[i - 1].UserCode;
                                 }
-                                else
+                                else if (list[i].DHFQ.Contains(list[i + 1].UserName))
                                 {
                                     list[i].RYBMBZ = list[i + 1].UserCode;
+                                }
+                                else
+                                {
+                                    list[i].RYBMBZ = list[i - 1].RYBMBZ;
                                 }
                             }
                         }
@@ -656,6 +660,10 @@ namespace Monopy.PreceRateWage.WinForm
                     if (listRes != null)
                     {
                         itemResult.RYBMBZ = listRes.RYBMBZ;
+                    }
+                    else
+                    {
+                        itemResult.RYBMBZ = itemResult.UserCode;
                     }
                 }
 

@@ -120,15 +120,15 @@ namespace Monopy.PreceRateWage.WinForm
                     itemGr.GH = item.GH;
                     itemGr.UserCode = item.UserCode;
                     itemGr.UserName = item.UserName;
-                    var xx = listCLKH.Where(t => t.BZ == itemGr.BZBM);
-                    if (xx.Count() == 0)
+                    var xx = listCLKH.Where(t => t.BZ == itemGr.BZBM).ToList();
+                    if (xx == null || xx.Count == 0)
                     {
                         MessageBox.Show("计件中找不到，班组编号：" + itemGr.BZBM + ",班组名称为：" + itemGr.BZMC + ",无法计算！！！");
                         return null;
                     }
 
-                    var jj = listJJ.Where(t => t.BZ == itemGr.BZBM);
-                    if (jj.Count() == 0)
+                    var jj = listJJ.Where(t => t.BZ == itemGr.BZBM).ToList();
+                    if (jj == null || jj.Count == 0)
                     {
                         MessageBox.Show("计件中找不到，班组编号：" + itemGr.BZBM + ",班组名称为：" + itemGr.BZMC + ",无法计算！！！");
                         return null;
@@ -142,7 +142,7 @@ namespace Monopy.PreceRateWage.WinForm
                     itemGr.ZLKHGR = (xx.FirstOrDefault().ZLKH / yy).ToString();
                     itemGr.CLKHGR = (xx.FirstOrDefault().CLKH / yy).ToString();
 
-                    if (tmp.SFXTQ == "是" && yy == 1)
+                    if (tmp != null && tmp.SFXTQ == "是" && yy == 1)
                     {
                         if (baseXTCLKH == null || baseXTZLKH == null)
                         {
@@ -204,7 +204,7 @@ namespace Monopy.PreceRateWage.WinForm
 
                 return listGr;
             }
-            catch
+            catch (Exception ex)
             {
                 return null;
             }

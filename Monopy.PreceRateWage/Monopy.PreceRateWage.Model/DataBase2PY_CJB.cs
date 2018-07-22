@@ -57,21 +57,6 @@ namespace Monopy.PreceRateWage.Model
         public string XTTS { get; set; }
 
         /// <summary>
-        /// 合计
-        /// </summary>
-        public string HJ { get; set; }
-
-        /// <summary>
-        /// 实出勤
-        /// </summary>
-        public string SCQ { get; set; }
-
-        /// <summary>
-        /// 应出勤
-        /// </summary>
-        public string YCQ { get; set; }
-
-        /// <summary>
         /// 喷釉工（手工）考核
         /// </summary>
         public string PYGSGKH { get; set; }

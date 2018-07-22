@@ -164,6 +164,11 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 if (dgv.SelectedRows[0].DataBoundItem is DataBase2YL_XCYLTJ DataBase2YL_XCYLTJ)
                 {
+                    if (DataBase2YL_XCYLTJ.No == "合计")
+                    {
+                        MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        return;
+                    }
                     FrmModify<DataBase2YL_XCYLTJ> frm = new FrmModify<DataBase2YL_XCYLTJ>(DataBase2YL_XCYLTJ, header, OptionType.Modify, Text, 5, 0);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {

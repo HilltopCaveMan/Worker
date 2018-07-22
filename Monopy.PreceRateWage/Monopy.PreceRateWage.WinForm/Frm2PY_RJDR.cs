@@ -107,9 +107,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase2PY_RJDR> list = dgv.DataSource as List<DataBase2PY_RJDR>;
-                var hj = list[0];
-                list.RemoveAt(0);
-                list.Add(hj);
+               
                 if (new ExcelHelper<DataBase2PY_RJDR>().WriteExcle(Application.StartupPath + "\\Excel\\模板一厂——喷釉——软件导入.xlsx", saveFileDlg.FileName, list, 1, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
@@ -121,8 +119,7 @@ namespace Monopy.PreceRateWage.WinForm
                 {
                     MessageBox.Show("导出错误，请检查后，再试！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                list.Remove(hj);
-                list.Insert(0, hj);
+               
                 Enabled = true;
             }
         }
@@ -147,7 +144,7 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
-
+                        btnSearch.PerformClick();
                     }
                 }
             }
@@ -176,7 +173,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
-
+                            btnSearch.PerformClick();
                         }
                     }
                 }
@@ -201,7 +198,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase2PY_RJDR>().Delete(item);
                     }
                 }
-
+                btnSearch.PerformClick();
                 return;
             }
             else
@@ -256,13 +253,13 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2PY_RJDR>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => t.No).ToList();
+            var datas = new BaseDal<DataBase2PY_RJDR>().GetList(t => t.Factory == _factoryNo && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (userCode == "全部" ? true : t.UserCode == userCode) && (userName == "全部" ? true : t.UserName == userName) && (gh == "全部" ? true : t.GH.Contains(gh))).ToList().OrderBy(t => Convert.ToInt32(t.No)).ToList();
             dgv.DataSource = datas;
             for (int i = 0; i < 6; i++)
             {
                 dgv.Columns[i].Visible = false;
             }
-          
+
             for (int i = 0; i < header.Length; i++)
             {
                 dgv.Columns[i + 1].HeaderText = header[i];

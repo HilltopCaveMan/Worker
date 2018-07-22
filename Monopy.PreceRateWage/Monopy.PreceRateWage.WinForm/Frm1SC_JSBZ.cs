@@ -168,7 +168,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 if (dgv.SelectedRows[0].DataBoundItem is DataBase1SC_JSBZ DataBase1SC_JSBZ)
                 {
-                    if (DataBase1SC_JSBZ.No == "合计")
+                    if (DataBase1SC_JSBZ.CJ == "合计")
                     {
                         MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return;
@@ -193,7 +193,7 @@ namespace Monopy.PreceRateWage.WinForm
             if (dgv.SelectedRows.Count == 1)
             {
                 var DataBase1SC_JSBZ = dgv.SelectedRows[0].DataBoundItem as DataBase1SC_JSBZ;
-                if (DataBase1SC_JSBZ.No == "合计")
+                if (DataBase1SC_JSBZ.CJ == "合计")
                 {
                     MessageBox.Show("【合计】不能删除，要全部删除请点【全部删除】！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
@@ -227,7 +227,7 @@ namespace Monopy.PreceRateWage.WinForm
                 dgv.DataSource = null;
                 foreach (var item in list)
                 {
-                    if (item.No != "合计")
+                    if (item.CJ != "合计")
                     {
                         new BaseDal<DataBase1SC_JSBZ>().Delete(item);
                     }
@@ -418,7 +418,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.WorkshopName == _dept).ToList();
+                var listTJ = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == _factoryNo && t.WorkshopName.Contains(_dept)).ToList();
 
                 if (listTJ == null || listTJ.Count == 0)
                 {
