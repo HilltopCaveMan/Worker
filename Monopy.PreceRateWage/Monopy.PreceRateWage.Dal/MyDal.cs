@@ -542,6 +542,17 @@ namespace Monopy.PreceRateWage.Dal
         {
             return (list == null || list.Count == 0) ? new DataBaseGeneral_XTDay { No = "合计", GZ = "合计", BZJE = 0.ToString() } : new DataBaseGeneral_XTDay { No = "合计", GZ = "合计", BZJE = list.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString() };
         }
+
+        /// <summary>
+        /// 一厂学徒（月）合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBaseGeneral_XT_CPLB GetTotalDataBaseGeneral_XT_CPLB(List<DataBaseGeneral_XT_CPLB> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBaseGeneral_XT_CPLB { No = "合计", BZJE = 0.ToString() } : new DataBaseGeneral_XT_CPLB { No = "合计", BZJE = list.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString() };
+        }
+
         /// <summary>
         /// 一厂原料统计合计
         /// </summary>
@@ -1107,6 +1118,16 @@ namespace Monopy.PreceRateWage.Dal
         public static DataBase2CX_SFBZ GetTotalDataBase2CX_SFBZ(List<DataBase2CX_SFBZ> list)
         {
             return (list == null || list.Count == 0) ? new DataBase2CX_SFBZ { No = "合计", SFCode = "合计", SFBZ = 0.ToString() } : new DataBase2CX_SFBZ { No = "合计", SFCode = "合计", SFBZ = list.Sum(t => decimal.TryParse(t.SFBZ, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
+        /// 二厂成型车间其他计件合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_QTJJ GetTotalDataBase2CX_QTJJ(List<DataBase2CX_QTJJ> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_QTJJ { GW = "合计", JS = 0.ToString(), JE = 0.ToString() } : new DataBase2CX_QTJJ { GW = "合计", JS = list.Sum(t => decimal.TryParse(t.JS, out decimal d) ? d : 0M).ToString(), JE = list.Sum(t => decimal.TryParse(t.JE, out decimal d) ? d : 0M).ToString() };
         }
 
         /// <summary>

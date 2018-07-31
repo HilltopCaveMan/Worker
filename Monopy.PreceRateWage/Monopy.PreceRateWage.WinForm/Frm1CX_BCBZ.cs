@@ -212,7 +212,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 item.BZJE = (je / 26 * bzts).ToString();
                             }
                         }
-                        
+
                         item.YCQ = ycq.ToString();
                         item.SCQ = scq.ToString();
                         item.IsBYE = false;
@@ -251,7 +251,7 @@ namespace Monopy.PreceRateWage.WinForm
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-            Enabled = false;
+            
             for (int i = 0; i < list.Count; i++)
             {
                 if (string.IsNullOrEmpty(list[i].UserCode) || string.IsNullOrEmpty(list[i].UserName))
@@ -306,15 +306,15 @@ namespace Monopy.PreceRateWage.WinForm
                     Enabled = true;
                     return;
                 }
-                //补助天数验证
-                int.TryParse(list[i].BZTS, out int bzts);
-                int.TryParse(list[i].SJBTS, out int sjbts);
-                if (bzts > sjbts)
-                {
-                    MessageBox.Show($"工段：{list[i].GD},姓名：{list[i].UserName},人员编码：{list[i].UserCode}，的补助天数大于实际补助天数 ！");
-                    Enabled = true;
-                    return;
-                }
+                ////补助天数验证
+                //int.TryParse(list[i].BZTS, out int bzts);
+                //int.TryParse(list[i].SJBTS, out int sjbts);
+                //if (bzts > sjbts)
+                //{
+                //    MessageBox.Show($"工段：{list[i].GD},姓名：{list[i].UserName},人员编码：{list[i].UserCode}，的补助天数大于实际补助天数 ！");
+                //    Enabled = true;
+                //    return;
+                //}
                 list[i].GD = list[i].GD.Replace("区", "") + "区";
                 list[i].CreateUser = Program.User.ToString();
                 list[i].CreateTime = Program.NowTime;
@@ -323,7 +323,7 @@ namespace Monopy.PreceRateWage.WinForm
             }
             var boolOK = Recount(list, out List<DataBase1CX_BCTZ> listTZ);
 
-            if (new BaseDal<DataBase1CX_BCBZ>().Add(list) > 0)
+            if (Check(list) && new BaseDal<DataBase1CX_BCBZ>().Add(list) > 0)
             {
                 if (boolOK)
                 {
@@ -337,7 +337,7 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                 }
 
-                Enabled = true;
+               
                 btnSearch.PerformClick();
                 MessageBox.Show("导入成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
@@ -369,7 +369,7 @@ namespace Monopy.PreceRateWage.WinForm
             };
             if (saveFileDlg.ShowDialog() == DialogResult.OK)
             {
-                Enabled = false;
+               
                 List<DataBase1CX_BCBZ> list = dgv.DataSource as List<DataBase1CX_BCBZ>;
                 var hj = list[0];
                 list.RemoveAt(0);
@@ -387,13 +387,13 @@ namespace Monopy.PreceRateWage.WinForm
                 }
                 list.Remove(hj);
                 list.Insert(0, hj);
-                Enabled = true;
+               
             }
         }
 
         private void btnRecount_Click(object sender, EventArgs e)
         {
-            Enabled = false;
+            
             List<DataBase1CX_BCBZ> list = new BaseDal<DataBase1CX_BCBZ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
             var boolOK = Recount(list, out List<DataBase1CX_BCTZ> listTZ);
             foreach (var item in list)
@@ -427,8 +427,7 @@ namespace Monopy.PreceRateWage.WinForm
                 MessageBox.Show("计算失败！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
-
-            Enabled = true;
+            
             btnSearch.PerformClick();
             MessageBox.Show("操作成功！", "信息", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
@@ -490,6 +489,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+                            btnSearch.PerformClick();
                             btnRecount.PerformClick();
                         }
                     }
@@ -510,8 +510,10 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase1CX_BCBZ>().Delete(item);
                     }
                 }
+                new BaseDal<DataBase1CX_BCTZ>().ExecuteSqlCommand("delete from DataBase1CX_BCTZ where TheYear=" + dtp.Value.Year + " and TheMonth=" + dtp.Value.Month);
                 InitUI();
-                btnRecount.PerformClick();
+                btnSearch.PerformClick();
+               
                 return;
             }
             else
@@ -654,7 +656,7 @@ namespace Monopy.PreceRateWage.WinForm
                     IsOk = false;
                     MessageBox.Show($"变产时间错误：工段：{item.GD}，线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}，变产产品：{item.BGCPMC}，变产时间/上线时间：【{item.SXSJ}】，不是有效的日期格式！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                
+
                 var tmp = listMonth.Where(t => t.ProductType == item.LB && t.MonthData == item.SXDJY).FirstOrDefault();
                 if (tmp == null)
                 {
@@ -681,6 +683,42 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 MessageBox.Show("至少有一条数据验收失败！", "验证失败", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+        }
+
+        private bool Check(List<DataBase1CX_BCBZ> list)
+        {
+            bool IsOk = true;
+
+            foreach (var item in list)
+            {
+                DateTime dateTime = new DateTime(dtp.Value.Year, dtp.Value.Month, 1);
+                var listTZ = new BaseDal<DataBase1CX_BCTZ>().GetList(t => t.UserCode == item.UserCode && t.TimeBZ < dateTime);
+
+                var tmp = list.Where(t => t.UserCode == item.UserCode).ToList();
+                if (tmp.Count > 1)
+                {
+                    MessageBox.Show($"线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}！有多条记录！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                var totalCount = tmp.Sum(t => string.IsNullOrEmpty(t.BZTS) ? 0 : Convert.ToDecimal(t.BZTS));
+
+                decimal.TryParse(item.SJBTS, out decimal sjbzts);
+
+                //验证补助天数
+                if (totalCount > sjbzts)
+                {
+                    IsOk = false;
+                    MessageBox.Show($"补助天数不对：线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}，补助天数为：{item.BZTS}，实补助天数为：{item.SJBTS}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                int.TryParse(item.SXDJY, out int djgy);
+                //验证台账
+                if (djgy - 1 != listTZ.Count())
+                {
+                    MessageBox.Show($"补助月份不对：线位：{item.XW}，人员编码：{item.UserCode}，姓名：{item.UserName}，提报补助月份：{item.SXDJY}，台账中只有：{listTZ.Count()}个月！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+
+            return IsOk;
         }
     }
 }

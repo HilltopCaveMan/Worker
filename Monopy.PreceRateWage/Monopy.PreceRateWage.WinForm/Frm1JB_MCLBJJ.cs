@@ -110,8 +110,8 @@ namespace Monopy.PreceRateWage.WinForm
 
                     list[i].CreateUser = Program.User.ToString();
                     list[i].CreateTime = Program.NowTime;
-                    list[i].TheYear = selectTime.Year;
-                    list[i].TheMonth = selectTime.Month;
+                    list[i].TheYear = dtp.Value.Year;
+                    list[i].TheMonth = dtp.Value.Month;
                 }
                 if (Recount(list) && new BaseDal<DataBase1JB_MCLBJJ>().Add(list) > 0)
                 {
@@ -146,7 +146,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (excelHelper.WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——磨瓷冷补.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, selectTime.ToString("yyyy-MM")))
+                if (excelHelper.WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——检包——磨瓷冷补.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -170,7 +170,7 @@ namespace Monopy.PreceRateWage.WinForm
         /// <param name="e"></param>
         private void BtnNew_Click(object sender, EventArgs e)
         {
-            DataBase1JB_MCLBJJ DataBase1JB_MCLBJJ = new DataBase1JB_MCLBJJ() { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = selectTime.Year, TheMonth = selectTime.Month };
+            DataBase1JB_MCLBJJ DataBase1JB_MCLBJJ = new DataBase1JB_MCLBJJ() { ID = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dtp.Value.Year, TheMonth = dtp.Value.Month };
             FrmModify<DataBase1JB_MCLBJJ> frm = new FrmModify<DataBase1JB_MCLBJJ>(DataBase1JB_MCLBJJ, header, OptionType.Add, Text, 5, 7);
             if (frm.ShowDialog() == DialogResult.Yes)
             {
@@ -188,7 +188,7 @@ namespace Monopy.PreceRateWage.WinForm
         private void BtnRecount_Click(object sender, EventArgs e)
         {
             Enabled = false;
-            List<DataBase1JB_MCLBJJ> list = new BaseDal<DataBase1JB_MCLBJJ>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList();
+            List<DataBase1JB_MCLBJJ> list = new BaseDal<DataBase1JB_MCLBJJ>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
             Recount(list);
             foreach (var item in list)
             {
@@ -265,11 +265,11 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         if (DataBase1JB_MCLBJJ.PZ == "合计")
                         {
-                            if (MessageBox.Show("要删除，日期为：" + selectTime.ToString("yyyy年MM月dd日") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
+                            if (MessageBox.Show("要删除，日期为：" + dtp.Value.ToString("yyyy年MM月dd日") + "所有数据吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning) == DialogResult.OK)
                             {
                                 using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                                 {
-                                    if (conn.Execute("delete from DataBase1JB_MCLBJJ where TheYear=" + selectTime.Year.ToString() + " and TheMonth=" + selectTime.Month.ToString()) > 0)
+                                    if (conn.Execute("delete from DataBase1JB_MCLBJJ where TheYear=" + dtp.Value.Year.ToString() + " and TheMonth=" + dtp.Value.Month.ToString()) > 0)
                                     {
                                         btnSearch.PerformClick();
                                         MessageBox.Show("全部删除完成！", "提示", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -332,37 +332,37 @@ namespace Monopy.PreceRateWage.WinForm
             try
             {
 
-                var baseDay = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间");
+                var baseDay = dalDay.Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间");
 
                 if (baseDay == null)
                 {
-                    MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的指标数据，无法计算，导入指标后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的指标数据，无法计算，导入指标后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 foreach (var item in list)
                 {
-                    var mCount = new BaseDal<DataBase1JB_PMCMC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
-                    var yCount = new BaseDal<DataBase1JB_PMCMCYKC>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
-                    var lCount = new BaseDal<DataBase1JB_PMCSY>().Get(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && t.CHMC == item.PZ);
+                    var mCount = new BaseDal<DataBase1JB_PMCMC>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CHMC == item.PZ);
+                    var yCount = new BaseDal<DataBase1JB_PMCMCYKC>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CHMC == item.PZ);
+                    var lCount = new BaseDal<DataBase1JB_PMCSY>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.CHMC == item.PZ);
                     decimal m = 0M;
                     decimal y = 0M;
                     decimal l = 0M;
 
-                    if (mCount == null)
+                    if (!string.IsNullOrEmpty(item.McCount) && mCount == null)
                     {
-                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的磨瓷月报数据，无法计算，导入磨瓷月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的品种为：【" + item.PZ + "】的磨瓷月报数据，无法计算，导入磨瓷月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
-                    if (yCount == null)
+                    if (!string.IsNullOrEmpty(item.YkcpgCount) && yCount == null)
                     {
-                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的磨瓷原库存月报数据，无法计算，导入磨瓷原库存月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的品种为：【" + item.PZ + "】的磨瓷原库存月报数据，无法计算，导入磨瓷原库存月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
-                    if (lCount == null)
+                    if (!string.IsNullOrEmpty(item.LbCount) && lCount == null)
                     {
-                        MessageBox.Show("没有" + selectTime.Year + "年" + selectTime.Month + "月的扫釉月报数据，无法计算，导入扫釉月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的品种为：【" + item.PZ + "】的扫釉月报数据，无法计算，导入扫釉月报后，再重新【计算】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
 
@@ -387,8 +387,8 @@ namespace Monopy.PreceRateWage.WinForm
                         MessageBox.Show("工号：【" + item.UserCode + "】,姓名：【" + item.UserName + "】,品种：【" + item.PZ + "】的冷补扫釉数量大于PMC扫釉月报中对应的合格数" + Environment.NewLine + "PMC扫釉月报中合格数为：【" + l.ToString() + "】", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         return false;
                     }
-                    var bDayMc = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "磨瓷" && t.TypesName == item.PZ);
-                    var bDayLb = dalDay.Get(t => t.CreateYear == selectTime.Year && t.CreateMonth == selectTime.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "冷补扫釉" && t.TypesName == item.PZ);
+                    var bDayMc = dalDay.Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "磨瓷" && t.TypesName == item.PZ);
+                    var bDayLb = dalDay.Get(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "检包车间" && t.Classification == "冷补扫釉" && t.TypesName == item.PZ);
                     item.McUnitPrice = bDayMc == null ? "0" : bDayMc.UnitPrice;
                     item.YkcpgUnitPrice = bDayMc == null ? "0" : bDayMc.UnitPrice;
                     item.LbUnitPrice = bDayLb == null ? "0" : bDayLb.UnitPrice;

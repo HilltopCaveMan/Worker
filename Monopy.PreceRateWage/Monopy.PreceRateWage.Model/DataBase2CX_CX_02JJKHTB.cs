@@ -14,6 +14,11 @@ namespace Monopy.PreceRateWage.Model
         public int TheMonth { get; set; }
 
         /// <summary>
+        /// 颜色
+        /// </summary>
+        public string Color { get; set; }
+
+        /// <summary>
         /// 序号
         /// </summary>
         public string No { get; set; }

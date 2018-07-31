@@ -421,51 +421,52 @@ namespace Monopy.PreceRateWage.WinForm
                     if (itemDay == null)
                     {
                         MessageBox.Show(itemResult.CHMC + ",基础数据中不存在，无法计算！");
-                        return null;
-                    }
-                    itemResult.YJPL = itemDay.GRKHZB1;
-                    itemResult.MBYJL = itemDay.GRKHZB3;
-                    itemResult.SFBZ = itemDay.GRJLDJ1;
-                    itemResult.XFBS = itemDay.GRFKDJ1;
 
-                    decimal.TryParse(itemResult.MBHGP, out decimal mbhgp);//目标合格品
-                    //考核工资
-                    if (mbhgp == 0 || itemResult.SFCYKH == "否" || string.IsNullOrEmpty(itemResult.MBYJL) || string.IsNullOrEmpty(itemResult.YJPL))
-                    {
-                        itemResult.KHGZ = "0";
                     }
                     else
                     {
-                        decimal.TryParse(itemResult.SFBZ, out decimal sfbz);//上浮倍数
-                        decimal.TryParse(itemResult.XFBS, out decimal xfbz);//下浮倍数
-
-                        if (kk >= mbhgp)
+                        itemResult.YJPL = itemDay.GRKHZB1;
+                        itemResult.MBYJL = itemDay.GRKHZB3;
+                        itemResult.SFBZ = itemDay.GRJLDJ1;
+                        itemResult.XFBS = itemDay.GRFKDJ1;
+                        decimal.TryParse(itemResult.MBHGP, out decimal mbhgp);//目标合格品
+                        //考核工资
+                        if (mbhgp == 0 || itemResult.SFCYKH == "否" || string.IsNullOrEmpty(itemResult.MBYJL) || string.IsNullOrEmpty(itemResult.YJPL))
                         {
-                            itemResult.KHGZ = ((kk - mbhgp) * mm * sfbz).ToString();
+                            itemResult.KHGZ = "0";
                         }
-                        if (kk < mbhgp)
+                        else
                         {
-                            itemResult.KHGZ = ((kk - mbhgp) * mm * xfbz).ToString();
+                            decimal.TryParse(itemResult.SFBZ, out decimal sfbz);//上浮倍数
+                            decimal.TryParse(itemResult.XFBS, out decimal xfbz);//下浮倍数
+
+                            if (kk >= mbhgp)
+                            {
+                                itemResult.KHGZ = ((kk - mbhgp) * mm * sfbz).ToString();
+                            }
+                            if (kk < mbhgp)
+                            {
+                                itemResult.KHGZ = ((kk - mbhgp) * mm * xfbz).ToString();
+                            }
                         }
-                    }
-                    decimal.TryParse(itemResult.PSS, out decimal pss);//破损数
-                    decimal.TryParse(itemResult.CKL, out decimal ckl);//残扣率
+                        decimal.TryParse(itemResult.PSS, out decimal pss);//破损数
+                        decimal.TryParse(itemResult.CKL, out decimal ckl);//残扣率
 
-                    //计件工资
-                    if (string.IsNullOrEmpty(itemResult.GBTZDJ))
-                    {
-                        itemResult.JJGZ = (kk * mm - pss * mm * ckl).ToString();
+                        //计件工资
+                        if (string.IsNullOrEmpty(itemResult.GBTZDJ))
+                        {
+                            itemResult.JJGZ = (kk * mm - pss * mm * ckl).ToString();
+                        }
+                        else
+                        {
+                            decimal.TryParse(itemResult.GBTZDJ, out decimal gbtzdj);//个别调整单价
+                            itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl).ToString();
+                        }
+                        //合计
+                        decimal.TryParse(itemResult.KHGZ, out decimal khgz);//考核工资
+                        decimal.TryParse(itemResult.JJGZ, out decimal jjgz);//计件工资
+                        itemResult.HJ = (khgz + jjgz).ToString();
                     }
-                    else
-                    {
-                        decimal.TryParse(itemResult.GBTZDJ, out decimal gbtzdj);//个别调整单价
-                        itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl).ToString();
-                    }
-                    //合计
-                    decimal.TryParse(itemResult.KHGZ, out decimal khgz);//考核工资
-                    decimal.TryParse(itemResult.JJGZ, out decimal jjgz);//计件工资
-                    itemResult.HJ = (khgz + jjgz).ToString();
-
                     listResult.Add(itemResult);
                 }
                 return listResult;
