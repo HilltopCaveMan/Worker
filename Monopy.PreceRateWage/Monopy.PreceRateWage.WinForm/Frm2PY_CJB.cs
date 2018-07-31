@@ -124,7 +124,7 @@ namespace Monopy.PreceRateWage.WinForm
                 var hj = list[0];
                 list.RemoveAt(0);
                 list.Add(hj);
-                if (new ExcelHelper<DataBase2PY_CJB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——喷釉——车间报.xlsx", saveFileDlg.FileName, list, 2, 5, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2PY_CJB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出二厂——喷釉——车间报.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {

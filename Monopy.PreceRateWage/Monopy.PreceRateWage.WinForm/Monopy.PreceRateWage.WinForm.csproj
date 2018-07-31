@@ -464,6 +464,12 @@
     <Compile Include="Frm2CX_PSPZ.Designer.cs">
       <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_QTJJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_QTJJ.Designer.cs">
+      <DependentUpon>Frm2CX_QTJJ.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_SFBZ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1334,6 +1340,18 @@
     <Compile Include="FrmGeneral_WX.Designer.cs">
       <DependentUpon>FrmGeneral_WX.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmGeneral_XTTZ_CPLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGeneral_XTTZ_CPLB.Designer.cs">
+      <DependentUpon>FrmGeneral_XTTZ_CPLB.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmGeneral_XT_CPLB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGeneral_XT_CPLB.Designer.cs">
+      <DependentUpon>FrmGeneral_XT_CPLB.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmGeneral_YEY.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1600,6 +1618,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_PSPZ.resx">
       <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_QTJJ.resx">
+      <DependentUpon>Frm2CX_QTJJ.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_SFBZ.resx">
       <DependentUpon>Frm2CX_SFBZ.cs</DependentUpon>
@@ -2038,6 +2059,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_WX.resx">
       <DependentUpon>FrmGeneral_WX.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGeneral_XTTZ_CPLB.resx">
+      <DependentUpon>FrmGeneral_XTTZ_CPLB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmGeneral_XT_CPLB.resx">
+      <DependentUpon>FrmGeneral_XT_CPLB.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmGeneral_YEY.resx">
       <DependentUpon>FrmGeneral_YEY.cs</DependentUpon>
@@ -2745,6 +2772,9 @@
     <None Include="Excel\模板一厂——烧成——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板一厂——通用模板——学徒台账.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——仓储——品管验货天数.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2983,6 +3013,12 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出四厂——学徒——入职表.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出通用——入职表.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板通用——入职表.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Monopy.PreceRateWage.WinForm_TemporaryKey.pfx" />

@@ -13,9 +13,10 @@ namespace Monopy.PreceRateWage.WinForm
 {
     public partial class Frm1CX_CX_02JJKHTB : Office2007Form
     {
-        private string[] header = "创建日期$创建人$年$月$序号$班组编码$人员编码班组$工段$搭伙夫妻$人员编号$姓名$注修工号$品种名称$模型数$注浆次数$模型数2$注浆次数2$备注".Split('$');
+        private string[] header = "创建日期$创建人$年$月$颜色$序号$班组编码$人员编码班组$工段$搭伙夫妻$人员编号$姓名$注修工号$品种名称$模型数$注浆次数$模型数2$注浆次数2$备注".Split('$');
         private string[] header2 = "班组编码$班组名称$员工".Split('$');
         private string[] header3 = "班组编码$班组名称$员工$员工编码$姓名$人员编码班组".Split('$');
+
 
         public Frm1CX_CX_02JJKHTB()
         {
@@ -111,7 +112,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase1CX_CX_02JJKHTB> list = dgv.DataSource as List<DataBase1CX_CX_02JJKHTB>;
-                if (new ExcelHelper<DataBase1CX_CX_02JJKHTB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——成型——计件考核提报.xlsx", saveFileDlg.FileName, list, 1, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase1CX_CX_02JJKHTB>().WriteExcle(Application.StartupPath + "\\Excel\\模板导出一厂——成型——计件考核提报.xlsx", saveFileDlg.FileName, list, 1, 7, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -228,7 +229,7 @@ namespace Monopy.PreceRateWage.WinForm
                     MessageBox.Show("【合计】不能修改！！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-                FrmModify<DataBase1CX_CX_02JJKHTB> frm = new FrmModify<DataBase1CX_CX_02JJKHTB>(DataBase1CX_CX_02JJKHTB, header, OptionType.Modify, Text, 5, 0);
+                FrmModify<DataBase1CX_CX_02JJKHTB> frm = new FrmModify<DataBase1CX_CX_02JJKHTB>(DataBase1CX_CX_02JJKHTB, header, OptionType.Modify, Text, 6, 0);
                 if (frm.ShowDialog() == DialogResult.Yes)
                 {
                     btnRecount.PerformClick();
@@ -273,7 +274,7 @@ namespace Monopy.PreceRateWage.WinForm
                             return;
                         }
                     }
-                    FrmModify<DataBase1CX_CX_02JJKHTB> frm = new FrmModify<DataBase1CX_CX_02JJKHTB>(DataBase1CX_CX_02JJKHTB, header, OptionType.Delete, Text, 5);
+                    FrmModify<DataBase1CX_CX_02JJKHTB> frm = new FrmModify<DataBase1CX_CX_02JJKHTB>(DataBase1CX_CX_02JJKHTB, header, OptionType.Delete, Text, 6);
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         btnSearch.PerformClick();
@@ -397,9 +398,16 @@ namespace Monopy.PreceRateWage.WinForm
             var datas = new BaseDal<DataBase1CX_CX_02JJKHTB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gd == "全部" ? true : t.GD.Equals(gd)) && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) && t.GH.Contains(gh) && t.DHFQ.Contains(dhfq) && t.PZMC.Contains(pzmc)).ToList().OrderBy(t => t.GD).ThenBy(t => int.TryParse(t.No, out int ix) ? ix : int.MaxValue).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase1CX_CX_02JJKHTB(datas));
             dgv.DataSource = datas;
-            for (int i = 0; i < 6; i++)
+            for (int i = 0; i < 7; i++)
             {
                 dgv.Columns[i].Visible = false;
+            }
+            for (int i = 0; i < datas.Count; i++)
+            {
+                if (!string.IsNullOrEmpty(datas[i].Color))
+                {
+                    dgv.Rows[i].DefaultCellStyle.BackColor = Color.Green;
+                }
             }
             dgv.Rows[0].Frozen = true;
             dgv.Rows[0].DefaultCellStyle.BackColor = Color.Yellow;
@@ -465,7 +473,8 @@ namespace Monopy.PreceRateWage.WinForm
         private void Import(string fileName)
         {
             Enabled = false;
-            List<DataBase1CX_CX_02JJKHTB> list = new ExcelHelper<DataBase1CX_CX_02JJKHTB>().ReadExcel(fileName, 1, 8, 0, 0, 0, true);
+
+            List<DataBase1CX_CX_02JJKHTB> list = new ExcelHelper<DataBase1CX_CX_02JJKHTB>().ReadExcel(fileName, 1, 9, 0, 0, 0, true);
             if (list == null)
             {
                 MessageBox.Show("Excel文件错误（请用Excle2007或以上打开文件，另存，再试），或者文件正在打开（关闭Excel），或者文件没有数据（请检查！）", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -505,7 +514,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         MessageBox.Show("品种名称为：【" + list[i].PZMC + "】，基础数据中不存在，请检查或联系管理员！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         Enabled = true;
-                        return;
+                        list[i].Color = "Sign";
                     }
                 }
 
@@ -693,6 +702,6 @@ namespace Monopy.PreceRateWage.WinForm
 
         #endregion
 
-        
+
     }
 }

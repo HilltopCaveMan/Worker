@@ -143,14 +143,29 @@ namespace Monopy.PreceRateWage.WinForm
                 for (int i = 0; i < list.Count; i++)
                 {
                     var item = list[i];
-                    if ((string.IsNullOrEmpty(item.GH) && /*item.GH.Contains("合计") ||*/ string.IsNullOrEmpty(item.UserCode) && string.IsNullOrEmpty(item.UserName)) || item.GH.Contains("合") || item.UserCode.Contains("合") || (item.UserName.Contains("合") && item.UserName.Contains("计")))
+                    //if ((string.IsNullOrEmpty(item.GH) && /*item.GH.Contains("合计") ||*/ string.IsNullOrEmpty(item.UserCode) && string.IsNullOrEmpty(item.UserName)) || item.GH.Contains("合") || item.UserCode.Contains("合") || (item.UserName.Contains("合") && item.UserName.Contains("计")))
+
+                    //{
+                    //    list.RemoveAt(i);
+                    //    if (i >= 0)
+                    //    {
+                    //        i--;
+                    //    }
+                    //    continue;
+                    //}
+                    if (string.IsNullOrEmpty(item.UserCode) || string.IsNullOrEmpty(item.UserName))
                     {
                         list.RemoveAt(i);
-                        if (i >= 0)
+                        if (i > 0)
                         {
                             i--;
                         }
+                        else
+                        {
+                            i = -1;
+                        }
                         continue;
+
                     }
                     if (!string.IsNullOrEmpty(item.UserCode) && !MyDal.IsUserCodeAndNameOK(item.UserCode, item.UserName, out string userNameERP))
                     {

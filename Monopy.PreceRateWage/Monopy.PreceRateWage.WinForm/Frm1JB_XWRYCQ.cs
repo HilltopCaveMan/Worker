@@ -579,7 +579,7 @@ namespace Monopy.PreceRateWage.WinForm
                         {
                             a.TotalTBGZE = totalJBGZ == 0 ? string.Empty : totalJBGZ.ToString();
                             a.TBGZE = string.IsNullOrEmpty(a.TotalTBGZE) || string.IsNullOrEmpty(a.GWZCQ) || string.IsNullOrEmpty(a.WorkDay) ? string.Empty : (Convert.ToDecimal(a.TotalTBGZE) / Convert.ToDecimal(a.GWZCQ) * Convert.ToDecimal(a.WorkDay)).ToString();
-                           
+
                         }
                     }
                 }
@@ -632,8 +632,8 @@ namespace Monopy.PreceRateWage.WinForm
                 var listxw = sl.GroupBy(t => t.XW);
                 foreach (var itemxw in listxw)
                 {
-                    var list2 = list.Where(t => t.GWMC == item.Key && t.XW == itemxw.Key).Sum(t => string.IsNullOrEmpty(t.WorkDay) ? 0M : Convert.ToDecimal(t.WorkDay));
-                    var list4 = new BaseDal<BaseHeadcount>().GetList(t => t.Factory == "一厂" && t.DeptName == "检包车间" && t.Name == item.Key && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList().Sum(t => string.IsNullOrEmpty(t.UserCount) ? 0M : Convert.ToDecimal(t.UserCount));
+                    var list2 = list.Where(t => t.GWMC == item.Key && t.XW == itemxw.Key).ToList().Count;
+                    var list4 = new BaseDal<BaseHeadcount>().GetList(t => t.Factory == "一厂" && t.DeptName == "检包车间" && t.Name == item.Key && t.Line == itemxw.Key && t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month).ToList().Sum(t => string.IsNullOrEmpty(t.UserCount) ? 0M : Convert.ToDecimal(t.UserCount));
                     result = list2 <= list4;
                     if (!result)
                     {

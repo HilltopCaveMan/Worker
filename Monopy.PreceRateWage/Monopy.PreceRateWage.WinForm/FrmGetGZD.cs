@@ -757,7 +757,7 @@ namespace Monopy.PreceRateWage.WinForm
                                 }
 
                                 break;
-                           
+
                         }
                     }
                 }
@@ -886,9 +886,9 @@ namespace Monopy.PreceRateWage.WinForm
                                     list.Add(gzd2cx);
                                     listSave.Add(gzd2cx);
                                 }
-                               
+
                                 break;
-                          
+
                         }
                     }
                 }
@@ -2216,14 +2216,14 @@ namespace Monopy.PreceRateWage.WinForm
                 case "一厂":
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                     {
-                        obj = conn.ExecuteScalar("select count(id) from DataBase1GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                        obj = conn.ExecuteScalar("select count(id) from DataBase1GZD where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
                         if (Convert.ToInt32(obj) > 0)
                         {
                             if (MessageBox.Show("已经存在【" + cmbFactory.Text + "】数据，重新计算将会删除已存在的数据，确定继续？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                             {
                                 return;
                             }
-                            conn.Execute("delete DataBase1GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                            conn.Execute("delete DataBase1GZD where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
                         }
                     }
                     trCalculation = new Thread(new ParameterizedThreadStart(Calculation1Factory_New));
@@ -2231,14 +2231,14 @@ namespace Monopy.PreceRateWage.WinForm
                 case "二厂":
                     using (SqlConnection conn = new SqlConnection(ConfigurationManager.ConnectionStrings["HHContext"].ConnectionString))
                     {
-                        obj = conn.ExecuteScalar("select count(id) from DataBase2GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                        obj = conn.ExecuteScalar("select count(id) from DataBase2GZD where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
                         if (Convert.ToInt32(obj) > 0)
                         {
                             if (MessageBox.Show("已经存在【" + cmbFactory.Text + "】数据，重新计算将会删除已存在的数据，确定继续？", "警告", MessageBoxButtons.YesNo, MessageBoxIcon.Warning) != DialogResult.Yes)
                             {
                                 return;
                             }
-                            conn.Execute("delete DataBase2GZDS where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
+                            conn.Execute("delete DataBase2GZD where theyear =" + dtp.Value.Year.ToString() + " and themonth=" + dtp.Value.Month.ToString());
                         }
                     }
                     trCalculation = new Thread(new ParameterizedThreadStart(Calculation2Factory_New));
@@ -2725,7 +2725,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1XJX" };
 
             //入职补助。
-            var d2_rzbz = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("修检线")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
+            var d2_rzbz = new BaseDal<DataBaseGeneral_XT_CPLB>().GetList(t => t.FactoryNo == "G001" && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode && t.CJ.Contains("修检线")).ToList().Sum(t => decimal.TryParse(t.BZJE, out decimal d_m) ? d_m : 0M);
             gzd.RZBZ = d2_rzbz.ToString();
 
             //计件工资1
@@ -2842,7 +2842,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase1GZD gzd = new DataBase1GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "1CX" };
 
             //入职补助
-            var xt = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
+            var xt = new BaseDal<DataBaseGeneral_XT_CPLB>().GetList(t => t.FactoryNo == "G001" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
             if (xt != null && xt.Count > 0)
             {
                 gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
@@ -3300,7 +3300,7 @@ namespace Monopy.PreceRateWage.WinForm
             DataBase2GZD gzd = new DataBase2GZD { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = dateTime.Year, TheMonth = dateTime.Month, Factory = item_CQ.Factory, Dept = item_CQ.Dept, UserCode = item_CQ.UserCode, UserName = item_CQ.UserName, CalculationType = "2CX" };
 
             //入职补助
-            var xt = new BaseDal<DataBaseGeneral_XT>().GetList(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
+            var xt = new BaseDal<DataBaseGeneral_XT_CPLB>().GetList(t => t.FactoryNo == "G002" && t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.CJ == "成型").ToList();
             if (xt != null && xt.Count > 0)
             {
                 gzd.RZBZ = xt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString();
@@ -3334,11 +3334,19 @@ namespace Monopy.PreceRateWage.WinForm
 
             //计件工资3
             var sfbz = new BaseDal<DataBase2CX_SFBZ>().GetList(t => t.SFCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+            var qtjj = new BaseDal<DataBase2CX_QTJJ>().GetList(t => t.UserCode == item_CQ.UserCode && t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month).ToList();
+
+            decimal totalCount = 0;
+            if (qtjj != null || qtjj.Count != 0)
+            {
+                totalCount += (qtjj.Sum(t => decimal.TryParse(t.JE, out decimal d_tp) ? d_tp : 0M));
+            }
             if (sfbz != null || sfbz.Count != 0)
             {
-                decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
-                gzd.JJGZ3 = (sfbz.Sum(t => decimal.TryParse(t.SFBZ, out decimal d_tp) ? d_tp : 0M) + jjgz3).ToString();
+                totalCount += (sfbz.Sum(t => decimal.TryParse(t.SFBZ, out decimal d_tp) ? d_tp : 0M));
             }
+            decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
+            gzd.JJGZ3 = (totalCount + jjgz3).ToString();
 
             //试烧补助
             var kfss = new BaseDal<DataBase2CX_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();

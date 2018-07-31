@@ -149,6 +149,7 @@ namespace Monopy.PreceRateWage.WinForm
                     if (frm.ShowDialog() == DialogResult.Yes)
                     {
                         InitUI();
+                        btnSearch.PerformClick();
                         btnRecount.PerformClick();
                     }
                 }
@@ -178,6 +179,7 @@ namespace Monopy.PreceRateWage.WinForm
                         if (frm.ShowDialog() == DialogResult.Yes)
                         {
                             InitUI();
+                            btnSearch.PerformClick();
                             btnRecount.PerformClick();
                         }
                     }
@@ -203,6 +205,7 @@ namespace Monopy.PreceRateWage.WinForm
                         new BaseDal<DataBase1PY_PYPJ>().Delete(item);
                     }
                 }
+                btnSearch.PerformClick();
                 btnRecount.PerformClick();
                 return;
             }

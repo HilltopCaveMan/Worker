@@ -495,6 +495,8 @@ namespace Monopy.PreceRateWage.WinForm
 
                 int.TryParse(item.BZTS, out int bzts);
                 int.TryParse(item.SCQ, out int scq);
+                int.TryParse(item.BZJE, out int bzje);
+                int.TryParse(item.SXJE, out int sxje);
 
                 //验证补助天数
                 if (bzts > scq)
@@ -510,6 +512,14 @@ namespace Monopy.PreceRateWage.WinForm
                     IsOk = false;
                     MessageBox.Show($"学徒总额超上限金额：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，核对数为：{item.HD}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
+
+                //验证补助金额
+                if (bzje > sxje)
+                {
+                    IsOk = false;
+                    MessageBox.Show($"补助金额不对：工种：{item.GZ}，人员编码：{item.UserCode}，姓名：{item.UserName}，补助金额为：{item.BZJE}！,上线金额为：{item.SXJE}！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
                 return IsOk;
             }
 
