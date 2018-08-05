@@ -91,7 +91,7 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 Enabled = false;
                 List<DataBase2CX_CX_06JJ> list = dgv.DataSource as List<DataBase2CX_CX_06JJ>;
-                if (new ExcelHelper<DataBase2CX_CX_06JJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板二厂——成型——注修工成型计件.xlsx", saveFileDlg.FileName, list, 3, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
+                if (new ExcelHelper<DataBase2CX_CX_06JJ>().WriteExcle(Application.StartupPath + "\\Excel\\模板二厂——成型——注修工成型计件.xlsx", saveFileDlg.FileName, list, 2, 6, 0, 0, 0, 0, dtp.Value.ToString("yyyy-MM")))
                 {
                     if (MessageBox.Show("导出成功，立即打开？", "提示", MessageBoxButtons.OKCancel, MessageBoxIcon.Information) == DialogResult.OK)
                     {
@@ -356,6 +356,8 @@ namespace Monopy.PreceRateWage.WinForm
             {
                 var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G002" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && !string.IsNullOrEmpty(t.TypesName));
                 var listResult = new List<DataBase2CX_CX_06JJ>();
+                string strPZ = string.Empty;
+
                 foreach (var item in list)
                 {
                     var itemResult = new DataBase2CX_CX_06JJ
@@ -393,7 +395,7 @@ namespace Monopy.PreceRateWage.WinForm
                     {
                         itemResult.GBTZDJ = listDLDT.DJ;
                     }
-                    var listTB = new BaseDal<DataBase2CX_CX_02JJKHTB>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ && t.UserCode == item.UserCode);
+                    var listTB = new BaseDal<DataBase2CX_CX_02JJKHTB>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ);
                     if (listTB != null)
                     {
                         itemResult.MXS = listTB.MXS;
@@ -403,98 +405,106 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     else
                     {
-
-                        decimal.TryParse(itemResult.DJ, out decimal mm);//单价
-                        decimal.TryParse(itemResult.KYL, out decimal jj);//开窑量
-                        decimal.TryParse(itemResult.YJP, out decimal kk);//一级品
-                        var nn = jj == 0 ? 0M : (kk / jj);
-                        itemResult.YJL = nn.ToString();
-
-                        decimal.TryParse(itemResult.JPS, out decimal oo);//交坯数
-                        decimal.TryParse(itemResult.MXS, out decimal rr);//模型数
-                        decimal.TryParse(itemResult.ZJCS, out decimal ss);//注浆次数
-                        decimal.TryParse(itemResult.MXS1, out decimal tt);//模型数1
-                        decimal.TryParse(itemResult.ZJCS1, out decimal uu);//注浆次数1
-
-                        var vv = (rr * ss + tt * uu) == 0 ? 0 : oo / (rr * ss + tt * uu);//实际交坯率
-                        itemResult.SJJPL = vv.ToString();
-
-
-                        var itemDay = listDay.Where(t => t.TypesName == itemResult.CHMC).FirstOrDefault();
-                        if (itemDay == null)
-                        {
-                            MessageBox.Show(itemResult.CHMC + ",基础数据中不存在，无法计算！");
-                            return null;
-                        }
-                        itemResult.CLZB = itemDay.GRKHZB1;
-                        itemResult.CLCJJDJ = itemDay.GRJLDJ1;
-                        itemResult.CLCJKDJ = itemDay.GRFKDJ1;
-                        itemResult.ZLDXZB = itemDay.GRKHZB3;
-                        itemResult.ZLFDZB = itemDay.GRKHZB4;
-
-                        decimal.TryParse(itemResult.CLZB, out decimal clzb);//产量指标
-                        decimal.TryParse(itemResult.CLCJJDJ, out decimal clcjjdj);//产量超件奖单价
-                        decimal.TryParse(itemResult.CLCJKDJ, out decimal clcjkdj);//产量亏件罚单价
-                        decimal.TryParse(itemResult.ZLDXZB, out decimal zldxzb);//产量奋斗指标
-                        decimal.TryParse(itemResult.ZLFDZB, out decimal zlfdzb);//质量奋斗指标
-                        decimal.TryParse(itemDay.GRJLDJ4, out decimal grjldj4);//个人奖励单价4
-                        decimal.TryParse(itemDay.GRFKDJ3, out decimal grjldj3);//个人奖励单价3
-                                                                               //产量考核
-                        if (string.IsNullOrEmpty(itemResult.CLZB) || clzb == 0)
-                        {
-                            itemResult.CLKH = "0";
-                        }
-                        else
-                        {
-                            if (vv >= clzb)
-                            {
-                                itemResult.CLKH = ((oo - (rr * ss + tt * uu) * clzb) * clcjjdj).ToString();
-                            }
-                            if (vv < clzb)
-                            {
-                                itemResult.CLKH = ((oo - (rr * ss + tt * uu) * clzb) * clcjkdj).ToString();
-                            }
-                        }
-
-                        //质量考核
-                        if (string.IsNullOrEmpty(itemResult.ZLDXZB) || zldxzb == 0)
-                        {
-                            itemResult.ZLKH = "0";
-                        }
-                        else
-                        {
-                            if (nn >= zlfdzb)
-                            {
-                                itemResult.ZLKH = ((kk - jj * zlfdzb) * grjldj4).ToString();
-                            }
-                            if (nn < zldxzb)
-                            {
-                                itemResult.ZLKH = ((kk - jj * zldxzb) * grjldj3).ToString();
-                            }
-                        }
-
-                        decimal.TryParse(itemResult.CLKH, out decimal clkh);//产量考核
-                        decimal.TryParse(itemResult.ZLKH, out decimal zlkh);//质量考核
-                        itemResult.KHGZ = (clkh + zlkh).ToString();//考核工资
-                        decimal.TryParse(itemResult.PSS, out decimal pss);//破损数
-                        decimal.TryParse(itemResult.CKL, out decimal ckl);//残扣率
-                        decimal.TryParse(itemResult.DLSL, out decimal dl);//大裂
-                                                                          //计件工资
-                        if (string.IsNullOrEmpty(itemResult.GBTZDJ))
-                        {
-                            itemResult.JJGZ = (kk * mm - pss * mm * ckl - dl * 2).ToString();
-                        }
-                        else
-                        {
-                            decimal.TryParse(itemResult.GBTZDJ, out decimal gbtzdj);//个别调整单价
-                            itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl - dl * 2).ToString();
-                        }
-                        //合计
-                        decimal.TryParse(itemResult.KHGZ, out decimal khgz);//考核工资
-                        decimal.TryParse(itemResult.JJGZ, out decimal jjgz);//计件工资
-                        itemResult.HJ = (khgz + jjgz).ToString();
+                        itemResult.MXS = "0";
+                        itemResult.ZJCS = "0";
+                        itemResult.MXS1 = "0";
+                        itemResult.ZJCS1 = "0";
                     }
+                    decimal.TryParse(itemResult.DJ, out decimal mm);//单价
+                    decimal.TryParse(itemResult.KYL, out decimal jj);//开窑量
+                    decimal.TryParse(itemResult.YJP, out decimal kk);//一级品
+                    var nn = jj == 0 ? 0M : (kk / jj);
+                    itemResult.YJL = nn.ToString();
+
+                    decimal.TryParse(itemResult.JPS, out decimal oo);//交坯数
+                    decimal.TryParse(itemResult.MXS, out decimal rr);//模型数
+                    decimal.TryParse(itemResult.ZJCS, out decimal ss);//注浆次数
+                    decimal.TryParse(itemResult.MXS1, out decimal tt);//模型数1
+                    decimal.TryParse(itemResult.ZJCS1, out decimal uu);//注浆次数1
+
+                    var vv = (rr * ss + tt * uu) == 0 ? 0 : oo / (rr * ss + tt * uu);//实际交坯率
+                    itemResult.SJJPL = vv.ToString();
+
+
+                    var itemDay = listDay.Where(t => t.TypesName == itemResult.CHMC).FirstOrDefault();
+                    if (itemDay == null)
+                    {
+                        strPZ += itemResult.CHMC + ",";
+                    }
+                    itemResult.CLZB = itemDay.GRKHZB1;
+                    itemResult.CLCJJDJ = itemDay.GRJLDJ1;
+                    itemResult.CLCJKDJ = itemDay.GRFKDJ1;
+                    itemResult.ZLDXZB = itemDay.GRKHZB3;
+                    itemResult.ZLFDZB = itemDay.GRKHZB4;
+
+                    decimal.TryParse(itemResult.CLZB, out decimal clzb);//产量指标
+                    decimal.TryParse(itemResult.CLCJJDJ, out decimal clcjjdj);//产量超件奖单价
+                    decimal.TryParse(itemResult.CLCJKDJ, out decimal clcjkdj);//产量亏件罚单价
+                    decimal.TryParse(itemResult.ZLDXZB, out decimal zldxzb);//产量奋斗指标
+                    decimal.TryParse(itemResult.ZLFDZB, out decimal zlfdzb);//质量奋斗指标
+                    decimal.TryParse(itemDay.GRJLDJ4, out decimal grjldj4);//个人奖励单价4
+                    decimal.TryParse(itemDay.GRFKDJ3, out decimal grjldj3);//个人奖励单价3
+                                                                           //产量考核
+                    if (string.IsNullOrEmpty(itemResult.CLZB) || clzb == 0)
+                    {
+                        itemResult.CLKH = "0";
+                    }
+                    else
+                    {
+                        if (vv >= clzb)
+                        {
+                            itemResult.CLKH = ((oo - (rr * ss + tt * uu) * clzb) * clcjjdj).ToString();
+                        }
+                        if (vv < clzb)
+                        {
+                            itemResult.CLKH = ((oo - (rr * ss + tt * uu) * clzb) * clcjkdj).ToString();
+                        }
+                    }
+
+                    //质量考核
+                    if (string.IsNullOrEmpty(itemResult.ZLDXZB) || zldxzb == 0)
+                    {
+                        itemResult.ZLKH = "0";
+                    }
+                    else
+                    {
+                        if (nn >= zlfdzb)
+                        {
+                            itemResult.ZLKH = ((kk - jj * zlfdzb) * grjldj4).ToString();
+                        }
+                        if (nn < zldxzb)
+                        {
+                            itemResult.ZLKH = ((kk - jj * zldxzb) * grjldj3).ToString();
+                        }
+                    }
+
+                    decimal.TryParse(itemResult.CLKH, out decimal clkh);//产量考核
+                    decimal.TryParse(itemResult.ZLKH, out decimal zlkh);//质量考核
+                    itemResult.KHGZ = (clkh + zlkh).ToString();//考核工资
+                    decimal.TryParse(itemResult.PSS, out decimal pss);//破损数
+                    decimal.TryParse(itemResult.CKL, out decimal ckl);//残扣率
+                    decimal.TryParse(itemResult.DLSL, out decimal dl);//大裂
+                                                                      //计件工资
+                    if (string.IsNullOrEmpty(itemResult.GBTZDJ))
+                    {
+                        itemResult.JJGZ = (kk * mm - pss * mm * ckl - dl * 2).ToString();
+                    }
+                    else
+                    {
+                        decimal.TryParse(itemResult.GBTZDJ, out decimal gbtzdj);//个别调整单价
+                        itemResult.JJGZ = (kk * gbtzdj - pss * gbtzdj * ckl - dl * 2).ToString();
+                    }
+                    //合计
+                    decimal.TryParse(itemResult.KHGZ, out decimal khgz);//考核工资
+                    decimal.TryParse(itemResult.JJGZ, out decimal jjgz);//计件工资
+                    itemResult.HJ = (khgz + jjgz).ToString();
+
                     listResult.Add(itemResult);
+                }
+
+                if (!string.IsNullOrEmpty(strPZ))
+                {
+                    MessageBox.Show("品种：" + strPZ + ",基础数据中不存在，无法计算！");
                 }
                 return listResult;
             }

@@ -3348,6 +3348,13 @@ namespace Monopy.PreceRateWage.WinForm
             decimal.TryParse(gzd.JJGZ3, out decimal jjgz3);
             gzd.JJGZ3 = (totalCount + jjgz3).ToString();
 
+            // 日工
+            var qtbt = new BaseDal<DataBase2CX_QTBT>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
+            if (qtbt != null && qtbt.Count > 0)
+            {
+                gzd.RG = (qtbt.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0m)).ToString();
+            }
+
             //试烧补助
             var kfss = new BaseDal<DataBase2CX_KFSS>().GetList(t => t.TheYear == dateTime.Year && t.TheMonth == dateTime.Month && t.UserCode == item_CQ.UserCode).ToList();
             if (kfss != null && kfss.Count > 0)
