@@ -394,7 +394,7 @@ namespace Monopy.PreceRateWage.WinForm
                 item.Frozen = false;
                 item.Visible = true;
             }
-            var datas = new BaseDal<DataBase2CX_CX_02JJKHTB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gd == "全部" ? true : t.GD.Equals(gd)) && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) && t.GH.Contains(gh) && t.DHFQ.Contains(dhfq) && t.PZMC.Contains(pzmc)).ToList().OrderBy(t => t.GD).ThenBy(t => int.TryParse(t.No, out int ix) ? ix : int.MaxValue).ToList();
+            var datas = new BaseDal<DataBase2CX_CX_02JJKHTB>().GetList(t => t.TheYear == selectTime.Year && t.TheMonth == selectTime.Month && (gd == "全部" ? true : t.GD.Equals(gd)) && t.UserCode.Contains(userCode) && t.UserName.Contains(userName) && t.GH.Contains(gh) && t.DHFQ.Contains(dhfq) && t.PZMC.Contains(pzmc)).ToList().OrderBy(t => int.TryParse(t.No, out int ix) ? ix : int.MaxValue).ToList();
             datas.Insert(0, MyDal.GetTotalDataBase2CX_CX_02JJKHTB(datas));
             dgv.DataSource = datas;
             for (int i = 0; i < 7; i++)

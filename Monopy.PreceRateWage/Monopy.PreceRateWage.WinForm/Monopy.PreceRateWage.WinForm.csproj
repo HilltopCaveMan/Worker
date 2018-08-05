@@ -464,6 +464,12 @@
     <Compile Include="Frm2CX_PSPZ.Designer.cs">
       <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
     </Compile>
+    <Compile Include="Frm2CX_QTBT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm2CX_QTBT.Designer.cs">
+      <DependentUpon>Frm2CX_QTBT.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm2CX_QTJJ.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -1618,6 +1624,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_PSPZ.resx">
       <DependentUpon>Frm2CX_PSPZ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm2CX_QTBT.resx">
+      <DependentUpon>Frm2CX_QTBT.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm2CX_QTJJ.resx">
       <DependentUpon>Frm2CX_QTJJ.cs</DependentUpon>
@@ -2799,6 +2808,9 @@
     <None Include="Excel\模板二厂——喷釉——车间报.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Excel\模板二厂——成型——其他补贴.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Excel\模板二厂——成型——学徒期名单.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -2971,6 +2983,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——喷釉——车间报.xlsx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <None Include="Excel\模板导出二厂——成型——其他补贴.xlsx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
     <None Include="Excel\模板导出二厂——成型——师傅补助.xlsx">

@@ -1131,6 +1131,16 @@ namespace Monopy.PreceRateWage.Dal
         }
 
         /// <summary>
+        /// 二厂成型车间其他补贴合计
+        /// </summary>
+        /// <param name="list"></param>
+        /// <returns></returns>
+        public static DataBase2CX_QTBT GetTotalDataBase2CX_QTBT(List<DataBase2CX_QTBT> list)
+        {
+            return (list == null || list.Count == 0) ? new DataBase2CX_QTBT { No = "合计",  BZJE = 0.ToString() } : new DataBase2CX_QTBT { No = "合计",  BZJE = list.Sum(t => decimal.TryParse(t.BZJE, out decimal d) ? d : 0M).ToString() };
+        }
+
+        /// <summary>
         /// 二厂检包车间包装计件导入合计
         /// </summary>
         /// <param name="list"></param>

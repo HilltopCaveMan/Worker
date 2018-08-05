@@ -354,8 +354,10 @@ namespace Monopy.PreceRateWage.WinForm
             }
             try
             {
-                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && !string.IsNullOrEmpty(t.TypesName));
+                var listDay = new BaseDal<DataBaseDay>().GetList(t => t.CreateYear == dtp.Value.Year && t.CreateMonth == dtp.Value.Month && t.FactoryNo == "G001" && t.WorkshopName == "成型车间" && t.PostName == "注修工" && !string.IsNullOrEmpty(t.TypesName));
                 var listResult = new List<DataBase1CX_CX_06JJ>();
+                string strPZ = string.Empty;
+
                 foreach (var item in list)
                 {
                     var itemResult = new DataBase1CX_CX_06JJ
@@ -382,18 +384,19 @@ namespace Monopy.PreceRateWage.WinForm
                         CKL = item.CKL
                     };
 
-                    var listBKH = new BaseDal<DataBase1CX_CX_04BKH>().Get(t => t.UserCode == itemResult.UserCode);
+                    var listBKH = new BaseDal<DataBase1CX_CX_04BKH>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.UserCode == itemResult.UserCode);
                     if (listBKH != null)
                     {
                         itemResult.SFCYKH = listBKH.SFCYKH;
                     }
 
-                    var listDLDT = new BaseDal<DataBase1CX_CX_07DLDT>().Get(t => t.UserCode == itemResult.UserCode && t.PZ == itemResult.CHMC);
+                    var listDLDT = new BaseDal<DataBase1CX_CX_07DLDT>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.UserCode == itemResult.UserCode && t.PZ == itemResult.CHMC);
                     if (listDLDT != null)
                     {
                         itemResult.GBTZDJ = listDLDT.DJ;
                     }
-                    var listTB = new BaseDal<DataBase1CX_CX_02JJKHTB>().Get(t => t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ);
+
+                    var listTB = new BaseDal<DataBase1CX_CX_02JJKHTB>().Get(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month && t.PZMC == itemResult.CHMC && t.BZBM == itemResult.BZ);
                     if (listTB != null)
                     {
                         itemResult.MXS = listTB.MXS;
@@ -401,7 +404,13 @@ namespace Monopy.PreceRateWage.WinForm
                         itemResult.MXS1 = listTB.MXS2;
                         itemResult.ZJCS1 = listTB.ZJCS2;
                     }
-
+                    else
+                    {
+                        itemResult.MXS = "0";
+                        itemResult.ZJCS = "0";
+                        itemResult.MXS1 = "0";
+                        itemResult.ZJCS1 = "0";
+                    }
                     decimal.TryParse(itemResult.DJ, out decimal mm);//单价
                     decimal.TryParse(itemResult.KYL, out decimal jj);//开窑量
                     decimal.TryParse(itemResult.YJP, out decimal kk);//一级品
@@ -420,8 +429,7 @@ namespace Monopy.PreceRateWage.WinForm
                     var itemDay = listDay.Where(t => t.TypesName == itemResult.CHMC).FirstOrDefault();
                     if (itemDay == null)
                     {
-                        MessageBox.Show(itemResult.CHMC + ",基础数据中不存在，无法计算！");
-
+                        strPZ += itemResult.CHMC + ",";
                     }
                     else
                     {
@@ -469,6 +477,12 @@ namespace Monopy.PreceRateWage.WinForm
                     }
                     listResult.Add(itemResult);
                 }
+
+                if (!string.IsNullOrEmpty(strPZ))
+                {
+                    MessageBox.Show("品种：" + strPZ + ",基础数据中不存在，无法计算！");
+                }
+
                 return listResult;
             }
             catch (Exception)
