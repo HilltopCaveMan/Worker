@@ -530,7 +530,7 @@ namespace Monopy.PreceRateWage.WinForm
                     Enabled = true;
                     return;
                 }
-
+                
                 var item = list7T[i];
                 if (string.IsNullOrEmpty(item.UserCode))
                 {
@@ -544,6 +544,24 @@ namespace Monopy.PreceRateWage.WinForm
                 list7T[i].CreateTime = Program.NowTime;
                 list7T[i].TheYear = dtp.Value.Year;
                 list7T[i].TheMonth = dtp.Value.Month;
+            }
+
+            List<DataBase2CX_GHDR> datas = new BaseDal<DataBase2CX_GHDR>().GetList(t => t.TheYear == dtp.Value.Year && t.TheMonth == dtp.Value.Month).ToList();
+            if (datas == null || datas.Count == 0)
+            {
+                MessageBox.Show("没有" + dtp.Value.Year + "年" + dtp.Value.Month + "月的工号数据，请先导入工号数据后在重新导入！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Enabled = true;
+                return;
+            }
+            foreach (var item in list7T)
+            {
+                DataBase2CX_GHDR data = datas.Where(t => t.UserCode == item.UserCode && t.GH == item.GH).FirstOrDefault();
+                if (data == null)
+                {
+                    MessageBox.Show("工号表中没有姓名：" + item.UserName + "工号：" + item.GH + "的数据信息，请先导入工号数据后在重新导入！！", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    Enabled = true;
+                    return;
+                }
             }
             var list = Recount(list7T);
             if (list == null)
