@@ -583,7 +583,7 @@ namespace Monopy.PreceRateWage.WinForm
             foreach (var item in list)
             {
                 DataBase2PY_CJB_YGZ xCGKH = new DataBase2PY_CJB_YGZ { Id = Guid.NewGuid(), CreateTime = Program.NowTime, CreateUser = Program.User.ToString(), TheYear = list.FirstOrDefault().TheYear, TheMonth = list.FirstOrDefault().TheMonth };
-                if (!string.IsNullOrEmpty(item.XTTS) && item.GZ == "擦水工（手工）")
+                if (item.GZ == "擦水工（手工）")
                 {
                     xCGKH.LB = item.LB;
                     xCGKH.GZ = item.GZ;
